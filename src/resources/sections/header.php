@@ -1,23 +1,28 @@
+<!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="DynamicalWeb Example Template">
-<meta name="author" content="Zi Xing Narrakas">
 
-<!-- Bootstrap core CSS -->
-<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+<!-- plugins:css -->
+<link rel="stylesheet" href="/assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+<link rel="stylesheet" href="/assets/vendors/css/vendor.bundle.base.css">
+<link rel="stylesheet" href="/assets/vendors/css/vendor.bundle.addons.css">
 
-<!-- Custom styles for this template -->
-<link href="assets/css/app.css" rel="stylesheet">
+<!-- plugin css for this page -->
+<link rel="stylesheet" href="/assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css">
 
-<!-- Favicon -->
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png?v=Kmnq9jqpb7">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png?v=Kmnq9jqpb7">
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png?v=Kmnq9jqpb7">
-<link rel="manifest" href="/assets/favicon/site.webmanifest?v=Kmnq9jqpb7">
-<link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg?v=Kmnq9jqpb7" color="#5bbad5">
-<link rel="shortcut icon" href="/assets/favicon/favicon.ico?v=Kmnq9jqpb7">
-<meta name="apple-mobile-web-app-title" content="DynamicalWeb">
-<meta name="application-name" content="DynamicalWeb">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-config" content="/assets/favicon/browserconfig.xml?v=Kmnq9jqpb7">
-<meta name="theme-color" content="#ffffff">
+<!-- inject:css -->
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png?v=Kmnx6w0N7E">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png?v=Kmnx6w0N7E">
+<link rel="icon" type="image/png" sizes="194x194" href="/assets/favicon/favicon-194x194.png?v=Kmnx6w0N7E">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png?v=Kmnx6w0N7E">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png?v=Kmnx6w0N7E">
+<link rel="manifest" href="/assets/favicon/site.webmanifest?v=Kmnx6w0N7E">
+<link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg?v=Kmnx6w0N7E" color="#2d89ef">
+<link rel="shortcut icon" href="/assets/favicon/favicon.ico?v=Kmnx6w0N7E">
+<meta name="apple-mobile-web-app-title" content="OpenBlu">
+<meta name="application-name" content="OpenBlu">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="msapplication-config" content="/assets/favicon/browserconfig.xml?v=Kmnx6w0N7E">
+<meta name="theme-color" content="#191c20">
