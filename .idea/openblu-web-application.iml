@@ -23,6 +23,13 @@
       <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/IntellivoidAccounts/ZiProto/Exception" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/IntellivoidAccounts/ZiProto/Type" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/IntellivoidAccounts/ZiProto/TypeTransformer" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/Abstracts" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/Abstracts/SearchMethods" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/Exceptions" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/Managers" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/Objects" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/Utilities" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
