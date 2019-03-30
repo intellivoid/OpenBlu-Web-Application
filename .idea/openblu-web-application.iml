@@ -42,6 +42,8 @@
       <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/sws/ZiProto/Exception" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/sws/ZiProto/Type" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/sws/ZiProto/TypeTransformer" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/login" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/register" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
