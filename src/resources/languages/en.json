@@ -8,6 +8,15 @@
             "PAGE_TITLE": "DynamicalWeb",
             "HEADER": "DynamicalWeb Example",
             "CONTENT": "This example contains various uses for Dynamical Web with Bootstrap"
+        },
+        "login": {
+            "PAGE_TITLE": "Login to OpenBlu",
+            "HEADER": "Intellivoid Accounts",
+            "FIELD_1": "Username or email *",
+            "FIELD_2": "Password *",
+            "SUBMIT_BUTTON": "Login",
+            "REGISTER": "Don't have an Intellivoid Account?",
+            "REGISTER_LINK": "Sign Up"
         }
     },
     "sections": {

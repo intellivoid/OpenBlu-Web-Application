@@ -2,7 +2,7 @@
 <html lang="<?PHP \DynamicalWeb\HTML::print(APP_LANGUAGE_ISO_639); ?>">
     <head>
         <?PHP \DynamicalWeb\HTML::importSection('header'); ?>
-        <title>Login to OpenBlu</title>
+        <title><?PHP \DynamicalWeb\HTML::print(TEXT_PAGE_TITLE); ?></title>
     </head>
     <body>
         <div class="container-scroller">
@@ -11,21 +11,22 @@
                     <div class="content-wrapper full-page-wrapper auth-pages login-2">
                         <div class="card col-lg-4">
                             <div class="card-body px-5 py-5">
-                                <h3 class="card-title text-left mb-3">Intellivoid Accounts</h3>
+                                <h3 class="card-title text-left mb-3"><?PHP \DynamicalWeb\HTML::print(TEXT_HEADER); ?></h3>
                                 <form>
+                                    
                                     <div class="form-group">
-                                        <label>Username or email *</label>
-                                        <input type="text" class="form-control p_input">
+                                        <label><?PHP \DynamicalWeb\HTML::print(TEXT_FIELD_1); ?></label>
+                                        <input type="text" class="form-control p_input" title="<?PHP \DynamicalWeb\HTML::print(TEXT_FIELD_1); ?>">
                                     </div>
                                     <div class="form-group">
-                                        <label>Password *</label>
-                                        <input type="text" class="form-control p_input">
+                                        <label><?PHP \DynamicalWeb\HTML::print(TEXT_FIELD_2); ?></label>
+                                        <input type="text" class="form-control p_input" title="<?PHP \DynamicalWeb\HTML::print(TEXT_FIELD_2); ?>">
                                     </div>
                                     <div class="text-center">
-                                        <button type="submit" class="btn btn-primary btn-block enter-btn">Login</button>
+                                        <button type="submit" class="btn btn-primary btn-block enter-btn"><?PHP \DynamicalWeb\HTML::print(TEXT_SUBMIT_BUTTON); ?></button>
                                     </div>
 
-                                    <p class="sign-up">Don't have an Intellivoid Account?<a href="register"> Sign Up</a></p>
+                                    <p class="sign-up"><?PHP \DynamicalWeb\HTML::print(TEXT_REGISTER); ?><a href="register"> <?PHP \DynamicalWeb\HTML::print(TEXT_REGISTER_LINK); ?></a></p>
                                 </form>
                             </div>
                         </div>
