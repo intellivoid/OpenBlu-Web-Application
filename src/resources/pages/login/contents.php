@@ -13,7 +13,7 @@
                             <div class="card-body px-5 py-5">
                                 <h3 class="card-title text-left mb-3"><?PHP \DynamicalWeb\HTML::print(TEXT_HEADER); ?></h3>
                                 <form>
-                                    
+
                                     <div class="form-group">
                                         <label><?PHP \DynamicalWeb\HTML::print(TEXT_FIELD_1); ?></label>
                                         <input type="text" class="form-control p_input" title="<?PHP \DynamicalWeb\HTML::print(TEXT_FIELD_1); ?>">

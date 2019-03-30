@@ -17,6 +17,17 @@
             "SUBMIT_BUTTON": "Login",
             "REGISTER": "Don't have an Intellivoid Account?",
             "REGISTER_LINK": "Sign Up"
+        },
+        "register": {
+            "PAGE_TITLE": "Create Intellivoid Account",
+            "HEADER": "Register",
+            "FIELD_1": "Username",
+            "FIELD_2": "Email",
+            "FIELD_3": "Password",
+            "SUBMIT_BUTTON": "Create Account",
+            "LOGIN": "Already have an Account?",
+            "LOGIN_LINK": "Login",
+            "TOS": "By creating an account you are accepting our Terms & Conditions"
         }
     },
     "sections": {

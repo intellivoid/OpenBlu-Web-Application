@@ -2,7 +2,7 @@
 <html lang="<?PHP \DynamicalWeb\HTML::print(APP_LANGUAGE_ISO_639); ?>">
     <head>
         <?PHP \DynamicalWeb\HTML::importSection('header'); ?>
-        <title>Create Intellivoid Account</title>
+        <title><?PHP \DynamicalWeb\HTML::print(TEXT_PAGE_TITLE); ?></title>
     </head>
     <body>
         <div class="container-scroller">
@@ -12,35 +12,34 @@
                         <div class="card col-lg-4">
                             <div class="card-body px-5 py-5">
                                 <div class="wrapper w-100">
-                                    <h3 class="card-title text-left mb-3">Register</h3>
+                                    <h3 class="card-title text-left mb-3"><?PHP \DynamicalWeb\HTML::print(TEXT_HEADER); ?></h3>
                                 </div>
                                 <form>
                                     <div class="form-group">
-                                        <label>Username</label>
-                                        <input type="text" class="form-control p_input">
+                                        <label><?PHP \DynamicalWeb\HTML::print(TEXT_FIELD_1); ?></label>
+                                        <input type="text" class="form-control p_input" title="<?PHP \DynamicalWeb\HTML::print(TEXT_FIELD_1); ?>">
                                     </div>
                                     <div class="form-group">
-                                        <label>Email</label>
-                                        <input type="email" class="form-control p_input">
+                                        <label><?PHP \DynamicalWeb\HTML::print(TEXT_FIELD_2); ?></label>
+                                        <input type="email" class="form-control p_input" title="<?PHP \DynamicalWeb\HTML::print(TEXT_FIELD_2); ?>">
                                     </div>
                                     <div class="form-group">
-                                        <label>Password</label>
-                                        <input type="password" class="form-control p_input">
+                                        <label><?PHP \DynamicalWeb\HTML::print(TEXT_FIELD_3); ?></label>
+                                        <input type="password" class="form-control p_input" title="<?PHP \DynamicalWeb\HTML::print(TEXT_FIELD_3); ?>">
                                     </div>
                                     <div class="text-center">
-                                        <button type="submit" class="btn btn-primary btn-block enter-btn">Create Account</button>
+                                        <button type="submit" class="btn btn-primary btn-block enter-btn"><?PHP \DynamicalWeb\HTML::print(TEXT_SUBMIT_BUTTON); ?></button>
                                     </div>
-                                    <p class="sign-up text-center">Already have an Account?<a href="#"> Sign Up</a></p>
-                                    <p class="terms">By creating an account you are accepting our<a href="#"> Terms & Conditions</a></p>
+                                    <p class="sign-up text-center"><?PHP \DynamicalWeb\HTML::print(TEXT_LOGIN); ?><a href="login"> <?PHP \DynamicalWeb\HTML::print(TEXT_LOGIN_LINK); ?></a></p>
+                                    <p class="terms">
+                                        <a href="#"> <?PHP \DynamicalWeb\HTML::print(TEXT_TOS); ?></a>
+                                    </p>
                                 </form>
                             </div>
                         </div>
                     </div>
-                    <!-- content-wrapper ends -->
                 </div>
-                <!-- row ends -->
             </div>
-            <!-- page-body-wrapper ends -->
         </div>
         <?PHP \DynamicalWeb\HTML::importSection('js_scripts'); ?>
     </body>
