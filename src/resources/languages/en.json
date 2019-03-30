@@ -27,7 +27,13 @@
             "SUBMIT_BUTTON": "Create Account",
             "LOGIN": "Already have an Account?",
             "LOGIN_LINK": "Login",
-            "TOS": "By creating an account you are accepting our Terms & Conditions"
+            "TOS": "By creating an account you are accepting our Terms & Conditions",
+            "CALLBACK_100": "There was an issue with your request, please make sure your browser is up to date",
+            "CALLBACK_101": "The given Username is invalid",
+            "CALLBACK_102": "The given E-Mail is invalid",
+            "CALLBACK_103": "The given password is invalid, it should be greater than 8 characters but no greater than 128",
+            "CALLBACK_104": "The given Username is already taken",
+            "CALLBACK_105": "The given E-Mail is already used"
         }
     },
     "sections": {

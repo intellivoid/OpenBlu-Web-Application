@@ -1,3 +1,5 @@
+<?PHP \DynamicalWeb\HTML::importScript('alert'); ?>
+<?PHP \DynamicalWeb\HTML::importScript('register_account'); ?>
 <!DOCTYPE html>
 <html lang="<?PHP \DynamicalWeb\HTML::print(APP_LANGUAGE_ISO_639); ?>">
     <head>
@@ -13,19 +15,20 @@
                             <div class="card-body px-5 py-5">
                                 <div class="wrapper w-100">
                                     <h3 class="card-title text-left mb-3"><?PHP \DynamicalWeb\HTML::print(TEXT_HEADER); ?></h3>
+                                    <?PHP \DynamicalWeb\HTML::importScript('callbacks'); ?>
                                 </div>
-                                <form>
+                                <form action="register" method="POST">
                                     <div class="form-group">
                                         <label><?PHP \DynamicalWeb\HTML::print(TEXT_FIELD_1); ?></label>
-                                        <input type="text" class="form-control p_input" title="<?PHP \DynamicalWeb\HTML::print(TEXT_FIELD_1); ?>">
+                                        <input type="text" name="username" id="username" class="form-control p_input" title="<?PHP \DynamicalWeb\HTML::print(TEXT_FIELD_1); ?>">
                                     </div>
                                     <div class="form-group">
                                         <label><?PHP \DynamicalWeb\HTML::print(TEXT_FIELD_2); ?></label>
-                                        <input type="email" class="form-control p_input" title="<?PHP \DynamicalWeb\HTML::print(TEXT_FIELD_2); ?>">
+                                        <input type="email" name="email" id="email" class="form-control p_input" title="<?PHP \DynamicalWeb\HTML::print(TEXT_FIELD_2); ?>">
                                     </div>
                                     <div class="form-group">
                                         <label><?PHP \DynamicalWeb\HTML::print(TEXT_FIELD_3); ?></label>
-                                        <input type="password" class="form-control p_input" title="<?PHP \DynamicalWeb\HTML::print(TEXT_FIELD_3); ?>">
+                                        <input type="password" name="password" id="password" class="form-control p_input" title="<?PHP \DynamicalWeb\HTML::print(TEXT_FIELD_3); ?>">
                                     </div>
                                     <div class="text-center">
                                         <button type="submit" class="btn btn-primary btn-block enter-btn"><?PHP \DynamicalWeb\HTML::print(TEXT_SUBMIT_BUTTON); ?></button>

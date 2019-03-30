@@ -18,6 +18,7 @@
     use IntellivoidAccounts\Objects\Account;
     use IntellivoidAccounts\Utilities\Hashing;
     use IntellivoidAccounts\Utilities\Validate;
+    use function PHPSTORM_META\type;
     use ZiProto\ZiProto;
 
     /**
@@ -93,8 +94,8 @@
             $last_login_id = (int)0;
             $creation_date = (int)time();
 
-            $query = "INSERT INTO `users` (public_id, username, email, password, status, personal_information, configuration, last_login_id, creation_date) VALUES ('$public_id', '$username', '$email', '$password', $status, '$personal_information', '$configuration', $last_login_id, $creation_date)";
-            $QueryResults = $this->intellivoidAccounts->database->query($query);
+            $Query = "INSERT INTO `users` (public_id, username, email, password, status, personal_information, configuration, last_login_id, creation_date) VALUES ('$public_id', '$username', '$email', '$password', $status, '$personal_information', '$configuration', $last_login_id, $creation_date)";
+            $QueryResults = $this->intellivoidAccounts->database->query($Query);
 
             if($QueryResults == true)
             {
@@ -102,7 +103,7 @@
             }
             else
             {
-                throw new DatabaseException($query, $this->intellivoidAccounts->database->error);
+                throw new DatabaseException($Query, $this->intellivoidAccounts->database->error);
             }
         }
 
@@ -234,6 +235,44 @@
             try
             {
                 $this->getAccount(AccountSearchMethod::byUsername, $username);
+                return true;
+            }
+            catch(AccountNotFoundException $accountNotFoundException)
+            {
+                return false;
+            }
+        }
+
+        /**
+         * Determines if the Public ID exists on the database
+         *
+         * @param string $public_id
+         * @return bool
+         */
+        public function publicIdExists(string $public_id): bool
+        {
+            try
+            {
+                $this->getAccount(AccountSearchMethod::byPublicID, $public_id);
+                return true;
+            }
+            catch(AccountNotFoundException $accountNotFoundException)
+            {
+                return false;
+            }
+        }
+
+        /**
+         * Determines if the ID exists on the database
+         *
+         * @param int $id
+         * @return bool
+         */
+        public function IdExists(int $id): bool
+        {
+            try
+            {
+                $this->getAccount(AccountSearchMethod::byId, $id);
                 return true;
             }
             catch(AccountNotFoundException $accountNotFoundException)
