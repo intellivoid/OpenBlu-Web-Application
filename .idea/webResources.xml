@@ -5,12 +5,15 @@
       <entry url="file://$PROJECT_DIR$">
         <entryData>
           <resourceRoots>
-            <path value="file://$PROJECT_DIR$/src/assets" />
             <path value="file://$PROJECT_DIR$/src/resources/languages" />
+            <path value="file://$PROJECT_DIR$/src/assets" />
             <path value="file://$PROJECT_DIR$/src/assets/css" />
             <path value="file://$PROJECT_DIR$/src/assets/favicon" />
+            <path value="file://$PROJECT_DIR$/src/assets/fonts" />
             <path value="file://$PROJECT_DIR$/src/assets/images" />
             <path value="file://$PROJECT_DIR$/src/assets/js" />
+            <path value="file://$PROJECT_DIR$/src/assets/scss" />
+            <path value="file://$PROJECT_DIR$/src/assets/vendors" />
           </resourceRoots>
         </entryData>
       </entry>
