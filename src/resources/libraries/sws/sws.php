@@ -38,7 +38,7 @@
         {
             $this->Configuration = parse_ini_file(__DIR__ . DIRECTORY_SEPARATOR . 'configuration.ini');
 
-            include_once($this->Configuration['ZiProto'] . DIRECTORY_SEPARATOR . 'ZiProto.php');
+            include_once(__DIR__ . DIRECTORY_SEPARATOR . 'ZiProto' . DIRECTORY_SEPARATOR . 'ZiProto.php');
 
             include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Abstracts' . DIRECTORY_SEPARATOR . 'DefaultValues.php');
             include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Abstracts' . DIRECTORY_SEPARATOR . 'ExceptionCodes.php');
@@ -55,7 +55,13 @@
 
             include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Objects' . DIRECTORY_SEPARATOR . 'Cookie.php');
 
-            $this->Database = new \mysqli($this->Configuration['Host'], $this->Configuration['Username'], $this->Configuration['Password'], $this->Configuration['Database']);
+            $this->Database = new \mysqli(
+                $this->Configuration['Host'],
+                $this->Configuration['Username'],
+                $this->Configuration['Password'],
+                $this->Configuration['Database'],
+                $this->Configuration['Port']
+            );
 
             if($this->Database->connect_error)
             {
