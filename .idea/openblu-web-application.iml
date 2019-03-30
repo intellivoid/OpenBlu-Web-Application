@@ -30,6 +30,12 @@
       <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/Managers" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/Objects" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/Utilities" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/scripts" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/sws" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/sws/Abstracts" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/sws/Classes" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/sws/Exceptions" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/sws/Objects" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

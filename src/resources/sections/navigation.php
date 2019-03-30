@@ -17,5 +17,11 @@
         <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
             <span class="mdi mdi-format-line-spacing"></span>
         </button>
+
+        <ul class="navbar-nav navbar-nav-right">
+            <li class="nav-item text-center d-flex algin-items-center justify-content-center">
+                <button type="button" class="btn btn-inverse-info btn-fw">Login to OpenBlu</button>
+            </li>
+        </ul>
     </div>
 </nav>
