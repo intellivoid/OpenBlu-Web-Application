@@ -33,7 +33,9 @@
             "CALLBACK_102": "The given E-Mail is invalid",
             "CALLBACK_103": "The given password is invalid, it should be greater than 8 characters but no greater than 128",
             "CALLBACK_104": "The given Username is already taken",
-            "CALLBACK_105": "The given E-Mail is already used"
+            "CALLBACK_105": "The given E-Mail is already used",
+            "CALLBACK_106": "There was an issue while trying to create your account, please contact support",
+            "CALLBACK_107": "Your account has been created!"
         }
     },
     "sections": {
