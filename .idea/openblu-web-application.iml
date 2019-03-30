@@ -8,6 +8,21 @@
       <sourceFolder url="file://$MODULE_DIR$/src/resources/sections" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/index" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/resources" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/IntellivoidAccounts" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/IntellivoidAccounts/Abstracts" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/IntellivoidAccounts/Abstracts/SearchMethods" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/IntellivoidAccounts/Exceptions" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/IntellivoidAccounts/Managers" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/IntellivoidAccounts/Objects" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/IntellivoidAccounts/Objects/Account" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/IntellivoidAccounts/Objects/Account/PersonalInformation" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/IntellivoidAccounts/Utilities" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/IntellivoidAccounts/ZiProto" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/IntellivoidAccounts/ZiProto/Abstracts" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/IntellivoidAccounts/ZiProto/Exception" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/IntellivoidAccounts/ZiProto/Type" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/IntellivoidAccounts/ZiProto/TypeTransformer" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
