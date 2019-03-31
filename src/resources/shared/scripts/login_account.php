@@ -40,6 +40,7 @@
             exit();
         }
 
+
         \DynamicalWeb\DynamicalWeb::loadLibrary('IntellivoidAccounts', 'IntellivoidAccounts', 'IntellivoidAccounts.php');
 
         if(\IntellivoidAccounts\Utilities\Validate::username($_POST['username_email']) == false)
@@ -80,6 +81,18 @@
             $IntellivoidAccounts->getLoginRecordManager()->createLoginRecord(
                 $Account->ID, getClientIP(), \IntellivoidAccounts\Abstracts\LoginStatus::Successful, 'OpenBlu WebApplication'
             );
+
+            $sws = new \sws\sws();
+
+            $Cookie = $sws->WebManager()->getCookie('web_session');
+            $Cookie->Data['session_active'] = true;
+            $Cookie->Data['account_pubid'] = $Account->PublicID;
+            $Cookie->Data['account_id'] = $Account->ID;
+            $Cookie->Data['account_email'] = $Account->Email;
+            $Cookie->Data['account_username'] = $Account->Username;
+
+            $sws->CookieManager()->updateCookie($Cookie);
+            $sws->WebManager()->setCookie($Cookie);
 
             header('Location: /');
             exit();
