@@ -1,3 +1,5 @@
+<?PHP \DynamicalWeb\HTML::importScript('login_account'); ?>
+<?PHP \DynamicalWeb\HTML::importScript('alert'); ?>
 <!DOCTYPE html>
 <html lang="<?PHP \DynamicalWeb\HTML::print(APP_LANGUAGE_ISO_639); ?>">
     <head>
@@ -12,15 +14,15 @@
                         <div class="card col-lg-4">
                             <div class="card-body px-5 py-5">
                                 <h3 class="card-title text-left mb-3"><?PHP \DynamicalWeb\HTML::print(TEXT_HEADER); ?></h3>
-                                <form>
-
+                                <?PHP \DynamicalWeb\HTML::importScript('callbacks'); ?>
+                                <form action="login" method="POST">
                                     <div class="form-group">
                                         <label><?PHP \DynamicalWeb\HTML::print(TEXT_FIELD_1); ?></label>
-                                        <input type="text" class="form-control p_input" title="<?PHP \DynamicalWeb\HTML::print(TEXT_FIELD_1); ?>">
+                                        <input type="text" name="username_email" id="username_email" class="form-control p_input" title="<?PHP \DynamicalWeb\HTML::print(TEXT_FIELD_1); ?>">
                                     </div>
                                     <div class="form-group">
                                         <label><?PHP \DynamicalWeb\HTML::print(TEXT_FIELD_2); ?></label>
-                                        <input type="text" class="form-control p_input" title="<?PHP \DynamicalWeb\HTML::print(TEXT_FIELD_2); ?>">
+                                        <input type="password" name="password" id="password" class="form-control p_input" title="<?PHP \DynamicalWeb\HTML::print(TEXT_FIELD_2); ?>">
                                     </div>
                                     <div class="text-center">
                                         <button type="submit" class="btn btn-primary btn-block enter-btn"><?PHP \DynamicalWeb\HTML::print(TEXT_SUBMIT_BUTTON); ?></button>
