@@ -1,3 +1,4 @@
+<?PHP \DynamicalWeb\HTML::importScript('check_auth'); ?>
 <!DOCTYPE html>
 <html lang="<?PHP \DynamicalWeb\HTML::print(APP_LANGUAGE_ISO_639); ?>">
     <head>

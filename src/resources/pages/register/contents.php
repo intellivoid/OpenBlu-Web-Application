@@ -1,3 +1,5 @@
+<?PHP \DynamicalWeb\HTML::importScript('check_auth'); ?>
+<?PHP \DynamicalWeb\HTML::importScript('auto_redirect'); ?>
 <?PHP \DynamicalWeb\HTML::importScript('alert'); ?>
 <?PHP \DynamicalWeb\HTML::importScript('register_account'); ?>
 <!DOCTYPE html>
