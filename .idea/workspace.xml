@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13744565-c04a-4ec4-8a5b-01f6fe867a44" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/languages/en.json" afterPath="$PROJECT_DIR$/src/resources/languages/en.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/pages/login/contents.php" afterPath="$PROJECT_DIR$/src/resources/pages/login/contents.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/pages/register/contents.php" afterPath="$PROJECT_DIR$/src/resources/pages/register/contents.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/shared/scripts/recaptcha.php" afterPath="$PROJECT_DIR$/src/resources/shared/scripts/recaptcha.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/pages/register/scripts/callbacks.php" afterPath="$PROJECT_DIR$/src/resources/pages/register/scripts/callbacks.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/shared/scripts/register_account.php" afterPath="$PROJECT_DIR$/src/resources/shared/scripts/register_account.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -73,41 +75,31 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="recaptcha.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resources/shared/recaptcha.json">
+      <file leaf-file-name="register_account.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/register_account.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="19" lean-forward="false" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="19" />
+            <state relative-caret-position="99">
+              <caret line="10" column="51" lean-forward="false" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="recaptcha.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/recaptcha.php">
+      <file leaf-file-name="callbacks.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resources/pages/register/scripts/callbacks.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="46" lean-forward="false" selection-start-line="13" selection-start-column="46" selection-end-line="13" selection-end-column="46" />
+            <state relative-caret-position="511">
+              <caret line="40" column="22" lean-forward="false" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="contents.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resources/pages/login/contents.php">
+      <file leaf-file-name="en.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/resources/languages/en.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="32" column="42" lean-forward="true" selection-start-line="30" selection-start-column="36" selection-end-line="32" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="contents.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/resources/pages/register/contents.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="38" column="42" lean-forward="false" selection-start-line="38" selection-start-column="42" selection-end-line="38" selection-end-column="42" />
+            <state relative-caret-position="426">
+              <caret line="42" column="93" lean-forward="false" selection-start-line="42" selection-start-column="93" selection-end-line="42" selection-end-column="93" />
               <folding />
             </state>
           </provider>
@@ -128,10 +120,7 @@
         <option value="$PROJECT_DIR$/src/resources/libraries/OpenBlu/configuration.ini" />
         <option value="$PROJECT_DIR$/src/resources/libraries/sws/configuration.ini" />
         <option value="$PROJECT_DIR$/src/resources/shared/scripts/alert.php" />
-        <option value="$PROJECT_DIR$/src/resources/pages/register/scripts/callbacks.php" />
-        <option value="$PROJECT_DIR$/src/resources/shared/scripts/register_account.php" />
         <option value="$PROJECT_DIR$/src/resources/libraries/IntellivoidAccounts/configuration.ini" />
-        <option value="$PROJECT_DIR$/src/resources/languages/en.json" />
         <option value="$PROJECT_DIR$/src/resources/pages/login/scripts/callbacks.php" />
         <option value="$PROJECT_DIR$/src/resources/libraries/IntellivoidAccounts/Managers/LoginRecordManager.php" />
         <option value="$PROJECT_DIR$/src/resources/pages/index/contents.php" />
@@ -148,8 +137,11 @@
         <option value="$PROJECT_DIR$/src/resources/DynamicalWeb/HTML.php" />
         <option value="$PROJECT_DIR$/src/resources/shared/recaptcha.json" />
         <option value="$PROJECT_DIR$/src/resources/shared/scripts/recaptcha.php" />
-        <option value="$PROJECT_DIR$/src/resources/pages/login/contents.php" />
         <option value="$PROJECT_DIR$/src/resources/pages/register/contents.php" />
+        <option value="$PROJECT_DIR$/src/resources/pages/login/contents.php" />
+        <option value="$PROJECT_DIR$/src/resources/pages/register/scripts/callbacks.php" />
+        <option value="$PROJECT_DIR$/src/resources/shared/scripts/register_account.php" />
+        <option value="$PROJECT_DIR$/src/resources/languages/en.json" />
       </list>
     </option>
   </component>
@@ -255,11 +247,67 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="shared" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="openblu-web-application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="openblu-web-application" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="pages" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="register" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="openblu-web-application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="openblu-web-application" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="register" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -574,12 +622,12 @@
       <workItem from="1553987549888" duration="4252000" />
       <workItem from="1554043519862" duration="7195000" />
       <workItem from="1554119512628" duration="2206000" />
-      <workItem from="1554128139549" duration="2506000" />
+      <workItem from="1554128139549" duration="3823000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30755000" />
+    <option name="totallyTimeSpent" value="32072000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -764,20 +812,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/pages/register/scripts/callbacks.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="36" column="22" lean-forward="false" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/languages/en.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="113" lean-forward="false" selection-start-line="22" selection-start-column="113" selection-end-line="22" selection-end-column="113" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/pages/login/scripts/callbacks.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -901,6 +935,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2499">
           <caret line="164" column="39" lean-forward="false" selection-start-line="164" selection-start-column="39" selection-end-line="164" selection-end-column="39" />
+          <folding>
+            <marker date="1553989841725" expanded="true" signature="3794:4069" ph="INSERT INTO `users`... " />
+            <marker date="1553989841725" expanded="true" signature="6136:6301" ph="SELECT id, p... users" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -927,14 +965,6 @@
             <marker date="1554055334573" expanded="true" signature="3265:4435" ph="{...}" />
             <marker date="1554055334573" expanded="true" signature="4795:4877" ph="{...}" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/register_account.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="54" column="85" lean-forward="false" selection-start-line="54" selection-start-column="85" selection-end-line="54" selection-end-column="85" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1009,16 +1039,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/pages/login/contents.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="32" column="42" lean-forward="true" selection-start-line="30" selection-start-column="36" selection-end-line="32" selection-end-column="42" />
+        <state relative-caret-position="34">
+          <caret line="2" column="55" lean-forward="false" selection-start-line="2" selection-start-column="55" selection-end-line="2" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/pages/register/contents.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="38" column="42" lean-forward="false" selection-start-line="38" selection-start-column="42" selection-end-line="38" selection-end-column="42" />
+        <state relative-caret-position="238">
+          <caret line="14" column="41" lean-forward="true" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/register_account.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="10" column="51" lean-forward="false" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/pages/register/scripts/callbacks.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="511">
+          <caret line="40" column="22" lean-forward="false" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/languages/en.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="42" column="93" lean-forward="false" selection-start-line="42" selection-start-column="93" selection-end-line="42" selection-end-column="93" />
           <folding />
         </state>
       </provider>

@@ -6,6 +6,12 @@
 
     function RegisterAccount()
     {
+        if(verify_recaptcha() == false)
+        {
+            header('Location: register?callback=108');
+            exit();
+        }
+
         \DynamicalWeb\DynamicalWeb::loadLibrary('IntellivoidAccounts', 'IntellivoidAccounts', 'IntellivoidAccounts.php');
 
         if(isset($_POST['username']) == false)

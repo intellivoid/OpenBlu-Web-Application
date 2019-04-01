@@ -35,5 +35,9 @@
             case 107:
                 render_alert(TEXT_CALLBACK_107, 'success', 'check-circle');
                 break;
+
+            case 108:
+                render_alert(TEXT_CALLBACK_108, 'warning', 'alert-circle');
+                break;
         }
     }

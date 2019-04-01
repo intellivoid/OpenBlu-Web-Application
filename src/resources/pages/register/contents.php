@@ -1,8 +1,8 @@
 <?PHP \DynamicalWeb\HTML::importScript('check_auth'); ?>
 <?PHP \DynamicalWeb\HTML::importScript('auto_redirect'); ?>
-<?PHP \DynamicalWeb\HTML::importScript('alert'); ?>
-<?PHP \DynamicalWeb\HTML::importScript('register_account'); ?>
 <?PHP \DynamicalWeb\HTML::importScript('recaptcha'); ?>
+<?PHP \DynamicalWeb\HTML::importScript('register_account'); ?>
+<?PHP \DynamicalWeb\HTML::importScript('alert'); ?>
 <!DOCTYPE html>
 <html lang="<?PHP \DynamicalWeb\HTML::print(APP_LANGUAGE_ISO_639); ?>">
     <head>
