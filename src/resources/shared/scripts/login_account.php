@@ -40,6 +40,11 @@
             exit();
         }
 
+        if(verify_recaptcha() == false)
+        {
+            header('Location: login?callback=104');
+            exit();
+        }
 
         \DynamicalWeb\DynamicalWeb::loadLibrary('IntellivoidAccounts', 'IntellivoidAccounts', 'IntellivoidAccounts.php');
 

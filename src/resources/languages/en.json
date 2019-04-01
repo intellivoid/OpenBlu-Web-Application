@@ -20,7 +20,8 @@
             "CALLBACK_100": "There was an issue with your request, please make sure your browser is up to date",
             "CALLBACK_101": "The login information is incorrect",
             "CALLBACK_102": "Your account has been suspended",
-            "CALLBACK_103": "There was an issue while trying to verify your login details, please contact support"
+            "CALLBACK_103": "There was an issue while trying to verify your login details, please contact support",
+            "CALLBACK_104": "Captcha verification failed, please solve the captcha correctly"
         },
         "register": {
             "PAGE_TITLE": "Create Intellivoid Account",

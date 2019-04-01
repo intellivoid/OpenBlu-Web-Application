@@ -19,5 +19,9 @@
             case 103:
                 render_alert(TEXT_CALLBACK_103, 'warning', 'alert-circle');
                 break;
+
+            case 104:
+                render_alert(TEXT_CALLBACK_104, 'warning', 'alert-circle');
+                break;
         }
     }
