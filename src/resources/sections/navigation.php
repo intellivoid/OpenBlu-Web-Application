@@ -20,7 +20,20 @@
 
         <ul class="navbar-nav navbar-nav-right">
             <li class="nav-item text-center d-flex algin-items-center justify-content-center">
-                <button type="button" class="btn btn-inverse-info btn-fw">Login to OpenBlu</button>
+                <?PHP
+                    if(WEB_SESSION_ACTIVE == true)
+                    {
+                        ?>
+                        <a href="logout" type="button" class="btn btn-inverse-danger btn-fw">Logout from OpenBlu</a>
+                        <?PHP
+                    }
+                    else
+                    {
+                        ?>
+                        <a href="login" type="button" class="btn btn-inverse-info btn-fw">Login to OpenBlu</a>
+                        <?PHP
+                    }
+                ?>
             </li>
         </ul>
     </div>
