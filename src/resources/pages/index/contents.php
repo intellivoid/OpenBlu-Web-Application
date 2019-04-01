@@ -1,6 +1,5 @@
 <?PHP \DynamicalWeb\HTML::importScript('check_auth'); ?>
-<?PHP \DynamicalWeb\DynamicalWeb::loadLibrary('OpenBlu', 'OpenBlu', 'OpenBlu.php'); ?>
-<?PHP $OpenBlu = new \OpenBlu\OpenBlu(); ?>
+<?PHP \DynamicalWeb\HTML::importScript('cache'); ?>
 <!DOCTYPE html>
 <html lang="<?PHP \DynamicalWeb\HTML::print(APP_LANGUAGE_ISO_639); ?>">
     <head>
@@ -25,7 +24,7 @@
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div class="d-inline-block pt-3">
                                                 <div class="d-flex">
-                                                    <h2 class="mb-0"><?PHP \DynamicalWeb\HTML::print($OpenBlu->getVPNManager()->totalServers()); ?></h2>
+                                                    <h2 class="mb-0"><?PHP \DynamicalWeb\HTML::print(CACHE_TOTAL_SERVERS); ?></h2>
                                                 </div>
                                                 <i class="mdi mdi-clock text-muted"></i>
                                                 <small class="text-gray">Updated 2 minutes ago.</small>

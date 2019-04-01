@@ -13,7 +13,9 @@
             'account_id' => null,
             'account_email' => null,
             'account_username' => null,
-            'downloads' => 0
+            'downloads' => 0,
+            'cache' => array(),
+            'cache_refresh' => 0
         );
 
         $sws->CookieManager()->updateCookie($Cookie);
