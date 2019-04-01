@@ -2,10 +2,12 @@
 <?PHP \DynamicalWeb\HTML::importScript('auto_redirect'); ?>
 <?PHP \DynamicalWeb\HTML::importScript('login_account'); ?>
 <?PHP \DynamicalWeb\HTML::importScript('alert'); ?>
+<?PHP \DynamicalWeb\HTML::importScript('recaptcha'); ?>
 <!DOCTYPE html>
 <html lang="<?PHP \DynamicalWeb\HTML::print(APP_LANGUAGE_ISO_639); ?>">
     <head>
         <?PHP \DynamicalWeb\HTML::importSection('header'); ?>
+        <?PHP \DynamicalWeb\HTML::print(re_import(), false); ?>
         <title><?PHP \DynamicalWeb\HTML::print(TEXT_PAGE_TITLE); ?></title>
     </head>
     <body>
@@ -25,6 +27,9 @@
                                     <div class="form-group">
                                         <label><?PHP \DynamicalWeb\HTML::print(TEXT_FIELD_2); ?></label>
                                         <input type="password" name="password" id="password" class="form-control p_input" title="<?PHP \DynamicalWeb\HTML::print(TEXT_FIELD_2); ?>">
+                                    </div>
+                                    <div class="form-group">
+                                        <?PHP \DynamicalWeb\HTML::print(re_render(), false); ?>
                                     </div>
                                     <div class="text-center">
                                         <button type="submit" class="btn btn-primary btn-block enter-btn"><?PHP \DynamicalWeb\HTML::print(TEXT_SUBMIT_BUTTON); ?></button>

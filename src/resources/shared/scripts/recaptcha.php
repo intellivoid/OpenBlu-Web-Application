@@ -17,6 +17,18 @@
         return '';
     }
 
+    function re_import()
+    {
+        $configuration = \DynamicalWeb\DynamicalWeb::getConfiguration('recaptcha');
+
+        if($configuration['enabled'] == true)
+        {
+            return("<script src=\"https://www.google.com/recaptcha/api.js\" async defer></script>");
+        }
+
+        return '';
+    }
+
     /**
      * Verifies the post request of the captcha request
      *
