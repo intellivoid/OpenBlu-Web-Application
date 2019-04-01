@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13744565-c04a-4ec4-8a5b-01f6fe867a44" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/resources/shared/scripts/cache.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/pages/index/contents.php" afterPath="$PROJECT_DIR$/src/resources/pages/index/contents.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/shared/scripts/check_auth.php" afterPath="$PROJECT_DIR$/src/resources/shared/scripts/check_auth.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -84,22 +81,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="contents.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="contents.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/resources/pages/index/contents.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="26" column="120" lean-forward="false" selection-start-line="26" selection-start-column="120" selection-end-line="26" selection-end-column="120" />
+            <state relative-caret-position="120">
+              <caret line="26" column="135" lean-forward="false" selection-start-line="26" selection-start-column="135" selection-end-line="26" selection-end-column="135" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cache.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="cache.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/cache.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="27" column="92" lean-forward="false" selection-start-line="27" selection-start-column="92" selection-end-line="27" selection-end-column="92" />
+            <state relative-caret-position="476">
+              <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="openblu.cookies" pinned="false" current-in-tab="false">
+        <entry file="dbDummy://dbtable:/d8aef657/47c3f4ab-28ec-47ec-ab44-478284754faf/openblu.cookies">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -142,8 +154,8 @@
         <option value="$PROJECT_DIR$/src/resources/libraries/OpenBlu/Managers/VPNManager.php" />
         <option value="$PROJECT_DIR$/src/resources/libraries/OpenBlu/openblu.json" />
         <option value="$PROJECT_DIR$/src/resources/shared/scripts/check_auth.php" />
-        <option value="$PROJECT_DIR$/src/resources/pages/index/contents.php" />
         <option value="$PROJECT_DIR$/src/resources/shared/scripts/cache.php" />
+        <option value="$PROJECT_DIR$/src/resources/pages/index/contents.php" />
       </list>
     </option>
   </component>
@@ -680,12 +692,12 @@
       <workItem from="1553987549888" duration="4252000" />
       <workItem from="1554043519862" duration="7195000" />
       <workItem from="1554119512628" duration="2206000" />
-      <workItem from="1554128139549" duration="5178000" />
+      <workItem from="1554128139549" duration="5604000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33427000" />
+    <option name="totallyTimeSpent" value="33853000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -981,19 +993,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/d8aef657/47c3f4ab-28ec-47ec-ab44-478284754faf/openblu.cookies">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/DynamicalWeb/HTML.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1496">
@@ -1135,18 +1134,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/pages/index/contents.php">
+    <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/cache.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="26" column="120" lean-forward="false" selection-start-line="26" selection-start-column="120" selection-end-line="26" selection-end-column="120" />
+        <state relative-caret-position="476">
+          <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/cache.php">
+    <entry file="dbDummy://dbtable:/d8aef657/47c3f4ab-28ec-47ec-ab44-478284754faf/openblu.cookies">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/pages/index/contents.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="92" lean-forward="false" selection-start-line="27" selection-start-column="92" selection-end-line="27" selection-end-column="92" />
+        <state relative-caret-position="120">
+          <caret line="26" column="135" lean-forward="false" selection-start-line="26" selection-start-column="135" selection-end-line="26" selection-end-column="135" />
           <folding />
         </state>
       </provider>
