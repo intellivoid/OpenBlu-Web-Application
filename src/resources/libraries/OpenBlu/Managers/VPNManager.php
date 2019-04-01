@@ -235,7 +235,7 @@
                 return 0;
             }
 
-            return (int)$QueryResults['total'];
+            return (int)$QueryResults->fetch_array()['total'];
         }
 
         /**
