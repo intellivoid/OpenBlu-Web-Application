@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13744565-c04a-4ec4-8a5b-01f6fe867a44" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/resources/shared/recaptcha.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/resources/shared/scripts/recaptcha.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/DynamicalWeb/DynamicalWeb.php" afterPath="$PROJECT_DIR$/src/resources/DynamicalWeb/DynamicalWeb.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/DynamicalWeb/HTML.php" afterPath="$PROJECT_DIR$/src/resources/DynamicalWeb/HTML.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/DynamicalWeb/dynamicalweb.json" afterPath="$PROJECT_DIR$/src/resources/DynamicalWeb/dynamicalweb.json" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -74,112 +73,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="login_account.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/login_account.php">
+      <file leaf-file-name="recaptcha.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/resources/shared/recaptcha.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1173">
-              <caret line="69" column="78" lean-forward="false" selection-start-line="69" selection-start-column="78" selection-end-line="69" selection-end-column="78" />
-              <folding>
-                <marker date="1554055334573" expanded="true" signature="3265:4435" ph="{...}" />
-                <marker date="1554055334573" expanded="true" signature="4795:4877" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="register_account.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/register_account.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="54" column="85" lean-forward="false" selection-start-line="54" selection-start-column="85" selection-end-line="54" selection-end-column="85" />
+            <state relative-caret-position="68">
+              <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="auto_redirect.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/auto_redirect.php">
+      <file leaf-file-name="recaptcha.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/recaptcha.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="5" lean-forward="false" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AccountManager.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resources/libraries/IntellivoidAccounts/Managers/AccountManager.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2499">
-              <caret line="164" column="39" lean-forward="false" selection-start-line="164" selection-start-column="39" selection-end-line="164" selection-end-column="39" />
-              <folding>
-                <marker date="1553989841725" expanded="true" signature="3794:4069" ph="INSERT INTO `users`... " />
-                <marker date="1553989841725" expanded="true" signature="6136:6301" ph="SELECT id, p... users" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Account.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resources/libraries/IntellivoidAccounts/Objects/Account.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2023">
-              <caret line="120" column="40" lean-forward="false" selection-start-line="120" selection-start-column="40" selection-end-line="120" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="configuration.ini" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resources/libraries/IntellivoidAccounts/configuration.ini">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="24" lean-forward="false" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="intellivoid_accounts.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resources/libraries/IntellivoidAccounts/intellivoid_accounts.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="23" lean-forward="false" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="check_auth.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/check_auth.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="28" lean-forward="false" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="openblu.cookies" pinned="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/d8aef657/47c3f4ab-28ec-47ec-ab44-478284754faf/openblu.cookies">
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HTML.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/resources/DynamicalWeb/HTML.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="772">
-              <caret line="88" column="31" lean-forward="false" selection-start-line="88" selection-start-column="31" selection-end-line="88" selection-end-column="31" />
+            <state relative-caret-position="51">
+              <caret line="3" column="50" lean-forward="false" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -220,6 +128,8 @@
         <option value="$PROJECT_DIR$/src/resources/libraries/IntellivoidAccounts/Objects/Account.php" />
         <option value="$PROJECT_DIR$/src/resources/libraries/IntellivoidAccounts/intellivoid_accounts.json" />
         <option value="$PROJECT_DIR$/src/resources/DynamicalWeb/HTML.php" />
+        <option value="$PROJECT_DIR$/src/resources/shared/recaptcha.json" />
+        <option value="$PROJECT_DIR$/src/resources/shared/scripts/recaptcha.php" />
       </list>
     </option>
   </component>
@@ -251,8 +161,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -306,10 +214,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="shared" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -529,6 +433,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -538,15 +444,15 @@
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Netkas\Documents\gits\openblu-web-application\src\resources\shared" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Netkas\Documents\gits\openblu-web-application\src\resources\libraries\IntellivoidAccounts" />
       <recent name="C:\Users\Netkas\Documents\gits\openblu-web-application\src\resources\shared\scripts" />
       <recent name="C:\Users\Netkas\Documents\gits\openblu-web-application\src\resources\pages\login" />
       <recent name="C:\Users\Netkas\Documents\gits\openblu-web-application\src\resources\libraries\sws" />
       <recent name="C:\Users\Netkas\Documents\gits\openblu-web-application\database" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Netkas\Documents\gits\openblu-web-application\src\resources\shared" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -647,18 +553,18 @@
       <workItem from="1553985936362" duration="681000" />
       <workItem from="1553987549888" duration="4252000" />
       <workItem from="1554043519862" duration="7195000" />
-      <workItem from="1554119512628" duration="795000" />
+      <workItem from="1554119512628" duration="2206000" />
+      <workItem from="1554128139549" duration="745000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26838000" />
+    <option name="totallyTimeSpent" value="28994000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19410875" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1971299" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16540785" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -709,21 +615,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/register_account.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="45" column="64" lean-forward="false" selection-start-line="45" selection-start-column="64" selection-end-line="45" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/libraries/IntellivoidAccounts/Utilities/Validate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="10" lean-forward="false" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/DynamicalWeb/Language.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -757,7 +648,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="952">
           <caret line="56" column="24" lean-forward="false" selection-start-line="56" selection-start-column="24" selection-end-line="56" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -916,7 +806,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="7" lean-forward="false" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -975,7 +864,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="59" lean-forward="false" selection-start-line="1" selection-start-column="59" selection-end-line="1" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -998,7 +886,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="37" column="20" lean-forward="false" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1006,7 +893,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="44" lean-forward="false" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1014,10 +900,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2499">
           <caret line="164" column="39" lean-forward="false" selection-start-line="164" selection-start-column="39" selection-end-line="164" selection-end-column="39" />
-          <folding>
-            <marker date="1553989841725" expanded="true" signature="3794:4069" ph="INSERT INTO `users`... " />
-            <marker date="1553989841725" expanded="true" signature="6136:6301" ph="SELECT id, p... users" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1025,23 +907,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2023">
           <caret line="120" column="40" lean-forward="false" selection-start-line="120" selection-start-column="40" selection-end-line="120" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/libraries/IntellivoidAccounts/configuration.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="24" lean-forward="false" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/libraries/IntellivoidAccounts/intellivoid_accounts.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="23" lean-forward="false" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1095,8 +960,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/DynamicalWeb/HTML.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="772">
+        <state relative-caret-position="1496">
           <caret line="88" column="31" lean-forward="false" selection-start-line="88" selection-start-column="31" selection-end-line="88" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/libraries/IntellivoidAccounts/configuration.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="24" lean-forward="false" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/libraries/IntellivoidAccounts/intellivoid_accounts.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="23" lean-forward="false" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/recaptcha.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="50" lean-forward="false" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/shared/recaptcha.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
           <folding />
         </state>
       </provider>
