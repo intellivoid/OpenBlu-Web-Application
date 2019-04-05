@@ -1,6 +1,7 @@
 <?php
 
     namespace OpenBlu\Managers;
+    use AnalyticsManager\Abstracts\RecordSearchMethod;
     use OpenBlu\Exceptions\DatabaseException;
     use OpenBlu\Exceptions\InvalidSearchMethodException;
     use OpenBlu\Exceptions\SyncException;
@@ -244,10 +245,20 @@
                             $VPNObject->Certificate = $Configuration['cert'];
                             $VPNObject->Key = $Configuration['key'];
 
+                            if(strlen($VPNObject->Country) == 0)
+                            {
+                                $VPNObject->Country = 'Unknown';
+                                $VPNObject->Country = 'N/A';
+                            }
+
+                            if(strlen($VPNObject->CountryShort) == 0)
+                            {
+                                $VPNObject->Country = 'Unknown';
+                                $VPNObject->Country = 'N/A';
+                            }
+
                             $this->openBlu->getVPNManager()->syncVPN($VPNObject);
                         }
-
-
                     }
 
                     unset($data);
@@ -255,5 +266,15 @@
                 }
                 fclose($handle);
             }
+
+            if($this->openBlu->getAnalyticsManager()->getManager()->nameExists('vpn_analytics', 'sessions') == false)
+            {
+                $this->openBlu->getAnalyticsManager()->getManager()->createRecord('vpn_analytics', 'sessions');
+            }
+
+            $Record = $this->openBlu->getAnalyticsManager()->getManager()->getRecord('vpn_analytics', RecordSearchMethod::byName, 'sessions');
+            $Record->tally($this->openBlu->getVPNManager()->currentSessions(), false, true);
+            $this->openBlu->getAnalyticsManager()->getManager()->updateRecord('vpn_analytics',  $Record);
+
         }
     }

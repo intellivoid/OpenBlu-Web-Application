@@ -47,6 +47,17 @@
       <sourceFolder url="file://$MODULE_DIR$/src/resources/shared" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/register/scripts" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/login/scripts" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/AnalyticsManager" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/AnalyticsManager/Abstracts" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/AnalyticsManager/Exceptions" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/AnalyticsManager/Managers" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/AnalyticsManager/Objects" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/AnalyticsManager/Utilities" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/AnalyticsManager/ZiProto" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/AnalyticsManager/ZiProto/Abstracts" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/AnalyticsManager/ZiProto/Exception" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/AnalyticsManager/ZiProto/Type" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/AnalyticsManager/ZiProto/TypeTransformer" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

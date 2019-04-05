@@ -2,6 +2,7 @@
 
     namespace OpenBlu;
 
+    use AnalyticsManager\AnalyticsManager;
     use OpenBlu\Exceptions\ConfigurationNotFoundException;
     use OpenBlu\Managers\RecordManager;
     use OpenBlu\Managers\VPNManager;
@@ -31,6 +32,11 @@
     include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Utilities' . DIRECTORY_SEPARATOR . 'OpenVPNConfiguration.php');
     include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Utilities' . DIRECTORY_SEPARATOR . 'Validate.php');
 
+    if(class_exists('AnalyticsManager\AnalyticsManager') == false)
+    {
+        include_once(__DIR__ . DIRECTORY_SEPARATOR . 'AnalyticsManager' . DIRECTORY_SEPARATOR . 'AnalyticsManager.php');
+    }
+
     /**
      * Class OpenBlu
      * @package OpenBlu
@@ -58,6 +64,11 @@
         private $VPNManager;
 
         /**
+         * @var AnalyticsManager
+         */
+        private $AnalyticsManager;
+
+        /**
          * OpenBlu constructor.
          * @throws ConfigurationNotFoundException
          */
@@ -80,6 +91,7 @@
 
             $this->RecordManager = new RecordManager($this);
             $this->VPNManager = new VPNManager($this);
+            $this->AnalyticsManager = new AnalyticsManager($this->configuration['DatabaseName']);
         }
 
         /**
@@ -96,5 +108,13 @@
         public function getVPNManager(): VPNManager
         {
             return $this->VPNManager;
+        }
+
+        /**
+         * @return AnalyticsManager
+         */
+        public function getAnalyticsManager(): AnalyticsManager
+        {
+            return $this->AnalyticsManager;
         }
     }

@@ -165,7 +165,6 @@
 
             if($QueryResults == true)
             {
-
                 return true;
             }
             else
