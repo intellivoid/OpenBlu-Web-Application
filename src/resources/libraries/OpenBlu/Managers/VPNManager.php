@@ -386,7 +386,7 @@
          */
         public function getPopularServers(): array
         {
-            $Query = "SELECT id, public_id, host_name, ip_address, score, ping, country, country_short, sessions, total_sessions, last_updated, created FROM `vpns` ORDER BY  `score` DESC LIMIT 0, 5";
+            $Query = "SELECT id, public_id, host_name, ip_address, score, ping, country, country_short, sessions, total_sessions, last_updated, created FROM `vpns` ORDER BY  `sessions` DESC LIMIT 0, 5";
             $QueryResults = $this->openBlu->database->query($Query);
 
             if($QueryResults == false)

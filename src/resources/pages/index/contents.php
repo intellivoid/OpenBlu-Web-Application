@@ -1,5 +1,7 @@
 <?PHP \DynamicalWeb\HTML::importScript('check_auth'); ?>
 <?PHP \DynamicalWeb\HTML::importScript('cache'); ?>
+<?PHP \DynamicalWeb\HTML::importScript('time_human'); ?>
+<?PHP $OpenBlu = new \OpenBlu\OpenBlu(); ?>
 <!DOCTYPE html>
 <html lang="<?PHP \DynamicalWeb\HTML::print(APP_LANGUAGE_ISO_639); ?>">
     <head>
@@ -151,101 +153,43 @@
                                     <div class="card-body">
                                         <div class="d-flex flex-row">
                                             <div class="align-self-top">
-                                                <h4 class="card-title">Open Projects</h4>
-                                                <p>Your data status</p>
+                                                <h4 class="card-title">Popular Servers</h4>
+                                                <p>The most popular servers with the most sessions</p>
                                             </div>
                                             <div class="align-self-center flex-grow text-right">
-                                                <p class="text-muted">View History</p>
+                                                <p class="text-muted"><a href="servers">View All Servers</a></p>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="preview-list">
-                                                    <div class="preview-item border-bottom">
-                                                        <div class="preview-thumbnail">
-                                                            <div class="preview-icon bg-primary rounded">
-                                                                <i class="mdi mdi-file-document"></i>
+
+                                                    <?PHP
+                                                        $PopularServers = $OpenBlu->getVPNManager()->getPopularServers();
+                                                        foreach($PopularServers as $VPN)
+                                                        {
+                                                            $VPN = \OpenBlu\Objects\VPN::fromArray($VPN);
+                                                            ?>
+                                                            <div class="preview-item border-bottom">
+                                                                <div class="preview-thumbnail">
+                                                                    <div class="preview-icon">
+                                                                        <i class="flag-icon flag-icon-<?PHP \DynamicalWeb\HTML::print(strtolower($VPN->CountryShort)); ?>"></i>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="preview-item-content d-flex flex-grow">
+                                                                    <div class="flex-grow">
+                                                                        <h6 class="preview-subject"><?PHP \DynamicalWeb\HTML::print($VPN->IP); ?></h6>
+                                                                        <p><?PHP \DynamicalWeb\HTML::print($VPN->Country) ?></p>
+                                                                    </div>
+                                                                    <div class="mr-auto text-right">
+                                                                        <p class="text-muted"><?PHP \DynamicalWeb\HTML::print(time_elapsed_string($VPN->LastUpdated)); ?></p>
+                                                                        <p><?PHP \DynamicalWeb\HTML::print($VPN->Sessions); ?> sessions</p>
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="preview-item-content d-flex flex-grow">
-                                                            <div class="flex-grow">
-                                                                <h6 class="preview-subject">New Document</h6>
-                                                                <p>Broadcast web app mockup</p>
-                                                            </div>
-                                                            <div class="mr-auto text-right">
-                                                                <p class="text-muted">15 minutes ago</p>
-                                                                <p>30 tasks, 5 issues </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="preview-item border-bottom">
-                                                        <div class="preview-thumbnail">
-                                                            <div class="preview-icon bg-success rounded">
-                                                                <i class="mdi mdi-cloud-upload"></i>
-                                                            </div>
-                                                        </div>
-                                                        <div class="preview-item-content d-flex flex-grow">
-                                                            <div class="flex-grow">
-                                                                <h6 class="preview-subject">New Design</h6>
-                                                                <p>Upload new design</p>
-                                                            </div>
-                                                            <div class="mr-auto text-right">
-                                                                <p class="text-muted">1 hour ago</p>
-                                                                <p>23 tasks, 5 issues </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="preview-item border-bottom">
-                                                        <div class="preview-thumbnail">
-                                                            <div class="preview-icon bg-info rounded">
-                                                                <i class="mdi mdi-clock"></i>
-                                                            </div>
-                                                        </div>
-                                                        <div class="preview-item-content d-flex flex-grow">
-                                                            <div class="flex-grow">
-                                                                <h6 class="preview-subject">Project meeting</h6>
-                                                                <p>New project discussion</p>
-                                                            </div>
-                                                            <div class="mr-auto text-right">
-                                                                <p class="text-muted">35 minutes ago</p>
-                                                                <p>15 tasks, 2 issues </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="preview-item border-bottom">
-                                                        <div class="preview-thumbnail">
-                                                            <div class="preview-icon bg-warning rounded">
-                                                                <i class="mdi mdi-email"></i>
-                                                            </div>
-                                                        </div>
-                                                        <div class="preview-item-content d-flex flex-grow">
-                                                            <div class="flex-grow">
-                                                                <h6 class="preview-subject">Broadcast Mail</h6>
-                                                                <p>Sent release details to team</p>
-                                                            </div>
-                                                            <div class="mr-auto text-right">
-                                                                <p class="text-muted">55 minutes ago</p>
-                                                                <p>35 tasks, 7 issues </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="preview-item">
-                                                        <div class="preview-thumbnail">
-                                                            <div class="preview-icon bg-danger rounded">
-                                                                <i class="mdi mdi-chart-pie"></i>
-                                                            </div>
-                                                        </div>
-                                                        <div class="preview-item-content d-flex flex-grow">
-                                                            <div class="flex-grow">
-                                                                <h6 class="preview-subject">Planning</h6>
-                                                                <p>New application planning</p>
-                                                            </div>
-                                                            <div class="mr-auto text-right">
-                                                                <p class="text-muted">50 minutes ago</p>
-                                                                <p>27 tasks, 4 issues </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                            <?PHP
+                                                        }
+                                                    ?>
                                                 </div>
                                             </div>
                                         </div>
