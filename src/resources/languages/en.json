@@ -5,9 +5,7 @@
     },
     "pages": {
         "index": {
-            "PAGE_TITLE": "DynamicalWeb",
-            "HEADER": "DynamicalWeb Example",
-            "CONTENT": "This example contains various uses for Dynamical Web with Bootstrap",
+            "PAGE_TITLE": "OpenBlu",
             "UPDATED_TIME_YEAR": "year",
             "UPDATED_TIME_MONTH": "month",
             "UPDATED_TIME_DAY": "day",
@@ -20,7 +18,26 @@
             "UPDATED_TIME_PLURAL_HOUR": "hours",
             "UPDATED_TIME_PLURAL_MINUTE": "minutes",
             "UPDATED_TIME_PLURAL_SECOND": "seconds",
-            "UPDATED_TIME_FORMAT": "%time %text ago"
+            "UPDATED_TIME_FORMAT": "%time %text ago",
+            "TOTAL_SERVERS_HEADER": "Total Servers",
+            "TOTAL_SERVERS_DESC": "The total servers that OpenBlu offers",
+            "CURRENT_USERS_HEADER": "Current Users",
+            "CURRENT_USERS_DESC": "The total amount of users connected using OpenBlu",
+            "SUPPORT_SERVICE_HEADER": "Support OpenBlu",
+            "SUPPORT_SERVICE_TEXT": "Like the free service and want it to last for the future?",
+            "DONATE_HEADER": "Donate to Intellivoid via PayPal",
+            "DONATE_TEXT": "We accept donations via PayPal, if you are interested (not obligated) you can donate to support us by giving us the money to buy a cup of coffee",
+            "DONATE_BUTTON_TEXT": "Donate with PayPal",
+            "API_HEADER": "Purchase API Access",
+            "API_TEXT": "If you want to use OpenBlu in your software, projects or servers you can easily access all available servers using the OpenBlu API. You can start off with a free tier (limited requests) and decide if it works for you.",
+            "API_BUTTON_TEXT": "View API Plans",
+            "CARD_ANALYTICS_HEADER": "Analytics",
+            "CARD_ANALYTICS_TOTAL_CURRENT_SESSIONS_TEXT": "Total Current Sessions",
+            "CARD_ANALYTICS_TOTAL_VPN_SERVERS": "Total VPN Servers",
+            "CARD_POPULAR_SERVERS_HEADER": "Popular Servers",
+            "CARD_POPULAR_SERVERS_TEXT": "The most popular servers with the most sessions",
+            "CARD_POPULAR_SERVERS_VIEW_SERVERS": "View All Servers",
+            "CARD_POPULAR_SERVERS_VPN_SESSIONS": "%s sessions"
         },
         "login": {
             "PAGE_TITLE": "Login to OpenBlu",

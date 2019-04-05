@@ -6,7 +6,7 @@
 <html lang="<?PHP \DynamicalWeb\HTML::print(APP_LANGUAGE_ISO_639); ?>">
     <head>
         <?PHP \DynamicalWeb\HTML::importSection('header'); ?>
-        <title>OpenBlu</title>
+        <title><?PHP \DynamicalWeb\HTML::print(TEXT_PAGE_TITLE); ?></title>
     </head>
 
     <body>
@@ -22,14 +22,13 @@
                             <div class="col-md-6 grid-margin">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="card-title mb-0">Total Servers</h4>
+                                        <h4 class="card-title mb-0"><?PHP \DynamicalWeb\HTML::print(TEXT_TOTAL_SERVERS_HEADER); ?></h4>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div class="d-inline-block pt-3">
                                                 <div class="d-flex">
                                                     <h2 class="mb-0"><?PHP \DynamicalWeb\HTML::print(number_format(CACHE_TOTAL_SERVERS)); ?></h2>
                                                 </div>
-                                                <i class="mdi mdi-clock text-muted"></i>
-                                                <small class="text-gray">Updated 2 minutes ago.</small>
+                                                <small class="text-gray"><?PHP \DynamicalWeb\HTML::print(TEXT_TOTAL_SERVERS_DESC); ?></small>
                                             </div>
                                             <div class="d-inline-block">
                                                 <div class="bg-info px-4 py-2 rounded">
@@ -43,17 +42,13 @@
                             <div class="col-md-6 grid-margin">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="card-title mb-0">Current Users</h4>
+                                        <h4 class="card-title mb-0"><?PHP \DynamicalWeb\HTML::print(TEXT_CURRENT_USERS_HEADER); ?>/h4>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div class="d-inline-block pt-3">
                                                 <div class="d-flex">
                                                     <h2 class="mb-0"><?PHP \DynamicalWeb\HTML::print(number_format(CACHE_CURRENT_SESSIONS)); ?></h2>
-                                                    <div class="d-flex align-items-center ml-2">
-                                                        <i class="mdi mdi-clock text-muted"></i>
-                                                        <small class=" ml-1 mb-0">Updated: 05:42pm</small>
-                                                    </div>
                                                 </div>
-                                                <small class="text-gray">The total amount of users connected using OpenBlu</small>
+                                                <small class="text-gray"><?PHP \DynamicalWeb\HTML::print(TEXT_CURRENT_USERS_DESC); ?></small>
                                             </div>
                                             <div class="d-inline-block">
                                                 <div class="bg-success px-4 py-2 rounded">
@@ -70,20 +65,16 @@
                             <div class="col-md-12 grid-margin">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="card-title">Support OpenBlu </h4>
-                                        <p class="card-description">Like the free service and want it to last for the future?</p>
+                                        <h4 class="card-title"><?PHP \DynamicalWeb\HTML::print(TEXT_SUPPORT_SERVICE_HEADER); ?></h4>
+                                        <p class="card-description"><?PHP \DynamicalWeb\HTML::print(TEXT_SUPPORT_SERVICE_TEXT); ?></p>
 
                                         <hr/>
                                         <div class="row">
                                             <div class="col-12">
-                                                <h5>Donate to Intellivoid via PayPal</h5>
-                                                <p>
-                                                    We accept donations via PayPal, if you are interested (not obligated)
-                                                    you can donate to support us by giving us the money to buy a cup
-                                                    of coffee
-                                                </p>
+                                                <h5><?PHP \DynamicalWeb\HTML::print(TEXT_DONATE_HEADER); ?></h5>
+                                                <p><?PHP \DynamicalWeb\HTML::print(TEXT_DONATE_TEXT); ?></p>
                                                 <a class="btn btn-primary btn-rounded btn-lg btn-fw">
-                                                    <i class="mdi mdi-paypal"></i>Donate with PayPal
+                                                    <i class="mdi mdi-paypal"></i><?PHP \DynamicalWeb\HTML::print(TEXT_DONATE_BUTTON_TEXT); ?>
                                                 </a>
                                             </div>
                                         </div>
@@ -91,15 +82,10 @@
                                         <hr/>
                                         <div class="row">
                                             <div class="col-12">
-                                                <h5>Purchase API Access</h5>
-                                                <p>
-                                                    If you want to use OpenBlu in your software, projects or servers you
-                                                    can easily access all available servers using the OpenBlu API. You
-                                                    can start off with a free tier (limited requests) and decide if it
-                                                    works for you.
-                                                </p>
+                                                <h5><?PHP \DynamicalWeb\HTML::print(TEXT_API_HEADER); ?></h5>
+                                                <p><?PHP \DynamicalWeb\HTML::print(TEXT_API_TEXT); ?></p>
                                                 <a class="btn btn-danger btn-rounded btn-lg btn-fw">
-                                                    <i class="mdi mdi-console"></i>API Plans
+                                                    <i class="mdi mdi-console"></i><?PHP \DynamicalWeb\HTML::print(TEXT_API_BUTTON_TEXT); ?>
                                                 </a>
                                             </div>
                                         </div>
@@ -112,12 +98,12 @@
                             <div class="col-md-4 grid-margin stretch-card">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="card-title">Analytics</h4>
+                                        <h4 class="card-title"><?PHP \DynamicalWeb\HTML::print(TEXT_CARD_ANALYTICS_HEADER); ?></h4>
 
                                         <div class="row mt-3">
                                             <div class="col-12 bg-gray-dark d-flex flex-row py-3 px-4 rounded">
                                                 <div class="align-self-top">
-                                                    <h6 class="mb-1">Total Current Sessions</h6>
+                                                    <h6 class="mb-1"><?PHP \DynamicalWeb\HTML::print(TEXT_CARD_ANALYTICS_TOTAL_CURRENT_SESSIONS_TEXT); ?></h6>
                                                 </div>
                                                 <div class="align-self-center flex-grow text-right">
                                                     <h6 class="font-weight-bold mb-0"><?PHP \DynamicalWeb\HTML::print(number_format(CACHE_CURRENT_SESSIONS)); ?></h6>
@@ -127,7 +113,7 @@
                                         <div class="row mt-3">
                                             <div class="col-12 bg-gray-dark d-flex flex-row py-3 px-4 rounded">
                                                 <div class="align-self-top">
-                                                    <h6 class="mb-1">Total VPN Servers</h6>
+                                                    <h6 class="mb-1"><?PHP \DynamicalWeb\HTML::print(TEXT_CARD_ANALYTICS_TOTAL_VPN_SERVERS); ?></h6>
                                                 </div>
                                                 <div class="align-self-center flex-grow text-right">
                                                     <h6 class="font-weight-bold mb-0"><?PHP \DynamicalWeb\HTML::print(number_format(CACHE_TOTAL_SERVERS)); ?></h6>
@@ -143,11 +129,13 @@
                                     <div class="card-body">
                                         <div class="d-flex flex-row">
                                             <div class="align-self-top">
-                                                <h4 class="card-title">Popular Servers</h4>
-                                                <p>The most popular servers with the most sessions</p>
+                                                <h4 class="card-title"><?PHP \DynamicalWeb\HTML::print(TEXT_CARD_POPULAR_SERVERS_HEADER); ?></h4>
+                                                <p><?PHP \DynamicalWeb\HTML::print(TEXT_CARD_POPULAR_SERVERS_TEXT); ?></p>
                                             </div>
                                             <div class="align-self-center flex-grow text-right">
-                                                <p class="text-muted"><a href="servers">View All Servers</a></p>
+                                                <p class="text-muted">
+                                                    <a href="servers"><?PHP \DynamicalWeb\HTML::print(TEXT_CARD_POPULAR_SERVERS_VIEW_SERVERS); ?></a>
+                                                </p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -173,7 +161,7 @@
                                                                     </div>
                                                                     <div class="mr-auto text-right">
                                                                         <p class="text-muted"><?PHP \DynamicalWeb\HTML::print(time_elapsed_string($VPN->LastUpdated)); ?></p>
-                                                                        <p><?PHP \DynamicalWeb\HTML::print($VPN->Sessions); ?> sessions</p>
+                                                                        <p><?PHP \DynamicalWeb\HTML::print(str_ireplace('%s', $VPN->Sessions, TEXT_CARD_POPULAR_SERVERS_VPN_SESSIONS)); ?></p>
                                                                     </div>
                                                                 </div>
                                                             </div>
