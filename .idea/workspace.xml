@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/resources/pages/index/contents.php" line="174" />
+    <bookmark url="file://$PROJECT_DIR$/src/resources/pages/index/contents.php" line="164" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13744565-c04a-4ec4-8a5b-01f6fe867a44" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/resources/shared/scripts/time_human.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/47c3f4ab-28ec-47ec-ab44-478284754faf.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/47c3f4ab-28ec-47ec-ab44-478284754faf.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/languages/en.json" afterPath="$PROJECT_DIR$/src/resources/languages/en.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/libraries/OpenBlu/Managers/VPNManager.php" afterPath="$PROJECT_DIR$/src/resources/libraries/OpenBlu/Managers/VPNManager.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/libraries/OpenBlu/openblu.json" afterPath="$PROJECT_DIR$/src/resources/libraries/OpenBlu/openblu.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/pages/index/contents.php" afterPath="$PROJECT_DIR$/src/resources/pages/index/contents.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -83,8 +77,8 @@
       <file leaf-file-name="contents.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/resources/pages/index/contents.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="172" column="100" lean-forward="true" selection-start-line="172" selection-start-column="100" selection-end-line="172" selection-end-column="100" />
+            <state relative-caret-position="918">
+              <caret line="135" column="46" lean-forward="false" selection-start-line="135" selection-start-column="46" selection-end-line="135" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -560,12 +554,12 @@
       <workItem from="1554119512628" duration="2206000" />
       <workItem from="1554128139549" duration="5859000" />
       <workItem from="1554479679867" duration="491000" />
-      <workItem from="1554493164498" duration="1713000" />
+      <workItem from="1554493164498" duration="1845000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36312000" />
+    <option name="totallyTimeSpent" value="36444000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -1025,8 +1019,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/pages/index/contents.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="172" column="100" lean-forward="true" selection-start-line="172" selection-start-column="100" selection-end-line="172" selection-end-column="100" />
+        <state relative-caret-position="918">
+          <caret line="135" column="46" lean-forward="false" selection-start-line="135" selection-start-column="46" selection-end-line="135" selection-end-column="46" />
           <folding />
         </state>
       </provider>

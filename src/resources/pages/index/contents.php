@@ -120,7 +120,7 @@
                                                     <h6 class="mb-1">Total Current Sessions</h6>
                                                 </div>
                                                 <div class="align-self-center flex-grow text-right">
-                                                    <h6 class="font-weight-bold mb-0">23,123</h6>
+                                                    <h6 class="font-weight-bold mb-0"><?PHP \DynamicalWeb\HTML::print(number_format(CACHE_CURRENT_SESSIONS)); ?></h6>
                                                 </div>
                                             </div>
                                         </div>
@@ -130,17 +130,7 @@
                                                     <h6 class="mb-1">Total VPN Servers</h6>
                                                 </div>
                                                 <div class="align-self-center flex-grow text-right">
-                                                    <h6 class="font-weight-bold mb-0">515</h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row mt-3">
-                                            <div class="col-12 bg-gray-dark d-flex flex-row py-3 px-4 rounded">
-                                                <div class="align-self-top">
-                                                    <h6 class="mb-1">Last updated</h6>
-                                                </div>
-                                                <div class="align-self-center flex-grow text-right">
-                                                    <h6 class="font-weight-bold mb-0">Dec 31, 2018</h6>
+                                                    <h6 class="font-weight-bold mb-0"><?PHP \DynamicalWeb\HTML::print(number_format(CACHE_TOTAL_SERVERS)); ?></h6>
                                                 </div>
                                             </div>
                                         </div>
