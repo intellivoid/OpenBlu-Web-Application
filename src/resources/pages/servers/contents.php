@@ -1,8 +1,8 @@
 <?PHP \DynamicalWeb\HTML::importScript('check_auth'); ?>
-<?PHP \DynamicalWeb\HTML::importScript('cache'); ?>
 <?PHP \DynamicalWeb\HTML::importScript('time_human'); ?>
 <?PHP \DynamicalWeb\HTML::importScript('table'); ?>
 <?PHP \DynamicalWeb\HTML::importScript('alert'); ?>
+<?PHP \DynamicalWeb\DynamicalWeb::loadLibrary('OpenBlu', 'OpenBlu', 'OpenBlu.php'); ?>
 <?PHP $OpenBlu = new \OpenBlu\OpenBlu(); ?>
 <!DOCTYPE html>
 <html lang="<?PHP \DynamicalWeb\HTML::print(APP_LANGUAGE_ISO_639); ?>">
