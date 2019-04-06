@@ -99,7 +99,6 @@
         print("</ul></nav>");
     }
 
-
     function render_table(\OpenBlu\OpenBlu $openBlu)
     {
         ?>
@@ -107,13 +106,13 @@
             <table class="table">
                 <?PHP
                 $headers = [
-                    'Country',
-                    'IP Address',
-                    'Ping',
-                    'Current Sessions',
-                    'Total Sessions',
-                    'Last Updated',
-                    'Actions'
+                    TEXT_TABLE_COUNTRY,
+                    TEXT_TABLE_IP,
+                    TEXT_TABLE_PING,
+                    TEXT_TABLE_CURRENT_SESSIONS,
+                    TEXT_TABLE_TOTAL_SESSIONS,
+                    TEXT_TABLE_LAST_UPDATED,
+                    TEXT_TABLE_ACTIONS
                 ];
                 create_headers($headers);
                 ?>
@@ -133,7 +132,7 @@
                         $RowData = [
                             '<i class="flag-icon flag-icon-' . strtolower($VPNObject->CountryShort) . '"></i> ' . $VPNObject->Country,
                             $VPNObject->IP,
-                            $VPNObject->Ping . ' ms',
+                            str_ireplace('%s', $VPNObject->Ping, TEXT_ROW_PING),
                             $VPNObject->Sessions,
                             $VPNObject->TotalSessions,
                             time_elapsed_string($VPNObject->LastUpdated),

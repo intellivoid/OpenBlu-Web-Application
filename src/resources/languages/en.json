@@ -53,7 +53,17 @@
             "UPDATED_TIME_PLURAL_HOUR": "hours",
             "UPDATED_TIME_PLURAL_MINUTE": "minutes",
             "UPDATED_TIME_PLURAL_SECOND": "seconds",
-            "UPDATED_TIME_FORMAT": "%time %text ago"
+            "UPDATED_TIME_FORMAT": "%time %text ago",
+            "TABLE_COUNTRY": "Country",
+            "TABLE_IP": "IP Address",
+            "TABLE_PING": "Ping (ms)",
+            "TABLE_CURRENT_SESSIONS": "Current Sessions",
+            "TABLE_TOTAL_SESSIONS": "Total Sessions",
+            "TABLE_LAST_UPDATED": "Last Updated",
+            "TABLE_ACTIONS": "Actions",
+            "ROW_PING": "%s ms",
+            "PAGE_NOT_FOUND_ERROR": "The requested page was not found, it might have been moved",
+            "RELOAD_PAGE_LINK": "Reload Page"
         },
         "login": {
             "PAGE_TITLE": "Login to OpenBlu",
