@@ -56,5 +56,6 @@
             <?PHP \DynamicalWeb\HTML::importSection('footer'); ?>
         </div>
         <?PHP \DynamicalWeb\HTML::importSection('js_scripts'); ?>
+        <script src="/assets/js/app-table-animations.js"></script>
     </body>
 </html>

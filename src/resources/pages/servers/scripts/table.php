@@ -22,7 +22,7 @@
      */
     function create_row(array $data)
     {
-        print("<tr>");
+        print("<tr class=\"invisible animated\">");
         foreach($data as $col)
         {
             print("<td>$col</td>");

@@ -20,7 +20,7 @@
 
                         <div class="row">
                             <div class="col-md-6 grid-margin">
-                                <div class="card">
+                                <div class="card animated bounceInLeft">
                                     <div class="card-body">
                                         <h4 class="card-title mb-0"><?PHP \DynamicalWeb\HTML::print(TEXT_TOTAL_SERVERS_HEADER); ?></h4>
                                         <div class="d-flex justify-content-between align-items-center">
@@ -40,7 +40,7 @@
                                 </div>
                             </div>
                             <div class="col-md-6 grid-margin">
-                                <div class="card">
+                                <div class="card animated bounceInRight">
                                     <div class="card-body">
                                         <h4 class="card-title mb-0"><?PHP \DynamicalWeb\HTML::print(TEXT_CURRENT_USERS_HEADER); ?></h4>
                                         <div class="d-flex justify-content-between align-items-center">
@@ -63,7 +63,7 @@
 
                         <div class="row">
                             <div class="col-md-12 grid-margin">
-                                <div class="card">
+                                <div class="card animated bounceIn">
                                     <div class="card-body">
                                         <h4 class="card-title"><?PHP \DynamicalWeb\HTML::print(TEXT_SUPPORT_SERVICE_HEADER); ?></h4>
                                         <p class="card-description"><?PHP \DynamicalWeb\HTML::print(TEXT_SUPPORT_SERVICE_TEXT); ?></p>
@@ -96,7 +96,7 @@
 
                         <div class="row">
                             <div class="col-md-4 grid-margin stretch-card">
-                                <div class="card">
+                                <div class="card animated fadeInUp">
                                     <div class="card-body">
                                         <h4 class="card-title"><?PHP \DynamicalWeb\HTML::print(TEXT_CARD_ANALYTICS_HEADER); ?></h4>
 
@@ -125,7 +125,7 @@
                                 </div>
                             </div>
                             <div class="col-md-8 grid-margin stretch-card">
-                                <div class="card">
+                                <div class="card animated fadeInUp">
                                     <div class="card-body">
                                         <div class="d-flex flex-row">
                                             <div class="align-self-top">

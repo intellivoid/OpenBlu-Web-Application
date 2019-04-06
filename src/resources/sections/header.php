@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="/assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
 <link rel="stylesheet" href="/assets/vendors/css/vendor.bundle.base.css">
 <link rel="stylesheet" href="/assets/vendors/css/vendor.bundle.addons.css">
+<link rel="stylesheet" href="/assets/vendors/animate.css/animate.min.css">
 
 <!-- plugin css for this page -->
 <link rel="stylesheet" href="/assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css">
