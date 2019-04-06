@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13744565-c04a-4ec4-8a5b-01f6fe867a44" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/js/app-table-animations.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/openblu-web-application.iml" afterPath="$PROJECT_DIR$/.idea/openblu-web-application.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/pages/index/contents.php" afterPath="$PROJECT_DIR$/src/resources/pages/index/contents.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/pages/servers/contents.php" afterPath="$PROJECT_DIR$/src/resources/pages/servers/contents.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/pages/servers/scripts/table.php" afterPath="$PROJECT_DIR$/src/resources/pages/servers/scripts/table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/sections/header.php" afterPath="$PROJECT_DIR$/src/resources/sections/header.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/libraries/OpenBlu/Managers/VPNManager.php" afterPath="$PROJECT_DIR$/src/resources/libraries/OpenBlu/Managers/VPNManager.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/libraries/OpenBlu/openblu.json" afterPath="$PROJECT_DIR$/src/resources/libraries/OpenBlu/openblu.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/shared/scripts/alert.php" afterPath="$PROJECT_DIR$/src/resources/shared/scripts/alert.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -80,7 +77,7 @@
       <file leaf-file-name="contents.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/resources/pages/servers/contents.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="388">
+            <state relative-caret-position="986">
               <caret line="58" column="55" lean-forward="false" selection-start-line="58" selection-start-column="55" selection-end-line="58" selection-end-column="55" />
               <folding />
             </state>
@@ -90,18 +87,59 @@
       <file leaf-file-name="HTML.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/resources/DynamicalWeb/HTML.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
+            <state relative-caret-position="578">
               <caret line="34" column="31" lean-forward="false" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app-table-animations.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app-table-animations.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assets/js/app-table-animations.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
+            <state relative-caret-position="116">
               <caret line="16" column="45" lean-forward="false" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="alert.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/alert.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="80" lean-forward="false" selection-start-line="4" selection-start-column="80" selection-end-line="4" selection-end-column="80" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VPNManager.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resources/libraries/OpenBlu/Managers/VPNManager.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="164">
+              <caret line="352" column="2" lean-forward="false" selection-start-line="352" selection-start-column="2" selection-end-line="355" selection-end-column="30" />
+              <folding>
+                <marker date="1554554515690" expanded="true" signature="2139:2567" ph="INSERT INTO `vpns`... " />
+                <marker date="1554554515690" expanded="true" signature="4285:4516" ph="SELECT id, p... vpns" />
+                <marker date="1554554515690" expanded="true" signature="6816:7187" ph="UPDATE `vpns... " />
+                <marker date="1554554515690" expanded="true" signature="9027:9064" ph="SELECT COUNT... vpns" />
+                <marker date="1554554515690" expanded="true" signature="9501:9528" ph="SELECT sessi... vpns" />
+                <marker date="1554554515690" expanded="true" signature="10089:10122" ph="SELECT total... vpns" />
+                <marker date="1554554515690" expanded="true" signature="10736:10757" ph="SELECT id FR... vpns" />
+                <marker date="1554554515690" expanded="true" signature="11926:12105" ph="SELECT id, p... vpns" />
+                <marker date="1554554515690" expanded="true" signature="12519:12709" ph="SELECT id, p... vpns" />
+                <marker date="1554554515690" expanded="true" signature="13446:13624" ph="SELECT id, p... vpns" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="openblu.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/resources/libraries/OpenBlu/openblu.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="23" lean-forward="false" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -120,7 +158,7 @@
       <file leaf-file-name="table.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/resources/pages/servers/scripts/table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
+            <state relative-caret-position="408">
               <caret line="24" column="37" lean-forward="false" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
               <folding />
             </state>
@@ -130,7 +168,7 @@
       <file leaf-file-name="en.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/resources/languages/en.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
+            <state relative-caret-position="1105">
               <caret line="65" column="29" lean-forward="false" selection-start-line="65" selection-start-column="13" selection-end-line="65" selection-end-column="29" />
               <folding />
             </state>
@@ -165,7 +203,6 @@
         <option value="$PROJECT_DIR$/src/resources/scripts/register_account.php" />
         <option value="$PROJECT_DIR$/src/resources/libraries/OpenBlu/configuration.ini" />
         <option value="$PROJECT_DIR$/src/resources/libraries/sws/configuration.ini" />
-        <option value="$PROJECT_DIR$/src/resources/shared/scripts/alert.php" />
         <option value="$PROJECT_DIR$/src/resources/libraries/IntellivoidAccounts/configuration.ini" />
         <option value="$PROJECT_DIR$/src/resources/libraries/IntellivoidAccounts/Managers/LoginRecordManager.php" />
         <option value="$PROJECT_DIR$/src/resources/shared/scripts/check_auth_s.php" />
@@ -190,8 +227,6 @@
         <option value="$PROJECT_DIR$/src/resources/sections/navigation.php" />
         <option value="$PROJECT_DIR$/src/resources/sections/time_human.php" />
         <option value="$PROJECT_DIR$/src/resources/shared/scripts/time_human.php" />
-        <option value="$PROJECT_DIR$/src/resources/libraries/OpenBlu/Managers/VPNManager.php" />
-        <option value="$PROJECT_DIR$/src/resources/libraries/OpenBlu/openblu.json" />
         <option value="$PROJECT_DIR$/src/resources/languages/en.json" />
         <option value="$PROJECT_DIR$/src/resources/sections/header.php" />
         <option value="$PROJECT_DIR$/src/resources/pages/index/contents.php" />
@@ -200,6 +235,9 @@
         <option value="$PROJECT_DIR$/src/resources/pages/servers/sections/table_animation.php" />
         <option value="$PROJECT_DIR$/src/resources/pages/servers/contents.php" />
         <option value="$PROJECT_DIR$/src/assets/js/app-table-animations.js" />
+        <option value="$PROJECT_DIR$/src/resources/shared/scripts/alert.php" />
+        <option value="$PROJECT_DIR$/src/resources/libraries/OpenBlu/Managers/VPNManager.php" />
+        <option value="$PROJECT_DIR$/src/resources/libraries/OpenBlu/openblu.json" />
       </list>
     </option>
   </component>
@@ -231,8 +269,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -286,6 +322,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="shared" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="openblu-web-application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="openblu-web-application" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shared" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -565,34 +627,14 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openblu-web-application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openblu-web-application" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="database" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -716,27 +758,27 @@
       <workItem from="1554128139549" duration="5859000" />
       <workItem from="1554479679867" duration="491000" />
       <workItem from="1554493164498" duration="4035000" />
-      <workItem from="1554509685169" duration="11681000" />
+      <workItem from="1554509685169" duration="12234000" />
+      <workItem from="1554554018180" duration="645000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50315000" />
+    <option name="totallyTimeSpent" value="51513000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20574887" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20877458" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16944024" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -818,13 +860,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/alert.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="85" lean-forward="false" selection-start-line="5" selection-start-column="85" selection-end-line="5" selection-end-column="85" />
         </state>
       </provider>
     </entry>
@@ -913,7 +948,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="217">
           <caret line="46" column="31" lean-forward="false" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1126,36 +1160,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/libraries/OpenBlu/openblu.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="23" lean-forward="false" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/libraries/OpenBlu/Managers/VPNManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="348" column="0" lean-forward="true" selection-start-line="348" selection-start-column="0" selection-end-line="348" selection-end-column="0" />
-          <folding>
-            <marker date="1554515302200" expanded="true" signature="2139:2567" ph="INSERT INTO `vpns`... " />
-            <marker date="1554515302200" expanded="true" signature="4285:4516" ph="SELECT id, p... vpns" />
-            <marker date="1554515302200" expanded="true" signature="6816:7187" ph="UPDATE `vpns... " />
-            <marker date="1554515302200" expanded="true" signature="9027:9064" ph="SELECT COUNT... vpns" />
-            <marker date="1554515302200" expanded="true" signature="9501:9528" ph="SELECT sessi... vpns" />
-            <marker date="1554515302200" expanded="true" signature="10089:10122" ph="SELECT total... vpns" />
-            <marker date="1554515302200" expanded="true" signature="10736:10757" ph="SELECT id FR... vpns" />
-            <marker date="1554515302200" expanded="true" signature="11926:12105" ph="SELECT id, p... vpns" />
-            <marker date="1554515302200" expanded="true" signature="12519:12714" ph="SELECT id, p... vpns" />
-            <marker date="1554515302200" expanded="true" signature="13451:13629" ph="SELECT id, p... vpns" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/languages/en.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
+        <state relative-caret-position="1105">
           <caret line="65" column="29" lean-forward="false" selection-start-line="65" selection-start-column="13" selection-end-line="65" selection-end-column="29" />
           <folding />
         </state>
@@ -1179,23 +1186,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/pages/servers/scripts/table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
+        <state relative-caret-position="408">
           <caret line="24" column="37" lean-forward="false" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/pages/servers/sections/table_animation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/pages/servers/sections/table_animation.php" />
     <entry file="file://$PROJECT_DIR$/src/resources/DynamicalWeb/HTML.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
+        <state relative-caret-position="578">
           <caret line="34" column="31" lean-forward="false" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
           <folding />
         </state>
@@ -1203,7 +1203,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/pages/servers/contents.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
+        <state relative-caret-position="986">
           <caret line="58" column="55" lean-forward="false" selection-start-line="58" selection-start-column="55" selection-end-line="58" selection-end-column="55" />
           <folding />
         </state>
@@ -1211,8 +1211,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/js/app-table-animations.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
+        <state relative-caret-position="116">
           <caret line="16" column="45" lean-forward="false" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/alert.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="80" lean-forward="false" selection-start-line="4" selection-start-column="80" selection-end-line="4" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/libraries/OpenBlu/Managers/VPNManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="352" column="2" lean-forward="false" selection-start-line="352" selection-start-column="2" selection-end-line="355" selection-end-column="30" />
+          <folding>
+            <marker date="1554554515690" expanded="true" signature="2139:2567" ph="INSERT INTO `vpns`... " />
+            <marker date="1554554515690" expanded="true" signature="4285:4516" ph="SELECT id, p... vpns" />
+            <marker date="1554554515690" expanded="true" signature="6816:7187" ph="UPDATE `vpns... " />
+            <marker date="1554554515690" expanded="true" signature="9027:9064" ph="SELECT COUNT... vpns" />
+            <marker date="1554554515690" expanded="true" signature="9501:9528" ph="SELECT sessi... vpns" />
+            <marker date="1554554515690" expanded="true" signature="10089:10122" ph="SELECT total... vpns" />
+            <marker date="1554554515690" expanded="true" signature="10736:10757" ph="SELECT id FR... vpns" />
+            <marker date="1554554515690" expanded="true" signature="11926:12105" ph="SELECT id, p... vpns" />
+            <marker date="1554554515690" expanded="true" signature="12519:12709" ph="SELECT id, p... vpns" />
+            <marker date="1554554515690" expanded="true" signature="13446:13624" ph="SELECT id, p... vpns" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/libraries/OpenBlu/openblu.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="23" lean-forward="false" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
           <folding />
         </state>
       </provider>
