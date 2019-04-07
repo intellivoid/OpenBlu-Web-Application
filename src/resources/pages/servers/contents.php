@@ -1,4 +1,16 @@
 <?PHP \DynamicalWeb\HTML::importScript('check_auth'); ?>
+<?PHP
+    if(isset($_GET['action']))
+    {
+        if($_GET['action'] == 'select')
+        {
+            if(isset($_GET['token']))
+            {
+                \DynamicalWeb\HTML::importScript('select_vpn');
+            }
+        }
+    }
+?>
 <?PHP \DynamicalWeb\HTML::importScript('time_human'); ?>
 <?PHP \DynamicalWeb\HTML::importScript('table'); ?>
 <?PHP \DynamicalWeb\HTML::importScript('alert'); ?>

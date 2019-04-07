@@ -65,6 +65,9 @@
             "PAGE_NOT_FOUND_ERROR": "The requested page was not found, it might have been moved",
             "RELOAD_PAGE_LINK": "Reload Page"
         },
+        "server": {
+            "PAGE_TITLE": "OpenBlu - VPN Server %s"
+        },
         "login": {
             "PAGE_TITLE": "Login to OpenBlu",
             "HEADER": "Intellivoid Accounts",

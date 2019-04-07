@@ -61,6 +61,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/servers" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/servers/scripts" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/servers/sections" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/server" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

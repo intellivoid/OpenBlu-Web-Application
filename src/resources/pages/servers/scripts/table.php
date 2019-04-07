@@ -128,7 +128,7 @@
                     foreach($openBlu->getVPNManager()->getServerPage($current_page) as $VPN)
                     {
                         $VPNObject = \OpenBlu\Objects\VPN::fromArray($VPN);
-                        $ActionView = '<i class="mdi mdi-pencil icon-sm mr-2 text-success"></i>';
+                        $ActionView = '<a href="servers?action=select&pub_id=' . urlencode($VPNObject->PublicID) . '&token=' . urlencode(hash('crc32', $VPNObject->ID)) . '"><i class="mdi mdi-pencil icon-sm mr-2 text-success"></i></a>';
                         $RowData = [
                             '<i class="flag-icon flag-icon-' . strtolower($VPNObject->CountryShort) . '"></i> ' . $VPNObject->Country,
                             $VPNObject->IP,
