@@ -1,9 +1,9 @@
 <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
     <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo" href="index">
+        <a class="navbar-brand brand-logo" onclick="location.href='/'">
             <img src="/assets/images/banner.png" alt="logo"/>
         </a>
-        <a class="navbar-brand brand-logo-mini" href="index">
+        <a class="navbar-brand brand-logo-mini" onclick="location.href='/'">
             <img src="/assets/images/logo.png" alt="logo"/>
         </a>
     </div>
@@ -24,13 +24,13 @@
                     if(WEB_SESSION_ACTIVE == true)
                     {
                         ?>
-                        <a href="logout" type="button" class="btn btn-inverse-danger btn-fw">Logout from OpenBlu</a>
+                        <a onclick="location.href='/logout'" type="button" class="btn btn-inverse-danger btn-fw">Logout from OpenBlu</a>
                         <?PHP
                     }
                     else
                     {
                         ?>
-                        <a href="login" type="button" class="btn btn-inverse-info btn-fw">Login to OpenBlu</a>
+                        <a onclick="location.href='/login'" type="button" class="btn btn-inverse-info btn-fw">Login to OpenBlu</a>
                         <?PHP
                     }
                 ?>

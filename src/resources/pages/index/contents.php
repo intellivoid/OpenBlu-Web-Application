@@ -148,7 +148,7 @@
                                                         {
                                                             $VPN = \OpenBlu\Objects\VPN::fromArray($VPN);
                                                             ?>
-                                                            <div class="preview-item border-bottom">
+                                                            <div class="preview-item border-bottom" onclick="location.href='/server?pub_id=<?PHP \DynamicalWeb\HTML::print($VPN->PublicID) ?>';">
                                                                 <div class="preview-thumbnail">
                                                                     <div class="preview-icon">
                                                                         <i class="flag-icon flag-icon-<?PHP \DynamicalWeb\HTML::print(strtolower($VPN->CountryShort)); ?>"></i>

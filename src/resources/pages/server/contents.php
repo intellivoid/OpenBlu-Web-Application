@@ -84,7 +84,7 @@
                                                         <div class="preview-item-content d-flex flex-grow">
                                                             <div class="flex-grow">
                                                                 <h6 class="preview-subject">Country</h6>
-                                                                <p>Avrage ping time from OpenBlu</p>
+                                                                <p>The country that this server is based in</p>
                                                             </div>
                                                             <div class="mr-auto text-right">
                                                                 <p class="text-info"><?PHP HTML::print(CACHE_VPN_COUNTRY); ?></p>
