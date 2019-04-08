@@ -1,32 +1,43 @@
-<?PHP \DynamicalWeb\HTML::importScript('check_auth'); ?>
 <?PHP
+
+    /** @noinspection PhpUnhandledExceptionInspection */
+
+    use DynamicalWeb\DynamicalWeb;
+    use DynamicalWeb\HTML;
+    use OpenBlu\OpenBlu;
+
+    HTML::importScript('check_auth');
+
     if(isset($_GET['action']))
     {
         if($_GET['action'] == 'select')
         {
             if(isset($_GET['token']))
             {
-                \DynamicalWeb\HTML::importScript('select_vpn');
+                HTML::importScript('select_vpn');
             }
         }
     }
+
+    HTML::importScript('time_human');
+    HTML::importScript('table');
+    HTML::importScript('alert');
+    DynamicalWeb::loadLibrary('OpenBlu', 'OpenBlu', 'OpenBlu.php');
+
+    $OpenBlu = new OpenBlu();
+
 ?>
-<?PHP \DynamicalWeb\HTML::importScript('time_human'); ?>
-<?PHP \DynamicalWeb\HTML::importScript('table'); ?>
-<?PHP \DynamicalWeb\HTML::importScript('alert'); ?>
-<?PHP \DynamicalWeb\DynamicalWeb::loadLibrary('OpenBlu', 'OpenBlu', 'OpenBlu.php'); ?>
-<?PHP $OpenBlu = new \OpenBlu\OpenBlu(); ?>
 <!DOCTYPE html>
-<html lang="<?PHP \DynamicalWeb\HTML::print(APP_LANGUAGE_ISO_639); ?>">
+<html lang="<?PHP HTML::print(APP_LANGUAGE_ISO_639); ?>">
     <head>
-        <?PHP \DynamicalWeb\HTML::importSection('header'); ?>
-        <title><?PHP \DynamicalWeb\HTML::print(TEXT_PAGE_TITLE); ?></title>
+        <?PHP HTML::importSection('header'); ?>
+        <title><?PHP HTML::print(TEXT_PAGE_TITLE); ?></title>
     </head>
     <body>
         <div class="container-scrollbar">
-            <?PHP \DynamicalWeb\HTML::importSection('navigation'); ?>
+            <?PHP HTML::importSection('navigation'); ?>
             <div class="container-fluid page-body-wrapper">
-                <?PHP \DynamicalWeb\HTML::importSection('sidebar'); ?>
+                <?PHP HTML::importSection('sidebar'); ?>
                 <div class="main-panel">
                     <div class="content-wrapper">
                         <div class="row grid-margin">
@@ -46,12 +57,12 @@
                                             if($current_page < 1)
                                             {
                                                 render_alert(TEXT_PAGE_NOT_FOUND_ERROR, 'danger', 'alert-circle');
-                                                \DynamicalWeb\HTML::print('<a href="servers">' . TEXT_RELOAD_PAGE_LINK . '</a>', false);
+                                                HTML::print('<a href="servers">' . TEXT_RELOAD_PAGE_LINK . '</a>', false);
                                             }
                                             elseif($current_page > $total_pages)
                                             {
                                                 render_alert(TEXT_PAGE_NOT_FOUND_ERROR, 'danger', 'alert-circle');
-                                                \DynamicalWeb\HTML::print('<a href="servers">' . TEXT_RELOAD_PAGE_LINK . '</a>', false);
+                                                HTML::print('<a href="servers">' . TEXT_RELOAD_PAGE_LINK . '</a>', false);
                                             }
                                             else
                                             {
@@ -65,9 +76,9 @@
                     </div>
                 </div>
             </div>
-            <?PHP \DynamicalWeb\HTML::importSection('footer'); ?>
+            <?PHP HTML::importSection('footer'); ?>
         </div>
-        <?PHP \DynamicalWeb\HTML::importSection('js_scripts'); ?>
+        <?PHP HTML::importSection('js_scripts'); ?>
         <script src="/assets/js/app-table-animations.js"></script>
     </body>
 </html>
