@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13744565-c04a-4ec4-8a5b-01f6fe867a44" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/shared/scripts/alert.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/shared/scripts/alert.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,11 +26,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/resources/libraries/sws/Classes/Crypto.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
               <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resources/DynamicalWeb/HTML.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="29">
+              <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/alert.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -92,7 +110,6 @@
         <option value="$PROJECT_DIR$/src/resources/pages/servers/sections/animation.php" />
         <option value="$PROJECT_DIR$/src/resources/pages/servers/sections/table_animation.php" />
         <option value="$PROJECT_DIR$/src/assets/js/app-table-animations.js" />
-        <option value="$PROJECT_DIR$/src/resources/shared/scripts/alert.php" />
         <option value="$PROJECT_DIR$/src/resources/libraries/OpenBlu/Managers/VPNManager.php" />
         <option value="$PROJECT_DIR$/src/resources/libraries/OpenBlu/openblu.json" />
         <option value="$PROJECT_DIR$/src/resources/languages/en.json" />
@@ -101,12 +118,13 @@
         <option value="$PROJECT_DIR$/src/resources/pages/servers/scripts/table.php" />
         <option value="$PROJECT_DIR$/src/resources/pages/server/contents.php" />
         <option value="$PROJECT_DIR$/src/resources/shared/scripts/check_selection.php" />
+        <option value="$PROJECT_DIR$/src/resources/shared/scripts/alert.php" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="522" />
-    <option name="y" value="58" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="277" />
+    <option name="y" value="25" />
     <option name="width" value="1382" />
     <option name="height" value="754" />
   </component>
@@ -115,6 +133,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -138,33 +157,63 @@
               <item name="openblu-web-application" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="libraries" type="462c0819:PsiDirectoryNode" />
+              <item name="DynamicalWeb" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="openblu-web-application" type="b2602c69:ProjectViewProjectNode" />
+              <item name="openblu-web-application" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="DynamicalWeb" type="462c0819:PsiDirectoryNode" />
+              <item name="HTML.php" type="88303cf5:PhpFileNode" />
+            </path>
+            <path>
+              <item name="openblu-web-application" type="b2602c69:ProjectViewProjectNode" />
+              <item name="openblu-web-application" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="DynamicalWeb" type="462c0819:PsiDirectoryNode" />
+              <item name="HTML.php" type="88303cf5:PhpFileNode" />
+              <item name="HTML" type="e2efd96b:PhpElementNode" />
+            </path>
+            <path>
+              <item name="openblu-web-application" type="b2602c69:ProjectViewProjectNode" />
+              <item name="openblu-web-application" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="shared" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="openblu-web-application" type="b2602c69:ProjectViewProjectNode" />
+              <item name="openblu-web-application" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="shared" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/resources" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Netkas\Documents\gits\openblu-web-application\src\resources\shared\scripts" />
+      <recent name="C:\Users\Netkas\Documents\gits\openblu-web-application\src\resources\shared" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Netkas\Documents\gits\openblu-web-application\src\resources" />
       <recent name="C:\Users\Netkas\Documents\gits\openblu-web-application\src\resources\libraries" />
       <recent name="C:\Users\Netkas\Documents\gits\openblu-web-application\src\resources\pages\servers" />
       <recent name="C:\Users\Netkas\Documents\gits\openblu-web-application\src\resources\libraries\IntellivoidAccounts" />
       <recent name="C:\Users\Netkas\Documents\gits\openblu-web-application\src\resources\shared\scripts" />
-      <recent name="C:\Users\Netkas\Documents\gits\openblu-web-application\src\resources\pages\login" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Netkas\Documents\gits\openblu-web-application\src\resources\shared\scripts" />
-      <recent name="C:\Users\Netkas\Documents\gits\openblu-web-application\src\resources\shared" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -214,23 +263,26 @@
       <workItem from="1554576478636" duration="3147000" />
       <workItem from="1554586176855" duration="2234000" />
       <workItem from="1554606238901" duration="446000" />
+      <workItem from="1554730315906" duration="252000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60540000" />
+    <option name="totallyTimeSpent" value="60792000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="95" y="30" width="1084" height="661" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.296875" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.30181542" />
       <window_info id="Structure" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Database Console" order="0" weight="0.32998326" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="2" weight="0.32941177" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="3" visible="true" weight="0.32871288" />
+      <window_info anchor="bottom" id="Terminal" order="3" weight="0.3277592" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" weight="0.32998326" />
       <window_info anchor="bottom" id="Run" order="6" />
@@ -238,7 +290,7 @@
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="10" />
-      <window_info anchor="right" id="Database" order="0" visible="true" weight="0.21875" />
+      <window_info anchor="right" id="Database" order="0" visible="true" weight="0.21860817" />
       <window_info anchor="right" id="Commander" order="1" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
@@ -263,6 +315,9 @@
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
     </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -506,24 +561,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/pages/servers/sections/table_animation.php" />
-    <entry file="file://$PROJECT_DIR$/src/resources/DynamicalWeb/HTML.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="31" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/js/app-table-animations.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="116">
           <caret line="16" column="45" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/alert.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="80" selection-start-line="4" selection-start-column="80" selection-end-line="4" selection-end-column="80" />
         </state>
       </provider>
     </entry>
@@ -607,6 +648,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/DynamicalWeb/HTML.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/alert.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
         </state>
       </provider>
     </entry>
