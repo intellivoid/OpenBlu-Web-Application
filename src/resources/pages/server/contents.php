@@ -1,21 +1,30 @@
-<?PHP \DynamicalWeb\HTML::importScript('check_auth'); ?>
-<?PHP \DynamicalWeb\HTML::importScript('check_selection'); ?>
-<?PHP \DynamicalWeb\HTML::importScript('cache'); ?>
-<?PHP \DynamicalWeb\HTML::importScript('time_human'); ?>
-<?PHP $OpenBlu = new \OpenBlu\OpenBlu(); ?>
+<?PHP
+    /** @noinspection PhpUnhandledExceptionInspection */
+
+    use DynamicalWeb\HTML;
+    use OpenBlu\OpenBlu;
+
+    HTML::importScript('check_auth');
+    HTML::importScript('check_selection');
+    HTML::importScript('cache');
+    HTML::importScript('time_human');
+
+    $OpenBlu = new OpenBlu();
+?>
+
 <!DOCTYPE html>
-<html lang="<?PHP \DynamicalWeb\HTML::print(APP_LANGUAGE_ISO_639); ?>">
+<html lang="<?PHP HTML::print(APP_LANGUAGE_ISO_639); ?>">
     <head>
-        <?PHP \DynamicalWeb\HTML::importSection('header'); ?>
-        <title><?PHP \DynamicalWeb\HTML::print(TEXT_PAGE_TITLE); ?></title>
+        <?PHP HTML::importSection('header'); ?>
+        <title><?PHP HTML::print(TEXT_PAGE_TITLE); ?></title>
     </head>
 
     <body>
 
         <div class="container-scrollbar">
-            <?PHP \DynamicalWeb\HTML::importSection('navigation'); ?>
+            <?PHP HTML::importSection('navigation'); ?>
             <div class="container-fluid page-body-wrapper">
-                <?PHP \DynamicalWeb\HTML::importSection('sidebar'); ?>
+                <?PHP HTML::importSection('sidebar'); ?>
                 <div class="main-panel">
                     <div class="content-wrapper">
 
@@ -41,8 +50,8 @@
                 </div>
             </div>
 
-            <?PHP \DynamicalWeb\HTML::importSection('footer'); ?>
+            <?PHP HTML::importSection('footer'); ?>
         </div>
-        <?PHP \DynamicalWeb\HTML::importSection('js_scripts'); ?>
+        <?PHP HTML::importSection('js_scripts'); ?>
     </body>
 </html>
