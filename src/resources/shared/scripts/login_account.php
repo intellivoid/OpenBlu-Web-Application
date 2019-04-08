@@ -1,10 +1,37 @@
 <?php
 
+    use DynamicalWeb\DynamicalWeb;
+    use DynamicalWeb\Page;
+    use IntellivoidAccounts\Abstracts\LoginStatus;
+    use IntellivoidAccounts\Abstracts\SearchMethods\AccountSearchMethod;
+    use IntellivoidAccounts\Exceptions\AccountNotFoundException;
+    use IntellivoidAccounts\Exceptions\AccountSuspendedException;
+    use IntellivoidAccounts\Exceptions\ConfigurationNotFoundException;
+    use IntellivoidAccounts\Exceptions\DatabaseException;
+    use IntellivoidAccounts\Exceptions\IncorrectLoginDetailsException;
+    use IntellivoidAccounts\Exceptions\InvalidIpException;
+    use IntellivoidAccounts\Exceptions\InvalidLoginStatusException;
+    use IntellivoidAccounts\Exceptions\InvalidSearchMethodException;
+    use IntellivoidAccounts\IntellivoidAccounts;
+    use IntellivoidAccounts\Utilities\Validate;
+    use sws\sws;
+
     if($_SERVER['REQUEST_METHOD'] == 'POST')
     {
-        LoginAccount();
+        try
+        {
+            LoginAccount();
+        }
+        catch(Exception $e)
+        {
+            header('Location: login?callback=103');
+            exit();
+        }
     }
 
+    /**
+     * @return mixed
+     */
     function getClientIP()
     {
         if(!empty($_SERVER['HTTP_CLIENT_IP']))
@@ -26,6 +53,14 @@
     }
 
 
+    /**
+     * @throws ConfigurationNotFoundException
+     * @throws DatabaseException
+     * @throws InvalidIpException
+     * @throws InvalidLoginStatusException
+     * @throws InvalidSearchMethodException
+     * @throws Exception
+     */
     function LoginAccount()
     {
         if(isset($_POST['username_email']) == false)
@@ -46,48 +81,48 @@
             exit();
         }
 
-        \DynamicalWeb\DynamicalWeb::loadLibrary('IntellivoidAccounts', 'IntellivoidAccounts', 'IntellivoidAccounts.php');
+        DynamicalWeb::loadLibrary('IntellivoidAccounts', 'IntellivoidAccounts', 'IntellivoidAccounts.php');
 
-        if(\IntellivoidAccounts\Utilities\Validate::username($_POST['username_email']) == false)
+        if(Validate::username($_POST['username_email']) == false)
         {
-            if(\IntellivoidAccounts\Utilities\Validate::email($_POST['username_email']) == false)
+            if(Validate::email($_POST['username_email']) == false)
             {
                 header('Location: login?callback=101');
                 exit();
             }
         }
 
-        if(\IntellivoidAccounts\Utilities\Validate::password($_POST['password']) == false)
+        if(Validate::password($_POST['password']) == false)
         {
             header('Location: login?callback=101');
             exit();
         }
 
-        $IntellivoidAccounts = new \IntellivoidAccounts\IntellivoidAccounts();
+        $IntellivoidAccounts = new IntellivoidAccounts();
 
         try
         {
             $IntellivoidAccounts->getAccountManager()->checkLogin($_POST['username_email'], $_POST['password']);
 
             $Account = null;
-            if(\IntellivoidAccounts\Utilities\Validate::email($_POST['username_email']) == true)
+            if(Validate::email($_POST['username_email']) == true)
             {
                 $Account = $IntellivoidAccounts->getAccountManager()->getAccount(
-                    \IntellivoidAccounts\Abstracts\SearchMethods\AccountSearchMethod::byEmail, $_POST['username_email']
+                    AccountSearchMethod::byEmail, $_POST['username_email']
                 );
             }
             else
             {
                 $Account = $IntellivoidAccounts->getAccountManager()->getAccount(
-                    \IntellivoidAccounts\Abstracts\SearchMethods\AccountSearchMethod::byUsername, $_POST['username_email']
+                    AccountSearchMethod::byUsername, $_POST['username_email']
                 );
             }
 
             $IntellivoidAccounts->getLoginRecordManager()->createLoginRecord(
-                $Account->ID, getClientIP(), \IntellivoidAccounts\Abstracts\LoginStatus::Successful, 'OpenBlu WebApplication'
+                $Account->ID, getClientIP(), LoginStatus::Successful, 'OpenBlu WebApplication'
             );
 
-            $sws = new \sws\sws();
+            $sws = new sws();
 
             $Cookie = $sws->WebManager()->getCookie('web_session');
             $Cookie->Data['session_active'] = true;
@@ -102,30 +137,30 @@
             header('Location: /');
             exit();
         }
-        catch(\IntellivoidAccounts\Exceptions\IncorrectLoginDetailsException $incorrectLoginDetailsException)
+        catch(IncorrectLoginDetailsException $incorrectLoginDetailsException)
         {
             try
             {
                 $Account = null;
 
-                if(\IntellivoidAccounts\Utilities\Validate::email($_POST['username_email']))
+                if(Validate::email($_POST['username_email']))
                 {
                     $Account = $IntellivoidAccounts->getAccountManager()->getAccount(
-                        \IntellivoidAccounts\Abstracts\SearchMethods\AccountSearchMethod::byEmail, $_POST['username_email']
+                        AccountSearchMethod::byEmail, $_POST['username_email']
                     );
                 }
                 else
                 {
                     $Account = $IntellivoidAccounts->getAccountManager()->getAccount(
-                        \IntellivoidAccounts\Abstracts\SearchMethods\AccountSearchMethod::byUsername, $_POST['username_email']
+                        AccountSearchMethod::byUsername, $_POST['username_email']
                     );
                 }
 
                 $IntellivoidAccounts->getLoginRecordManager()->createLoginRecord(
-                    $Account->ID, getClientIP(), \IntellivoidAccounts\Abstracts\LoginStatus::IncorrectCredentials, 'OpenBlu WebApplication'
+                    $Account->ID, getClientIP(), LoginStatus::IncorrectCredentials, 'OpenBlu WebApplication'
                 );
             }
-            catch(\IntellivoidAccounts\Exceptions\AccountNotFoundException $accountNotFoundException)
+            catch(AccountNotFoundException $accountNotFoundException)
             {
                 // Ignore this exception
             }
@@ -133,15 +168,13 @@
             header('Location: login?callback=101');
             exit();
         }
-        catch(\IntellivoidAccounts\Exceptions\AccountSuspendedException $accountSuspendedException)
+        catch(AccountSuspendedException $accountSuspendedException)
         {
             header('Location: login?callback=102');
             exit();
         }
         catch(Exception $exception)
         {
-            var_dump($exception);
-            die();
             header('Location: login?callback=103');
             exit();
         }
