@@ -1,9 +1,31 @@
 <?php
+
+    use DynamicalWeb\DynamicalWeb;
+    use IntellivoidAccounts\Exceptions\ConfigurationNotFoundException;
+    use IntellivoidAccounts\Exceptions\DatabaseException;
+    use IntellivoidAccounts\Exceptions\InvalidSearchMethodException;
+    use IntellivoidAccounts\IntellivoidAccounts;
+    use IntellivoidAccounts\Utilities\Validate;
+
     if($_SERVER['REQUEST_METHOD'] == 'POST')
     {
-        RegisterAccount();
+        try
+        {
+            RegisterAccount();
+        }
+        catch (Exception $e)
+        {
+            header('Location: register?callback=106');
+            exit();
+        }
     }
 
+    /**
+     * @throws ConfigurationNotFoundException
+     * @throws DatabaseException
+     * @throws InvalidSearchMethodException
+     * @throws Exception
+     */
     function RegisterAccount()
     {
         if(verify_recaptcha() == false)
@@ -12,7 +34,7 @@
             exit();
         }
 
-        \DynamicalWeb\DynamicalWeb::loadLibrary('IntellivoidAccounts', 'IntellivoidAccounts', 'IntellivoidAccounts.php');
+        DynamicalWeb::loadLibrary('IntellivoidAccounts', 'IntellivoidAccounts', 'IntellivoidAccounts.php');
 
         if(isset($_POST['username']) == false)
         {
@@ -32,25 +54,25 @@
             exit();
         }
 
-        if(\IntellivoidAccounts\Utilities\Validate::username($_POST['username']) == false)
+        if(Validate::username($_POST['username']) == false)
         {
             header('Location: register?callback=101');
             exit();
         }
 
-        if(\IntellivoidAccounts\Utilities\Validate::email($_POST['email']) == false)
+        if(Validate::email($_POST['email']) == false)
         {
             header('Location: register?callback=102');
             exit();
         }
 
-        if(\IntellivoidAccounts\Utilities\Validate::password($_POST['password']) == false)
+        if(Validate::password($_POST['password']) == false)
         {
             header('Location: register?callback=103');
             exit();
         }
 
-        $IntellivoidAccounts = new \IntellivoidAccounts\IntellivoidAccounts();
+        $IntellivoidAccounts = new IntellivoidAccounts();
         
         if($IntellivoidAccounts->getAccountManager()->usernameExists($_POST['username']) == true)
         {
