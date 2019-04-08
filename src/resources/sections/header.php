@@ -13,6 +13,7 @@
 
 <!-- inject:css -->
 <link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/app.css">
 
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png?v=Kmnx6w0N7E">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png?v=Kmnx6w0N7E">

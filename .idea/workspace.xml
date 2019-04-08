@@ -28,75 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resources/libraries/OpenBlu/openblu.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resources/sections/footer.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="9" lean-forward="true" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/resources/sections/header.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="74" selection-start-line="8" selection-start-column="74" selection-end-line="8" selection-end-column="74" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resources/sections/js_scripts.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resources/sections/navigation.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resources/sections/sidebar.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="42" lean-forward="true" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/assets/css/app.css">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/resources/libraries/sws/configuration.ini">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resources/libraries/OpenBlu/configuration.ini">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="23" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="23" />
+            <state relative-caret-position="255">
+              <caret line="15" column="50" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -147,7 +83,6 @@
         <option value="$PROJECT_DIR$/src/resources/sections/navigation.php" />
         <option value="$PROJECT_DIR$/src/resources/sections/time_human.php" />
         <option value="$PROJECT_DIR$/src/resources/shared/scripts/time_human.php" />
-        <option value="$PROJECT_DIR$/src/resources/sections/header.php" />
         <option value="$PROJECT_DIR$/src/resources/pages/index/contents.php" />
         <option value="$PROJECT_DIR$/src/resources/pages/servers/sections/animation.php" />
         <option value="$PROJECT_DIR$/src/resources/pages/servers/sections/table_animation.php" />
@@ -170,10 +105,11 @@
         <option value="$PROJECT_DIR$/src/resources/sections/footer.php" />
         <option value="$PROJECT_DIR$/src/resources/sections/sidebar.php" />
         <option value="$PROJECT_DIR$/src/resources/libraries/sws/configuration.ini" />
+        <option value="$PROJECT_DIR$/src/resources/sections/header.php" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="277" />
     <option name="y" value="25" />
     <option name="width" value="1382" />
@@ -238,6 +174,20 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="libraries" type="462c0819:PsiDirectoryNode" />
               <item name="sws" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="openblu-web-application" type="b2602c69:ProjectViewProjectNode" />
+              <item name="openblu-web-application" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="openblu-web-application" type="b2602c69:ProjectViewProjectNode" />
+              <item name="openblu-web-application" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="sections" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="openblu-web-application" type="b2602c69:ProjectViewProjectNode" />
@@ -330,12 +280,12 @@
       <workItem from="1554576478636" duration="3147000" />
       <workItem from="1554586176855" duration="2234000" />
       <workItem from="1554606238901" duration="446000" />
-      <workItem from="1554730315906" duration="3515000" />
+      <workItem from="1554730315906" duration="3621000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64055000" />
+    <option name="totallyTimeSpent" value="64161000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -700,13 +650,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/sections/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="74" selection-start-line="8" selection-start-column="74" selection-end-line="8" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/sections/js_scripts.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -745,6 +688,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/sections/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="50" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
         </state>
       </provider>
     </entry>
