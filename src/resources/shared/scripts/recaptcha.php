@@ -1,13 +1,16 @@
 <?php
 
+    use DynamicalWeb\DynamicalWeb;
+
     /**
      * Returns the rendering content for recaptcha
      *
      * @return string
+     * @throws Exception
      */
     function re_render()
     {
-        $configuration = \DynamicalWeb\DynamicalWeb::getConfiguration('recaptcha');
+        $configuration = DynamicalWeb::getConfiguration('recaptcha');
 
         if($configuration['enabled'] == true)
         {
@@ -17,12 +20,17 @@
         return '';
     }
 
+    /**
+     * @return string
+     * @throws Exception
+     */
     function re_import()
     {
-        $configuration = \DynamicalWeb\DynamicalWeb::getConfiguration('recaptcha');
+        $configuration = DynamicalWeb::getConfiguration('recaptcha');
 
         if($configuration['enabled'] == true)
         {
+            /** @noinspection JSUnresolvedLibraryURL */
             return("<script src=\"https://www.google.com/recaptcha/api.js\" async defer></script>");
         }
 
@@ -33,10 +41,11 @@
      * Verifies the post request of the captcha request
      *
      * @return bool
+     * @throws Exception
      */
     function verify_recaptcha(): bool
     {
-        $configuration = \DynamicalWeb\DynamicalWeb::getConfiguration('recaptcha');
+        $configuration = DynamicalWeb::getConfiguration('recaptcha');
 
         if($configuration['enabled'] == false)
         {
