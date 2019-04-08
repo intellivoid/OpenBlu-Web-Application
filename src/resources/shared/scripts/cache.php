@@ -10,7 +10,7 @@
     }
     catch (Exception $e)
     {
-        header('Location: 500');
+        header('Location: /500');
         exit();
     }
 
@@ -20,7 +20,7 @@
     }
     catch (Exception $e)
     {
-        header('Location: 500');
+        header('Location: /500');
         exit();
     }
 

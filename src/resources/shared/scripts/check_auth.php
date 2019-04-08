@@ -1,7 +1,19 @@
 <?php
-    \DynamicalWeb\DynamicalWeb::loadLibrary('sws', 'sws', 'sws.php');
 
-    $sws = new \sws\sws();
+    use DynamicalWeb\DynamicalWeb;
+    use sws\sws;
+
+    try
+    {
+        DynamicalWeb::loadLibrary('sws', 'sws', 'sws.php');
+    }
+    catch (Exception $e)
+    {
+        header('Location: /500');
+        exit();
+    }
+
+    $sws = new sws();
 
     if($sws->WebManager()->isCookieValid('web_session') == false)
     {
