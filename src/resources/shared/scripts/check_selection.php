@@ -1,5 +1,6 @@
 <?php
 
+    use DynamicalWeb\DynamicalWeb;
     use OpenBlu\Abstracts\SearchMethods\VPN;
     use OpenBlu\Exceptions\VPNNotFoundException;
     use OpenBlu\OpenBlu;
@@ -10,6 +11,8 @@
         exit();
     }
 
+    /** @noinspection PhpUnhandledExceptionInspection */
+    DynamicalWeb::loadLibrary('OpenBlu', 'OpenBlu', 'OpenBlu.php');
     $OpenBlu = new OpenBlu();
 
     try
@@ -35,3 +38,4 @@
     define('CACHE_VPN_PING', $VPN->Ping, false);
     define('CACHE_VPN_COUNTRY', $VPN->Country, false);
     define('CACHE_VPN_COUNTRY_SHORT', $VPN->CountryShort, false);
+    define('CACHE_VPN_LAST_UPDATED', $VPN->LastUpdated, false);
