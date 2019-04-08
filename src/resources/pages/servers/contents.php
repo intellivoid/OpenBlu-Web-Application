@@ -31,7 +31,7 @@
                     <div class="content-wrapper">
                         <div class="row grid-margin">
                             <div class="col-12">
-                                <div class="card">
+                                <div class="card" id="servers_table">
                                     <div class="card-body">
                                         <h4 class="card-title">Servers</h4>
                                         <?PHP

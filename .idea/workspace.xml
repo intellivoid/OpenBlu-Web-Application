@@ -28,68 +28,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resources/pages/server/contents.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="86" column="107" selection-start-line="86" selection-start-column="107" selection-end-line="86" selection-end-column="107" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resources/pages/index/contents.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="150" column="125" selection-start-line="150" selection-start-column="125" selection-end-line="150" selection-end-column="125" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/resources/sections/sidebar.php">
+        <entry file="file://$PROJECT_DIR$/src/resources/pages/servers/contents.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="44" lean-forward="true" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="44" />
+            <state relative-caret-position="121">
+              <caret line="32" column="48" lean-forward="true" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resources/sections/navigation.php">
+        <entry file="file://$PROJECT_DIR$/src/assets/js/app-table-animations.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="107">
-              <caret line="31" column="26" lean-forward="true" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resources/languages/en.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="587">
-              <caret line="81" column="52" selection-start-line="81" selection-start-column="52" selection-end-line="81" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/check_selection.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="32" column="31" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="31" />
-              <folding>
-                <element signature="e#7#37#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resources/pages/servers/scripts/table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="124" column="30" selection-start-line="124" selection-start-column="30" selection-end-line="124" selection-end-column="30" />
+            <state relative-caret-position="278">
+              <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -142,11 +94,9 @@
         <option value="$PROJECT_DIR$/src/resources/shared/scripts/time_human.php" />
         <option value="$PROJECT_DIR$/src/resources/pages/servers/sections/animation.php" />
         <option value="$PROJECT_DIR$/src/resources/pages/servers/sections/table_animation.php" />
-        <option value="$PROJECT_DIR$/src/assets/js/app-table-animations.js" />
         <option value="$PROJECT_DIR$/src/resources/libraries/OpenBlu/Managers/VPNManager.php" />
         <option value="$PROJECT_DIR$/src/resources/libraries/OpenBlu/openblu.json" />
         <option value="$PROJECT_DIR$/src/resources/shared/scripts/check_vpn.php" />
-        <option value="$PROJECT_DIR$/src/resources/pages/servers/contents.php" />
         <option value="$PROJECT_DIR$/src/resources/shared/scripts/alert.php" />
         <option value="$PROJECT_DIR$/src/resources/shared/scripts/cache.php" />
         <option value="$PROJECT_DIR$/src/resources/shared/scripts/check_auth.php" />
@@ -164,6 +114,8 @@
         <option value="$PROJECT_DIR$/src/resources/pages/index/contents.php" />
         <option value="$PROJECT_DIR$/src/resources/sections/navigation.php" />
         <option value="$PROJECT_DIR$/src/resources/sections/sidebar.php" />
+        <option value="$PROJECT_DIR$/src/assets/js/app-table-animations.js" />
+        <option value="$PROJECT_DIR$/src/resources/pages/servers/contents.php" />
       </list>
     </option>
   </component>
@@ -362,26 +314,26 @@
       <workItem from="1554576478636" duration="3147000" />
       <workItem from="1554586176855" duration="2234000" />
       <workItem from="1554606238901" duration="446000" />
-      <workItem from="1554730315906" duration="10347000" />
+      <workItem from="1554730315906" duration="10977000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70887000" />
+    <option name="totallyTimeSpent" value="71517000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="70" y="38" width="1190" height="689" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.1938053" />
+      <window_info content_ui="combo" id="Project" order="1" weight="0.1938053" />
       <window_info id="Structure" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Database Console" order="0" weight="0.32998326" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="2" weight="0.3277592" />
-      <window_info anchor="bottom" id="Terminal" order="3" visible="true" weight="0.32645404" />
+      <window_info anchor="bottom" id="Terminal" order="3" weight="0.32645404" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" weight="0.32998326" />
       <window_info anchor="bottom" id="Run" order="6" />
@@ -396,20 +348,22 @@
     </layout>
     <layout-to-restore>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.20272315" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.1938053" />
       <window_info id="Structure" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Database Console" order="0" weight="0.32998326" />
-      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="2" weight="0.32998326" />
-      <window_info anchor="bottom" id="Terminal" order="3" weight="0.32941177" />
-      <window_info anchor="bottom" id="Message" order="4" />
-      <window_info anchor="bottom" id="Find" order="5" weight="0.32998326" />
-      <window_info anchor="bottom" id="Run" order="6" />
-      <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="10" />
-      <window_info anchor="right" id="Database" order="0" weight="0.16490166" />
+      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="1" />
+      <window_info anchor="bottom" id="Database Console" order="2" weight="0.32998326" />
+      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="4" weight="0.3277592" />
+      <window_info anchor="bottom" id="Terminal" order="5" visible="true" weight="0.32645404" />
+      <window_info anchor="bottom" id="Message" order="6" />
+      <window_info anchor="bottom" id="Find" order="7" weight="0.32998326" />
+      <window_info anchor="bottom" id="Run" order="8" />
+      <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="12" />
+      <window_info anchor="right" id="Database" order="0" weight="0.21860817" />
       <window_info anchor="right" id="Commander" order="1" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
@@ -543,13 +497,6 @@
     </entry>
     <entry file="dbDummy://dbtable:/d8aef657/47c3f4ab-28ec-47ec-ab44-478284754faf/openblu.vpn_analytics" />
     <entry file="file://$PROJECT_DIR$/src/resources/pages/servers/sections/table_animation.php" />
-    <entry file="file://$PROJECT_DIR$/src/assets/js/app-table-animations.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="16" column="45" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/libraries/OpenBlu/Managers/VPNManager.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="164">
@@ -558,13 +505,6 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/d8aef657/47c3f4ab-28ec-47ec-ab44-478284754faf/openblu.vpns" />
-    <entry file="file://$PROJECT_DIR$/src/resources/pages/servers/contents.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="63" selection-start-line="8" selection-start-column="63" selection-end-line="8" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/select_vpn.php" />
     <entry file="file://$PROJECT_DIR$/src/resources/libraries/IntellivoidAccounts/Objects/Account/Configuration.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -769,6 +709,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="44" lean-forward="true" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/js/app-table-animations.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/pages/servers/contents.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="32" column="48" lean-forward="true" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
         </state>
       </provider>
     </entry>
