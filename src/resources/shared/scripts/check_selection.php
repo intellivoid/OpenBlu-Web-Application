@@ -1,18 +1,22 @@
 <?php
 
+    use OpenBlu\Abstracts\SearchMethods\VPN;
+    use OpenBlu\Exceptions\VPNNotFoundException;
+    use OpenBlu\OpenBlu;
+
     if(isset($_GET['pub_id']) == false)
     {
         header('Location: servers');
         exit();
     }
 
-    $OpenBlu = new \OpenBlu\OpenBlu();
+    $OpenBlu = new OpenBlu();
 
     try
     {
-        $VPN = $OpenBlu->getVPNManager()->getVPN(OpenBlu\Abstracts\SearchMethods\VPN::byPublicID, $_GET['pub_id']);
+        $VPN = $OpenBlu->getVPNManager()->getVPN(VPN::byPublicID, $_GET['pub_id']);
     }
-    catch(\OpenBlu\Exceptions\VPNNotFoundException $VPNNotFoundException)
+    catch(VPNNotFoundException $VPNNotFoundException)
     {
         header('Location: servers?callback=100');
         exit();
