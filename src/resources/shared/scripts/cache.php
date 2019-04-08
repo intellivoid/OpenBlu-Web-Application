@@ -1,9 +1,30 @@
 <?php
 
-    \DynamicalWeb\DynamicalWeb::loadLibrary('sws', 'sws', 'sws.php');
-    \DynamicalWeb\DynamicalWeb::loadLibrary('OpenBlu', 'OpenBlu', 'OpenBlu.php');
+    use DynamicalWeb\DynamicalWeb;
+    use OpenBlu\OpenBlu;
+    use sws\sws;
 
-    $sws = new \sws\sws();
+    try
+    {
+        DynamicalWeb::loadLibrary('sws', 'sws', 'sws.php');
+    }
+    catch (Exception $e)
+    {
+        header('Location: 500');
+        exit();
+    }
+
+    try
+    {
+        DynamicalWeb::loadLibrary('OpenBlu', 'OpenBlu', 'OpenBlu.php');
+    }
+    catch (Exception $e)
+    {
+        header('Location: 500');
+        exit();
+    }
+
+    $sws = new sws();
 
     if($sws->WebManager()->isCookieValid('web_session') == true)
     {
@@ -12,7 +33,7 @@
 
         if(time() > $Cookie->Data['cache_refresh'])
         {
-            $OpenBlu = new \OpenBlu\OpenBlu();
+            $OpenBlu = new OpenBlu();
 
             $Cookie->Data['cache']['total_servers'] = $OpenBlu->getVPNManager()->totalServers();
             $Cookie->Data['cache']['total_sessions'] = $OpenBlu->getVPNManager()->totalSessions();
