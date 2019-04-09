@@ -34,7 +34,7 @@
                                             <i class="flag-icon flag-icon-<?PHP HTML::print(strtolower(CACHE_VPN_COUNTRY_SHORT)); ?> text-primary icon-md"></i>
                                             <div class="ml-3">
                                                 <h6 class="text-primary"><?PHP HTML::print(CACHE_VPN_IP); ?></h6>
-                                                <p class="mt-2 text-muted card-text"><?PHP HTML::print(CACHE_VPN_SESSIONS . ' sessions'); ?></p>
+                                                <p class="mt-2 text-muted card-text"><?PHP HTML::print(str_ireplace('%s', CACHE_VPN_SESSIONS, TEXT_HEADER_CURRENT_SESSIONS)); ?></p>
                                             </div>
                                         </div>
                                     </div>
@@ -49,8 +49,8 @@
                                     <div class="card-body">
                                         <div class="d-flex flex-row">
                                             <div class="align-self-top">
-                                                <h4 class="card-title">Server Details</h4>
-                                                <p class="card-description">Last updated <?PHP HTML::print(time_elapsed_string(CACHE_VPN_LAST_UPDATED)); ?></p>
+                                                <h4 class="card-title"><?PHP HTML::print(TEXT_CARD_SERVER_DETAILS_TITLE); ?></h4>
+                                                <p class="card-description"><?PHP HTML::print(str_ireplace('%s', time_elapsed_string(CACHE_VPN_LAST_UPDATED), TEXT_CARD_SERVER_DETAILS_DESC)); ?></p>
                                             </div>
                                         </div>
 
@@ -66,8 +66,8 @@
                                                         </div>
                                                         <div class="preview-item-content d-flex flex-grow">
                                                             <div class="flex-grow">
-                                                                <h6 class="preview-subject">IP Address</h6>
-                                                                <p>The IP Address of the remote VPN Server</p>
+                                                                <h6 class="preview-subject"><?PHP HTML::print(TEXT_CARD_SERVER_DETAILS_IP_ADDRESS_TITLE); ?></h6>
+                                                                <p><?PHP HTML::print(TEXT_CARD_SERVER_DETAILS_IP_ADDRESS_DESC); ?></p>
                                                             </div>
                                                             <div class="mr-auto text-right">
                                                                 <p class="text-info"><?PHP HTML::print(CACHE_VPN_IP); ?></p>
@@ -83,8 +83,8 @@
                                                         </div>
                                                         <div class="preview-item-content d-flex flex-grow">
                                                             <div class="flex-grow">
-                                                                <h6 class="preview-subject">Country</h6>
-                                                                <p>The country that this server is based in</p>
+                                                                <h6 class="preview-subject"><?PHP HTML::print(TEXT_CARD_SERVER_DETAILS_COUNTRY_TITLE); ?></h6>
+                                                                <p><?PHP HTML::print(TEXT_CARD_SERVER_DETAILS_COUNTRY_DESC); ?></p>
                                                             </div>
                                                             <div class="mr-auto text-right">
                                                                 <p class="text-info"><?PHP HTML::print(CACHE_VPN_COUNTRY); ?></p>
@@ -100,8 +100,8 @@
                                                         </div>
                                                         <div class="preview-item-content d-flex flex-grow">
                                                             <div class="flex-grow">
-                                                                <h6 class="preview-subject">Current Sessions</h6>
-                                                                <p>The total amount of users that are currently connected</p>
+                                                                <h6 class="preview-subject"><?PHP HTML::print(TEXT_CARD_SERVER_DETAILS_CURRENT_SESSIONS_TITLE); ?></h6>
+                                                                <p><?PHP HTML::print(TEXT_CARD_SERVER_DETAILS_CURRENT_SESSIONS_DESC); ?></p>
                                                             </div>
                                                             <div class="mr-auto text-right">
                                                                 <p class="text-info"><?PHP HTML::print(CACHE_VPN_SESSIONS . ' Sessions'); ?></p>
@@ -118,11 +118,11 @@
                                                         </div>
                                                         <div class="preview-item-content d-flex flex-grow">
                                                             <div class="flex-grow">
-                                                                <h6 class="preview-subject">Total Sessions</h6>
-                                                                <p>The total amount of sessions this server had (all time)</p>
+                                                                <h6 class="preview-subject"><?PHP HTML::print(TEXT_CARD_SERVER_DETAILS_TOTAL_SESSIONS_TITLE); ?></h6>
+                                                                <p><?PHP HTML::print(TEXT_CARD_SERVER_DETAILS_TOTAL_SESSIONS_DESC); ?></p>
                                                             </div>
                                                             <div class="mr-auto text-right">
-                                                                <p class="text-info"><?PHP HTML::print(CACHE_VPN_TOTAL_SESSIONS . ' Sessions'); ?></p>
+                                                                <p class="text-info"><?PHP HTML::print(str_ireplace('%s', CACHE_VPN_TOTAL_SESSIONS, PLACEHOLDER_SESSIONS)); ?></p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -135,11 +135,11 @@
                                                         </div>
                                                         <div class="preview-item-content d-flex flex-grow">
                                                             <div class="flex-grow">
-                                                                <h6 class="preview-subject">Ping</h6>
-                                                                <p>Average ping time from OpenBlu</p>
+                                                                <h6 class="preview-subject"><?PHP HTML::print(TEXT_CARD_SERVER_DETAILS_PING_TITLE); ?></h6>
+                                                                <p><?PHP HTML::print(TEXT_CARD_SERVER_DETAILS_PING_DESC); ?></p>
                                                             </div>
                                                             <div class="mr-auto text-right">
-                                                                <p class="text-info"><?PHP HTML::print(CACHE_VPN_PING . ' ms'); ?></p>
+                                                                <p class="text-info"><?PHP HTML::print(str_ireplace('%s', CACHE_VPN_PING, PLACEHOLDER_SPEED)); ?></p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -152,8 +152,8 @@
                                                         </div>
                                                         <div class="preview-item-content d-flex flex-grow">
                                                             <div class="flex-grow">
-                                                                <h6 class="preview-subject">VPN ID</h6>
-                                                                <p>The ID of the OpenBlu VPN Server</p>
+                                                                <h6 class="preview-subject"><?PHP HTML::print(TEXT_CARD_SERVER_DETAILS_ID_TITLE); ?></h6>
+                                                                <p><?PHP HTML::print(TEXT_CARD_SERVER_DETAILS_ID_DESC); ?></p>
                                                             </div>
                                                             <div class="mr-auto text-right">
                                                                 <p class="text-info"><?PHP HTML::print(CACHE_VPN_PUBLIC_ID); ?></p>
@@ -174,14 +174,14 @@
                                 <div class="card animated slideInRight">
                                     <div class="card-body">
 
-                                        <h4 class="card-title">Connect</h4>
-                                        <p class="card-description">You can connect to this server using a OpenVPN client with any supported device, the download to the configuration file (.ovpn) is available below</p>
+                                        <h4 class="card-title"><?PHP HTML::print(TEXT_CARD_CONNECT_TITLE); ?></h4>
+                                        <p class="card-description"><?PHP HTML::print(TEXT_CARD_CONNECT_OPENVPN_DESC); ?></p>
 
                                         <div class="row mt-3">
 
 
                                             <button type="button" class="btn btn-block btn-lg btn-inverse-info">
-                                                <i class="mdi mdi-cloud-download"></i> Download Configuration File
+                                                <i class="mdi mdi-cloud-download"></i> <?PHP HTML::print(TEXT_CARD_CONNECT_OPENVPN_DOWNLOAD_BUTTON); ?>
                                             </button>
 
                                         </div>

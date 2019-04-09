@@ -27,15 +27,15 @@
     <select />
   </component>
   <component name="DockManager">
-    <window id="1">
+    <window id="2">
       <content type="file-editors">
         <state>
           <leaf>
             <file pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/src/resources/pages/server/contents.php">
+              <entry file="file://$PROJECT_DIR$/src/resources/languages/en.json">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="448">
-                    <caret line="86" column="107" selection-start-line="86" selection-start-column="107" selection-end-line="86" selection-end-column="107" />
+                  <state relative-caret-position="397">
+                    <caret line="100" column="33" selection-start-line="100" selection-start-column="13" selection-end-line="100" selection-end-column="33" />
                   </state>
                 </provider>
               </entry>
@@ -47,23 +47,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resources/languages/en.json">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/resources/pages/server/contents.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="101" column="10" lean-forward="true" selection-start-line="101" selection-start-column="10" selection-end-line="101" selection-end-column="10" />
+            <state relative-caret-position="442">
+              <caret line="124" column="169" selection-start-line="124" selection-start-column="169" selection-end-line="124" selection-end-column="169" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/resources/pages/index/contents.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/check_selection.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-17">
-              <caret line="152" lean-forward="true" selection-start-line="152" selection-end-line="152" />
-              <folding>
-                <element signature="e#6#28#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="301">
+              <caret line="34" column="24" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -135,15 +132,15 @@
         <option value="$PROJECT_DIR$/src/resources/sections/sidebar.php" />
         <option value="$PROJECT_DIR$/src/assets/js/app-table-animations.js" />
         <option value="$PROJECT_DIR$/src/resources/pages/servers/contents.php" />
-        <option value="$PROJECT_DIR$/src/resources/pages/server/contents.php" />
-        <option value="$PROJECT_DIR$/src/resources/languages/en.json" />
         <option value="$PROJECT_DIR$/src/resources/pages/index/contents.php" />
+        <option value="$PROJECT_DIR$/src/resources/languages/en.json" />
+        <option value="$PROJECT_DIR$/src/resources/pages/server/contents.php" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="59" />
-    <option name="y" value="16" />
+    <option name="x" value="115" />
+    <option name="y" value="15" />
     <option name="width" value="1190" />
     <option name="height" value="689" />
   </component>
@@ -327,33 +324,32 @@
       <workItem from="1554576478636" duration="3147000" />
       <workItem from="1554586176855" duration="2234000" />
       <workItem from="1554606238901" duration="446000" />
-      <workItem from="1554730315906" duration="14214000" />
+      <workItem from="1554730315906" duration="21130000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74754000" />
+    <option name="totallyTimeSpent" value="81670000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="59" y="16" width="1190" height="689" extended-state="0" />
-    <editor active="true" />
+    <frame x="115" y="15" width="1190" height="689" extended-state="0" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="1" weight="0.1938053" />
       <window_info id="Structure" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Database Console" order="0" weight="0.32998326" />
-      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="2" weight="0.32645404" />
-      <window_info anchor="bottom" id="Terminal" order="3" weight="0.32645404" />
-      <window_info anchor="bottom" id="Message" order="4" />
-      <window_info anchor="bottom" id="Find" order="5" weight="0.32998326" />
-      <window_info anchor="bottom" id="Run" order="6" />
-      <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info anchor="bottom" id="Database Changes" order="0" />
+      <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Console" order="2" weight="0.32998326" />
+      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="4" weight="0.32645404" />
+      <window_info anchor="bottom" id="Terminal" order="5" weight="0.32645404" />
+      <window_info anchor="bottom" id="Message" order="6" />
+      <window_info anchor="bottom" id="Find" order="7" weight="0.32998326" />
+      <window_info anchor="bottom" id="Run" order="8" />
+      <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="12" />
       <window_info anchor="right" id="Database" order="0" weight="0.21860817" />
       <window_info anchor="right" id="Commander" order="1" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
@@ -361,14 +357,14 @@
     </layout>
     <layout-to-restore>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.1938053" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.1938053" />
       <window_info id="Structure" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="1" />
+      <window_info anchor="bottom" id="Database Changes" order="0" />
+      <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Console" order="2" weight="0.32998326" />
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="4" weight="0.3277592" />
-      <window_info anchor="bottom" id="Terminal" order="5" visible="true" weight="0.32645404" />
+      <window_info anchor="bottom" id="Version Control" order="4" weight="0.32645404" />
+      <window_info anchor="bottom" id="Terminal" order="5" weight="0.32645404" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" weight="0.32998326" />
       <window_info anchor="bottom" id="Run" order="8" />
@@ -680,16 +676,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/check_selection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="32" column="31" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="31" />
-          <folding>
-            <element signature="e#7#37#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/sections/navigation.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="107">
@@ -721,27 +707,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/pages/server/contents.php">
+    <entry file="file://$PROJECT_DIR$/src/resources/pages/index/contents.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="86" column="107" selection-start-line="86" selection-start-column="107" selection-end-line="86" selection-end-column="107" />
+        <state relative-caret-position="315">
+          <caret line="36" column="68" lean-forward="true" selection-start-line="36" selection-start-column="68" selection-end-line="36" selection-end-column="68" />
+          <folding>
+            <element signature="e#6#28#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/check_selection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="34" column="24" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/languages/en.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="101" column="10" lean-forward="true" selection-start-line="101" selection-start-column="10" selection-end-line="101" selection-end-column="10" />
+        <state relative-caret-position="397">
+          <caret line="100" column="33" selection-start-line="100" selection-start-column="13" selection-end-line="100" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/pages/index/contents.php">
+    <entry file="file://$PROJECT_DIR$/src/resources/pages/server/contents.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17">
-          <caret line="152" lean-forward="true" selection-start-line="152" selection-end-line="152" />
-          <folding>
-            <element signature="e#6#28#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="442">
+          <caret line="124" column="169" selection-start-line="124" selection-start-column="169" selection-end-line="124" selection-end-column="169" />
         </state>
       </provider>
     </entry>
