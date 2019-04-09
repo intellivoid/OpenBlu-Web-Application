@@ -104,7 +104,7 @@
                                                                 <p><?PHP HTML::print(TEXT_CARD_SERVER_DETAILS_CURRENT_SESSIONS_DESC); ?></p>
                                                             </div>
                                                             <div class="mr-auto text-right">
-                                                                <p class="text-info"><?PHP HTML::print(CACHE_VPN_SESSIONS . ' Sessions'); ?></p>
+                                                                <p class="text-info"><?PHP HTML::print(str_ireplace('%s', CACHE_VPN_SESSIONS, PLACEHOLDER_SESSIONS)); ?></p>
                                                             </div>
                                                         </div>
                                                     </div>
