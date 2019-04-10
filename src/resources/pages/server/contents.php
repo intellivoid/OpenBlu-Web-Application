@@ -104,7 +104,7 @@
                                                                 <p><?PHP HTML::print(TEXT_CARD_SERVER_DETAILS_CURRENT_SESSIONS_DESC); ?></p>
                                                             </div>
                                                             <div class="mr-auto text-right">
-                                                                <p class="text-info"><?PHP HTML::print(str_ireplace('%s', CACHE_VPN_SESSIONS, PLACEHOLDER_SESSIONS)); ?></p>
+                                                                <p class="text-info"><?PHP HTML::print(str_ireplace('%s', CACHE_VPN_SESSIONS, TEXT_PLACEHOLDER_SESSIONS)); ?></p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -122,7 +122,7 @@
                                                                 <p><?PHP HTML::print(TEXT_CARD_SERVER_DETAILS_TOTAL_SESSIONS_DESC); ?></p>
                                                             </div>
                                                             <div class="mr-auto text-right">
-                                                                <p class="text-info"><?PHP HTML::print(str_ireplace('%s', CACHE_VPN_TOTAL_SESSIONS, PLACEHOLDER_SESSIONS)); ?></p>
+                                                                <p class="text-info"><?PHP HTML::print(str_ireplace('%s', CACHE_VPN_TOTAL_SESSIONS, TEXT_PLACEHOLDER_SESSIONS)); ?></p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -139,7 +139,7 @@
                                                                 <p><?PHP HTML::print(TEXT_CARD_SERVER_DETAILS_PING_DESC); ?></p>
                                                             </div>
                                                             <div class="mr-auto text-right">
-                                                                <p class="text-info"><?PHP HTML::print(str_ireplace('%s', CACHE_VPN_PING, PLACEHOLDER_SPEED)); ?></p>
+                                                                <p class="text-info"><?PHP HTML::print(str_ireplace('%s', CACHE_VPN_PING, TEXT_PLACEHOLDER_SPEED)); ?></p>
                                                             </div>
                                                         </div>
                                                     </div>
