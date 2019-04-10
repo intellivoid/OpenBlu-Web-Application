@@ -3,12 +3,13 @@
     namespace AnalyticsManager\Exceptions;
 
     use AnalyticsManager\Abstracts\ExceptionCodes;
+    use Exception;
 
     /**
      * Class ObjectNotAvailableException
      * @package AnalyticsManager\Exceptions
      */
-    class ObjectNotAvailableException extends \Exception
+    class ObjectNotAvailableException extends Exception
     {
         /**
          * ObjectNotAvailableException constructor.

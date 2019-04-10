@@ -2,13 +2,14 @@
 
     namespace OpenBlu\Exceptions;
 
+    use Exception;
     use OpenBlu\Abstracts\ExceptionCodes;
 
     /**
      * Class PageNotFoundException
      * @package OpenBlu\Exceptions
      */
-    class PageNotFoundException extends \Exception
+    class PageNotFoundException extends Exception
     {
         /**
          * PageNotFoundException constructor.

@@ -4,6 +4,7 @@
     use OpenBlu\Abstracts\SearchMethods\VPN;
     use OpenBlu\Exceptions\VPNNotFoundException;
     use OpenBlu\OpenBlu;
+    use sws\sws;
 
     if(isset($_GET['pub_id']) == false)
     {
@@ -29,6 +30,18 @@
         header('Location: servers?callback=100');
         exit();
     }
+
+    // Set a special one-time download token
+    /** @noinspection PhpUnhandledExceptionInspection */
+    DynamicalWeb::loadLibrary('sws', 'sws', 'sws.php');
+
+    $sws = new sws();
+
+    $Cookie = $sws->WebManager()->getCookie('web_session');
+    $Cookie->Data['download_token'] = hash('haval128,3', $VPN->PublicID . time());
+    $Cookie->Data['download_target'] = $VPN->PublicID;
+
+    $sws->CookieManager()->updateCookie($Cookie);
 
     define('CACHE_VPN_PUBLIC_ID', $VPN->PublicID, false);
     define('CACHE_VPN_INTERNAL_ID', $VPN->ID, false);

@@ -41,17 +41,4 @@
             return (int)$input;
         }
 
-        /**
-         * Removes all comments from configuration file
-         *
-         * @param $input
-         * @return string
-         */
-        public static function configuration($input): string
-        {
-
-        }
-
-
-
     }

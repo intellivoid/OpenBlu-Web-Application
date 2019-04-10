@@ -2,10 +2,14 @@
 
     namespace OpenBlu\Managers;
     use AnalyticsManager\Abstracts\RecordSearchMethod;
+    use AnalyticsManager\Exceptions\RecordAlreadyExistsException as RecordAlreadyExistsExceptionAlias;
+    use AnalyticsManager\Exceptions\RecordNotFoundException;
     use OpenBlu\Exceptions\DatabaseException;
+    use OpenBlu\Exceptions\InvalidIPAddressException;
     use OpenBlu\Exceptions\InvalidSearchMethodException;
     use OpenBlu\Exceptions\SyncException;
     use OpenBlu\Exceptions\UpdateRecordNotFoundException;
+    use OpenBlu\Exceptions\VPNNotFoundException;
     use OpenBlu\Objects\UpdateRecord;
     use OpenBlu\Objects\VPN;
     use OpenBlu\OpenBlu;
@@ -33,6 +37,15 @@
             $this->openBlu = $openBlu;
         }
 
+        /**
+         * Creates a new record
+         *
+         * @param string $data
+         * @return UpdateRecord
+         * @throws DatabaseException
+         * @throws InvalidSearchMethodException
+         * @throws UpdateRecordNotFoundException
+         */
         public function createRecord(string $data): UpdateRecord
         {
             $PublicID = $this->openBlu->database->real_escape_string(Hashing::calculateUpdateRecordPublicID($data));
@@ -101,7 +114,15 @@
          * Syncs the database with updated information
          *
          * @param string $endpoint
+         * @throws DatabaseException
+         * @throws InvalidIPAddressException
+         * @throws InvalidSearchMethodException
+         * @throws RecordAlreadyExistsExceptionAlias
+         * @throws RecordNotFoundException
          * @throws SyncException
+         * @throws UpdateRecordNotFoundException
+         * @throws VPNNotFoundException
+         * @throws \AnalyticsManager\Exceptions\DatabaseException
          */
         public function sync(string $endpoint = "http://www.vpngate.net/api/iphone")
         {
@@ -178,6 +199,13 @@
          * Imports contents of a CSV file to the database
          *
          * @param string $RecordFile
+         * @throws DatabaseException
+         * @throws InvalidSearchMethodException
+         * @throws \AnalyticsManager\Exceptions\DatabaseException
+         * @throws RecordAlreadyExistsExceptionAlias
+         * @throws RecordNotFoundException
+         * @throws InvalidIPAddressException
+         * @throws VPNNotFoundException
          */
         private function importCSV(string $RecordFile)
         {

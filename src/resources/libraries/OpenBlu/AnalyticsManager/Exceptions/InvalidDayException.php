@@ -3,12 +3,13 @@
     namespace AnalyticsManager\Exceptions;
 
     use AnalyticsManager\Abstracts\ExceptionCodes;
+    use Exception;
 
     /**
      * Class InvalidDayException
      * @package AnalyticsManager\Exceptions
      */
-    class InvalidDayException extends \Exception
+    class InvalidDayException extends Exception
     {
         /**
          * InvalidDayException constructor.

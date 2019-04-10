@@ -23,9 +23,9 @@
             $results['cert'] = self::getTag($data, 'cert');
             $results['key'] = self::getTag($data, 'key');
 
-            $data = str_ireplace("<ca>\r\n" . $results['ca'] . "\r\n</ca>", '', $data);
-            $data = str_ireplace("<cert>\r\n" . $results['cert'] . "\r\n</cert>", '', $data);
-            $data = str_ireplace("<key>\r\n" . $results['key'] . "\r\n</key>", '', $data);
+            $data = str_ireplace(sprintf("<ca>\r\n%s\r\n</ca>", $results['ca']), '', $data);
+            $data = str_ireplace(sprintf("<cert>\r\n%s\r\n</cert>", $results['cert']), '', $data);
+            $data = str_ireplace(sprintf("<key>\r\n%s\r\n</key>", $results['key']), '', $data);
 
             $results['parameters'] = self::extractParameters($data);
 

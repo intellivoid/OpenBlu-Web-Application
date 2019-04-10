@@ -3,12 +3,13 @@
     namespace AnalyticsManager\Exceptions;
 
     use AnalyticsManager\Abstracts\ExceptionCodes;
+    use Exception;
 
     /**
      * Class RecordAlreadyExistsException
      * @package AnalyticsManager\Exceptions
      */
-    class RecordAlreadyExistsException extends \Exception
+    class RecordAlreadyExistsException extends Exception
     {
         /**
          * RecordAlreadyExistsException constructor.

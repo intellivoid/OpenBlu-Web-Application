@@ -2,13 +2,14 @@
 
     namespace OpenBlu\Exceptions;
 
+    use Exception;
     use OpenBlu\Abstracts\ExceptionCodes;
 
     /**
      * Class DatabaseException
      * @package OpenBlu\Exceptions
      */
-    class DatabaseException extends \Exception
+    class DatabaseException extends Exception
     {
         /**
          * @var string
@@ -22,6 +23,8 @@
 
         /**
          * DatabaseException constructor.
+         * @param string $error_message
+         * @param string $query
          */
         public function __construct(string $error_message, string $query)
         {

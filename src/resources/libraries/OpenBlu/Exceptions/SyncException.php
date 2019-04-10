@@ -2,13 +2,14 @@
 
     namespace OpenBlu\Exceptions;
 
+    use Exception;
     use OpenBlu\Abstracts\ExceptionCodes;
 
     /**
      * Class SyncException
      * @package OpenBlu\Exceptions
      */
-    class SyncException extends \Exception
+    class SyncException extends Exception
     {
         /**
          * @var string

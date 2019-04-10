@@ -2,6 +2,7 @@
 
     namespace OpenBlu\Objects;
     use OpenBlu\Abstracts\DefaultValues;
+    use OpenBlu\OpenBlu;
 
     /**
      * Class VPN
@@ -303,5 +304,99 @@
             }
 
             return $VPNObject;
+        }
+
+        /**
+         * Creates a configuration file (.ovpn)
+         *
+         * @return string
+         */
+        public function createConfiguration(): string
+        {
+            $configuration_data = OpenBlu::getResource('configuration_header.txt');
+            $configuration_data .= "\n\n";
+
+            $vpn_information = OpenBlu::getResource('vpn_information.txt');
+            $vpn_information = str_ireplace('%PUBLIC_ID%', $this->PublicID, $vpn_information);
+            $vpn_information = str_ireplace('%COUNTRY%', $this->Country, $vpn_information);
+            $vpn_information = str_ireplace('%SCORE%', $this->Score, $vpn_information);
+
+            $configuration_data .= $vpn_information;
+            $configuration_data .= "\n\n";
+
+            $other_parameters = OpenBlu::getResource('other_parameters.txt');
+            $other_parameters .= "\n\n";
+
+            foreach($this->ConfigurationParameters as $key => $value)
+            {
+                $is_other = false;
+
+                switch(strtolower($key))
+                {
+                    case "dev":
+                        $configuration_data .= OpenBlu::getResource('docs_dev.txt');
+                        $configuration_data .= "\n\n";
+                        break;
+
+                    case "proto":
+                        $configuration_data .= OpenBlu::getResource('docs_proto.txt');
+                        $configuration_data .= "\n\n";
+                        break;
+
+                    case "remote":
+                        $configuration_data .= OpenBlu::getResource('docs_remote.txt');
+                        $configuration_data .= "\n\n";
+                        break;
+
+                    case "encryption":
+                        $configuration_data .= OpenBlu::getResource('docs_encryption.txt');
+                        $configuration_data .= "\n\n";
+                        break;
+
+                    default:
+                        $is_other = true;
+                        break;
+                }
+
+                if($is_other == true)
+                {
+                    if($value == null)
+                    {
+                        $other_parameters .= $key . "\n";
+                    }
+                    else
+                    {
+                        $other_parameters .= $key . " " . $value . "\n";
+                    }
+                }
+                else
+                {
+                    if($value == null)
+                    {
+                        $configuration_data .= $key . "\n\n";
+                    }
+                    else
+                    {
+                        $configuration_data .= $key . " " . $value . "\n\n";
+                    }
+                }
+            }
+
+            $configuration_data .= OpenBlu::getResource('docs_proxy.txt');
+            $configuration_data .= "\n\n";
+
+            $configuration_data .= $other_parameters;
+            $configuration_data .= "\n\n\n\n";
+
+            $configuration_data .= OpenBlu::getResource('docs_certificate_authority.txt');
+            $configuration_data .= "\n\n" . "<ca>\n" . $this->CertificateAuthority . "\n</ca>\n\n";
+
+            $configuration_data .= OpenBlu::getResource('docs_certificate.txt');
+            $configuration_data .= "\n\n";
+
+            $configuration_data .= "<cert>\n" . $this->Certificate . "\n</cert>\n\n";
+            $configuration_data .= "<key>\n" . $this->Key . "\n</key>\n\n";
+
+            return $configuration_data;
         }
     }

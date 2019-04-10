@@ -3,12 +3,13 @@
     namespace AnalyticsManager\Exceptions;
 
     use AnalyticsManager\Abstracts\ExceptionCodes;
+    use Exception;
 
     /**
      * Class InvalidHourException
      * @package AnalyticsManager\Exceptions
      */
-    class InvalidHourException extends \Exception
+    class InvalidHourException extends Exception
     {
         /**
          * InvalidHourException constructor.

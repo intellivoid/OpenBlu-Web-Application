@@ -2,13 +2,14 @@
 
     namespace OpenBlu\Exceptions;
 
+    use Exception;
     use OpenBlu\Abstracts\ExceptionCodes;
 
     /**
      * Class ConfigurationNotFoundException
      * @package OpenBlu\Exceptions
      */
-    class ConfigurationNotFoundException extends \Exception
+    class ConfigurationNotFoundException extends Exception
     {
         /**
          * ConfigurationNotFoundException constructor.

@@ -1,13 +1,14 @@
 <?php
 
     namespace OpenBlu\Exceptions;
+    use Exception;
     use OpenBlu\Abstracts\ExceptionCodes;
 
     /**
      * Class InvalidSearchMethodException
      * @package OpenBlu\Exceptions
      */
-    class InvalidSearchMethodException extends \Exception
+    class InvalidSearchMethodException extends Exception
     {
         /**
          * InvalidSearchMethodException constructor.

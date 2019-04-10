@@ -2,13 +2,14 @@
 
     namespace OpenBlu\Exceptions;
 
+    use Exception;
     use OpenBlu\Abstracts\ExceptionCodes;
 
     /**
      * Class VPNNotFoundException
      * @package OpenBlu\Exceptions
      */
-    class VPNNotFoundException extends \Exception
+    class VPNNotFoundException extends Exception
     {
         /**
          * VPNNotFoundException constructor.

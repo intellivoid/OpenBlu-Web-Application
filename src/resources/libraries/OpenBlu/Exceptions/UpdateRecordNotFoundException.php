@@ -2,13 +2,14 @@
 
     namespace OpenBlu\Exceptions;
 
+    use Exception;
     use OpenBlu\Abstracts\ExceptionCodes;
 
     /**
      * Class UpdateRecordNotFoundException
      * @package OpenBlu\Exceptions
      */
-    class UpdateRecordNotFoundException extends \Exception
+    class UpdateRecordNotFoundException extends Exception
     {
         /**
          * UpdateRecordNotFoundException constructor.

@@ -4,6 +4,7 @@
 
 
     use AnalyticsManager\Managers\Manager;
+    use mysqli;
 
     include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Abstracts' . DIRECTORY_SEPARATOR . 'ExceptionCodes.php');
     include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Abstracts' . DIRECTORY_SEPARATOR . 'RecordSearchMethod.php');
@@ -42,7 +43,7 @@
         private $configuration;
 
         /**
-         * @var \mysqli
+         * @var mysqli
          */
         private $database;
 
@@ -59,7 +60,7 @@
         {
             $this->configuration = parse_ini_file(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'configuration.ini');
 
-            $this->database = new \mysqli(
+            $this->database = new mysqli(
                 $this->configuration['DatabaseHost'],
                 $this->configuration['DatabaseUsername'],
                 $this->configuration['DatabasePassword'],
@@ -79,9 +80,9 @@
         }
 
         /**
-         * @return \mysqli
+         * @return mysqli
          */
-        public function getDatabase(): \mysqli
+        public function getDatabase(): mysqli
         {
             return $this->database;
         }

@@ -2,13 +2,14 @@
 
     namespace OpenBlu\Exceptions;
 
+    use Exception;
     use OpenBlu\Abstracts\ExceptionCodes;
 
     /**
      * Class InvalidIPAddressException
      * @package OpenBlu\Exceptions
      */
-    class InvalidIPAddressException extends \Exception
+    class InvalidIPAddressException extends Exception
     {
         /**
          * InvalidIPAddressException constructor.

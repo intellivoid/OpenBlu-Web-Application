@@ -3,6 +3,7 @@
     namespace OpenBlu;
 
     use AnalyticsManager\AnalyticsManager;
+    use mysqli;
     use OpenBlu\Exceptions\ConfigurationNotFoundException;
     use OpenBlu\Managers\RecordManager;
     use OpenBlu\Managers\VPNManager;
@@ -49,7 +50,7 @@
         public $configuration;
 
         /**
-         * @var \mysqli
+         * @var mysqli
          */
         public $database;
 
@@ -81,7 +82,7 @@
 
             $this->configuration = parse_ini_file(__DIR__ . DIRECTORY_SEPARATOR . 'configuration.ini');
 
-            $this->database = new \mysqli(
+            $this->database = new mysqli(
                 $this->configuration['DatabaseHost'],
                 $this->configuration['DatabaseUsername'],
                 $this->configuration['DatabasePassword'],
@@ -116,5 +117,14 @@
         public function getAnalyticsManager(): AnalyticsManager
         {
             return $this->AnalyticsManager;
+        }
+
+        /**
+         * @param string $file
+         * @return string
+         */
+        public static function getResource(string $file): string
+        {
+            return(file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . 'Resources' . DIRECTORY_SEPARATOR . $file));
         }
     }

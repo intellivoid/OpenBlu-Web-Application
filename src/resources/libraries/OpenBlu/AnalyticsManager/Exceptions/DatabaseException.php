@@ -3,13 +3,14 @@
     namespace AnalyticsManager\Exceptions;
 
     use AnalyticsManager\Abstracts\ExceptionCodes;
+    use Exception;
 
 
     /**
      * Class DatabaseException
      * @package AnalyticsManager\Exceptions
      */
-    class DatabaseException extends \Exception
+    class DatabaseException extends Exception
     {
         /**
          * @var string

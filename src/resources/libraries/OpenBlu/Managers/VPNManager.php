@@ -32,6 +32,12 @@
             $this->openBlu = $openBlu;
         }
 
+        /**
+         * @param VPN $vpn
+         * @return bool
+         * @throws DatabaseException
+         * @throws InvalidIPAddressException
+         */
         public function registerVPN(VPN $vpn): bool
         {
             if(Validate::IP($vpn->IP) == false)
@@ -131,6 +137,7 @@
          * @throws DatabaseException
          * @throws InvalidIPAddressException
          * @throws VPNNotFoundException
+         * @throws InvalidSearchMethodException
          */
         public function updateVPN(VPN $vpn): bool
         {
@@ -179,6 +186,8 @@
          * @param string|\OpenBlu\Abstracts\SearchMethods\VPN $searchMethod
          * @param string $input
          * @return bool
+         * @throws DatabaseException
+         * @throws InvalidSearchMethodException
          */
         public function vpnExists(string $searchMethod, string $input): bool
         {
@@ -198,6 +207,10 @@
          *
          * @param VPN $vpn
          * @return bool
+         * @throws DatabaseException
+         * @throws InvalidIPAddressException
+         * @throws InvalidSearchMethodException
+         * @throws VPNNotFoundException
          */
         public function syncVPN(VPN $vpn): bool
         {
@@ -340,7 +353,7 @@
             $Query = null;
             if($page == 1)
             {
-                $Query = "SELECT id, public_id, host_name, ip_address, score, ping, country, country_short, sessions, total_sessions, last_updated, created FROM `vpns` ORDER BY  `sessions` DESC LIMIT 0, 40";
+                $Query = "SELECT id, public_id, host_name, ip_address, score, ping, country, country_short, sessions, total_sessions, last_updated, created FROM `vpns` ORDER BY `sessions` DESC LIMIT 0, 40";
             }
             else
             {
