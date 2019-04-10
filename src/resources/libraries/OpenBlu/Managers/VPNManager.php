@@ -124,7 +124,7 @@
                 }
 
                 $Row = $QueryResults->fetch_array(MYSQLI_ASSOC);
-                $Row['configuration_parameters'] = json_decode($Row['configuration_parameters']);
+                $Row['configuration_parameters'] = json_decode($Row['configuration_parameters'], true);
                 return VPN::fromArray($Row);
             }
         }

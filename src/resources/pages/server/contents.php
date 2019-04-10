@@ -4,6 +4,7 @@
     use DynamicalWeb\HTML;
 
     HTML::importScript('check_auth');
+    HTML::importScript('action.download');
     HTML::importScript('check_selection');
     HTML::importScript('cache');
     HTML::importScript('time_human');
@@ -180,9 +181,9 @@
                                         <div class="row mt-3">
 
 
-                                            <button type="button" class="btn btn-block btn-lg btn-inverse-info">
+                                            <a type="button" onclick="location.href='/server?action=download'" class="btn btn-block btn-lg btn-inverse-info">
                                                 <i class="mdi mdi-cloud-download"></i> <?PHP HTML::print(TEXT_CARD_CONNECT_OPENVPN_DOWNLOAD_BUTTON); ?>
-                                            </button>
+                                            </a>
 
                                         </div>
                                     </div>

@@ -9,17 +9,19 @@
 
     if(isset($_GET['action']))
     {
-        if(isset($_GET['token']))
+        if($_GET['action'] == 'download')
         {
-            send_configuration_direct($_GET['token']);
+            /** @noinspection PhpUnhandledExceptionInspection */
+            send_configuration_direct();
         }
+
     }
 
     /**
      * @param string $token
      * @throws Exception
      */
-    function send_configuration_direct(string $token)
+    function send_configuration_direct()
     {
         DynamicalWeb::loadLibrary('OpenBlu', 'OpenBlu', 'OpenBlu.php');
         DynamicalWeb::loadLibrary('sws', 'sws', 'sws.php');
@@ -28,18 +30,18 @@
         $sws = new sws();
         $Cookie = $sws->WebManager()->getCookie('web_session');
 
-        if(hash('sha256', $Cookie->Data['download_token']) !== hash('sha256', $token))
-        {
-            header('Location: /');
-            exit();
-        }
+        //if(hash('sha256', $Cookie->Data['download_token']) !== hash('sha256', $token))
+        //{
+        //    header('Location: /');
+        //    exit();
+        //}
 
         // Gets the selected VPN
         $OpenBlu = new OpenBlu();
 
         try
         {
-            $OpenBlu->getVPNManager()->getVPN(VPN::byPublicID, $Cookie->Data['download_target']);
+            $VPN = $OpenBlu->getVPNManager()->getVPN(VPN::byPublicID, $Cookie->Data['download_target']);
         }
         catch(VPNNotFoundException $VPNNotFoundException)
         {
@@ -56,5 +58,10 @@
             exit();
         }
 
+        $Token = $Cookie->Data['download_token'];
 
+        header("Content-Type: application/x-openvpn-profile");
+        header("Content-disposition: attachment; filename=\"openblu_$Token.ovpn\"");
+        print($VPN->createConfiguration());
+        exit();
     }

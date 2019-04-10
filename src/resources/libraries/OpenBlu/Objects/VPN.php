@@ -330,6 +330,7 @@
             foreach($this->ConfigurationParameters as $key => $value)
             {
                 $is_other = false;
+                $ignore = false;
 
                 switch(strtolower($key))
                 {
@@ -353,33 +354,62 @@
                         $configuration_data .= "\n\n";
                         break;
 
+                    case "cipher":
+                        $ignore = true;
+                        break;
+
+                    case "auth":
+                        $ignore = true;
+                        break;
+
                     default:
                         $is_other = true;
                         break;
                 }
 
-                if($is_other == true)
+                if($ignore == false)
                 {
-                    if($value == null)
+                    if($is_other == true)
                     {
-                        $other_parameters .= $key . "\n";
+                        if($value == null)
+                        {
+                            $other_parameters .= $key . "\n";
+                        }
+                        else
+                        {
+                            $other_parameters .= $key . " " . $value . "\n";
+                        }
                     }
                     else
                     {
-                        $other_parameters .= $key . " " . $value . "\n";
+                        if($value == null)
+                        {
+                            $configuration_data .= $key . "\n\n";
+                        }
+                        else
+                        {
+                            $configuration_data .= $key . " " . $value . "\n\n";
+                        }
                     }
                 }
-                else
+            }
+
+            if(isset($this->ConfigurationParameters['cipher']) || isset($this->ConfigurationParameters['auth']))
+            {
+                $configuration_data .= OpenBlu::getResource('docs_encryption.txt');
+                $configuration_data .= "\n\n";
+
+                if(isset($this->ConfigurationParameters['cipher']))
                 {
-                    if($value == null)
-                    {
-                        $configuration_data .= $key . "\n\n";
-                    }
-                    else
-                    {
-                        $configuration_data .= $key . " " . $value . "\n\n";
-                    }
+                    $configuration_data .= 'cipher ' . $this->ConfigurationParameters['cipher'] . "\n";
                 }
+
+                if(isset($this->ConfigurationParameters['auth']))
+                {
+                    $configuration_data .= 'auth ' . $this->ConfigurationParameters['auth'] . "\n";
+                }
+
+                $configuration_data .= "\n";
             }
 
             $configuration_data .= OpenBlu::getResource('docs_proxy.txt');
