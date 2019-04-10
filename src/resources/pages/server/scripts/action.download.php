@@ -11,8 +11,11 @@
     {
         if($_GET['action'] == 'download')
         {
-            /** @noinspection PhpUnhandledExceptionInspection */
-            send_configuration_direct();
+            if(isset($_GET['token']))
+            {
+                /** @noinspection PhpUnhandledExceptionInspection */
+                send_configuration_direct($_GET['token']);
+            }
         }
 
     }
@@ -21,7 +24,7 @@
      * @param string $token
      * @throws Exception
      */
-    function send_configuration_direct()
+    function send_configuration_direct(string $token)
     {
         DynamicalWeb::loadLibrary('OpenBlu', 'OpenBlu', 'OpenBlu.php');
         DynamicalWeb::loadLibrary('sws', 'sws', 'sws.php');
@@ -30,11 +33,11 @@
         $sws = new sws();
         $Cookie = $sws->WebManager()->getCookie('web_session');
 
-        //if(hash('sha256', $Cookie->Data['download_token']) !== hash('sha256', $token))
-        //{
-        //    header('Location: /');
-        //    exit();
-        //}
+        if(hash('sha256', $Cookie->Data['download_token']) !== hash('sha256', $token))
+        {
+            header('Location: /');
+            exit();
+        }
 
         // Gets the selected VPN
         $OpenBlu = new OpenBlu();

@@ -181,9 +181,9 @@
                                         <div class="row mt-3">
 
 
-                                            <a type="button" onclick="location.href='/server?action=download'" class="btn btn-block btn-lg btn-inverse-info">
+                                            <button type="button" onclick="location.href='/server?action=download&token=<?PHP HTML::print(CACHE_VPN_TOKEN); ?>'" class="btn btn-block btn-lg btn-inverse-info">
                                                 <i class="mdi mdi-cloud-download"></i> <?PHP HTML::print(TEXT_CARD_CONNECT_OPENVPN_DOWNLOAD_BUTTON); ?>
-                                            </a>
+                                            </button>
 
                                         </div>
                                     </div>

@@ -52,3 +52,4 @@
     define('CACHE_VPN_COUNTRY', $VPN->Country, false);
     define('CACHE_VPN_COUNTRY_SHORT', $VPN->CountryShort, false);
     define('CACHE_VPN_LAST_UPDATED', $VPN->LastUpdated, false);
+    define('CACHE_VPN_TOKEN', $Cookie->Data['download_token'], false);
