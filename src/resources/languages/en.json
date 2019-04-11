@@ -103,7 +103,7 @@
         },
         "api": {
             "PAGE_TITLE": "OpenBlu - API",
-            "PRICING_HEADER": "Start building software with VPN simple access",
+            "PRICING_HEADER": "Start adding VPNs to your software solutions",
             "PRICING_DESC": "Choose a plan that suits you the best. You can also try the API for free for personal use / small projects",
             "PRICING_FREE_HEADER": "Free",
             "PRICING_FREE_SUB_HEADER": "Try Free First",
@@ -111,7 +111,23 @@
             "PRICING_FREE_FEATURE_2": "Public server listings",
             "PRICING_FREE_FEATURE_3": "OpenVPN configurations",
             "PRICING_FREE_FEATURE_4": "For personal use only",
-            "PRICING_FREE_SUBMIT": "Get API Key"
+            "PRICING_FREE_SUBMIT": "Get API Key",
+            "PRICING_BASIC_HEADER": "Basic",
+            "PRICING_BASIC_SUB_HEADER": "For Personal Use",
+            "PRICING_BASIC_CYCLE": "Monthly",
+            "PRICING_BASIC_FEATURE_1": "5000 Monthly Requests",
+            "PRICING_BASIC_FEATURE_2": "Public server listings",
+            "PRICING_BASIC_FEATURE_3": "OpenVPN configurations",
+            "PRICING_BASIC_FEATURE_4": "For personal use only",
+            "PRICING_BASIC_SUBMIT": "Purchase Now",
+            "PRICING_ENTERPRISE_HEADER": "Enterprise",
+            "PRICING_ENTERPRISE_SUB_HEADER": "For Commercial Use",
+            "PRICING_ENTERPRISE_CYCLE": "Yearly",
+            "PRICING_ENTERPRISE_FEATURE_1": "100 Monthly Requests",
+            "PRICING_ENTERPRISE_FEATURE_2": "Public server listings",
+            "PRICING_ENTERPRISE_FEATURE_3": "OpenVPN configurations",
+            "PRICING_ENTERPRISE_FEATURE_4": "For personal use only",
+            "PRICING_ENTERPRISE_SUBMIT": "Get API Key"
         },
         "login": {
             "PAGE_TITLE": "Login to OpenBlu",
