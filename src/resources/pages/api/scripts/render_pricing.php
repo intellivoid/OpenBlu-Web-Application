@@ -1,71 +1,72 @@
+<?PHP
+    use DynamicalWeb\HTML;
+?>
 <div class="col-12">
     <div class="card">
         <div class="card-body">
             <div class="container text-center pt-5">
-                <h4 class="mb-3 mt-5">Start up your Bussiness today</h4>
-                <p class="w-75 mx-auto mb-5">Choose a plan that suits you the best. If you are not fully satisfied, we offer 30-day money-back guarantee no questions asked!!</p>
+                <h4 class="mb-3 mt-5"><?PHP HTML::print(TEXT_PRICING_HEADER); ?></h4>
+                <p class="w-75 mx-auto mb-5"><?PHP HTML::print(TEXT_PRICING_DESC); ?></p>
                 <div class="row pricing-table">
                     <div class="col-md-4 grid-margin stretch-card pricing-card">
                         <div class="card border-primary border pricing-card-body">
                             <div class="text-center pricing-card-head">
-                                <h3>Free</h3>
-                                <p>Basic Plan</p>
-                                <h1 class="font-weight-normal mb-4">$00.00</h1>
+                                <h3><?PHP HTML::print(TEXT_PRICING_FREE_HEADER); ?></h3>
+                                <p><?PHP HTML::print(TEXT_PRICING_FREE_SUB_HEADER); ?></p>
+                                <h1 class="font-weight-normal mb-4">$0.00</h1>
                             </div>
                             <ul class="list-unstyled plan-features">
-                                <li>Email preview on air</li>
-                                <li>Spam testing and blocking</li>
-                                <li>10 GB Space</li>
-                                <li>50 user accounts</li>
-                                <li>Free support for one years</li>
-                                <li>Free upgrade for one year</li>
+                                <li><?PHP HTML::print(TEXT_PRICING_FREE_FEATURE_1); ?></li>
+                                <li><?PHP HTML::print(TEXT_PRICING_FREE_FEATURE_2); ?></li>
+                                <li><?PHP HTML::print(TEXT_PRICING_FREE_FEATURE_3); ?></li>
+                                <li><?PHP HTML::print(TEXT_PRICING_FREE_FEATURE_4); ?></li>
                             </ul>
                             <div class="wrapper">
-                                <a href="#" class="btn btn-inverse-primary btn-block">Download</a>
+                                <a href="#" class="btn btn-inverse-primary btn-block">Get API Key</a>
                             </div>
-                            <p class="mt-3 mb-0 plan-cost text-gray">Free</p>
                         </div>
                     </div>
                     <div class="col-md-4 grid-margin stretch-card pricing-card">
                         <div class="card border border-success pricing-card-body">
                             <div class="text-center pricing-card-head">
-                                <h3 class="text-success">Professional</h3>
-                                <p>For Business</p>
-                                <h1 class="font-weight-normal mb-4">$50.90</h1>
+                                <h3 class="text-success">Basic</h3>
+                                <p>For Personal Use</p>
+                                <h1 class="font-weight-normal mb-4">
+                                    $7.99
+                                    <p class="text-muted">Monthly</p>
+                                </h1>
+
                             </div>
                             <ul class="list-unstyled plan-features">
-                                <li>Email preview on air</li>
-                                <li>Spam testing and blocking</li>
-                                <li>50 GB Space</li>
-                                <li>100 user accounts</li>
-                                <li>Free support for two years</li>
-                                <li>Free upgrade for two year</li>
+                                <li>5000 Monthly Requests</li>
+                                <li>Public server listings</li>
+                                <li>OpenVPN configurations</li>
+                                <li>For personal use only</li>
                             </ul>
                             <div class="wrapper">
-                                <a href="#" class="btn btn-inverse-success btn-block">Start trial</a>
+                                <a href="#" class="btn btn-inverse-success btn-block">Purchase Now</a>
                             </div>
-                            <p class="mt-3 mb-0 plan-cost text-success">or purchase now</p>
                         </div>
                     </div>
                     <div class="col-md-4 grid-margin stretch-card pricing-card">
                         <div class="card border border-primary pricing-card-body">
                             <div class="text-center pricing-card-head">
                                 <h3>Enterprise</h3>
-                                <p>Custom Business</p>
-                                <h1 class="font-weight-normal mb-4">$80.90</h1>
+                                <p>For Large Scale Use</p>
+                                <h1 class="font-weight-normal mb-4">
+                                    $39.99
+                                    <p class="text-muted">Yearly</p>
+                                </h1>
                             </div>
                             <ul class="list-unstyled plan-features">
-                                <li>Email preview on air</li>
-                                <li>Spam testing and blocking</li>
-                                <li>100 GB Space</li>
-                                <li>200 user accounts</li>
-                                <li>Free support for two years</li>
-                                <li>Free upgrade for two year</li>
+                                <li>Unlimited Requests</li>
+                                <li>Public server listings</li>
+                                <li>OpenVPN configurations</li>
+                                <li>For commercial use</li>
                             </ul>
                             <div class="wrapper">
-                                <a href="#" class="btn btn-inverse-primary btn-block">Start trial</a>
+                                <a href="#" class="btn btn-inverse-primary btn-block">Purchase Now</a>
                             </div>
-                            <p class="mt-3 mb-0 plan-cost text-gray">or purchase now</p>
                         </div>
                     </div>
                 </div>

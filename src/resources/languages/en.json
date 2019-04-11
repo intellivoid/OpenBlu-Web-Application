@@ -102,7 +102,16 @@
             "PLACEHOLDER_SPEED": "%s ms"
         },
         "api": {
-            "PAGE_TITLE": "OpenBlu - API"
+            "PAGE_TITLE": "OpenBlu - API",
+            "PRICING_HEADER": "Start building software with VPN simple access",
+            "PRICING_DESC": "Choose a plan that suits you the best. You can also try the API for free for personal use / small projects",
+            "PRICING_FREE_HEADER": "Free",
+            "PRICING_FREE_SUB_HEADER": "Try Free First",
+            "PRICING_FREE_FEATURE_1": "100 Monthly Requests",
+            "PRICING_FREE_FEATURE_2": "Public server listings",
+            "PRICING_FREE_FEATURE_3": "OpenVPN configurations",
+            "PRICING_FREE_FEATURE_4": "For personal use only",
+            "PRICING_FREE_SUBMIT": "Get API Key"
         },
         "login": {
             "PAGE_TITLE": "Login to OpenBlu",
