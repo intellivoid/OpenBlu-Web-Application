@@ -4,7 +4,7 @@
             <span class="nav-link">Navigation</span>
         </li>
         <li class="nav-item menu-items">
-            <a class="nav-link" href="index">
+            <a class="nav-link" href="/">
                 <span class="menu-icon">
                   <i class="mdi mdi-home"></i>
                 </span>
@@ -12,7 +12,7 @@
             </a>
         </li>
         <li class="nav-item menu-items">
-            <a class="nav-link" href="servers">
+            <a class="nav-link" href="/servers">
                 <span class="menu-icon">
                   <i class="mdi mdi-server-network"></i>
                 </span>
@@ -20,7 +20,7 @@
             </a>
         </li>
         <li class="nav-item menu-items">
-            <a class="nav-link" href="api">
+            <a class="nav-link" href="/api">
                 <span class="menu-icon">
                   <i class="mdi mdi-console"></i>
                 </span>
@@ -28,7 +28,7 @@
             </a>
         </li>
         <li class="nav-item menu-items">
-            <a class="nav-link" href="guide">
+            <a class="nav-link" href="/guide">
                 <span class="menu-icon">
                   <i class="mdi mdi-help"></i>
                 </span>
@@ -36,7 +36,7 @@
             </a>
         </li>
         <li class="nav-item menu-items">
-            <a class="nav-link" href="support">
+            <a class="nav-link" href="/support">
                 <span class="menu-icon">
                   <i class="mdi mdi-lifebuoy"></i>
                 </span>
@@ -44,7 +44,7 @@
             </a>
         </li>
         <li class="nav-item menu-items">
-            <a class="nav-link" href="about">
+            <a class="nav-link" href="/about">
                 <span class="menu-icon">
                   <i class="mdi mdi-information-outline"></i>
                 </span>

@@ -101,6 +101,9 @@
             "PLACEHOLDER_SESSIONS": "%s Sessions",
             "PLACEHOLDER_SPEED": "%s ms"
         },
+        "api": {
+            "PAGE_TITLE": "OpenBlu - API"
+        },
         "login": {
             "PAGE_TITLE": "Login to OpenBlu",
             "HEADER": "Intellivoid Accounts",
