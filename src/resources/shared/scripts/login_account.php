@@ -87,6 +87,40 @@
 
 
     /**
+     * Returns the location to redirect the user to on success
+     *
+     * @return string
+     */
+    function getSuccessLocation()
+    {
+        if(isset($_GET['redirect']))
+        {
+            if($_GET['redirect'] == 'purchase_plan')
+            {
+                if(isset($_GET['type']))
+                {
+                    switch($_GET['type'])
+                    {
+                        case 'free':
+                            return '/confirm_purchase?plan=free';
+                            break;
+
+                        case 'basic':
+                            return '/confirm_purchase?plan=basic';
+                            break;
+
+                        case 'enterprise':
+                            return '/confirm_purchase?plan=enterprise';
+                            break;
+                    }
+                }
+            }
+        }
+
+        return '/';
+    }
+
+    /**
      * @throws ConfigurationNotFoundException
      * @throws DatabaseException
      * @throws InvalidIpException
@@ -167,7 +201,7 @@
             $sws->CookieManager()->updateCookie($Cookie);
             $sws->WebManager()->setCookie($Cookie);
 
-            header('Location: /');
+            header('Location: ' . getSuccessLocation());
             exit();
         }
         catch(IncorrectLoginDetailsException $incorrectLoginDetailsException)
