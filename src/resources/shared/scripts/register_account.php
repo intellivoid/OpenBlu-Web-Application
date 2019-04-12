@@ -55,6 +55,40 @@
     }
 
     /**
+     * Returns the location to redirect the user to on success
+     *
+     * @return string
+     */
+    function getSuccessLocation()
+    {
+        if(isset($_GET['redirect']))
+        {
+            if($_GET['redirect'] == 'purchase_plan')
+            {
+                if(isset($_GET['type']))
+                {
+                    switch($_GET['type'])
+                    {
+                        case 'free':
+                            return '/confirm_purchase?plan=free';
+                            break;
+
+                        case 'basic':
+                            return '/confirm_purchase?plan=basic';
+                            break;
+
+                        case 'enterprise':
+                            return '/confirm_purchase?plan=enterprise';
+                            break;
+                    }
+                }
+            }
+        }
+
+        return '/';
+    }
+
+    /**
      * @throws ConfigurationNotFoundException
      * @throws DatabaseException
      * @throws InvalidSearchMethodException
@@ -123,7 +157,7 @@
         try
         {
             $IntellivoidAccounts->getAccountManager()->registerAccount($_POST['username'], $_POST['email'], $_POST['password']);
-            header('Location: ' . getRedirectLocation() . 'callback=107');
+            header('Location: ' . getSuccessLocation());
             exit();
         }
         catch(Exception $exception)
