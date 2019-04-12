@@ -49,7 +49,7 @@
 
         if($configuration['enabled'] == false)
         {
-            return false;
+            return true;
         }
 
         // Check the captcha
