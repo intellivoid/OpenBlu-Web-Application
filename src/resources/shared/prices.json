@@ -1,0 +1,72 @@
+{
+    "FREE": {
+        "NORMAL": {
+            "price": "$0.00",
+            "affiliation_share": "$0.00",
+            "cycle": "MONTHLY",
+            "require_transaction": false,
+            "merchant": "NONE",
+            "calls_monthly": 100,
+            "plan_duration": {
+                "expires": false,
+                "timestamp": 0
+            },
+            "offer_duration": {
+                "expires": false,
+                "timestamp": 0
+            }
+        }
+    },
+    "BASIC": {
+        "NORMAL": {
+            "price": "$7.99",
+            "affiliation_share": "$0.00",
+            "cycle": "MONTHLY",
+            "require_transaction": true,
+            "merchant": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=P9NAPMJAHYQH2",
+            "calls_monthly": 5000,
+            "plan_duration": {
+                "expires": false,
+                "timestamp": 0
+            },
+            "offer_duration": {
+                "expires": false,
+                "timestamp": 0
+            }
+        },
+    },
+    "ENTERPRISE": {
+        "NORMAL": {
+            "price": "$39.99",
+            "affiliation_share": "$0.00",
+            "cycle": "YEARLY",
+            "require_transaction": true,
+            "merchant": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=U88J5UCKYRFWE",
+            "calls_monthly": "UNLIMITED",
+            "plan_duration": {
+                "expires": false,
+                "timestamp": 0
+            },
+            "offer_duration": {
+                "expires": false,
+                "timestamp": 0
+            }
+        },
+        "AEROSPACE_WUZ_HERE420_XD": {
+          "price": "$0.0",
+          "affiliation_share": "$0.00",
+          "cycle": "MONTHLY",
+          "require_transaction": false,
+          "merchant": "NONE",
+          "calls_monthly": "UNLIMITED",
+          "plan_duration": {
+            "expires": false,
+            "timestamp": 0
+          },
+          "offer_duration": {
+            "expires": false,
+            "timestamp": 0
+          }
+        }
+    }
+}
