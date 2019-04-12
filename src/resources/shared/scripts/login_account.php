@@ -51,6 +51,40 @@
         return $ip;
     }
 
+    /**
+     * Determines the proper redirect location based of the given parameters
+     *
+     * @return string
+     */
+    function getRedirectLocation()
+    {
+        if(isset($_GET['redirect']))
+        {
+            if($_GET['redirect'] == 'purchase_plan')
+            {
+                if(isset($_GET['type']))
+                {
+                    switch($_GET['type'])
+                    {
+                        case 'free':
+                            return '/login?redirect=purchase_plan&type=free&';
+                            break;
+
+                        case 'basic':
+                            return '/login?redirect=purchase_plan&type=basic&';
+                            break;
+
+                        case 'enterprise':
+                            return '/login?redirect=purchase_plan&type=enterprise&';
+                            break;
+                    }
+                }
+            }
+        }
+
+        return '/login?';
+    }
+
 
     /**
      * @throws ConfigurationNotFoundException
@@ -64,19 +98,19 @@
     {
         if(isset($_POST['username_email']) == false)
         {
-            header('Location: login?callback=100');
+            header('Location: ' . getRedirectLocation() . 'callback=100');
             exit();
         }
 
         if(isset($_POST['password']) == false)
         {
-            header('Location: login?callback=100');
+            header('Location: ' . getRedirectLocation() . 'callback=100');
             exit();
         }
 
         if(verify_recaptcha() == false)
         {
-            header('Location: login?callback=104');
+            header('Location: ' . getRedirectLocation() . 'callback=104');
             exit();
         }
 
@@ -86,14 +120,14 @@
         {
             if(Validate::email($_POST['username_email']) == false)
             {
-                header('Location: login?callback=101');
+                header('Location: ' . getRedirectLocation() . 'callback=101');
                 exit();
             }
         }
 
         if(Validate::password($_POST['password']) == false)
         {
-            header('Location: login?callback=101');
+            header('Location: ' . getRedirectLocation() . 'callback=101');
             exit();
         }
 
@@ -164,17 +198,17 @@
                 // Ignore this exception
             }
 
-            header('Location: login?callback=101');
+            header('Location: ' . getRedirectLocation() . 'callback=101');
             exit();
         }
         catch(AccountSuspendedException $accountSuspendedException)
         {
-            header('Location: login?callback=102');
+            header('Location: ' . getRedirectLocation() . 'callback=102');
             exit();
         }
         catch(Exception $exception)
         {
-            header('Location: login?callback=103');
+            header('Location: ' . getRedirectLocation() . 'callback=103');
             exit();
         }
     }
