@@ -1,5 +1,23 @@
 <?PHP
     use DynamicalWeb\HTML;
+
+    $FreeLocation = '';
+    $BasicLocation = '';
+    $EnterpriseLocation = '';
+
+    if(WEB_SESSION_ACTIVE == false)
+    {
+        $FreeLocation = '/register?redirect=purchase_plan&type=free';
+        $BasicLocation = '/register?redirect=purchase_plan&type=basic';
+        $EnterpriseLocation = '/register?redirect=purchase_plan&type=enterprise';
+    }
+    else
+    {
+        $FreeLocation = '/confirm_purchase?plan=free';
+        $BasicLocation = '/confirm_purchase?plan=basic';
+        $EnterpriseLocation = '/confirm_purchase?plan=enterprise';
+    }
+
 ?>
 <div class="col-12">
     <div class="card">
@@ -23,7 +41,7 @@
                                 <li><?PHP HTML::print(TEXT_PRICING_FREE_FEATURE_4); ?></li>
                             </ul>
                             <div class="wrapper">
-                                <a href="#" class="btn btn-inverse-primary btn-block">Get API Key</a>
+                                <a href="<?PHP HTML::print($FreeLocation, false); ?>" class="btn btn-inverse-primary btn-block">Get API Key</a href="#">
                             </div>
                         </div>
                     </div>
@@ -45,7 +63,7 @@
                                 <li><?PHP HTML::print(TEXT_PRICING_BASIC_FEATURE_4); ?></li>
                             </ul>
                             <div class="wrapper">
-                                <a href="#" class="btn btn-inverse-success btn-block"><?PHP HTML::print(TEXT_PRICING_BASIC_SUBMIT); ?></a>
+                                <a href="<?PHP HTML::print($BasicLocation, false); ?>" class="btn btn-inverse-success btn-block"><?PHP HTML::print(TEXT_PRICING_BASIC_SUBMIT); ?></a>
                             </div>
                         </div>
                     </div>
@@ -66,7 +84,7 @@
                                 <li><?PHP HTML::print(TEXT_PRICING_ENTERPRISE_FEATURE_4); ?></li>
                             </ul>
                             <div class="wrapper">
-                                <a href="#" class="btn btn-inverse-danger btn-block"><?PHP HTML::print(TEXT_PRICING_ENTERPRISE_SUBMIT); ?></a>
+                                <a href="<?PHP HTML::print($EnterpriseLocation, false); ?>" class="btn btn-inverse-danger btn-block"><?PHP HTML::print(TEXT_PRICING_ENTERPRISE_SUBMIT); ?></a>
                             </div>
                         </div>
                     </div>
