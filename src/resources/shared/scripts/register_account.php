@@ -21,6 +21,40 @@
     }
 
     /**
+     * Determines the proper redirect location
+     *
+     * @return string
+     */
+    function getRedirectLocation()
+    {
+        if(isset($_GET['redirect']))
+        {
+            if($_GET['redirect'] == 'purchase_plan')
+            {
+                if(isset($_GET['type']))
+                {
+                    switch($_GET['type'])
+                    {
+                        case 'free':
+                            return '/register?redirect=purchase_plan&type=free&';
+                            break;
+
+                        case 'basic':
+                            return '/register?redirect=purchase_plan&type=basic&';
+                            break;
+
+                        case 'enterprise':
+                            return '/register?redirect=purchase_plan&type=enterprise&';
+                            break;
+                    }
+                }
+            }
+        }
+
+        return '/register?';
+    }
+
+    /**
      * @throws ConfigurationNotFoundException
      * @throws DatabaseException
      * @throws InvalidSearchMethodException
@@ -30,7 +64,7 @@
     {
         if(verify_recaptcha() == false)
         {
-            header('Location: register?callback=108');
+            header('Location: ' . getRedirectLocation() . 'callback=108');
             exit();
         }
 
@@ -38,37 +72,37 @@
 
         if(isset($_POST['username']) == false)
         {
-            header('Location: register?callback=100');
+            header('Location: ' . getRedirectLocation() . 'callback=100');
             exit();
         }
 
         if(isset($_POST['email']) == false)
         {
-            header('Location: register?callback=100');
+            header('Location: ' . getRedirectLocation() . 'callback=100');
             exit();
         }
 
         if(isset($_POST['password']) == false)
         {
-            header('Location: register?callback=100');
+            header('Location: ' . getRedirectLocation() . 'callback=100');
             exit();
         }
 
         if(Validate::username($_POST['username']) == false)
         {
-            header('Location: register?callback=101');
+            header('Location: ' . getRedirectLocation() . 'callback=101');
             exit();
         }
 
         if(Validate::email($_POST['email']) == false)
         {
-            header('Location: register?callback=102');
+            header('Location: ' . getRedirectLocation() . 'callback=102');
             exit();
         }
 
         if(Validate::password($_POST['password']) == false)
         {
-            header('Location: register?callback=103');
+            header('Location: ' . getRedirectLocation() . 'callback=103');
             exit();
         }
 
@@ -76,25 +110,25 @@
         
         if($IntellivoidAccounts->getAccountManager()->usernameExists($_POST['username']) == true)
         {
-            header('Location: register?callback=104');
+            header('Location: ' . getRedirectLocation() . 'callback=104');
             exit();
         }
 
         if($IntellivoidAccounts->getAccountManager()->emailExists($_POST['email']) == true)
         {
-            header('Location: register?callback=105');
+            header('Location: ' . getRedirectLocation() . 'callback=105');
             exit();
         }
 
         try
         {
             $IntellivoidAccounts->getAccountManager()->registerAccount($_POST['username'], $_POST['email'], $_POST['password']);
-            header('Location: register?callback=107');
+            header('Location: ' . getRedirectLocation() . 'callback=107');
             exit();
         }
         catch(Exception $exception)
         {
-            header('Location: register?callback=106');
+            header('Location: ' . getRedirectLocation() . 'callback=106');
             exit();
         }
     }
