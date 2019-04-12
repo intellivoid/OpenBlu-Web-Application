@@ -162,6 +162,9 @@
             "CALLBACK_106": "There was an issue while trying to create your account, please contact support",
             "CALLBACK_107": "Your account has been created!",
             "CALLBACK_108": "Captcha verification failed, please solve the captcha correctly"
+        },
+        "confirm_purchase": {
+            "PAGE_TITLE": "OpenBlu - Confirm Purchase"
         }
     },
     "sections": {
