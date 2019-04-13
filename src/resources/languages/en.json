@@ -165,6 +165,13 @@
         },
         "confirm_purchase": {
             "PAGE_TITLE": "OpenBlu - Confirm Purchase"
+        },
+        "add_balance": {
+            "PAGE_TITLE": "OpenBlu - Add Balance",
+            "CARD_HEADER": "Add To Balance",
+            "FAQ_HEADER": "Please read the information presented below before adding money to your account balance (English Only)",
+            "ADD_BALANCE_HEADER": "Add balance using PayPal",
+            "ADD_BALANCE_DESC": "Please make sure that your Intellivoid Account's email is the same as your PayPal email, if they are different then send an email to %s with your PayPal transaction ID (after the purchase) and your Intellivoid Account username or email. If you fail to provide us with the required information then you will be refunded"
         }
     },
     "sections": {

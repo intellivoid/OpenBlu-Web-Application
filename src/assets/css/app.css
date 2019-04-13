@@ -21,3 +21,17 @@ i.mdi-server-network {
 i.mdi-home {
     color: #fff;
 }
+
+body::-webkit-scrollbar {
+    background-color: #24272a;
+    width: 1em;
+}
+
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #191c20;
+    outline: 1px solid slategrey;
+}
