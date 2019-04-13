@@ -198,6 +198,12 @@
             $Cookie->Data['account_email'] = $Account->Email;
             $Cookie->Data['account_username'] = $Account->Username;
 
+            // Force refresh cache
+            if(isset($Cookie->Data['cache_refresh']) == true)
+            {
+                $Cookie->Data['cache_refresh'] = 0;
+            }
+
             $sws->CookieManager()->updateCookie($Cookie);
             $sws->WebManager()->setCookie($Cookie);
 
