@@ -11,7 +11,12 @@
                         <a class="nav-link" data-toggle="collapse" href="#account-dropdown" aria-expanded="false" aria-controls="account-dropdown">
                             <img class="img-sm rounded-circle" src="/default_avatar" alt="User Avatar">
                             <p class="mb-0 ml-3 text-light" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"><?PHP HTML::print(WEB_ACCOUNT_USERNAME); ?></p>
-                            <div class="badge badge-success badge-pill mb-0 ml-3">$0.00</div>
+                            <?PHP
+                                if(CACHE_BALANCE_AVAILABLE == true)
+                                {
+                                    HTML::print("<div class=\"badge badge-success badge-pill mb-0 ml-3\">$" . CACHE_BALANCE_AMOUNT . "</div>", false);
+                                }
+                            ?>
                             <i class="menu-arrow"></i>
                         </a>
                         <div class="collapse" id="account-dropdown">

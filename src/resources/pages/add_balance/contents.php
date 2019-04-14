@@ -6,6 +6,7 @@
     HTML::importScript('check_auth');
     HTML::importScript('require_authentication');
     HTML::importScript('cache');
+    
 ?>
 <!DOCTYPE html>
 <html lang="<?PHP HTML::print(APP_LANGUAGE_ISO_639); ?>">

@@ -68,4 +68,6 @@
         define('CACHE_TOTAL_SERVERS', $Cookie->Data['cache']['total_servers'], false);
         define('CACHE_TOTAL_SESSIONS', $Cookie->Data['cache']['total_sessions'], false);
         define('CACHE_CURRENT_SESSIONS', $Cookie->Data['cache']['current_sessions'], false);
+        define('CACHE_BALANCE_AVAILABLE', $Cookie->Data['cache']['balance_available'], false);
+        define('CACHE_BALANCE_AMOUNT', $Cookie->Data['cache']['balance_amount'], false);
     }
