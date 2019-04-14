@@ -163,7 +163,13 @@
             "CALLBACK_108": "Captcha verification failed, please solve the captcha correctly"
         },
         "confirm_purchase": {
-            "PAGE_TITLE": "OpenBlu - Confirm Purchase"
+            "PAGE_TITLE": "OpenBlu - Confirm Purchase",
+            "PLACEHOLDER_PRICE_FREE": "Free",
+            "PLACEHOLDER_PRICE": "US $%s",
+            "PLACEHOLDER_MONTHLY_CALLS": "%s Monthly Calls",
+            "PLACEHOLDER_UNLIMITED_CALLS": "Unlimited Calls",
+            "PLACEHOLDER_MONTHLY_BILLING_CYCLE": "Monthly",
+            "PLACEHOLDER_YEARLY_BILLING_CYCLE": "Yearly"
         },
         "add_balance": {
             "PAGE_TITLE": "OpenBlu - Add Balance",
