@@ -38,6 +38,12 @@
                 }
             }
         }
+
+        if($_GET['redirect'] == 'add_balance')
+        {
+            $LoginLocation = '/login?redirect=add_balance';
+            $PostLocation = '/register?redirect=add_balance';
+        }
     }
 ?>
 <!DOCTYPE html>

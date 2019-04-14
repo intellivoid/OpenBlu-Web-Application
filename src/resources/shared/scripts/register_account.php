@@ -49,6 +49,11 @@
                     }
                 }
             }
+
+            if($_GET['redirect'] == 'add_balance')
+            {
+                return '/register?redirect=add_balance&';
+            }
         }
 
         return '/register?';
@@ -82,6 +87,11 @@
                             break;
                     }
                 }
+            }
+
+            if(isset($_GET['redirect']) == 'add_balance')
+            {
+                return '/add_balance';
             }
         }
 
