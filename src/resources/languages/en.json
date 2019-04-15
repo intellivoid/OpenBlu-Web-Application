@@ -169,7 +169,19 @@
             "PLACEHOLDER_MONTHLY_CALLS": "%s Monthly Calls",
             "PLACEHOLDER_UNLIMITED_CALLS": "Unlimited Calls",
             "PLACEHOLDER_MONTHLY_BILLING_CYCLE": "Monthly",
-            "PLACEHOLDER_YEARLY_BILLING_CYCLE": "Yearly"
+            "PLACEHOLDER_YEARLY_BILLING_CYCLE": "Yearly",
+            "DETAILS_HEADER": "Confirm Purchase",
+            "DETAILS_DESC": "Please confirm the purchase of this subscription.",
+            "DETAILS_PLAN_NAME": "Plan Name",
+            "DETAILS_MONTHLY_CALLS": "Monthly Calls",
+            "DETAILS_BILLING_CYCLE": "Billing Cycle",
+            "DETAILS_PRICE": "Price",
+            "PROMOTION_HEADER": "Promotion Code (Optional)",
+            "PROMOTION_DESC": "If you have a promotion code to receive a special offer, you can enter it below and verify it",
+            "PROMOTION_LABEL": "Promotion Code",
+            "PROMOTION_PLACEHOLDER": "Enter Promotion Code",
+            "PROMOTION_SUBMIT_BUTTON": "Verify",
+            "CONFIRM_PURCHASE_BUTTON": "Confirm Purchase"
         },
         "add_balance": {
             "PAGE_TITLE": "OpenBlu - Add Balance",

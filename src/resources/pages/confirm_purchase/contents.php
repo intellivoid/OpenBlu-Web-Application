@@ -15,7 +15,17 @@
         case 'free': $TypeURL = 'free'; break;
         case 'basic': $TypeURL = 'basic'; break;
         case 'enterprise': $TypeURL = 'enterprise'; break;
+    }
 
+    $PurchaseURL = '';
+
+    if(isset($_GET['promotion_code']))
+    {
+        $PurchaseURL = '/confirm_purchase?plan=' . $TypeURL . '&promotion_code=' . urlencode($_GET['promotion_code']) . '&action=complete_purchase';
+    }
+    else
+    {
+        $PurchaseURL = '/confirm_purchase?plan=' . $TypeURL . '&action=complete_purchase';
     }
 ?>
 <!DOCTYPE html>
@@ -39,25 +49,25 @@
                             <div class="card">
                                 <div class="card-body">
 
-                                    <h4 class="card-title">Confirm Purchase</h4>
-                                    <p class="card-description"> Please confirm the purchase of this subscription.</p>
+                                    <h4 class="card-title"><?PHP HTML::print(TEXT_DETAILS_HEADER); ?></h4>
+                                    <p class="card-description"><?PHP HTML::print(TEXT_DETAILS_DESC); ?></p>
 
                                     <table class="table">
                                         <tbody>
                                         <tr>
-                                            <td>Plan Name</td>
+                                            <td><?PHP HTML::print(TEXT_DETAILS_PLAN_NAME); ?></td>
                                             <td><?PHP HTML::print(PLAN_NAME); ?></td>
                                         </tr>
                                         <tr>
-                                            <td>Monthly Calls</td>
+                                            <td><?PHP HTML::print(TEXT_DETAILS_MONTHLY_CALLS); ?></td>
                                             <td><?PHP HTML::print(PLAN_CALLS_MONTHLY); ?></td>
                                         </tr>
                                         <tr>
-                                            <td>Billing Cycle</td>
+                                            <td><?PHP HTML::print(TEXT_DETAILS_BILLING_CYCLE); ?></td>
                                             <td><?PHP HTML::print(PLAN_BILLING_CYCLE); ?></td>
                                         </tr>
                                         <tr>
-                                            <td>Price</td>
+                                            <td><?PHP HTML::print(TEXT_DETAILS_PRICE); ?></td>
                                             <td><?PHP HTML::print(PLAN_PRICE); ?></td>
                                         </tr>
                                         </tbody>
@@ -70,16 +80,16 @@
                                     {
                                         ?>
                                         <div class="card-body">
-                                            <h4 class="card-title">Promotion Code (Optional)</h4>
-                                            <p class="card-description"> If you have a promotion code to receive a special offer, you can enter it below and verify it</p>
+                                            <h4 class="card-title"><?PHP HTML::print(TEXT_PROMOTION_HEADER); ?></h4>
+                                            <p class="card-description"><?PHP HTML::print(TEXT_PROMOTION_DESC); ?></p>
                                             <form action="confirm_purchase" method="GET">
                                                 <input type="hidden" name="plan" id="plan" value="<?PHP HTML::print($TypeURL, true); ?>">
                                                 <div class="form-group">
-                                                    <label for="promotion_code">Promotion Code</label>
-                                                    <input type="text" class="form-control" name="promotion_code" id="promotion_code" placeholder="Enter Promotion Code">
+                                                    <label for="promotion_code"><?PHP HTML::print(TEXT_PROMOTION_LABEL); ?></label>
+                                                    <input type="text" class="form-control" name="promotion_code" id="promotion_code" placeholder="<?PHP HTML::print(TEXT_PROMOTION_PLACEHOLDER); ?>">
                                                 </div>
 
-                                                <button type="submit" class="btn btn-inverse-info btn-lg mr-2">Verify</button>
+                                                <button type="submit" class="btn btn-inverse-info btn-lg mr-2"><?PHP HTML::print(TEXT_PROMOTION_SUBMIT_BUTTON); ?></button>
                                             </form>
                                         </div>
                                         <?PHP
@@ -87,7 +97,7 @@
                                 ?>
 
                                 <div class="card-body">
-                                    <a href="#" class="btn btn-outline-primary float-right">Confirm Purchase</a>
+                                    <button type="button" onclick="location.href='<?PHP HTML::print($PurchaseURL); ?>';" class="btn btn-outline-primary float-right"><?PHP HTML::print(TEXT_CONFIRM_PURCHASE_BUTTON); ?></button>
                                 </div>
                             </div>
                         </div>
