@@ -3,7 +3,6 @@
     namespace IntellivoidAccounts\Objects\Account\Configuration;
 
     use IntellivoidAccounts\Abstracts\OpenBluPlan;
-    use IntellivoidAccounts\Abstracts\TransactionStatus;
 
     /**
      * Class OpenBlu
@@ -12,6 +11,13 @@
     class OpenBlu
     {
         /**
+         * Indicates if a promotion code is used or not
+         *
+         * @var bool
+         */
+        public $CodeUsed;
+
+        /**
          * The current plan of the API
          *
          * @var OpenBluPlan|int
@@ -19,53 +25,53 @@
         public $CurrentPlan;
 
         /**
-         * The status of the transaction status right now
-         *
-         * @var TransactionStatus|int
-         */
-        public $TransactionStatus;
-
-        /**
-         * The access key ID
+         * The next billing cycle
          *
          * @var int
          */
-        public $AccessKeyID;
+        public $NexCycle;
 
         /**
-         * Indicates if a merchant was used to active this plan, if so
-         * then it cannot be cancelled/replaced directly
+         * The price that gets charged each month
+         *
+         * @var float
+         */
+        public $Price;
+
+        /**
+         * The amount of monthly calls that are available, 0 is for unlimited
+         *
+         * @var int
+         */
+        public $CallsMonthly;
+
+        /**
+         * Indicates if the current plan is active or not, this can
+         * deactivate due to not paying the billing cycle
          *
          * @var bool
          */
-        public $MerchantUsed;
+        public $Active;
 
         /**
-         * The code that was used with this plan, this allows the plan
-         * conditions to be altered, including the price.
+         * The access key associated with this account, by default
+         * if none, it's set to 0.
          *
          * @var string
          */
-        public $PlanCode;
-
-        /**
-         * The PayPal Transaction ID
-         *
-         * @var string
-         */
-        public $TransactionID;
-
-        /**
-         * @var int
-         */
-        public $TransactionProcessedTimestamp;
+        public $AccessKeyPublicID;
 
         /**
          * OpenBlu constructor.
          */
         public function __construct()
         {
+            $this->CodeUsed = false;
             $this->CurrentPlan = OpenBluPlan::None;
+            $this->NexCycle = 0;
+            $this->Price = 0;
+            $this->CallsMonthly = 0;
+            $this->Active = false;
         }
 
         /**
@@ -76,13 +82,13 @@
         public function toArray(): array
         {
             return array(
+                'code_used' => (bool)$this->CodeUsed,
                 'current_plan' => (int)$this->CurrentPlan,
-                'transaction_status' => (int)$this->TransactionStatus,
-                'access_key_id' => (int)$this->AccessKeyID,
-                'merchant_used' => $this->MerchantUsed,
-                'plan_code' => $this->PlanCode,
-                'transaction_id' => $this->TransactionID,
-                'transaction_processed_timestamp' => (int)$this->TransactionProcessedTimestamp
+                'next_cycle' => (int)$this->NexCycle,
+                'price' => (float)$this->Price,
+                'calls_monthly' => (int)$this->CallsMonthly,
+                'active' => (bool)$this->Active,
+                'access_key_public_id' => $this->AccessKeyPublicID
             );
         }
 
@@ -96,39 +102,44 @@
         {
             $ConfigurationObject = new OpenBlu();
 
+            if(isset($data['code_used']))
+            {
+                $ConfigurationObject->CodeUsed = (bool)$data['code_used'];
+            }
+
             if(isset($data['current_plan']))
             {
                 $ConfigurationObject->CurrentPlan = (int)$data['current_plan'];
             }
 
-            if(isset($data['transaction_status']))
+            if(isset($data['next_cycle']))
             {
-                $ConfigurationObject->TransactionStatus = (int)$data['transaction_status'];
+                $ConfigurationObject->NexCycle = (int)$data['next_cycle'];
             }
 
-            if(isset($data['access_key_id']))
+            if(isset($data['price']))
             {
-                $ConfigurationObject->AccessKeyID = (int)$data['access_key_id'];
+                $ConfigurationObject->Price = (float)$data['price'];
             }
 
-            if(isset($data['merchant_used']))
+            if(isset($data['calls_monthly']))
             {
-                $ConfigurationObject->MerchantUsed = $data['merchant_used'];
+                $ConfigurationObject->CallsMonthly = (int)$data['calls_monthly'];
             }
 
-            if(isset($data['plan_code']))
+            if(isset($data['active']))
             {
-                $ConfigurationObject->PlanCode = $data['plan_code'];
+                $ConfigurationObject->Active = (bool)$data['active'];
             }
 
-            if(isset($data['transaction_id']))
+            if(isset($data['auto_renew']))
             {
-                $ConfigurationObject->TransactionID = $data['transaction_id'];
+                $ConfigurationObject->AutoRenew = (bool)$data['auto_renew'];
             }
 
-            if(isset($data['transaction_processed_timestamp']))
+            if(isset($data['access_key_public_iid']))
             {
-                $ConfigurationObject->TransactionProcessedTimestamp = (int)$data['transaction_processed_timestamp'];
+                $ConfigurationObject->AccessKeyPublicID = $data['access_key_public_id'];
             }
 
             return $ConfigurationObject;
