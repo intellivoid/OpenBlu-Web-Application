@@ -5,11 +5,14 @@
     use AnalyticsManager\AnalyticsManager;
     use mysqli;
     use OpenBlu\Exceptions\ConfigurationNotFoundException;
+    use OpenBlu\Managers\APIManager;
     use OpenBlu\Managers\RecordManager;
     use OpenBlu\Managers\VPNManager;
 
     include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Abstracts' . DIRECTORY_SEPARATOR . 'SearchMethods' . DIRECTORY_SEPARATOR . 'UpdateRecord.php');
     include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Abstracts' . DIRECTORY_SEPARATOR . 'SearchMethods' . DIRECTORY_SEPARATOR . 'VPN.php');
+    include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Abstracts' . DIRECTORY_SEPARATOR . 'APIPlan.php');
+    include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Abstracts' . DIRECTORY_SEPARATOR . 'BillingCycle.php');
     include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Abstracts' . DIRECTORY_SEPARATOR . 'DefaultValues.php');
     include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Abstracts' . DIRECTORY_SEPARATOR . 'ExceptionCodes.php');
 
@@ -22,6 +25,7 @@
     include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Exceptions' . DIRECTORY_SEPARATOR . 'UpdateRecordNotFoundException.php');
     include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Exceptions' . DIRECTORY_SEPARATOR . 'VPNNotFoundException.php');
 
+    include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Managers' . DIRECTORY_SEPARATOR . 'APIManager.php');
     include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Managers' . DIRECTORY_SEPARATOR . 'RecordManager.php');
     include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Managers' . DIRECTORY_SEPARATOR . 'VPNManager.php');
 
@@ -36,6 +40,11 @@
     if(class_exists('AnalyticsManager\AnalyticsManager') == false)
     {
         include_once(__DIR__ . DIRECTORY_SEPARATOR . 'AnalyticsManager' . DIRECTORY_SEPARATOR . 'AnalyticsManager.php');
+    }
+
+    if(class_exists('ModularAPI\ModularAPI') == false)
+    {
+        include_once(__DIR__ . DIRECTORY_SEPARATOR . 'ModularAPI' . DIRECTORY_SEPARATOR . 'ModularAPI.php');
     }
 
     /**
@@ -70,6 +79,11 @@
         private $AnalyticsManager;
 
         /**
+         * @var APIManager
+         */
+        private $APIManager;
+
+        /**
          * OpenBlu constructor.
          * @throws ConfigurationNotFoundException
          */
@@ -93,6 +107,7 @@
             $this->RecordManager = new RecordManager($this);
             $this->VPNManager = new VPNManager($this);
             $this->AnalyticsManager = new AnalyticsManager($this->configuration['DatabaseName']);
+            $this->APIManager = new APIManager($this);
         }
 
         /**
@@ -126,5 +141,13 @@
         public static function getResource(string $file): string
         {
             return(file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . 'Resources' . DIRECTORY_SEPARATOR . $file));
+        }
+
+        /**
+         * @return APIManager
+         */
+        public function getAPIManager(): APIManager
+        {
+            return $this->APIManager;
         }
     }
