@@ -47,7 +47,7 @@
     if($Enterprise->CallsMonthly > 0 ) { $EnterpriseCalls = str_ireplace('%s', $Enterprise->CallsMonthly, TEXT_CALLS_PER_MONTH); }
 ?>
 <div class="col-12">
-    <div class="card">
+    <div class="card animated fadeInUp">
         <div class="card-body">
             <h4 class="card-title">API Plans</h4>
             <div class="container text-center pt-5">

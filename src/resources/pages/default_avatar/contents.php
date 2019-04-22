@@ -9,7 +9,7 @@
     {
         if(WEB_SESSION_ACTIVE == true)
         {
-            display_picture();
+            //display_picture();
         }
     }
 

@@ -46,7 +46,7 @@
 
                         <div class="col-12">
                             <?PHP HTML::importScript('callbacks'); ?>
-                            <div class="card">
+                            <div class="card animated fadeInUp">
                                 <div class="card-body">
 
                                     <h4 class="card-title"><?PHP HTML::print(TEXT_DETAILS_HEADER); ?></h4>
@@ -54,19 +54,19 @@
 
                                     <table class="table">
                                         <tbody>
-                                        <tr>
+                                        <tr class="animated fadeInLeft">
                                             <td><?PHP HTML::print(TEXT_DETAILS_PLAN_NAME); ?></td>
                                             <td><?PHP HTML::print(PLAN_NAME); ?></td>
                                         </tr>
-                                        <tr>
+                                        <tr class="animated fadeInLeft">
                                             <td><?PHP HTML::print(TEXT_DETAILS_MONTHLY_CALLS); ?></td>
                                             <td><?PHP HTML::print(PLAN_CALLS_MONTHLY); ?></td>
                                         </tr>
-                                        <tr>
+                                        <tr class="animated fadeInLeft">
                                             <td><?PHP HTML::print(TEXT_DETAILS_BILLING_CYCLE); ?></td>
                                             <td><?PHP HTML::print(PLAN_BILLING_CYCLE); ?></td>
                                         </tr>
-                                        <tr>
+                                        <tr class="animated fadeInLeft">
                                             <td><?PHP HTML::print(TEXT_DETAILS_PRICE); ?></td>
                                             <td><?PHP HTML::print(PLAN_PRICE); ?></td>
                                         </tr>
@@ -79,7 +79,7 @@
                                     if(PROMOTION_SET == false)
                                     {
                                         ?>
-                                        <div class="card-body">
+                                        <div class="card-body animated fadeIn">
                                             <h4 class="card-title"><?PHP HTML::print(TEXT_PROMOTION_HEADER); ?></h4>
                                             <p class="card-description"><?PHP HTML::print(TEXT_PROMOTION_DESC); ?></p>
                                             <form action="confirm_purchase" method="GET">
