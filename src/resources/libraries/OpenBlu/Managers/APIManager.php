@@ -36,11 +36,10 @@
         /**
          * APIManager constructor.
          * @param OpenBlu $openBlu
-         * @throws ConfigurationNotFoundException
          */
         public function __construct(OpenBlu $openBlu)
         {
-           $this->openBlu = new OpenBlu();
+           $this->openBlu = $openBlu;
         }
 
         /**
