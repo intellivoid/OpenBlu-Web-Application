@@ -6,9 +6,9 @@
 
     abstract class APIPlan
     {
-        const Free = 'free';
+        const Free = 0;
 
-        const Basic = 'basic';
+        const Basic = 1;
 
-        const Enterprise = 'enterprise';
+        const Enterprise = 2;
     }

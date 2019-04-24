@@ -11,6 +11,9 @@
     /** @noinspection PhpUnhandledExceptionInspection */
     DynamicalWeb::loadLibrary('ModularAPI', 'ModularAPI', 'ModularAPI.php');
 
+    /** @noinspection PhpUnhandledExceptionInspection */
+    DynamicalWeb::loadLibrary('OpenBlu', 'OpenBlu', 'OpenBlu.php');
+
     $IntellivoidAccounts = new IntellivoidAccounts();
 
     /** @noinspection PhpUnhandledExceptionInspection */
@@ -21,4 +24,9 @@
         // TODO: Redirect depending on status
     }
 
-    if($Account->Configuration->OpenBlu->)
+    if($Account->Configuration->OpenBlu->Active == true)
+    {
+        // TODO: Redirect if already active
+    }
+
+    
