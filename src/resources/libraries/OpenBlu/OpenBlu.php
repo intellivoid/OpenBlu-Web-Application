@@ -6,6 +6,7 @@
     use mysqli;
     use OpenBlu\Exceptions\ConfigurationNotFoundException;
     use OpenBlu\Managers\APIManager;
+    use OpenBlu\Managers\PlanManager;
     use OpenBlu\Managers\RecordManager;
     use OpenBlu\Managers\VPNManager;
 
@@ -86,6 +87,11 @@
          * @var APIManager
          */
         private $APIManager;
+        
+        /**
+         * @var PlanManager
+         */
+        private $PlanManager;
 
         /**
          * OpenBlu constructor.
@@ -112,6 +118,7 @@
             $this->VPNManager = new VPNManager($this);
             $this->AnalyticsManager = new AnalyticsManager($this->configuration['DatabaseName']);
             $this->APIManager = new APIManager($this);
+            $this->PlanManager = new PlanManager($this);
         }
 
         /**
@@ -153,5 +160,13 @@
         public function getAPIManager(): APIManager
         {
             return $this->APIManager;
+        }
+
+        /**
+         * @return PlanManager
+         */
+        public function getPlanManager(): PlanManager
+        {
+            return $this->PlanManager;
         }
     }
