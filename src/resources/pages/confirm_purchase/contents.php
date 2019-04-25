@@ -5,6 +5,14 @@
 
     HTML::importScript('check_auth');
     HTML::importScript('cache');
+
+
+    if(WEB_SESSION_ACTIVE == false)
+    {
+        header('Location: /');
+        exit();
+    }
+
     HTML::importScript('alert');
     HTML::importScript('check_product');
 
@@ -26,6 +34,14 @@
     else
     {
         $PurchaseURL = '/confirm_purchase?plan=' . $TypeURL . '&action=complete_purchase';
+    }
+
+    if(isset($_GET['action']))
+    {
+        if($_GET['action'] == 'complete_purchase')
+        {
+            HTML::importScript('process_transaction');
+        }
     }
 ?>
 <!DOCTYPE html>

@@ -75,6 +75,9 @@
     }
 
     define('PLAN_NAME', $PlanDetails->PlanName, false);
+    define('PLAN_PRICE_C', $PlanDetails->Price, false);
+    define('PLAN_CALLS_MONTHLY_C', $PlanDetails->CallsMonthly, false);
+
     if($PlanDetails->Price > 0)
     {
         define('PLAN_PRICE', str_ireplace('%s', $PlanDetails->Price, TEXT_PLACEHOLDER_PRICE), false);
@@ -95,10 +98,12 @@
 
     if($PlanDetails->Cycle == 'MONTHLY')
     {
+        define('PLAN_BILLING_CYCLE_C', 'MONTHLY', false);
         define('PLAN_BILLING_CYCLE', TEXT_PLACEHOLDER_MONTHLY_BILLING_CYCLE, false);
     }
     elseif($PlanDetails->Cycle == 'YEARLY')
     {
+        define('PLAN_BILLING_CYCLE_C', 'YEARLY', false);
         define('PLAN_BILLING_CYCLE', TEXT_PLACEHOLDER_YEARLY_BILLING_CYCLE, false);
     }
 
