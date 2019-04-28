@@ -6,6 +6,7 @@
     // Load the application resources
     require __DIR__ . DIRECTORY_SEPARATOR . 'resources' . DIRECTORY_SEPARATOR . 'DynamicalWeb' . DIRECTORY_SEPARATOR . 'DynamicalWeb.php';
     \DynamicalWeb\DynamicalWeb::loadApplication(__DIR__ . DIRECTORY_SEPARATOR . 'resources');
+    \DynamicalWeb\DynamicalWeb::loadLibrary('Logixal', 'Logixal', 'Logixal.php');
 
     if(isset($_GET['set_language']))
     {
@@ -29,4 +30,22 @@
             \DynamicalWeb\Page::load($_GET['c_view_point']);
         }
     }
+
+    // Log the request
+    if(!empty($_SERVER['HTTP_CLIENT_IP']))
+    {
+        //ip from share internet
+        $ip = $_SERVER['HTTP_CLIENT_IP'];
+    }
+    elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR']))
+    {
+        //ip pass from proxy
+        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+    }
+    else
+    {
+        $ip = $_SERVER['REMOTE_ADDR'];
+    }
+
+    \Logixal\Logging::information('OpenBlu Web Application', sprintf('%s: /%s', $ip, APP_CURRENT_PAGE));
 
