@@ -34,7 +34,9 @@
 
             if(file_exists($today_directory) == false)
             {
-                mkdir($today_directory);
+                $oldmask = umask(0);
+                mkdir($today_directory, 0777);
+                umask($oldmask);
             }
 
             return $today_directory;

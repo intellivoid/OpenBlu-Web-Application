@@ -4,12 +4,13 @@
     use IntellivoidAccounts\Abstracts\AccountStatus;
     use IntellivoidAccounts\Abstracts\SearchMethods\AccountSearchMethod;
     use IntellivoidAccounts\IntellivoidAccounts;
-use OpenBlu\Abstracts\APIPlan;
-use OpenBlu\Abstracts\SearchMethods\PlanSearchMethod;
-use OpenBlu\Objects\Plan;
+    use OpenBlu\Abstracts\APIPlan;
+    use OpenBlu\Abstracts\SearchMethods\PlanSearchMethod;
+    use OpenBlu\Objects\Plan;
     use OpenBlu\OpenBlu;
+use sws\sws;
 
-    function returnCallback(int $callbackCode)
+function returnCallback(int $callbackCode)
     {
         switch($_GET['plan'])
         {
@@ -136,6 +137,24 @@ use OpenBlu\Objects\Plan;
     $PlanObject->PlanStarted = true;
     $PlanObject->PaymentRequired = false;
 
+    /** @noinspection PhpUnhandledExceptionInspection */
     $OpenBlu->getPlanManager()->createPlan($PlanObject);
+
+    $Account->Configuration->Balance -= PLAN_PRICE_C;
+    /** @noinspection PhpUnhandledExceptionInspection */
+    $IntellivoidAccounts->getAccountManager()->updateAccount($Account);
+
+    $sws = new sws();
+    $Cookie = $sws->WebManager()->getCookie('web_session');
+
+    // Force refresh cache
+    if(isset($Cookie->Data['cache_refresh']) == true)
+    {
+        $Cookie->Data['cache_refresh'] = 0;
+    }
+
+    $sws->CookieManager()->updateCookie($Cookie);
+    $sws->WebManager()->setCookie($Cookie);
+
     header('Location: /api');
     exit();

@@ -22,7 +22,16 @@
                 <div class="main-panel">
                     <div class="content-wrapper">
 
-                        <?PHP HTML::importScript('render_pricing'); ?>
+                        <?PHP
+                            if(CACHE_SUBSCRIPTION_ACTIVE == false)
+                            {
+                                HTML::importScript('render_pricing');
+                            }
+                            else
+                            {
+                                HTML::importScript('render_dashboard');
+                            }
+                        ?>
 
                     </div>
                 </div>
@@ -32,6 +41,11 @@
         </div>
 
         <?PHP HTML::importSection('js_scripts'); ?>
-
+        <?PHP
+            if(CACHE_SUBSCRIPTION_ACTIVE == true)
+            {
+                HTML::importScript('render_table_js');
+            }
+       ?>
     </body>
 </html>

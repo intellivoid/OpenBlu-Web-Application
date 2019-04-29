@@ -3,7 +3,7 @@ $(function() {
     if($('#morris-line-example').length) {
       Morris.Line({
           element: 'morris-line-example',
-          lineColors: ['#63CF72', '#F36368', '#76C1FA', '#FABA66'],
+          lineColors: ['#0088cc', '#d53f3a', '#47a447', '#5bc0de'],
           data: [{
                   y: '2006',
                   a: 100,
@@ -93,7 +93,7 @@ $(function() {
     if($("#morris-bar-example").length){
       Morris.Bar({
           element: 'morris-bar-example',
-          barColors: ['#63CF72', '#F36368', '#76C1FA', '#FABA66'],
+          barColors: ['#0088cc', '#d53f3a', '#47a447', '#5bc0de'],
           data: [{
                   y: '2006',
                   a: 100,
