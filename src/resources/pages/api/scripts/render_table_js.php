@@ -12,57 +12,54 @@
     $ModularAPI = new ModularAPI();
     $AccessKeyObject = $ModularAPI->AccessKeys()->Manager->get(AccessKeySearchMethod::byID, CACHE_SUBSCRIPTION_ACCESS_KEY_ID);
 
-    var_dump($AccessKeyObject);
+    $Javascript = "$(function() { 'use strict'; if ($('#api-usage-chart').length) { Morris.Line({";
+    $Javascript .= "element: 'api-usage-chart',";
+    $Javascript .= "parseTime: false,";
+    $Javascript .= "resize: true,";
+    $Javascript .= "redraw: true,";
+    $Javascript .= "lineColors: ['#0088cc', '#d53f3a', '#47a447', '#5bc0de'],";
 
-?>
-<script>
-    $(function() {
-        'use strict';
-        if ($('#morris-line-example').length) {
-            Morris.Line({
-                element: 'morris-line-example',
-                lineColors: ['#0088cc', '#d53f3a', '#47a447', '#5bc0de'],
-                data: [
-                    {
-                        y: '2006',
-                        a: 100,
-                        b: 150
-                    },
-                    {
-                        y: '2007',
-                        a: 75,
-                        b: 65
-                    },
-                    {
-                        y: '2008',
-                        a: 50,
-                        b: 40
-                    },
-                    {
-                        y: '2009',
-                        a: 75,
-                        b: 65
-                    },
-                    {
-                        y: '2010',
-                        a: 50,
-                        b: 40
-                    },
-                    {
-                        y: '2011',
-                        a: 75,
-                        b: 65
-                    },
-                    {
-                        y: '2012',
-                        a: 100,
-                        b: 90
-                    }
-                ],
-                xkey: 'y',
-                ykeys: ['a', 'b'],
-                labels: ['Series A', 'Series B']
-            });
+    if($AccessKeyObject->Analytics->LastMonthAvailable == true)
+    {
+        $data = [];
+
+        foreach($AccessKeyObject->Analytics->CurrentMonthUsage as $key => $value)
+        {
+            $data[$key]['day'] = $key +1;
+            $data[$key]['day'] = (string)$data[$key]['day'];
+            $data[$key]['current_month'] = $value;
         }
-    })
-</script>
+
+        foreach($AccessKeyObject->Analytics->CurrentMonthUsage as $key => $value)
+        {
+            $data[$key]['day'] = $key +1;
+            $data[$key]['day'] = (string)$data[$key]['day'];
+            $data[$key]['last_month'] = $value;
+        }
+
+        $Javascript .= "data: " . json_encode($data) . ",";
+        $Javascript .= "xkey: \"day\",";
+        $Javascript .= "ykeys: ['current_month', 'last_month'],";
+        $Javascript .= "labels: ['current Month', 'Last Month']";
+    }
+    else
+    {
+        $data = [];
+
+        foreach($AccessKeyObject->Analytics->CurrentMonthUsage as $key => $value)
+        {
+            $data[$key]['day'] = $key +1;
+            $data[$key]['day'] = (string)$data[$key]['day'];
+            $data[$key]['current_month'] = $value;
+        }
+
+        $Javascript .= "data: " . json_encode($data) . ",";
+        $Javascript .= "xkey: \"day\",";
+        $Javascript .= "ykeys: ['current_month'],";
+        $Javascript .= "labels: ['Current Month']";
+    }
+
+
+    $Javascript .= "});}})";
+
+    print("<script>$Javascript</script>");
