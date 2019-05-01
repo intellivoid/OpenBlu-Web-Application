@@ -44,8 +44,14 @@
         <?PHP
             if(CACHE_SUBSCRIPTION_ACTIVE == true)
             {
-                HTML::importScript('render_table_js');
+                HTML::importScript('render_charts_js');
             }
        ?>
+        <script>
+            function auto_grow(element) {
+                element.style.height = "5px";
+                element.style.height = (element.scrollHeight)+"px";
+            }
+        </script>
     </body>
 </html>

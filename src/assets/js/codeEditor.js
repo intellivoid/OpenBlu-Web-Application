@@ -50,7 +50,8 @@
         theme: "ambiance",
         readOnly: "nocursor",
         maxHighlightLength: 0,
-        workDelay: 0
+        workDelay: 0,
+        lineWrapping: true
       });
     }
   }
