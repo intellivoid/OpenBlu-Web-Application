@@ -3,8 +3,8 @@
     use DynamicalWeb\DynamicalWeb;
     use IntellivoidAccounts\Abstracts\SearchMethods\AccountSearchMethod;
     use IntellivoidAccounts\IntellivoidAccounts;
-use OpenBlu\Abstracts\SearchMethods\PlanSearchMethod;
-use OpenBlu\OpenBlu;
+    use OpenBlu\Abstracts\SearchMethods\PlanSearchMethod;
+    use OpenBlu\OpenBlu;
     use sws\sws;
 
     try

@@ -12,9 +12,12 @@
                             <img class="img-sm rounded-circle" src="/default_avatar" alt="User Avatar">
                             <p class="mb-0 ml-3 text-light" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"><?PHP HTML::print(WEB_ACCOUNT_USERNAME); ?></p>
                             <?PHP
-                                if(CACHE_BALANCE_AVAILABLE == true)
+                                if(CLIENT_MODE_ENABLED == false)
                                 {
-                                    HTML::print("<div class=\"badge badge-success badge-pill mb-0 ml-3\">$" . CACHE_BALANCE_AMOUNT . "</div>", false);
+                                    if(CACHE_BALANCE_AVAILABLE == true)
+                                    {
+                                        HTML::print("<div class=\"badge badge-success badge-pill mb-0 ml-3\">$" . CACHE_BALANCE_AMOUNT . "</div>", false);
+                                    }
                                 }
                             ?>
                             <i class="menu-arrow"></i>
@@ -22,14 +25,21 @@
                         <div class="collapse" id="account-dropdown">
                             <ul class="nav flex-column sub-menu pl-0">
 
-                                <li class="nav-item">
-                                    <a class="nav-link pl-5" onclick="location.href='/add_balance';">
-                                        <span class="menu-icon">
-                                            <i class="mdi mdi-bank"></i>
-                                        </span>
-                                        <span class="menu-title">Add to balance</span>
-                                    </a>
-                                </li>
+                                <?PHP
+                                    if(CLIENT_MODE_ENABLED == false)
+                                    {
+                                        ?>
+                                        <li class="nav-item">
+                                            <a class="nav-link pl-5" onclick="location.href='/add_balance';">
+                                                <span class="menu-icon">
+                                                    <i class="mdi mdi-bank"></i>
+                                                </span>
+                                                <span class="menu-title">Add to balance</span>
+                                            </a>
+                                        </li>
+                                        <?PHP
+                                    }
+                                ?>
 
                                 <li class="nav-item">
                                     <a class="nav-link pl-5" onclick="location.href='/logout';">
@@ -65,22 +75,29 @@
                 <span class="menu-title">VPN Servers</span>
             </a>
         </li>
-        <li class="nav-item menu-items">
-            <a class="nav-link" href="/api">
+        <?PHP
+            if(CLIENT_MODE_ENABLED == false)
+            {
+                ?>
+                <li class="nav-item menu-items">
+                    <a class="nav-link" href="/api">
                 <span class="menu-icon">
                   <i class="mdi mdi-console"></i>
                 </span>
-                <span class="menu-title">API</span>
-            </a>
-        </li>
-        <li class="nav-item menu-items">
-            <a class="nav-link" href="/guide">
+                        <span class="menu-title">API</span>
+                    </a>
+                </li>
+                <li class="nav-item menu-items">
+                    <a class="nav-link" href="/guide">
                 <span class="menu-icon">
                   <i class="mdi mdi-help"></i>
                 </span>
-                <span class="menu-title">How to connect</span>
-            </a>
-        </li>
+                        <span class="menu-title">How to connect</span>
+                    </a>
+                </li>
+                <?PHP
+            }
+        ?>
         <li class="nav-item menu-items">
             <a class="nav-link" href="/support">
                 <span class="menu-icon">

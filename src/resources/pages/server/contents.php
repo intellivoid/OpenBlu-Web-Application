@@ -180,10 +180,24 @@
 
                                         <div class="row mt-3">
 
-
-                                            <button type="button" onclick="location.href='/server?action=download&token=<?PHP HTML::print(CACHE_VPN_TOKEN); ?>'" class="btn btn-block btn-lg btn-inverse-info">
-                                                <i class="mdi mdi-cloud-download"></i> <?PHP HTML::print(TEXT_CARD_CONNECT_OPENVPN_DOWNLOAD_BUTTON); ?>
-                                            </button>
+                                            <?PHP
+                                                if(CLIENT_MODE_ENABLED == true)
+                                                {
+                                                    ?>
+                                                    <button type="button" onclick="location.href='/server?action=download&token=<?PHP HTML::print(CACHE_VPN_TOKEN); ?>'" class="btn btn-block btn-lg btn-inverse-success">
+                                                        <i class="mdi mdi-lan-connect"></i> Connect
+                                                    </button>
+                                                    <?PHP
+                                                }
+                                                else
+                                                {
+                                                    ?>
+                                                    <button type="button" onclick="location.href='/server?action=download&token=<?PHP HTML::print(CACHE_VPN_TOKEN); ?>'" class="btn btn-block btn-lg btn-inverse-info">
+                                                        <i class="mdi mdi-cloud-download"></i> <?PHP HTML::print(TEXT_CARD_CONNECT_OPENVPN_DOWNLOAD_BUTTON); ?>
+                                                    </button>
+                                                    <?PHP
+                                                }
+                                            ?>
 
                                         </div>
                                     </div>

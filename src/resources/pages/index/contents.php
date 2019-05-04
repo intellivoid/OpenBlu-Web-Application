@@ -70,38 +70,45 @@
                             </div>
                         </div>
 
-                        <div class="row">
-                            <div class="col-md-12 grid-margin">
-                                <div class="card animated bounceIn">
-                                    <div class="card-body">
-                                        <h4 class="card-title"><?PHP HTML::print(TEXT_SUPPORT_SERVICE_HEADER); ?></h4>
-                                        <p class="card-description"><?PHP HTML::print(TEXT_SUPPORT_SERVICE_TEXT); ?></p>
+                        <?PHP
+                            if(CLIENT_MODE_ENABLED == false)
+                            {
+                                ?>
+                                <div class="row">
+                                    <div class="col-md-12 grid-margin">
+                                        <div class="card animated bounceIn">
+                                            <div class="card-body">
+                                                <h4 class="card-title"><?PHP HTML::print(TEXT_SUPPORT_SERVICE_HEADER); ?></h4>
+                                                <p class="card-description"><?PHP HTML::print(TEXT_SUPPORT_SERVICE_TEXT); ?></p>
 
-                                        <hr/>
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <h5><?PHP HTML::print(TEXT_DONATE_HEADER); ?></h5>
-                                                <p><?PHP HTML::print(TEXT_DONATE_TEXT); ?></p>
-                                                <a class="btn btn-primary btn-rounded btn-lg btn-fw">
-                                                    <i class="mdi mdi-paypal"></i><?PHP HTML::print(TEXT_DONATE_BUTTON_TEXT); ?>
-                                                </a>
-                                            </div>
-                                        </div>
+                                                <hr/>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <h5><?PHP HTML::print(TEXT_DONATE_HEADER); ?></h5>
+                                                        <p><?PHP HTML::print(TEXT_DONATE_TEXT); ?></p>
+                                                        <a class="btn btn-primary btn-rounded btn-lg btn-fw">
+                                                            <i class="mdi mdi-paypal"></i><?PHP HTML::print(TEXT_DONATE_BUTTON_TEXT); ?>
+                                                        </a>
+                                                    </div>
+                                                </div>
 
-                                        <hr/>
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <h5><?PHP HTML::print(TEXT_API_HEADER); ?></h5>
-                                                <p><?PHP HTML::print(TEXT_API_TEXT); ?></p>
-                                                <a class="btn btn-danger btn-rounded btn-lg btn-fw">
-                                                    <i class="mdi mdi-console"></i><?PHP HTML::print(TEXT_API_BUTTON_TEXT); ?>
-                                                </a>
+                                                <hr/>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <h5><?PHP HTML::print(TEXT_API_HEADER); ?></h5>
+                                                        <p><?PHP HTML::print(TEXT_API_TEXT); ?></p>
+                                                        <a class="btn btn-danger btn-rounded btn-lg btn-fw">
+                                                            <i class="mdi mdi-console"></i><?PHP HTML::print(TEXT_API_BUTTON_TEXT); ?>
+                                                        </a>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                                <?PHP
+                            }
+                        ?>
 
                         <div class="row">
                             <div class="col-md-4 grid-margin stretch-card">
