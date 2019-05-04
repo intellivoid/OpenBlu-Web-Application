@@ -62,6 +62,26 @@
       <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/servers/scripts" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/servers/sections" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/server" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/server/scripts" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/api" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/api/scripts" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/IntellivoidAccounts/Objects/Account/Configuration" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/ModularAPI" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/ModularAPI/Abstracts" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/ModularAPI/Configurations" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/ModularAPI/DatabaseManager" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/ModularAPI/Exceptions" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/ModularAPI/HTTP" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/ModularAPI/Managers" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/ModularAPI/Objects" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/ModularAPI/Objects/AccessKey" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/ModularAPI/Utilities" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/confirm_purchase" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/default_avatar" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/add_balance" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/add_balance/scripts" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/logout" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/confirm_purchase/scripts" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -17,4 +17,6 @@
         const VPNNotFoundException = 106;
         const PageNotFoundException = 107;
         const PlanNotFoundException = 108;
+        const InvalidClientPropertyException = 109;
+        const ClientNotFoundException = 110;
     }
