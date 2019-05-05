@@ -1,6 +1,7 @@
 <?php
 
     use DynamicalWeb\DynamicalWeb;
+    use IntellivoidAccounts\Abstracts\AccountStatus;
     use IntellivoidAccounts\Abstracts\LoginStatus;
     use IntellivoidAccounts\Abstracts\SearchMethods\AccountSearchMethod;
     use IntellivoidAccounts\Exceptions\AccountNotFoundException;
@@ -13,7 +14,18 @@
     use IntellivoidAccounts\Exceptions\InvalidSearchMethodException;
     use IntellivoidAccounts\IntellivoidAccounts;
     use IntellivoidAccounts\Utilities\Validate;
+    use OpenBlu\Abstracts\SearchMethods\ClientSearchMethod;
+    use OpenBlu\Exceptions\ClientNotFoundException;
+    use OpenBlu\OpenBlu;
     use sws\sws;
+
+    if(CLIENT_MODE_ENABLED == true)
+    {
+        if(CLIENT_AUTHORIZED == true)
+        {
+            AutoLogin();
+        }
+    }
 
     if($_SERVER['REQUEST_METHOD'] == 'POST')
     {
@@ -136,7 +148,6 @@
      * @throws InvalidIpException
      * @throws InvalidLoginStatusException
      * @throws InvalidSearchMethodException
-     * @throws Exception
      */
     function LoginAccount()
     {
@@ -208,6 +219,24 @@
             $Cookie->Data['account_email'] = $Account->Email;
             $Cookie->Data['account_username'] = $Account->Username;
 
+            // If client mode is enabled
+            if($Cookie->Data['client_mode_enabled'] == true)
+            {
+                DynamicalWeb::loadLibrary('OpenBlu', 'OpenBlu', 'OpenBlu.php');
+                $OpenBlu = new OpenBlu();
+
+                $Client = $OpenBlu->getClientManager()->getClient(ClientSearchMethod::byClientUid, $Cookie->Data['client_uid']);
+                $Client->AccountID = $Account->ID;
+                $Client->AuthExpires = time() + 43200;
+
+                $OpenBlu->getClientManager()->updateClient($Client);
+
+                $Cookie->Data['client_authorized'] = true;
+                $Cookie->Data['client_account_id'] = $Client->AccountID;
+                $Cookie->Data['client_auth_expires'] = $Client->AuthExpires;
+
+            }
+
             // Force refresh cache
             if(isset($Cookie->Data['cache_refresh']) == true)
             {
@@ -260,5 +289,76 @@
         {
             header('Location: ' . getRedirectLocation() . 'callback=103');
             exit();
+        }
+    }
+
+    /**
+     * @throws ConfigurationNotFoundException
+     * @throws ClientNotFoundException
+     * @throws \OpenBlu\Exceptions\ConfigurationNotFoundException
+     * @throws \OpenBlu\Exceptions\DatabaseException
+     * @throws \OpenBlu\Exceptions\InvalidSearchMethodException
+     * @throws Exception
+     */
+    function AutoLogin()
+    {
+        DynamicalWeb::loadLibrary('IntellivoidAccounts', 'IntellivoidAccounts', 'IntellivoidAccounts.php');
+        DynamicalWeb::loadLibrary('OpenBlu', 'OpenBlu', 'OpenBlu.php');
+
+        $IntellivoidAccounts = new IntellivoidAccounts();
+        $OpenBlu = new OpenBlu();
+        $sws = new sws();
+
+        $Cookie = $sws->WebManager()->getCookie('web_session');
+        $Client = $OpenBlu->getClientManager()->getClient(ClientSearchMethod::byClientUid, $Cookie->Data['client_uid']);
+
+        if($Client->isAuthorized() == false)
+        {
+            $Cookie->Data['client_authorized'] = false;
+            $Cookie->Data['client_auth_expires'] = 0;
+            $sws->CookieManager()->updateCookie($Cookie);
+
+            header('Location: /login?callback=105');
+            exit();
+        }
+
+        $Account = $IntellivoidAccounts->getAccountManager()->getAccount(AccountSearchMethod::byId, $Cookie->Data['client_account_id']);
+
+        switch($Account->Status)
+        {
+            case AccountStatus::Suspended:
+                $Cookie->Data['client_authorized'] = false;
+                $Cookie->Data['client_auth_expires'] = 0;
+                $sws->CookieManager()->updateCookie($Cookie);
+
+                header('Location: /login?callback=102');
+                exit();
+
+            case AccountStatus::VerificationRequired:
+                $Cookie->Data['client_authorized'] = false;
+                $Cookie->Data['client_auth_expires'] = 0;
+                $sws->CookieManager()->updateCookie($Cookie);
+
+                header('Location: /login?callback=103');
+                exit();
+
+            default:
+                $Cookie->Data['session_active'] = true;
+                $Cookie->Data['account_pubid'] = $Account->PublicID;
+                $Cookie->Data['account_id'] = $Account->ID;
+                $Cookie->Data['account_email'] = $Account->Email;
+                $Cookie->Data['account_username'] = $Account->Username;
+
+                // Force refresh cache
+                if(isset($Cookie->Data['cache_refresh']) == true)
+                {
+                    $Cookie->Data['cache_refresh'] = 0;
+                }
+
+                $sws->CookieManager()->updateCookie($Cookie);
+                $sws->WebManager()->setCookie($Cookie);
+
+                header('Location: /');
+                exit();
         }
     }

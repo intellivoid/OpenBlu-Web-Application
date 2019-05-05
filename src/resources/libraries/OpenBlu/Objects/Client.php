@@ -108,7 +108,7 @@
          */
         public function isAuthorized(): bool
         {
-            if($this->AccountID = 0)
+            if($this->AccountID == 0)
             {
                 return false;
             }

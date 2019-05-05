@@ -36,7 +36,8 @@
             'client_name' => null,
             'client_version' => null,
             'client_authorized' => false,
-            'client_account_id' => 0
+            'client_account_id' => 0,
+            'client_auth_expires' => 0
         );
 
         $sws->CookieManager()->updateCookie($Cookie);
@@ -55,6 +56,7 @@
     }
 
     $Cookie = $sws->WebManager()->getCookie('web_session');
+
     define('WEB_SESSION_ACTIVE', $Cookie->Data['session_active'], false);
     define('WEB_ACCOUNT_PUBID', $Cookie->Data['account_pubid'], false);
     define('WEB_ACCOUNT_ID', $Cookie->Data['account_id'], false);
@@ -69,6 +71,7 @@
     define('CLIENT_VERSION', $Cookie->Data['client_version'], false);
     define('CLIENT_AUTHORIZED', $Cookie->Data['client_authorized'], false);
     define('CLIENT_ACCOUNT_ID', $Cookie->Data['client_account_id'], false);
+    define('CLIENT_AUTH_EXPIRES', $Cookie->Data['client_auth_expires'], false);
 
     HTML::importScript('client_mode');
 

@@ -12,6 +12,7 @@
     $RegisterLocation = '/register';
     $PostLocation = '/login';
 
+
     if(isset($_GET['redirect']))
     {
         if($_GET['redirect'] == 'purchase_plan')

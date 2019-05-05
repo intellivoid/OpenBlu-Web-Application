@@ -1,7 +1,7 @@
 <?php
 
-use DynamicalWeb\DynamicalWeb;
-use OpenBlu\Abstracts\SearchMethods\ClientSearchMethod;
+    use DynamicalWeb\DynamicalWeb;
+    use OpenBlu\Abstracts\SearchMethods\ClientSearchMethod;
     use OpenBlu\Exceptions\ClientNotFoundException;
     use OpenBlu\Exceptions\ConfigurationNotFoundException;
     use OpenBlu\Exceptions\DatabaseException;
@@ -9,9 +9,9 @@ use OpenBlu\Abstracts\SearchMethods\ClientSearchMethod;
     use OpenBlu\Exceptions\InvalidSearchMethodException;
     use OpenBlu\Objects\Client;
     use OpenBlu\OpenBlu;
-use sws\sws;
+    use sws\sws;
 
-function jsonResponse(array $data, int $status_code = 200)
+    function jsonResponse(array $data, int $status_code = 200)
     {
         header('Content-Type: application/json');
         header('Status: ' . $status_code);
@@ -140,20 +140,23 @@ function jsonResponse(array $data, int $status_code = 200)
             $OpenBlu->getClientManager()->updateClient($Client);
         }
 
-
         $sws = new sws();
         $Cookie = $sws->WebManager()->getCookie('web_session');
         $Cookie->Data['client_mode_enabled'] = true;
         $Cookie->Data['client_uid'] = $Client->ClientUid;
         $Cookie->Data['client_name'] = $Client->ClientName;
         $Cookie->Data['client_version'] = $Client->ClientVersion;
-        $Cookie->Data['client_authorized'] = false;
-        $Cookie->Data['client_account_id'] = 0;
 
         if($Client->isAuthorized() == true)
         {
             $Cookie->Data['client_authorized'] = true;
             $Cookie->Data['client_account_id'] = $Client->AccountID;
+            $Cookie->Data['client_auth_expires'] = $Client->AuthExpires;
+        }
+        else
+        {
+            $Cookie->Data['client_authorized'] = false;
+            $Cookie->Data['client_auth_expires'] = 0;
         }
 
         $sws->CookieManager()->updateCookie($Cookie);
