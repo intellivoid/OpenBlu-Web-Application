@@ -318,7 +318,7 @@
             $Cookie->Data['client_auth_expires'] = 0;
             $sws->CookieManager()->updateCookie($Cookie);
 
-            header('Location: /login?callback=105');
+            header('Location: /login');
             exit();
         }
 

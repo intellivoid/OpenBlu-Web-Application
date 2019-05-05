@@ -2,6 +2,8 @@
 
     use DynamicalWeb\DynamicalWeb;
     use DynamicalWeb\HTML;
+    use OpenBlu\Abstracts\SearchMethods\ClientSearchMethod;
+    use OpenBlu\OpenBlu;
     use sws\sws;
 
     /** @noinspection PhpUnhandledExceptionInspection */
@@ -27,6 +29,20 @@
     $Cookie->Data['account_username'] = null;
     $Cookie->Data['downloads'] = 0;
 
+    if(CLIENT_MODE_ENABLED == true)
+    {
+        DynamicalWeb::loadLibrary('OpenBlu', 'OpenBlu', 'OpenBlu.php');
+        $OpenBlu = new OpenBlu();
+
+        $Client = $OpenBlu->getClientManager()->getClient(ClientSearchMethod::byClientUid, $Cookie->Data['client_uid']);
+        $Client->AuthExpires = 0;
+        $OpenBlu->getClientManager()->updateClient($Client);
+
+        $Cookie->Data['client_authorized'] = false;
+        $Cookie->Data['client_auth_expires'] = 0;
+    }
+
     $sws->CookieManager()->updateCookie($Cookie);
+
     header('Location: /');
     exit();
