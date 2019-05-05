@@ -34,9 +34,16 @@
         DynamicalWeb::loadLibrary('OpenBlu', 'OpenBlu', 'OpenBlu.php');
         $OpenBlu = new OpenBlu();
 
-        $Client = $OpenBlu->getClientManager()->getClient(ClientSearchMethod::byClientUid, $Cookie->Data['client_uid']);
-        $Client->AuthExpires = 0;
-        $OpenBlu->getClientManager()->updateClient($Client);
+        try
+        {
+            $Client = $OpenBlu->getClientManager()->getClient(ClientSearchMethod::byClientUid, $Cookie->Data['client_uid']);
+            $Client->AuthExpires = 0;
+            $OpenBlu->getClientManager()->updateClient($Client);
+        }
+        catch(Exception $exception)
+        {
+            // TODO: Fix issue where clients are not available
+        }
 
         $Cookie->Data['client_authorized'] = false;
         $Cookie->Data['client_auth_expires'] = 0;

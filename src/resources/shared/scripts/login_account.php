@@ -285,6 +285,11 @@
             header('Location: ' . getRedirectLocation() . 'callback=102');
             exit();
         }
+        catch(ClientNotFoundException $clientNotFoundException)
+        {
+            header('Location: ' . getRedirectLocation() . 'callback=105');
+            exit();
+        }
         catch(Exception $exception)
         {
             header('Location: ' . getRedirectLocation() . 'callback=103');
@@ -310,7 +315,21 @@
         $sws = new sws();
 
         $Cookie = $sws->WebManager()->getCookie('web_session');
-        $Client = $OpenBlu->getClientManager()->getClient(ClientSearchMethod::byClientUid, $Cookie->Data['client_uid']);
+
+        try
+        {
+            $Client = $OpenBlu->getClientManager()->getClient(ClientSearchMethod::byClientUid, $Cookie->Data['client_uid']);
+        }
+        catch(ClientNotFoundException $clientNotFoundException)
+        {
+            header('Location: /login?callback=105');
+            exit();
+        }
+        catch(Exception $exception)
+        {
+            header('Location: /login?callback=106');
+            exit();
+        }
 
         if($Client->isAuthorized() == false)
         {
@@ -322,7 +341,15 @@
             exit();
         }
 
-        $Account = $IntellivoidAccounts->getAccountManager()->getAccount(AccountSearchMethod::byId, $Cookie->Data['client_account_id']);
+        try
+        {
+            $Account = $IntellivoidAccounts->getAccountManager()->getAccount(AccountSearchMethod::byId, $Cookie->Data['client_account_id']);
+        }
+        catch(Exception $exception)
+        {
+            header('Location: /login?callback=107');
+            exit();
+        }
 
         switch($Account->Status)
         {

@@ -25,7 +25,15 @@
                 break;
 
             case 105:
-                render_alert(TEXT_CALLBACK_105, 'warning', 'alert-circle');
+                render_alert(TEXT_CALLBACK_105, 'danger', 'alert-circle');
+                break;
+
+            case 106:
+                render_alert(TEXT_CALLBACK_106, 'danger', 'alert-circle');
+                break;
+
+            case 107:
+                render_alert(TEXT_CALLBACK_107, 'danger', 'alert-circle');
                 break;
         }
     }
