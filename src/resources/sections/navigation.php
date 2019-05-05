@@ -12,11 +12,11 @@
                 </a>
             </div>
             <div class="navbar-menu-wrapper d-flex align-items-stretch">
-                <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                <button class="navbar-toggler navbar-toggler align-self-center" id="toggle-sidebar" type="button">
                     <span class="mdi mdi-format-list-bulleted"></span>
                 </button>
                 <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-                    <span class="mdi mdi-format-line-spacing"></span>
+                    <span class="mdi mdi-format-list-bulleted"></span>
                 </button>
             </div>
         </nav>
