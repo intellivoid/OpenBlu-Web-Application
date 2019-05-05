@@ -55,6 +55,40 @@
                     </li>
                 <?PHP
             }
+            else
+            {
+                ?>
+                <li class="nav-item account-dropdown">
+                    <a class="nav-link" data-toggle="collapse" href="#account-dropdown" aria-expanded="false" aria-controls="account-dropdown">
+                        <p class="mb-0 ml-3 text-light" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">Not Logged In</p>
+                        <i class="menu-arrow"></i>
+                    </a>
+                    <div class="collapse" id="account-dropdown">
+                        <ul class="nav flex-column sub-menu pl-0">
+
+                            <li class="nav-item">
+                                <a class="nav-link pl-5" onclick="location.href='/login';">
+                                        <span class="menu-icon">
+                                            <i class="mdi mdi-login"></i>
+                                        </span>
+                                    <span class="menu-title">Login</span>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link pl-5" onclick="location.href='/register';">
+                                        <span class="menu-icon">
+                                            <i class="mdi mdi-account-plus"></i>
+                                        </span>
+                                    <span class="menu-title">Register</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </li>
+                <?PHP
+            }
         ?>
         <li class="nav-item nav-category">
             <span class="nav-link">Navigation</span>

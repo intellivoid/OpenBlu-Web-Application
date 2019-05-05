@@ -15,28 +15,9 @@
                 <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
                     <span class="mdi mdi-format-list-bulleted"></span>
                 </button>
-                <ul class="navbar-nav navbar-nav-right">
-
-                </ul>
                 <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
                     <span class="mdi mdi-format-line-spacing"></span>
                 </button>
-
-                <?PHP
-                if(WEB_SESSION_ACTIVE == false)
-                {
-                    ?>
-                    <ul class="navbar-nav navbar-nav-right">
-
-                        <li class="nav-item d-none d-lg-block">
-                            <button onclick="location.href='/login'" type="button" class="btn btn-inverse-info btn-fw">Login to OpenBlu</button>
-
-                        </li>
-                    </ul>
-                    <?PHP
-                }
-                ?>
-
             </div>
         </nav>
         <?PHP
