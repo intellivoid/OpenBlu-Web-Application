@@ -5,6 +5,8 @@
     use ModularAPI\Abstracts\AccessKeySearchMethod;
     use ModularAPI\ModularAPI;
     use ModularAPI\Utilities\Hashing;
+    use OpenBlu\Abstracts\SearchMethods\PlanSearchMethod;
+    use OpenBlu\OpenBlu;
 
     if(class_exists('ModularAPI\ModularAPI') == false)
     {
@@ -12,7 +14,16 @@
     }
 
     $ModularAPI = new ModularAPI();
+    $OpenBlu = new OpenBlu();
+
     $AccessKeyObject = $ModularAPI->AccessKeys()->Manager->get(AccessKeySearchMethod::byID, CACHE_SUBSCRIPTION_ACCESS_KEY_ID);
+    $Plan = $OpenBlu->getPlanManager()->getPlan(PlanSearchMethod::byAccountId, WEB_ACCOUNT_ID);
+
+    $UsageCurrentMonth = 0;
+    foreach($AccessKeyObject->Analytics->CurrentMonthUsage as $Month => $Usage)
+    {
+        $UsageCurrentMonth += $Usage;
+    }
 
 ?>
 <div class="row">
@@ -55,7 +66,7 @@
                                 <h6 class="preview-subject">Monthly Calls
                                     <span class="float-right small">
                                         <span class="text-muted border-right pr-3">5000</span>
-                                        <span class="text-muted pl-3">13 calls this month</span>
+                                        <span class="text-muted pl-3"><?PHP HTML::print($UsageCurrentMonth); ?> calls this month</span>
                                     </span>
                                 </h6>
                                 <p>The amount of monthly calls you can make with this plan</p>
@@ -65,14 +76,14 @@
                     <div class="preview-item">
                         <div class="preview-thumbnail">
                             <div class="preview-icon bg-inverse-primary rounded">
-                                <i class="mdi mdi-chart-pie"></i>
+                                <i class="mdi mdi-receipt"></i>
                             </div>
                         </div>
                         <div class="preview-item-content d-flex flex-grow">
                             <div class="flex-grow">
                                 <h6 class="preview-subject">Next Billing Cycle <span class="float-right small">
                                     <span class="float-right small">
-                                        <span class="text-muted border-right pr-3">08.07.2017</span>
+                                        <span class="text-muted pr-3"><?PHP HTML::print(gmdate("Y-m-d", $Plan->NextBillingCycle)); ?></span>
                                     </span>
                                 </h6>
                                 <p>The date for when the system will process your next billing cycle</p>
@@ -83,9 +94,43 @@
 
                 </div>
 
-                <button type="button" class="btn btn-inverse-danger">
-                    <i class="mdi mdi-refresh"></i>Cancel Plan
+                <button type="button" class="btn btn-inverse-danger" data-toggle="modal" data-target="#exampleModal-4">
+                    <i class="mdi mdi-cancel"></i>Cancel Plan
                 </button>
+
+                <div class="modal fade" id="exampleModal-4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Cancel Current Subscription</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">
+                                        <i class="mdi mdi-close"></i>
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="alert alert-fill-danger" role="alert">
+                                    <i class="mdi mdi-alert-circle"></i>
+                                    You will not be refunded if you cancel your subscription, if you want to request a refund
+                                    you must contact support after cancelling your subscription.
+                                </div>
+                                <p>
+                                    Once you cancel your subscription, your API access will be revoked and you can purchase another
+                                    subscription to reactivate your API. If you simply want to change your API Key or certificate
+                                    then you can update your signatures instead of canceling your subscription.
+                                </p>
+                                <p class="text-danger">
+                                    This action cannot be undone! <i class="mdi mdi-alert"></i>
+                                </p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-light" data-dismiss="modal">Dimiss</button>
+                                <button type="button" class="btn btn-danger">Cancel Subscription</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -104,7 +149,7 @@
 
                 <div class="form-group">
                     <label for="certificate" class="card-subtitle">Certificate</label>
-                    <textarea id="certificate" name="certificate" class="form-control" rows="11" readonly><?PHP HTML::print(Hashing::buildCertificateKey(
+                    <textarea id="certificate" name="certificate" class="form-control" rows="13" readonly><?PHP HTML::print(Hashing::buildCertificateKey(
                             $AccessKeyObject->Signatures->IssuerName,
                             $AccessKeyObject->Signatures->PrivateSignature,
                             $AccessKeyObject->Signatures->PublicSignature
