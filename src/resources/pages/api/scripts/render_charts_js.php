@@ -40,7 +40,7 @@
         $Javascript .= "data: " . json_encode($data) . ",";
         $Javascript .= "xkey: \"day\",";
         $Javascript .= "ykeys: ['current_month', 'last_month'],";
-        $Javascript .= "labels: ['current Month', 'Last Month']";
+        $Javascript .= "labels: ['" . TEXT_API_USAGE_GRAPH_CURRENT_MONTH . "', '" . TEXT_API_USAGE_GRAPH_LAST_MONTH .  "']";
     }
     else
     {
