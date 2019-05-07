@@ -8,9 +8,9 @@
     use OpenBlu\Abstracts\SearchMethods\PlanSearchMethod;
     use OpenBlu\Objects\Plan;
     use OpenBlu\OpenBlu;
-use sws\sws;
+    use sws\sws;
 
-function returnCallback(int $callbackCode)
+    function returnCallback(int $callbackCode)
     {
         switch($_GET['plan'])
         {

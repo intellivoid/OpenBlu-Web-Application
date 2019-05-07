@@ -4,9 +4,8 @@
     use DynamicalWeb\HTML;
     use ModularAPI\Abstracts\AccessKeySearchMethod;
     use ModularAPI\ModularAPI;
-    use ModularAPI\Utilities\Hashing;
-use OpenBlu\Abstracts\APIPlan;
-use OpenBlu\Abstracts\SearchMethods\PlanSearchMethod;
+    use OpenBlu\Abstracts\APIPlan;
+    use OpenBlu\Abstracts\SearchMethods\PlanSearchMethod;
     use OpenBlu\OpenBlu;
 
     if(class_exists('ModularAPI\ModularAPI') == false)
@@ -166,20 +165,16 @@ use OpenBlu\Abstracts\SearchMethods\PlanSearchMethod;
 
                 <div class="form-group">
                     <label for="certificate" class="card-subtitle"><?PHP HTML::print(TEXT_AUTHENTICATION_CARD_CERTIFICATE_TITLE); ?></label>
-                    <textarea id="certificate" name="certificate" class="form-control" rows="13" readonly><?PHP HTML::print(Hashing::buildCertificateKey(
-                            $AccessKeyObject->Signatures->IssuerName,
-                            $AccessKeyObject->Signatures->PrivateSignature,
-                            $AccessKeyObject->Signatures->PublicSignature
-                        )); ?></textarea>
+                    <textarea id="certificate" name="certificate" class="form-control" rows="13" readonly><?PHP HTML::print($AccessKeyObject->Signatures->createCertificate()); ?></textarea>
                 </div>
 
                 <hr/>
 
                 <div class="form-group text-right">
-                    <button type="button" class="btn btn-inverse-success">
+                    <button type="button" class="btn btn-inverse-success" onclick="location.href='/api?action=download_certificate';">
                         <i class="mdi mdi-cloud-download"></i><?PHP HTML::print(TEXT_AUTHENTICATION_CARD_DOWNLOAD_CERTIFICATE_BUTTON); ?>
                     </button>
-                    <button type="button" class="btn btn-inverse-primary">
+                    <button type="button" class="btn btn-inverse-primary" onclick="location.href='/api?action=update_signatures';">
                         <i class="mdi mdi-refresh"></i><?PHP HTML::print(TEXT_AUTHENTICATION_CARD_UPDATE_SIGNATURES_BUTTON); ?>
                     </button>
                 </div>

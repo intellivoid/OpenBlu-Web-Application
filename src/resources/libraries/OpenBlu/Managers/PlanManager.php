@@ -3,11 +3,15 @@
     namespace OpenBlu\Managers;
 
     use Exception;
+    use ModularAPI\Abstracts\AccessKeySearchMethod;
     use ModularAPI\Configurations\UsageConfiguration;
+    use ModularAPI\Exceptions\AccessKeyNotFoundException;
     use ModularAPI\Exceptions\InvalidAccessKeyStatusException;
     use ModularAPI\Exceptions\NoResultsFoundException;
     use ModularAPI\Exceptions\UnsupportedSearchMethodException;
     use ModularAPI\ModularAPI;
+    use ModularAPI\Objects\AccessKey;
+    use ModularAPI\Utilities\Hashing;
     use OpenBlu\Abstracts\SearchMethods\PlanSearchMethod;
     use OpenBlu\Exceptions\DatabaseException;
     use OpenBlu\Exceptions\InvalidSearchMethodException;
@@ -247,5 +251,35 @@
             {
                 return false;
             }
+        }
+
+        /**
+         * @param Plan $plan
+         * @return AccessKey
+         * @throws NoResultsFoundException
+         * @throws UnsupportedSearchMethodException
+         * @throws AccessKeyNotFoundException
+         */
+        function updateSignatures(Plan $plan): AccessKey
+        {
+            $AccessKeyObject = $this->modularApi->AccessKeys()->Manager->get(AccessKeySearchMethod::byID, $plan->AccessKeyId);
+
+            $CurrentTime = time();
+
+            $AccessKeyObject->Signatures->PrivateSignature = Hashing::generatePrivateSignature(
+                $AccessKeyObject->Signatures->TimeSignature,
+                $AccessKeyObject->Signatures->IssuerName,
+                $CurrentTime
+            );
+
+            $AccessKeyObject->Signatures->PublicSignature = Hashing::generatePublicSignature(
+                $AccessKeyObject->Signatures->TimeSignature,
+                $AccessKeyObject->Signatures->PrivateSignature
+            );
+
+            $AccessKeyObject->PublicKey = Hashing::calculatePublicKey($AccessKeyObject->Signatures->createCertificate());
+            $this->modularApi->AccessKeys()->Manager->update($AccessKeyObject);
+
+            return $AccessKeyObject;
         }
     }

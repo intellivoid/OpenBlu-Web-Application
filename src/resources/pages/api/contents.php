@@ -5,6 +5,11 @@
 
     HTML::importScript('check_auth');
     HTML::importScript('cache');
+
+    if(CACHE_SUBSCRIPTION_ACTIVE == true)
+    {
+        HTML::importScript('dashboard_actions');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="<?PHP HTML::print(APP_LANGUAGE_ISO_639); ?>">
