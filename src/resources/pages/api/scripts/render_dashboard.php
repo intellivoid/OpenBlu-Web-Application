@@ -46,7 +46,7 @@
 <div class="row">
 
     <div class="col-md-6 grid-margin stretch-card">
-        <div class="card">
+        <div class="card animated fadeInLeft">
             <div class="card-body">
                 <h4 class="card-title"><?PHP HTML::print(TEXT_CURRENT_PLAN_CARD_TITLE); ?></h4>
                 <div class="alert alert-fill-primary" role="alert"><?PHP HTML::print(TEXT_CURRENT_PLAN_ALERT); ?></div>
@@ -153,7 +153,7 @@
     </div>
 
     <div class="col-md-6 grid-margin stretch-card">
-        <div class="card">
+        <div class="card animated fadeInRight">
             <div class="card-body">
                 <h4 class="card-title"><?PHP HTML::print(TEXT_AUTHENTICATION_CARD_TITLE); ?></h4>
                 <p class="card-description"><?PHP HTML::print(TEXT_AUTHENTICATION_CARD_DESC); ?></p>
@@ -187,7 +187,7 @@
 
 <div class="row grid-margin">
     <div class="col-12">
-        <div class="card">
+        <div class="card animated fadeInUp">
             <div class="card-body">
                 <h4 class="card-title"><?PHP HTML::print(TEXT_API_USAGE_CARD_TITLE); ?></h4>
                 <div id="api-usage-chart"></div>
