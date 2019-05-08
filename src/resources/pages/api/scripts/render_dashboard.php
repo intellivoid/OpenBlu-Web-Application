@@ -119,35 +119,6 @@
                     <i class="mdi mdi-cancel"></i><?PHP HTML::print(TEXT_CANCEL_PLAN_BUTTON); ?>
                 </button>
 
-                <div class="modal fade" id="cancel-plan-dialog" tabindex="-1" role="dialog" aria-labelledby="cancel-plan-label" style="display: none;" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="cancel-plan-label"><?PHP HTML::print(TEXT_CANCEL_DIALOG_TITLE); ?></h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">
-                                        <i class="mdi mdi-close"></i>
-                                    </span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="alert alert-fill-danger" role="alert">
-                                    <i class="mdi mdi-alert-circle"></i>
-                                    <?PHP HTML::print(TEXT_CANCEL_DIALOG_ALERT); ?>
-                                </div>
-                                <p><?PHP HTML::print(TEXT_CANCEL_DIALOG_TEXT); ?></p>
-                                <p class="text-danger">
-                                    <?PHP HTML::print(TEXT_CANCEL_DIALOG_WARNING); ?> <i class="mdi mdi-alert"></i>
-                                </p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-light" data-dismiss="modal"><?PHP HTML::print(TEXT_CANCEL_DIALOG_DISMISS_BUTTON); ?></button>
-                                <button type="button" class="btn btn-danger"><?PHP HTML::print(TEXT_CANCEL_DIALOG_CANCEL_SUBSCRIPTION_BUTTON); ?></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </div>
@@ -191,6 +162,35 @@
             <div class="card-body">
                 <h4 class="card-title"><?PHP HTML::print(TEXT_API_USAGE_CARD_TITLE); ?></h4>
                 <div id="api-usage-chart"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="cancel-plan-dialog" tabindex="-1" role="dialog" aria-labelledby="cancel-plan-label" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cancel-plan-label"><?PHP HTML::print(TEXT_CANCEL_DIALOG_TITLE); ?></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">
+                                        <i class="mdi mdi-close"></i>
+                                    </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-fill-danger" role="alert">
+                    <i class="mdi mdi-alert-circle"></i>
+                    <?PHP HTML::print(TEXT_CANCEL_DIALOG_ALERT); ?>
+                </div>
+                <p><?PHP HTML::print(TEXT_CANCEL_DIALOG_TEXT); ?></p>
+                <p class="text-danger">
+                    <?PHP HTML::print(TEXT_CANCEL_DIALOG_WARNING); ?> <i class="mdi mdi-alert"></i>
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-dismiss="modal"><?PHP HTML::print(TEXT_CANCEL_DIALOG_DISMISS_BUTTON); ?></button>
+                <button type="button" class="btn btn-danger" onclick="location.href='/api?action=cancel_plan';"><?PHP HTML::print(TEXT_CANCEL_DIALOG_CANCEL_SUBSCRIPTION_BUTTON); ?></button>
             </div>
         </div>
     </div>

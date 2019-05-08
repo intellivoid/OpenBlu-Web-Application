@@ -12,8 +12,9 @@
     use OpenBlu\Exceptions\InvalidSearchMethodException;
     use OpenBlu\Exceptions\UpdateRecordNotFoundException;
     use OpenBlu\OpenBlu;
+use sws\sws;
 
-    // TODO: Add callbacks to dashboard
+// TODO: Add callbacks to dashboard
     if(isset($_GET['action']))
     {
         switch($_GET['action'])
@@ -22,12 +23,12 @@
                 try
                 {
                     update_signatures();
-                    header('Location: /api');
+                    header('Location: /api'); // Redirect to dashboard
                     exit();
                 }
                 catch(Exception $exception)
                 {
-                    header('Location: /api?callback=100');
+                    header('Location: /api?callback=100'); // Dashboard callback
                     exit();
                 }
 
@@ -44,7 +45,20 @@
                 }
                 catch(Exception $exception)
                 {
-                    header('Location: /api?callback=101');
+                    header('Location: /api?callback=101'); // Dashboard Callback
+                    exit();
+                }
+
+            case 'cancel_plan':
+                try
+                {
+                    cancel_plan();
+                    header('Location: /api?callback=100'); // API Callback
+                    exit();
+                }
+                catch(Exception $exception)
+                {
+                    header('Location: /api?callback=103'); // Dashboard callback
                     exit();
                 }
         }
@@ -93,4 +107,27 @@
             'certificate' => $AccessKeyObject->Signatures->createCertificate(),
             'public_id' => $AccessKeyObject->PublicID
         );
+    }
+
+    /**
+     * @throws ConfigurationNotFoundException
+     * @throws DatabaseException
+     * @throws InvalidSearchMethodException
+     * @throws UpdateRecordNotFoundException
+     */
+    function cancel_plan()
+    {
+        $OpenBlu = new OpenBlu();
+
+        $Plan = $OpenBlu->getPlanManager()->getPlan(PlanSearchMethod::byAccountId, WEB_ACCOUNT_ID);
+        $Plan->Active = false;
+        $Plan->PlanStarted = false;
+        $OpenBlu->getPlanManager()->updatePlan($Plan);
+
+        // Force update the cache
+        $sws = new sws();
+        $Cookie = $sws->WebManager()->getCookie('web_session');
+        $Cookie->Data['cache_refresh'] = 0;
+
+        $sws->CookieManager()->updateCookie($Cookie);
     }
