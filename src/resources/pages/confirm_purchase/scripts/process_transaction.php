@@ -135,10 +135,19 @@
     $PlanObject->PromotionCode = PROMOTION_CODE;
     $PlanObject->AccountId = $Account->ID;
     $PlanObject->PlanStarted = true;
+    $PlanObject->Active = true;
     $PlanObject->PaymentRequired = false;
 
-    /** @noinspection PhpUnhandledExceptionInspection */
-    $OpenBlu->getPlanManager()->createPlan($PlanObject);
+    if($PlanExists == true)
+    {
+        /** @noinspection PhpUnhandledExceptionInspection */
+        $OpenBlu->getPlanManager()->updatePlan($PlanObject);
+    }
+    else
+    {
+        /** @noinspection PhpUnhandledExceptionInspection */
+        $OpenBlu->getPlanManager()->createPlan($PlanObject);
+    }
 
     $Account->Configuration->Balance -= PLAN_PRICE_C;
     /** @noinspection PhpUnhandledExceptionInspection */

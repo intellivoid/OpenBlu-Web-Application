@@ -173,9 +173,9 @@
             <div class="modal-header">
                 <h5 class="modal-title" id="cancel-plan-label"><?PHP HTML::print(TEXT_CANCEL_DIALOG_TITLE); ?></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">
-                                        <i class="mdi mdi-close"></i>
-                                    </span>
+                    <span aria-hidden="true">
+                        <i class="mdi mdi-close"></i>
+                    </span>
                 </button>
             </div>
             <div class="modal-body">

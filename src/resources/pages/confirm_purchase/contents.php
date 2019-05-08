@@ -6,6 +6,11 @@
     HTML::importScript('check_auth');
     HTML::importScript('cache');
 
+    if(CACHE_SUBSCRIPTION_ACTIVE == true)
+    {
+        header('Location: /api');
+        exit();
+    }
 
     if(WEB_SESSION_ACTIVE == false)
     {
