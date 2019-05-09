@@ -15,6 +15,7 @@
     use OpenBlu\Abstracts\SearchMethods\PlanSearchMethod;
     use OpenBlu\Exceptions\DatabaseException;
     use OpenBlu\Exceptions\InvalidSearchMethodException;
+    use OpenBlu\Exceptions\PlanNotFoundException;
     use OpenBlu\Exceptions\UpdateRecordNotFoundException;
     use OpenBlu\Objects\Plan;
     use OpenBlu\OpenBlu;
@@ -162,12 +163,16 @@
          * @param Plan $plan
          * @return bool
          * @throws DatabaseException
+         * @throws NoResultsFoundException
+         * @throws PlanNotFoundException
+         * @throws UnsupportedSearchMethodException
+         * @throws AccessKeyNotFoundException
          */
         function updatePlan(Plan $plan): bool
         {
             if($this->IdExists($plan->Id) == false)
             {
-
+                throw new PlanNotFoundException();
             }
 
             $id = (int)$plan->Id;
@@ -186,14 +191,16 @@
             $Query = "UPDATE `plans` SET active=$active, account_id=$account_id, access_key_id=$access_key_id, plan_type=$plan_type, promotion_code='$promotion_code', monthly_calls=$monthly_calls, price_per_cycle=$price_per_cycle, next_billing_cycle=$next_billing_cycle, billing_cycle=$billing_cycle, payment_required=$payment_required, plan_started=$plan_started WHERE id=$id";
             $QueryResults = $this->openBlu->database->query($Query);
 
-            if($QueryResults == true)
-            {
-                return true;
-            }
-            else
+            if($QueryResults == false)
             {
                 throw new DatabaseException($this->openBlu->database->error, $Query);
             }
+
+            $AccessKeyObject = $this->modularApi->AccessKeys()->getAccessKey(AccessKeySearchMethod::byID, $plan->AccessKeyId);
+            $AccessKeyObject->Usage->Limit = $plan->MonthlyCalls;
+            $this->modularApi->AccessKeys()->Manager->update($AccessKeyObject);
+
+            return true;
         }
 
         /**
