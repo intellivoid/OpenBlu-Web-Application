@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/IntellivoidAccounts" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/IntellivoidAccounts/Abstracts" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/IntellivoidAccounts/Abstracts/SearchMethods" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/IntellivoidAccounts/Exceptions" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/IntellivoidAccounts/Managers" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/IntellivoidAccounts/Objects" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/IntellivoidAccounts/Objects/Account" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/IntellivoidAccounts/Objects/Account/Configuration" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/IntellivoidAccounts/Objects/Account/PersonalInformation" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/IntellivoidAccounts/Utilities" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/IntellivoidAccounts/ZiProto" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/IntellivoidAccounts/ZiProto/Abstracts" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/IntellivoidAccounts/ZiProto/Exception" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/IntellivoidAccounts/ZiProto/Type" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/IntellivoidAccounts/ZiProto/TypeTransformer" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/Logixal" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/Logixal/Abstracts" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/Logixal/Exceptions" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/ModularAPI" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/ModularAPI/Abstracts" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/ModularAPI/Abstracts/HTTP" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/ModularAPI/Abstracts/HTTP/ResponseCode" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/ModularAPI/Configurations" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/ModularAPI/DatabaseManager" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/ModularAPI/Exceptions" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/ModularAPI/HTTP" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/ModularAPI/Managers" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/ModularAPI/Objects" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/ModularAPI/Objects/AccessKey" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/ModularAPI/Utilities" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/Abstracts" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/Abstracts/SearchMethods" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/AnalyticsManager" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/AnalyticsManager/Abstracts" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/AnalyticsManager/Exceptions" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/AnalyticsManager/Managers" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/AnalyticsManager/Objects" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/AnalyticsManager/Utilities" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/AnalyticsManager/ZiProto" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/AnalyticsManager/ZiProto/Abstracts" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/AnalyticsManager/ZiProto/Exception" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/AnalyticsManager/ZiProto/Type" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/AnalyticsManager/ZiProto/TypeTransformer" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/Exceptions" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/Managers" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/ModularAPI" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/ModularAPI/Abstracts" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/ModularAPI/Abstracts/HTTP" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/ModularAPI/Abstracts/HTTP/ResponseCode" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/ModularAPI/Configurations" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/ModularAPI/DatabaseManager" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/ModularAPI/Exceptions" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/ModularAPI/HTTP" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/ModularAPI/Managers" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/ModularAPI/Objects" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/ModularAPI/Objects/AccessKey" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/ModularAPI/Utilities" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/Objects" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/Resources" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/OpenBlu/Utilities" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/sws" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/sws/Abstracts" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/sws/Classes" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/sws/Exceptions" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/sws/Objects" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/sws/ZiProto" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/sws/ZiProto/Abstracts" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/sws/ZiProto/Exception" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/sws/ZiProto/Type" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/sws/ZiProto/TypeTransformer" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/DynamicalWeb" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/pages" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/add_balance" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/add_balance/scripts" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/api" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/api/scripts" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/confirm_purchase" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/confirm_purchase/scripts" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/default_avatar" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/index" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/login" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/login/scripts" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/logout" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/register" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/register/scripts" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/server" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/server/scripts" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/servers" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/servers/scripts" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/sections" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/shared" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/shared/scripts" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/database" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
