@@ -30,7 +30,7 @@
             $data[$key]['current_month'] = $value;
         }
 
-        foreach($AccessKeyObject->Analytics->CurrentMonthUsage as $key => $value)
+        foreach($AccessKeyObject->Analytics->LastMonthUsage as $key => $value)
         {
             $data[$key]['day'] = $key +1;
             $data[$key]['day'] = (string)$data[$key]['day'];

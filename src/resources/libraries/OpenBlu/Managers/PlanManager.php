@@ -4,6 +4,7 @@
 
     use Exception;
     use ModularAPI\Abstracts\AccessKeySearchMethod;
+    use ModularAPI\Abstracts\UsageType;
     use ModularAPI\Configurations\UsageConfiguration;
     use ModularAPI\Exceptions\AccessKeyNotFoundException;
     use ModularAPI\Exceptions\InvalidAccessKeyStatusException;
@@ -58,13 +59,25 @@
          */
         public function createPlan(Plan $plan): Plan
         {
-            // Create an access key
-            $AccessKey = $this->modularApi->AccessKeys()->createKey(
-                UsageConfiguration::dateIntervalLimit($plan->MonthlyCalls, 2628002),
-                array(
-                    'test'
-                )
-            );
+            if($plan->MonthlyCalls == 0)
+            {
+                $AccessKey = $this->modularApi->AccessKeys()->createKey(
+                    UsageConfiguration::unlimited(),
+                    array(
+                        'test'
+                    )
+                );
+            }
+            else
+            {
+                $AccessKey = $this->modularApi->AccessKeys()->createKey(
+                    UsageConfiguration::dateIntervalLimit($plan->MonthlyCalls, 2628002),
+                    array(
+                        'test'
+                    )
+                );
+            }
+
 
             $current_time = time();
 
@@ -196,8 +209,24 @@
                 throw new DatabaseException($this->openBlu->database->error, $Query);
             }
 
-            $AccessKeyObject = $this->modularApi->AccessKeys()->getAccessKey(AccessKeySearchMethod::byID, $plan->AccessKeyId);
-            $AccessKeyObject->Usage->Limit = $plan->MonthlyCalls;
+            $AccessKeyObject = $this->modularApi->AccessKeys()->Manager->get(AccessKeySearchMethod::byID, $plan->AccessKeyId);
+
+            if($plan->MonthlyCalls == 0)
+            {
+                $AccessKeyObject->Usage->UsageType = UsageType::Unlimited;
+                $AccessKeyObject->Usage->ResetInterval = 0;
+                $AccessKeyObject->Usage->NextInterval = 0;
+                $AccessKeyObject->Usage->Limit = 0;
+            }
+            else
+            {
+                $AccessKeyObject->Usage->UsageType = UsageType::DateIntervalLimit;
+                $AccessKeyObject->Usage->ResetInterval = 2628002;
+                $AccessKeyObject->Usage->NextInterval = 0;
+                $AccessKeyObject->Usage->Limit = $plan->MonthlyCalls;
+            }
+
+            $AccessKeyObject->Permissions->AllowAll = true;
             $this->modularApi->AccessKeys()->Manager->update($AccessKeyObject);
 
             return true;

@@ -58,6 +58,7 @@ use sws\sws;
                 }
                 catch(Exception $exception)
                 {
+                    die(var_dump($exception));
                     header('Location: /api?callback=103'); // Dashboard callback
                     exit();
                 }
@@ -110,10 +111,14 @@ use sws\sws;
     }
 
     /**
+     * @throws AccessKeyNotFoundException
      * @throws ConfigurationNotFoundException
      * @throws DatabaseException
      * @throws InvalidSearchMethodException
+     * @throws NoResultsFoundException
+     * @throws UnsupportedSearchMethodException
      * @throws UpdateRecordNotFoundException
+     * @throws \OpenBlu\Exceptions\PlanNotFoundException
      */
     function cancel_plan()
     {
