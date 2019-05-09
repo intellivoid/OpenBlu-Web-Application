@@ -123,11 +123,7 @@ use sws\sws;
     function cancel_plan()
     {
         $OpenBlu = new OpenBlu();
-
-        $Plan = $OpenBlu->getPlanManager()->getPlan(PlanSearchMethod::byAccountId, WEB_ACCOUNT_ID);
-        $Plan->Active = false;
-        $Plan->PlanStarted = false;
-        $OpenBlu->getPlanManager()->updatePlan($Plan);
+        $OpenBlu->getPlanManager()->cancelPlan(WEB_ACCOUNT_ID);
 
         // Force update the cache
         $sws = new sws();

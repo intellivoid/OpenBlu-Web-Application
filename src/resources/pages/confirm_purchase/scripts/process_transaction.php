@@ -82,47 +82,30 @@
     }
 
     $OpenBlu = new OpenBlu();
-    $PlanObject = null;
-    $PlanExists = false;
 
-    if($OpenBlu->getPlanManager()->accountIdExists($Account->ID) == true)
-    {
-        $PlanObject = $OpenBlu->getPlanManager()->getPlan(PlanSearchMethod::byAccountId, $Account->ID);
-
-        if($PlanObject->PlanStarted == true)
-        {
-            returnCallback(103);
-        }
-
-        $PlanExists = true;
-    }
-    else
-    {
-        $PlanObject = new Plan();
-    }
-
-
+    $BillingCycle = 0;
     if(PLAN_BILLING_CYCLE_C == 'MONTHLY')
     {
-        $PlanObject->BillingCycle = 86400;
+        $BillingCycle = 86400;
     }
     else
     {
-        $PlanObject->BillingCycle = 31536000;
+        $BillingCycle = 31536000;
     }
 
+    $PlanType = 'Unknown';
     switch($_GET['plan'])
     {
         case 'free':
-            $PlanObject->PlanType = APIPLan::Free;
+            $PlanType = APIPLan::Free;
             break;
 
         case 'basic':
-            $PlanObject->PlanType = APIPlan::Basic;
+            $PlanType = APIPlan::Basic;
             break;
 
         case 'enterprise':
-            $PlanObject->PlanType = APIPlan::Enterprise;
+            $PlanType = APIPlan::Enterprise;
             break;
 
         default:
@@ -130,24 +113,14 @@
             exit();
     }
 
-    $PlanObject->PricePerCycle = PLAN_PRICE_C;
-    $PlanObject->MonthlyCalls = PLAN_CALLS_MONTHLY_C;
-    $PlanObject->PromotionCode = PROMOTION_CODE;
-    $PlanObject->AccountId = $Account->ID;
-    $PlanObject->PlanStarted = true;
-    $PlanObject->Active = true;
-    $PlanObject->PaymentRequired = false;
-
-    if($PlanExists == true)
-    {
-        /** @noinspection PhpUnhandledExceptionInspection */
-        $OpenBlu->getPlanManager()->updatePlan($PlanObject);
-    }
-    else
-    {
-        /** @noinspection PhpUnhandledExceptionInspection */
-        $OpenBlu->getPlanManager()->createPlan($PlanObject);
-    }
+    $OpenBlu->getPlanManager()->startPlan(
+        $Account->ID,
+        $PlanType,
+        PLAN_CALLS_MONTHLY_C,
+        $BillingCycle,
+        PLAN_PRICE_C,
+        PROMOTION_CODE
+    );
 
     $Account->Configuration->Balance -= PLAN_PRICE_C;
     /** @noinspection PhpUnhandledExceptionInspection */
