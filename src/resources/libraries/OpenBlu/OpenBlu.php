@@ -1,5 +1,4 @@
 <?php
-    die('1');
 
     namespace OpenBlu;
 
