@@ -113,7 +113,7 @@
             exit();
     }
 
-    $OpenBlu->getPlanManager()->startPlan(
+    $Plan = $OpenBlu->getPlanManager()->startPlan(
         $Account->ID,
         $PlanType,
         PLAN_CALLS_MONTHLY_C,

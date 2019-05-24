@@ -70,6 +70,22 @@
 
         $parameters = getParameters();
 
+        switch($parameters['client'])
+        {
+            case 'win32_desktop':
+                break;
+
+            default:
+                jsonResponse(
+                    array(
+                        'operation_success' => false,
+                        'error_code' => 'UNSUPPORTED_CLIENT'
+                    ),
+                    400
+                );
+                break;
+        }
+
         DynamicalWeb::loadLibrary('OpenBlu', 'OpenBlu', 'OpenBlu.php');
         $OpenBlu = new OpenBlu();
         $Client = new Client();
