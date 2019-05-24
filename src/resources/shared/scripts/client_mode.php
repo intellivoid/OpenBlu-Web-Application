@@ -63,11 +63,6 @@
      */
     function start_client_mode()
     {
-        if(CLIENT_MODE_ENABLED == true)
-        {
-            return;
-        }
-
         $parameters = getParameters();
 
         switch($parameters['client'])
@@ -87,6 +82,7 @@
         }
 
         DynamicalWeb::loadLibrary('OpenBlu', 'OpenBlu', 'OpenBlu.php');
+        DynamicalWeb::loadLibrary('sws', 'sws', 'sws.php');
         $OpenBlu = new OpenBlu();
         $Client = new Client();
 
@@ -157,7 +153,47 @@
         }
 
         $sws = new sws();
-        $Cookie = $sws->WebManager()->getCookie('web_session');
+        $Cookie = null;
+
+        if($sws->WebManager()->isCookieValid('web_session') == false)
+        {
+            $Cookie = $sws->CookieManager()->newCookie('web_session', 86400, false);
+
+            $Cookie->Data = array(
+                'session_active' => false,
+                'account_pubid' => null,
+                'account_id' => null,
+                'account_email' => null,
+                'account_username' => null,
+                'downloads' => 0,
+                'cache' => array(),
+                'cache_refresh' => 0,
+
+                // Client Mode Properties
+                'client_mode_enabled' => false,
+                'client_uid' => null,
+                'client_name' => null,
+                'client_version' => null,
+                'client_authorized' => false,
+                'client_account_id' => 0,
+                'client_auth_expires' => 0
+            );
+
+            $sws->CookieManager()->updateCookie($Cookie);
+            $sws->WebManager()->setCookie($Cookie);
+
+            if($Cookie->Name == null)
+            {
+                print('There was an issue with the security check, Please refresh the page');
+                exit();
+            }
+
+        }
+        else
+        {
+            $Cookie = $sws->WebManager()->getCookie('web_session');
+        }
+
         $Cookie->Data['client_mode_enabled'] = true;
         $Cookie->Data['client_uid'] = $Client->ClientUid;
         $Cookie->Data['client_name'] = $Client->ClientName;
@@ -176,17 +212,8 @@
         }
 
         $sws->CookieManager()->updateCookie($Cookie);
-
-        if($Client->isAuthorized() == true)
-        {
-            header('Location: /');
-            exit();
-        }
-        else
-        {
-            header('Location: /login');
-            exit();
-        }
+        header('Location: /');
+        exit();
     }
 
     if(isset($_GET['mode']))
@@ -199,6 +226,7 @@
             }
             catch(Exception $exception)
             {
+                var_dump($exception);
                 jsonResponse(
                     array(
                         'operation_success' => false,

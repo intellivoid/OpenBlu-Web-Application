@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13744565-c04a-4ec4-8a5b-01f6fe867a44" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/47c3f4ab-28ec-47ec-ab44-478284754faf.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fe396203-53a2-4c55-ac4a-59c77f30ab04.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/libraries/OpenBlu/Managers/PlanManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/libraries/OpenBlu/Managers/PlanManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/pages/confirm_purchase/scripts/process_transaction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/pages/confirm_purchase/scripts/process_transaction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/pages/index/contents.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/pages/index/contents.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/shared/scripts/client_mode.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/shared/scripts/client_mode.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,11 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/client_mode.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-85">
-              <caret line="85" column="22" selection-start-line="85" selection-start-column="22" selection-end-line="85" selection-end-column="22" />
+            <state relative-caret-position="309">
+              <caret line="192" column="9" selection-start-line="192" selection-start-column="9" selection-end-line="192" selection-end-column="9" />
               <folding>
                 <element signature="e#11#41#0#PHP" expanded="true" />
               </folding>
@@ -45,9 +41,36 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/check_auth.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54">
+              <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="63" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resources/pages/index/contents.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resources/libraries/OpenBlu/Managers/ClientManager.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="496">
+              <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/resources/pages/confirm_purchase/scripts/process_transaction.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1363">
+            <state relative-caret-position="2244">
               <caret line="140" column="12" selection-start-line="140" selection-start-column="12" selection-end-line="140" selection-end-column="12" />
             </state>
           </provider>
@@ -56,13 +79,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/resources/libraries/OpenBlu/OpenBlu.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
+            <state relative-caret-position="3094">
               <caret line="189" column="24" selection-start-line="189" selection-start-column="24" selection-end-line="189" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/resources/libraries/OpenBlu/Managers/PlanManager.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="116">
@@ -74,7 +97,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/resources/libraries/OpenBlu/ModularAPI/Managers/AccessKeyManager.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
+            <state relative-caret-position="1462">
               <caret line="98" column="46" selection-start-line="98" selection-start-column="46" selection-end-line="98" selection-end-column="46" />
             </state>
           </provider>
@@ -83,7 +106,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/resources/libraries/OpenBlu/ModularAPI/Objects/AccessKey/Permissions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
+            <state relative-caret-position="1309">
               <caret line="77" column="9" selection-start-line="77" selection-start-column="9" selection-end-line="77" selection-end-column="9" />
             </state>
           </provider>
@@ -146,7 +169,6 @@
         <option value="$PROJECT_DIR$/src/resources/shared/scripts/check_vpn.php" />
         <option value="$PROJECT_DIR$/src/resources/shared/scripts/alert.php" />
         <option value="$PROJECT_DIR$/src/resources/shared/scripts/cache.php" />
-        <option value="$PROJECT_DIR$/src/resources/shared/scripts/check_auth.php" />
         <option value="$PROJECT_DIR$/src/resources/libraries/OpenBlu/Abstracts/SearchMethods/VPN.php" />
         <option value="$PROJECT_DIR$/src/resources/shared/scripts/recaptcha.php" />
         <option value="$PROJECT_DIR$/src/resources/shared/scripts/login_account.php" />
@@ -160,18 +182,19 @@
         <option value="$PROJECT_DIR$/src/resources/sections/sidebar.php" />
         <option value="$PROJECT_DIR$/src/assets/js/app-table-animations.js" />
         <option value="$PROJECT_DIR$/src/resources/pages/servers/contents.php" />
-        <option value="$PROJECT_DIR$/src/resources/pages/index/contents.php" />
         <option value="$PROJECT_DIR$/src/resources/languages/en.json" />
         <option value="$PROJECT_DIR$/src/resources/pages/server/contents.php" />
-        <option value="$PROJECT_DIR$/src/resources/shared/scripts/client_mode.php" />
         <option value="$PROJECT_DIR$/src/resources/libraries/OpenBlu/ModularAPI/Managers/AccessKeyManager.php" />
         <option value="$PROJECT_DIR$/src/resources/libraries/OpenBlu/ModularAPI/Objects/AccessKey/Permissions.php" />
         <option value="$PROJECT_DIR$/src/resources/pages/confirm_purchase/scripts/process_transaction.php" />
         <option value="$PROJECT_DIR$/src/resources/libraries/OpenBlu/Managers/PlanManager.php" />
+        <option value="$PROJECT_DIR$/src/resources/pages/index/contents.php" />
+        <option value="$PROJECT_DIR$/src/resources/shared/scripts/check_auth.php" />
+        <option value="$PROJECT_DIR$/src/resources/shared/scripts/client_mode.php" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="147" />
     <option name="y" value="134" />
     <option name="width" value="1026" />
@@ -250,6 +273,36 @@
               <item name="confirm_purchase" type="462c0819:PsiDirectoryNode" />
               <item name="scripts" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="OpenBlu-Web-Application" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OpenBlu-Web-Application" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="index" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OpenBlu-Web-Application" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OpenBlu-Web-Application" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="sections" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OpenBlu-Web-Application" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OpenBlu-Web-Application" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="shared" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OpenBlu-Web-Application" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OpenBlu-Web-Application" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="shared" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -260,7 +313,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../modular-api" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
   <component name="RecentsManager">
@@ -326,19 +379,29 @@
       <workItem from="1554730315906" duration="21130000" />
       <workItem from="1558627669808" duration="97000" />
       <workItem from="1558635136148" duration="890000" />
-      <workItem from="1558645399491" duration="2765000" />
+      <workItem from="1558645399491" duration="3337000" />
+      <workItem from="1558710873294" duration="4173000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85422000" />
+    <option name="totallyTimeSpent" value="90167000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.16868381" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.1709531" />
       <window_info id="Structure" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" order="0" />
       <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
@@ -403,7 +466,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/html5/web-forms2.rnc" />
     <entry file="file://$PROJECT_DIR$/src/resources/pages/register/contents.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -496,16 +558,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/check_auth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
-          <folding>
-            <element signature="e#7#37#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -646,16 +698,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/pages/index/contents.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="36" column="68" lean-forward="true" selection-start-line="36" selection-start-column="68" selection-end-line="36" selection-end-column="68" />
-          <folding>
-            <element signature="e#6#28#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/languages/en.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="397">
@@ -677,41 +719,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/pages/confirm_purchase/scripts/process_transaction.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2244">
+          <caret line="140" column="12" selection-start-line="140" selection-start-column="12" selection-end-line="140" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/libraries/OpenBlu/OpenBlu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3094">
+          <caret line="189" column="24" selection-start-line="189" selection-start-column="24" selection-end-line="189" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/libraries/OpenBlu/ModularAPI/Managers/AccessKeyManager.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
+        <state relative-caret-position="1462">
           <caret line="98" column="46" selection-start-line="98" selection-start-column="46" selection-end-line="98" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/libraries/OpenBlu/ModularAPI/Objects/AccessKey/Permissions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
+        <state relative-caret-position="1309">
           <caret line="77" column="9" selection-start-line="77" selection-start-column="9" selection-end-line="77" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/libraries/OpenBlu/OpenBlu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="189" column="24" selection-start-line="189" selection-start-column="24" selection-end-line="189" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/pages/confirm_purchase/scripts/process_transaction.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1363">
-          <caret line="140" column="12" selection-start-line="140" selection-start-column="12" selection-end-line="140" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/client_mode.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-85">
-          <caret line="85" column="22" selection-start-line="85" selection-start-column="22" selection-end-line="85" selection-end-column="22" />
-          <folding>
-            <element signature="e#11#41#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -719,6 +751,37 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="116">
           <caret line="336" column="42" selection-start-line="336" selection-start-column="42" selection-end-line="336" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/libraries/OpenBlu/Managers/ClientManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/check_auth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="63" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/pages/index/contents.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/client_mode.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="192" column="9" selection-start-line="192" selection-start-column="9" selection-end-line="192" selection-end-column="9" />
+          <folding>
+            <element signature="e#11#41#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
