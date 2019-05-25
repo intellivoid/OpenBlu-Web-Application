@@ -50,6 +50,10 @@
             $Cookie->Data['cache']['subscription_plan_id'] = 0;
             $Cookie->Data['cache']['subscription_access_key_id'] = 0;
             $Cookie->Data['cache']['subscription_monthly_calls'] = 0;
+            if(isset($Cookie->Data['cache']['ui']['sidebar_expanded']) == false)
+            {
+                $Cookie->Data['cache']['ui']['sidebar_expanded'] = true;
+            }
 
             if(defined('WEB_SESSION_ACTIVE') == true)
             {
@@ -104,5 +108,13 @@
         define('CACHE_SUBSCRIPTION_PLAN_ID', $Cookie->Data['cache']['subscription_plan_id'], false);
         define('CACHE_SUBSCRIPTION_ACCESS_KEY_ID', $Cookie->Data['cache']['subscription_access_key_id'], false);
         define('CACHE_SUBSCRIPTION_MONTHLY_CALLS', $Cookie->Data['cache']['subscription_monthly_calls'], false);
-
+        define('CACHE_UI_SIDEBAR_EXPANDED', $Cookie->Data['cache']['ui']['sidebar_expanded'], false);
+        if($Cookie->Data['cache']['ui']['sidebar_expanded'] == true)
+        {
+            define('SIDEBAR_STATE', ' class="sidebar-icon-only"', false);
+        }
+        else
+        {
+            define('SIDEBAR_STATE', '', false);
+        }
     }

@@ -18,7 +18,7 @@
         <title><?PHP HTML::print(TEXT_PAGE_TITLE); ?></title>
     </head>
 
-    <body>
+    <body<?PHP HTML::print(SIDEBAR_STATE, false); ?>>
 
         <div class="container-scrollbar">
             <?PHP HTML::importSection('navigation'); ?>

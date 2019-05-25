@@ -17,7 +17,7 @@
         <title><?PHP HTML::print(str_ireplace('%s', CACHE_VPN_PUBLIC_ID, TEXT_PAGE_TITLE)); ?></title>
     </head>
 
-    <body>
+    <body<?PHP HTML::print(SIDEBAR_STATE, false); ?>>
 
         <div class="container-scrollbar">
             <?PHP HTML::importSection('navigation'); ?>

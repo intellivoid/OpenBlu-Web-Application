@@ -8,6 +8,7 @@
     HTML::importScript('client_mode');
     HTML::importScript('check_auth');
     HTML::importScript('cache');
+    HTML::importScript('toggle_sidebar');
     HTML::importScript('time_human');
 
     $OpenBlu = new OpenBlu();
@@ -19,7 +20,7 @@
         <title><?PHP HTML::print(TEXT_PAGE_TITLE); ?></title>
     </head>
 
-    <body>
+    <body<?PHP HTML::print(SIDEBAR_STATE, false); ?>>
 
         <div class="container-scrollbar">
             <?PHP HTML::importSection('navigation'); ?>

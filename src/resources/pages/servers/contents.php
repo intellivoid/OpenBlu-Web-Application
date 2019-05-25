@@ -19,6 +19,7 @@
         }
     }
 
+    HTML::importScript('cache');
     HTML::importScript('time_human');
     HTML::importScript('table');
     HTML::importScript('alert');
@@ -33,7 +34,7 @@
         <?PHP HTML::importSection('header'); ?>
         <title><?PHP HTML::print(TEXT_PAGE_TITLE); ?></title>
     </head>
-    <body>
+    <body<?PHP HTML::print(SIDEBAR_STATE, false); ?>>
         <div class="container-scrollbar">
             <?PHP HTML::importSection('navigation'); ?>
             <div class="container-fluid page-body-wrapper">
