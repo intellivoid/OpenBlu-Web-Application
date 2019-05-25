@@ -219,9 +219,15 @@
             "CONFIRM_PURCHASE_BUTTON": "Confirm Purchase"
         },
         "404": {
-            "PAGE_TITLE": "OpenBlu - 404",
+            "PAGE_TITLE": "OpenBlu - Page Not Found",
             "CARD_HEADER": "404 Not Found",
             "CARD_DESCRIPTION": "The page you were looking for was not found",
+            "BUTTON_HOME": "Go Home"
+        },
+        "500": {
+            "PAGE_TITLE": "OpenBlu - Internal Server Error",
+            "CARD_HEADER": "Internal Server Error",
+            "CARD_DESCRIPTION": "There was an issue while processing your request, please try again or report to support",
             "BUTTON_HOME": "Go Home"
         },
         "add_balance": {
