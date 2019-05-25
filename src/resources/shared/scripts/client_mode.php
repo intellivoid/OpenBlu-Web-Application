@@ -226,7 +226,6 @@
             }
             catch(Exception $exception)
             {
-                var_dump($exception);
                 jsonResponse(
                     array(
                         'operation_success' => false,
