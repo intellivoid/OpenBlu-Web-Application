@@ -109,7 +109,7 @@
         define('CACHE_SUBSCRIPTION_ACCESS_KEY_ID', $Cookie->Data['cache']['subscription_access_key_id'], false);
         define('CACHE_SUBSCRIPTION_MONTHLY_CALLS', $Cookie->Data['cache']['subscription_monthly_calls'], false);
         define('CACHE_UI_SIDEBAR_EXPANDED', $Cookie->Data['cache']['ui']['sidebar_expanded'], false);
-        if($Cookie->Data['cache']['ui']['sidebar_expanded'] == true)
+        if($Cookie->Data['cache']['ui']['sidebar_expanded'] == false)
         {
             define('SIDEBAR_STATE', ' class="sidebar-icon-only"', false);
         }

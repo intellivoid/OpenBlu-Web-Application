@@ -2,19 +2,75 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13744565-c04a-4ec4-8a5b-01f6fe867a44" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/resources/shared/scripts/toggle_sidebar.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/pages/404/contents.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/pages/404/contents.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/pages/500/contents.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/pages/500/contents.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/pages/about/contents.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/pages/about/contents.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/pages/add_balance/contents.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/pages/add_balance/contents.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/pages/api/contents.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/pages/api/contents.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/pages/confirm_purchase/contents.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/pages/confirm_purchase/contents.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/pages/index/contents.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/pages/index/contents.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/pages/server/contents.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/pages/server/contents.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/pages/servers/contents.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/pages/servers/contents.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/shared/scripts/cache.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/shared/scripts/cache.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/ace.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/alerts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/avgrund.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/bootstrap-table.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/bt-maxLength.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/bt-multiselect-splitter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/c3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/calendar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/chart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/chartist.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/circle-progress.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/clipboard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/codeEditor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/context-menu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/cropper.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/dashboard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/data-table.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/db.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/demo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/desktop-notification.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/dragula.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/dropify.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/dropzone.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/editorDemo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/file-upload.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/float-chart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/form-addons.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/form-repeater.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/form-validation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/formpickers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/google-charts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/google-maps.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/hoverable-collapse.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/iCheck.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/ion-range-slider.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/jq.tablesort.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/js-grid.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/just-gage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/light-gallery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/listify.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/mail.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/mapeal.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/mapeal_example_2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/mapeal_example_3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/mapiel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/maps.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/misc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/modal-demo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/morris.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/no-ui-slider.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/off-canvas.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/owl-carousel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/paginate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/popover.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/progress-bar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/select2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/settings.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/sparkline.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/tablesorter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/tabs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/tight-grid.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/toastDemo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/todolist.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/tooltips.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/typeahead.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/widget-drag.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/wizard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/js/x-editable.js" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,16 +94,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/cache.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="479">
-              <caret line="54" column="72" selection-start-line="54" selection-start-column="72" selection-end-line="54" selection-end-column="72" />
+            <state relative-caret-position="377">
+              <caret line="111" column="68" selection-start-line="111" selection-start-column="68" selection-end-line="111" selection-end-column="68" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/resources/pages/servers/contents.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
@@ -60,7 +116,7 @@
         <entry file="file://$PROJECT_DIR$/src/resources/pages/server/contents.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
-              <caret line="8" column="4" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="32" />
+              <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -143,8 +199,8 @@
         <option value="$PROJECT_DIR$/src/resources/pages/api/contents.php" />
         <option value="$PROJECT_DIR$/src/resources/pages/confirm_purchase/contents.php" />
         <option value="$PROJECT_DIR$/src/resources/pages/server/contents.php" />
-        <option value="$PROJECT_DIR$/src/resources/shared/scripts/cache.php" />
         <option value="$PROJECT_DIR$/src/resources/pages/servers/contents.php" />
+        <option value="$PROJECT_DIR$/src/resources/shared/scripts/cache.php" />
       </list>
     </option>
   </component>
@@ -411,12 +467,12 @@
       <workItem from="1558746690082" duration="1132000" />
       <workItem from="1558751592199" duration="3987000" />
       <workItem from="1558821669602" duration="5854000" />
-      <workItem from="1558821198509" duration="4181000" />
+      <workItem from="1558821198509" duration="4306000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106035000" />
+    <option name="totallyTimeSpent" value="106160000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -825,17 +881,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/cache.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="54" column="72" selection-start-line="54" selection-start-column="72" selection-end-line="54" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/pages/server/contents.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="8" column="4" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="32" />
+          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -843,6 +892,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/cache.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="111" column="68" selection-start-line="111" selection-start-column="68" selection-end-line="111" selection-end-column="68" />
         </state>
       </provider>
     </entry>
