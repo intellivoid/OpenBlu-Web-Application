@@ -94,7 +94,7 @@
         <li class="nav-item nav-category">
             <span class="nav-link">Navigation</span>
         </li>
-        <li class="nav-item menu-items">
+        <li class="nav-item menu-items<?PHP if(APP_CURRENT_PAGE == 'index'){ HTML::print(' active'); } ?>">
             <a class="nav-link" href="/">
                 <span class="menu-icon">
                   <i class="mdi mdi-home"></i>
@@ -102,7 +102,7 @@
                 <span class="menu-title">Home</span>
             </a>
         </li>
-        <li class="nav-item menu-items">
+        <li class="nav-item menu-items<?PHP if(APP_CURRENT_PAGE == 'servers' || APP_CURRENT_PAGE == 'server'){ HTML::print(' active'); } ?>">
             <a class="nav-link" href="/servers">
                 <span class="menu-icon">
                   <i class="mdi mdi-server-network"></i>
@@ -114,7 +114,7 @@
             if(CLIENT_MODE_ENABLED == false)
             {
                 ?>
-                <li class="nav-item menu-items">
+                <li class="nav-item menu-items<?PHP if(APP_CURRENT_PAGE == 'api' || APP_CURRENT_PAGE == 'confirm_purchase'){ HTML::print(' active'); } ?>">
                     <a class="nav-link" href="/api">
                 <span class="menu-icon">
                   <i class="mdi mdi-console"></i>
@@ -122,7 +122,7 @@
                         <span class="menu-title">API</span>
                     </a>
                 </li>
-                <li class="nav-item menu-items">
+                <li class="nav-item menu-items<?PHP if(APP_CURRENT_PAGE == 'guide'){ HTML::print(' active'); } ?>">
                     <a class="nav-link" href="/guide">
                 <span class="menu-icon">
                   <i class="mdi mdi-help"></i>
@@ -133,7 +133,7 @@
                 <?PHP
             }
         ?>
-        <li class="nav-item menu-items">
+        <li class="nav-item menu-items<?PHP if(APP_CURRENT_PAGE == 'support'){ HTML::print(' support'); } ?>">
             <a class="nav-link" href="/support">
                 <span class="menu-icon">
                   <i class="mdi mdi-lifebuoy"></i>
@@ -141,7 +141,7 @@
                 <span class="menu-title">Support</span>
             </a>
         </li>
-        <li class="nav-item menu-items">
+        <li class="nav-item menu-items<?PHP if(APP_CURRENT_PAGE == 'about'){ HTML::print(' active'); } ?>">
             <a class="nav-link" href="/about">
                 <span class="menu-icon">
                   <i class="mdi mdi-information-outline"></i>
