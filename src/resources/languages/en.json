@@ -98,6 +98,7 @@
             "CARD_CONNECT_TITLE": "Connect",
             "CARD_CONNECT_OPENVPN_DESC": "You can connect to this server using a OpenVPN client with any supported device, the download to the configuration file (.ovpn) is available below",
             "CARD_CONNECT_OPENVPN_DOWNLOAD_BUTTON": "Download Configuration File",
+            "CARD_CONNECT_CLIENT_DESC": "By clicking connect your client will start a OpenVPN session, you can close the connection by closing the OpenVPN Client.",
             "PLACEHOLDER_SESSIONS": "%s Sessions",
             "PLACEHOLDER_SPEED": "%s ms"
         },

@@ -50,7 +50,7 @@
         }
 
         header('Refresh: 2; URL=/');
-        print('Loading WebApp Resources ...');
+        HTML::importScript('loading_splash');
         exit();
 
     }
