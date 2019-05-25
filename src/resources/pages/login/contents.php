@@ -9,8 +9,6 @@
     HTML::importScript('login_account');
     HTML::importScript('alert');
 
-
-
 ?>
 <!DOCTYPE html>
 <html lang="<?PHP HTML::print(APP_LANGUAGE_ISO_639); ?>">
