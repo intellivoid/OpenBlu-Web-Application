@@ -218,6 +218,12 @@
             "PROMOTION_SUBMIT_BUTTON": "Verify",
             "CONFIRM_PURCHASE_BUTTON": "Confirm Purchase"
         },
+        "404": {
+            "PAGE_TITLE": "OpenBlu - 404",
+            "CARD_HEADER": "404 Not Found",
+            "CARD_DESCRIPTION": "The page you were looking for was not found",
+            "BUTTON_HOME": "Go Home"
+        },
         "add_balance": {
             "PAGE_TITLE": "OpenBlu - Add Balance",
             "CARD_HEADER": "Add To Balance",

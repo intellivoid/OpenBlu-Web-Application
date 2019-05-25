@@ -98,6 +98,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/resources/sections" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/resources/shared" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/resources/shared/scripts" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/404" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/database" />
     </content>
     <orderEntry type="inheritedJdk" />

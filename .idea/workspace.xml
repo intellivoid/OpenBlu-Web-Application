@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13744565-c04a-4ec4-8a5b-01f6fe867a44" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/resources/shared/scripts/loading_splash.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/pages/404/contents.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/openblu-web-application.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/openblu-web-application.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/languages/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/languages/en.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/pages/server/contents.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/pages/server/contents.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/shared/scripts/check_auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/shared/scripts/check_auth.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,51 +29,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/client_mode.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
-              <caret line="239" column="5" lean-forward="true" selection-start-line="239" selection-start-column="5" selection-end-line="239" selection-end-column="5" />
-              <folding>
-                <element signature="e#11#41#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resources/pages/server/contents.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="227" column="8" selection-start-line="227" selection-start-column="8" selection-end-line="227" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/check_auth.php">
+        <entry file="file://$PROJECT_DIR$/src/resources/pages/404/contents.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="52" column="45" selection-start-line="52" selection-start-column="45" selection-end-line="52" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/loading_splash.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-153" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resources/pages/index/contents.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-              <folding>
-                <element signature="e#68#90#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="236">
+              <caret line="36" column="97" selection-start-line="36" selection-start-column="97" selection-end-line="36" selection-end-column="97" />
             </state>
           </provider>
         </entry>
@@ -82,8 +41,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/resources/languages/en.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="226" column="9" lean-forward="true" selection-start-line="226" selection-start-column="9" selection-end-line="226" selection-end-column="9" />
+            <state relative-caret-position="238">
+              <caret line="224" column="24" selection-start-line="224" selection-start-column="13" selection-end-line="224" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -116,7 +75,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/resources/libraries/OpenBlu/configuration.ini" />
         <option value="$PROJECT_DIR$/src/resources/libraries/IntellivoidAccounts/configuration.ini" />
         <option value="$PROJECT_DIR$/src/resources/libraries/IntellivoidAccounts/Managers/LoginRecordManager.php" />
         <option value="$PROJECT_DIR$/src/resources/shared/scripts/check_auth_s.php" />
@@ -164,9 +122,10 @@
         <option value="$PROJECT_DIR$/src/resources/pages/register/contents.php" />
         <option value="$PROJECT_DIR$/src/resources/shared/scripts/client_mode.php" />
         <option value="$PROJECT_DIR$/src/resources/pages/server/contents.php" />
-        <option value="$PROJECT_DIR$/src/resources/languages/en.json" />
         <option value="$PROJECT_DIR$/src/resources/pages/loading/contents.php" />
         <option value="$PROJECT_DIR$/src/resources/shared/scripts/check_auth.php" />
+        <option value="$PROJECT_DIR$/src/resources/languages/en.json" />
+        <option value="$PROJECT_DIR$/src/resources/pages/404/contents.php" />
       </list>
     </option>
   </component>
@@ -221,6 +180,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="404" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OpenBlu-Web-Application" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OpenBlu-Web-Application" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="index" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -229,14 +196,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="shared" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OpenBlu-Web-Application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OpenBlu-Web-Application" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="shared" type="462c0819:PsiDirectoryNode" />
-              <item name="scripts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -248,16 +207,16 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/resources/shared/scripts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/resources/pages" />
     <property name="settings.editor.selected.configurable" value="configurable.group.other" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Netkas\Documents\gits\OpenBlu-Web-Application\src\resources\pages" />
       <recent name="C:\Users\Netkas\Documents\gits\OpenBlu-Web-Application\src\resources\shared\scripts" />
       <recent name="C:\Users\Netkas\Documents\gits\openblu-web-application\src\resources" />
       <recent name="C:\Users\Netkas\Documents\gits\openblu-web-application\src\resources\libraries" />
       <recent name="C:\Users\Netkas\Documents\gits\openblu-web-application\src\resources\pages\servers" />
-      <recent name="C:\Users\Netkas\Documents\gits\openblu-web-application\src\resources\libraries\IntellivoidAccounts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Netkas\Documents\gits\openblu-web-application\src\resources\shared\scripts" />
@@ -318,12 +277,12 @@
       <workItem from="1558710873294" duration="4887000" />
       <workItem from="1558746690082" duration="1132000" />
       <workItem from="1558751592199" duration="3987000" />
-      <workItem from="1558821669602" duration="3472000" />
+      <workItem from="1558821669602" duration="5011000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99472000" />
+    <option name="totallyTimeSpent" value="101011000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -346,7 +305,7 @@
       <window_info anchor="bottom" id="Database Console" order="2" weight="0.32998326" />
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" weight="0.32943144" />
       <window_info anchor="bottom" id="Version Control" order="4" weight="0.32645404" />
-      <window_info anchor="bottom" id="Terminal" order="5" weight="0.32608697" />
+      <window_info anchor="bottom" id="Terminal" order="5" visible="true" weight="0.32608697" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" weight="0.32998326" />
       <window_info anchor="bottom" id="Run" order="8" />
@@ -404,9 +363,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/resources/DynamicalWeb/dynamicalweb.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="dbDummy://dbtable:/d8aef657/47c3f4ab-28ec-47ec-ab44-478284754faf/openblu.vpn_analytics" />
     <entry file="file://$PROJECT_DIR$/src/resources/pages/servers/sections/table_animation.php" />
     <entry file="file://$PROJECT_DIR$/src/resources/libraries/OpenBlu/Managers/VPNManager.php">
@@ -684,13 +640,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/languages/en.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="226" column="9" lean-forward="true" selection-start-line="226" selection-start-column="9" selection-end-line="226" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/pages/index/contents.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -725,8 +674,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/check_auth.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="52" column="45" selection-start-line="52" selection-start-column="45" selection-end-line="52" selection-end-column="45" />
+        <state relative-caret-position="221">
+          <caret line="45" column="33" lean-forward="true" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/languages/en.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="224" column="24" selection-start-line="224" selection-start-column="13" selection-end-line="224" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/pages/404/contents.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="36" column="97" selection-start-line="36" selection-start-column="97" selection-end-line="36" selection-end-column="97" />
         </state>
       </provider>
     </entry>
