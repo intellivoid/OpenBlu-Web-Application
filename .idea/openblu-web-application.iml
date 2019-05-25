@@ -99,6 +99,9 @@
       <sourceFolder url="file://$MODULE_DIR$/src/resources/shared" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/resources/shared/scripts" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/404" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/500" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/markdown" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/about" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/database" />
     </content>
     <orderEntry type="inheritedJdk" />

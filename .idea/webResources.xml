@@ -14,6 +14,7 @@
             <path value="file://$PROJECT_DIR$/src/assets/js" />
             <path value="file://$PROJECT_DIR$/src/assets/scss" />
             <path value="file://$PROJECT_DIR$/src/assets/vendors" />
+            <path value="file://$PROJECT_DIR$/src/resources/markdown/about" />
           </resourceRoots>
         </entryData>
       </entry>

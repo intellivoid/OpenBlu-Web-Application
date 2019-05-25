@@ -230,6 +230,10 @@
             "CARD_DESCRIPTION": "There was an issue while processing your request, please try again or report to support",
             "BUTTON_HOME": "Go Home"
         },
+        "about": {
+            "PAGE_TITLE": "OpenBlu - About",
+            "CARD_HEADER": "About OpenBlu"
+        },
         "add_balance": {
             "PAGE_TITLE": "OpenBlu - Add Balance",
             "CARD_HEADER": "Add To Balance",
