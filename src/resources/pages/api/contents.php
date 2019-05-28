@@ -3,7 +3,6 @@
 
     use DynamicalWeb\HTML;
 
-    HTML::importScript('check_auth');
     HTML::importScript('cache');
 
     if(CACHE_SUBSCRIPTION_ACTIVE == true)

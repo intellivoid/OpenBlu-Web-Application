@@ -3,7 +3,6 @@
 
     use DynamicalWeb\HTML;
 
-    HTML::importScript('check_auth');
     HTML::importScript('auto_redirect');
     HTML::importScript('recaptcha');
     HTML::importScript('login_account');

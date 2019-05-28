@@ -2,9 +2,6 @@
 
     use DynamicalWeb\HTML;
 
-    /** @noinspection PhpUnhandledExceptionInspection */
-    HTML::importScript('check_auth');
-
     if(defined('WEB_SESSION_ACTIVE') == true)
     {
         if(WEB_SESSION_ACTIVE == true)

@@ -1,52 +1,56 @@
 <?php
     /**
-     * DynamicalWeb Bootstrap v1.0.0.0
+     * DynamicalWeb Bootstrap v1.0.0.1
      */
 
     // Load the application resources
+    use DynamicalWeb\DynamicalWeb;
+    use DynamicalWeb\Language;
+    use DynamicalWeb\Page;
+
     require __DIR__ . DIRECTORY_SEPARATOR . 'resources' . DIRECTORY_SEPARATOR . 'DynamicalWeb' . DIRECTORY_SEPARATOR . 'DynamicalWeb.php';
-    \DynamicalWeb\DynamicalWeb::loadApplication(__DIR__ . DIRECTORY_SEPARATOR . 'resources');
-    \DynamicalWeb\DynamicalWeb::loadLibrary('Logixal', 'Logixal', 'Logixal.php');
+    try
+    {
+        DynamicalWeb::loadApplication(__DIR__ . DIRECTORY_SEPARATOR . 'resources');
+    }
+    catch (Exception $e)
+    {
+        Page::staticResponse('DynamicalWeb Error', 'DynamicalWeb Internal Server Error', $e->getMessage());
+        exit();
+    }
+
+    \DynamicalWeb\Runtime::runEventScripts('on_request');
 
     if(isset($_GET['set_language']))
     {
-        \DynamicalWeb\Language::changeLanguage($_GET['set_language']);
+        try
+        {
+            Language::changeLanguage($_GET['set_language']);
+        }
+        catch (Exception $e)
+        {
+            Page::staticResponse('DynamicalWeb Error', 'DynamicalWeb Internal Server Error', $e->getMessage());
+            exit();
+        }
+
         header('Location: '. APP_HOME_PAGE);
         exit();
     }
 
-    $ip = 'Unknown';
-    if(!empty($_SERVER['HTTP_CLIENT_IP']))
-    {
-        //ip from share internet
-        $ip = $_SERVER['HTTP_CLIENT_IP'];
-    }
-    elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR']))
-    {
-        //ip pass from proxy
-        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
-    }
-    else
-    {
-        $ip = $_SERVER['REMOTE_ADDR'];
-    }
-
     if(isset($_GET['c_view_point']) == false)
     {
-        \Logixal\Logging::information('OpenBlu Web Application', sprintf('%s: /%s', $ip, APP_HOME_PAGE));
-        \DynamicalWeb\Page::load(APP_HOME_PAGE);
+        Page::load(APP_HOME_PAGE);
     }
     else
     {
         if(strstr($_GET['c_view_point'], '/'))
         {
-            \Logixal\Logging::information('OpenBlu Web Application', sprintf('%s: /%s', $ip, '404'));
-            \DynamicalWeb\Page::load('404');
+            Page::load('404');
         }
         else
         {
-            \Logixal\Logging::information('OpenBlu Web Application', sprintf('%s: /%s', $ip, $_GET['c_view_point']));
-            \DynamicalWeb\Page::load($_GET['c_view_point']);
+            Page::load($_GET['c_view_point']);
         }
     }
 
+    \DynamicalWeb\Runtime::runEventScripts('after_request');

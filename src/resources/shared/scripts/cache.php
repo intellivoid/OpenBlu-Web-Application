@@ -6,20 +6,22 @@
     use IntellivoidAccounts\IntellivoidAccounts;
     use OpenBlu\Abstracts\SearchMethods\PlanSearchMethod;
     use OpenBlu\OpenBlu;
-    use sws\sws;
+use sws\Objects\Cookie;
+use sws\sws;
 
-    Runtime::import('SecuredWebSessions');
     Runtime::import('OpenBlu');
 
-    $sws = new sws();
+    $sws = DynamicalWeb::getMemoryObject('sws');
 
     if($sws->WebManager()->isCookieValid('web_session') == true)
     {
 
-        $Cookie = $sws->WebManager()->getCookie('web_session');
+        /** @var Cookie $Cookie */
+        $Cookie = DynamicalWeb::getMemoryObject('(cookie)web_session');
 
         if(time() > $Cookie->Data['cache_refresh'])
         {
+            // No need to set these values to MMS since they will be used once
             $OpenBlu = new OpenBlu();
 
             $Cookie->Data['cache']['total_servers'] = $OpenBlu->getVPNManager()->totalServers();
@@ -34,6 +36,7 @@
             $Cookie->Data['cache']['subscription_plan_id'] = 0;
             $Cookie->Data['cache']['subscription_access_key_id'] = 0;
             $Cookie->Data['cache']['subscription_monthly_calls'] = 0;
+
             if(isset($Cookie->Data['cache']['ui']['sidebar_expanded']) == false)
             {
                 $Cookie->Data['cache']['ui']['sidebar_expanded'] = true;
@@ -78,6 +81,7 @@
             $Cookie->Data['cache_refresh'] = time() + 30;
 
             $sws->CookieManager()->updateCookie($Cookie);
+            DynamicalWeb::setMemoryObject('(cookie)web_session', $Cookie);
         }
 
         define('CACHE_TOTAL_SERVERS', $Cookie->Data['cache']['total_servers'], false);
@@ -93,6 +97,7 @@
         define('CACHE_SUBSCRIPTION_ACCESS_KEY_ID', $Cookie->Data['cache']['subscription_access_key_id'], false);
         define('CACHE_SUBSCRIPTION_MONTHLY_CALLS', $Cookie->Data['cache']['subscription_monthly_calls'], false);
         define('CACHE_UI_SIDEBAR_EXPANDED', $Cookie->Data['cache']['ui']['sidebar_expanded'], false);
+
         if($Cookie->Data['cache']['ui']['sidebar_expanded'] == false)
         {
             define('SIDEBAR_STATE', ' class="sidebar-icon-only"', false);

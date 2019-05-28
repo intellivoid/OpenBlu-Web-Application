@@ -6,8 +6,6 @@
     use DynamicalWeb\HTML;
     use OpenBlu\OpenBlu;
 
-    HTML::importScript('check_auth');
-
     if(isset($_GET['action']))
     {
         if($_GET['action'] == 'select')

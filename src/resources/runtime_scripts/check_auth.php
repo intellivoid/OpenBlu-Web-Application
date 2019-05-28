@@ -1,12 +1,14 @@
 <?php
 
+    use DynamicalWeb\DynamicalWeb;
     use DynamicalWeb\HTML;
     use DynamicalWeb\Runtime;
     use sws\sws;
 
     Runtime::import('SecuredWebSessions');
 
-    $sws = new sws();
+    /** @var sws $sws */
+    $sws = DynamicalWeb::setMemoryObject('sws', new sws());
 
     if($sws->WebManager()->isCookieValid('web_session') == false)
     {
@@ -48,6 +50,7 @@
     }
 
     $Cookie = $sws->WebManager()->getCookie('web_session');
+    DynamicalWeb::setMemoryObject('(cookie)web_session', $Cookie);
 
     define('WEB_SESSION_ACTIVE', $Cookie->Data['session_active'], false);
     define('WEB_ACCOUNT_PUBID', $Cookie->Data['account_pubid'], false);
@@ -66,10 +69,9 @@
     define('CLIENT_AUTH_EXPIRES', $Cookie->Data['client_auth_expires'], false);
 
     HTML::importScript('client_mode');
-
-    if(CLIENT_MODE_ENABLED == true)
+    if($Cookie->Data['client_mode_enabled'] == true)
     {
-        if(WEB_SESSION_ACTIVE == false)
+        if($Cookie->Data['session_active'] == false)
         {
             switch(APP_CURRENT_PAGE)
             {

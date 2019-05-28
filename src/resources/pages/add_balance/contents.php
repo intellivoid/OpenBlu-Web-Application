@@ -3,7 +3,6 @@
 
     use DynamicalWeb\HTML;
 
-    HTML::importScript('check_auth');
     HTML::importScript('require_authentication');
     HTML::importScript('cache');
 

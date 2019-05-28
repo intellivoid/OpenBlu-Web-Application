@@ -6,9 +6,6 @@
     use OpenBlu\OpenBlu;
     use sws\sws;
 
-    /** @noinspection PhpUnhandledExceptionInspection */
-    HTML::importScript('check_auth');
-
     if(WEB_SESSION_ACTIVE == false)
     {
         header('Location: /');
