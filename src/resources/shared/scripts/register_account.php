@@ -1,6 +1,6 @@
 <?php
 
-    use DynamicalWeb\DynamicalWeb;
+    use DynamicalWeb\Runtime;
     use IntellivoidAccounts\Exceptions\ConfigurationNotFoundException;
     use IntellivoidAccounts\Exceptions\DatabaseException;
     use IntellivoidAccounts\Exceptions\InvalidSearchMethodException;
@@ -112,7 +112,7 @@
             exit();
         }
 
-        DynamicalWeb::loadLibrary('IntellivoidAccounts', 'IntellivoidAccounts', 'IntellivoidAccounts.php');
+        Runtime::import('IntellivoidAccounts');
 
         if(isset($_POST['username']) == false)
         {

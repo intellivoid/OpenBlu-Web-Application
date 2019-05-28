@@ -1,18 +1,10 @@
 <?php
 
-    use DynamicalWeb\DynamicalWeb;
     use DynamicalWeb\HTML;
+    use DynamicalWeb\Runtime;
     use sws\sws;
 
-    try
-    {
-        DynamicalWeb::loadLibrary('sws', 'sws', 'sws.php');
-    }
-    catch (Exception $e)
-    {
-        header('Location: /500');
-        exit();
-    }
+    Runtime::import('SecuredWebSessions');
 
     $sws = new sws();
 

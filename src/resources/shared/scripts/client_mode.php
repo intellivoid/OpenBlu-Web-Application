@@ -1,7 +1,8 @@
 <?php
 
     use DynamicalWeb\DynamicalWeb;
-    use OpenBlu\Abstracts\SearchMethods\ClientSearchMethod;
+use DynamicalWeb\Runtime;
+use OpenBlu\Abstracts\SearchMethods\ClientSearchMethod;
     use OpenBlu\Exceptions\ClientNotFoundException;
     use OpenBlu\Exceptions\ConfigurationNotFoundException;
     use OpenBlu\Exceptions\DatabaseException;
@@ -81,8 +82,9 @@
                 break;
         }
 
-        DynamicalWeb::loadLibrary('OpenBlu', 'OpenBlu', 'OpenBlu.php');
-        DynamicalWeb::loadLibrary('sws', 'sws', 'sws.php');
+        Runtime::import('OpenBlu');
+        Runtime::import('SecuredWebSessions');
+
         $OpenBlu = new OpenBlu();
         $Client = new Client();
 

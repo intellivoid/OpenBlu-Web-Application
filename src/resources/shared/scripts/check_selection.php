@@ -1,6 +1,7 @@
 <?php
 
     use DynamicalWeb\DynamicalWeb;
+    use DynamicalWeb\Runtime;
     use OpenBlu\Abstracts\SearchMethods\VPN;
     use OpenBlu\Exceptions\VPNNotFoundException;
     use OpenBlu\OpenBlu;
@@ -13,7 +14,7 @@
     }
 
     /** @noinspection PhpUnhandledExceptionInspection */
-    DynamicalWeb::loadLibrary('OpenBlu', 'OpenBlu', 'OpenBlu.php');
+    Runtime::import('OpenBlu');
     $OpenBlu = new OpenBlu();
 
     try
@@ -33,8 +34,7 @@
 
     // Set a special one-time download token
     /** @noinspection PhpUnhandledExceptionInspection */
-    DynamicalWeb::loadLibrary('sws', 'sws', 'sws.php');
-
+    Runtime::import('SecuredWebSessions');
     $sws = new sws();
 
     $Cookie = $sws->WebManager()->getCookie('web_session');

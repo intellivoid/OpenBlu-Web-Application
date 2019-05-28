@@ -1,31 +1,15 @@
 <?php
 
     use DynamicalWeb\DynamicalWeb;
+    use DynamicalWeb\Runtime;
     use IntellivoidAccounts\Abstracts\SearchMethods\AccountSearchMethod;
     use IntellivoidAccounts\IntellivoidAccounts;
     use OpenBlu\Abstracts\SearchMethods\PlanSearchMethod;
     use OpenBlu\OpenBlu;
     use sws\sws;
 
-    try
-    {
-        DynamicalWeb::loadLibrary('sws', 'sws', 'sws.php');
-    }
-    catch (Exception $e)
-    {
-        header('Location: /500');
-        exit();
-    }
-
-    try
-    {
-        DynamicalWeb::loadLibrary('OpenBlu', 'OpenBlu', 'OpenBlu.php');
-    }
-    catch (Exception $e)
-    {
-        header('Location: /500');
-        exit();
-    }
+    Runtime::import('SecuredWebSessions');
+    Runtime::import('OpenBlu');
 
     $sws = new sws();
 
@@ -60,7 +44,7 @@
                 if(WEB_SESSION_ACTIVE == true)
                 {
                     /** @noinspection PhpUnhandledExceptionInspection */
-                    DynamicalWeb::loadLibrary('IntellivoidAccounts', 'IntellivoidAccounts', 'IntellivoidAccounts.php');
+                    Runtime::import('IntellivoidAccounts');
 
                     $IntellivoidAccounts = new IntellivoidAccounts();
 

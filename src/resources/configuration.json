@@ -35,7 +35,7 @@
             "autoloader": "sws.php",
             "check_class_exists": true,
             "namespace": "sws",
-            "main-class": "sws"
+            "main_class": "sws"
         }
     },
     "runtime_scripts": {

@@ -1,6 +1,6 @@
 <?php
 
-    use DynamicalWeb\DynamicalWeb;
+    use DynamicalWeb\Runtime;
     use IntellivoidAccounts\Abstracts\AccountStatus;
     use IntellivoidAccounts\Abstracts\LoginStatus;
     use IntellivoidAccounts\Abstracts\SearchMethods\AccountSearchMethod;
@@ -169,7 +169,7 @@
             exit();
         }
 
-        DynamicalWeb::loadLibrary('IntellivoidAccounts', 'IntellivoidAccounts', 'IntellivoidAccounts.php');
+        Runtime::import('IntellivoidAccounts');
 
         if(Validate::username($_POST['username_email']) == false)
         {
@@ -222,7 +222,7 @@
             // If client mode is enabled
             if($Cookie->Data['client_mode_enabled'] == true)
             {
-                DynamicalWeb::loadLibrary('OpenBlu', 'OpenBlu', 'OpenBlu.php');
+                Runtime::import('OpenBlu');
                 $OpenBlu = new OpenBlu();
 
                 $Client = $OpenBlu->getClientManager()->getClient(ClientSearchMethod::byClientUid, $Cookie->Data['client_uid']);
@@ -299,16 +299,13 @@
 
     /**
      * @throws ConfigurationNotFoundException
-     * @throws ClientNotFoundException
      * @throws \OpenBlu\Exceptions\ConfigurationNotFoundException
-     * @throws \OpenBlu\Exceptions\DatabaseException
-     * @throws \OpenBlu\Exceptions\InvalidSearchMethodException
      * @throws Exception
      */
     function AutoLogin()
     {
-        DynamicalWeb::loadLibrary('IntellivoidAccounts', 'IntellivoidAccounts', 'IntellivoidAccounts.php');
-        DynamicalWeb::loadLibrary('OpenBlu', 'OpenBlu', 'OpenBlu.php');
+        Runtime::import('IntellivoidAccounts');
+        Runtime::import('OpenBlu');
 
         $IntellivoidAccounts = new IntellivoidAccounts();
         $OpenBlu = new OpenBlu();
