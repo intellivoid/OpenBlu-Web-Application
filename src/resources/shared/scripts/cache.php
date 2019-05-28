@@ -10,7 +10,6 @@ use sws\Objects\Cookie;
 use sws\sws;
 
     Runtime::import('OpenBlu');
-
     $sws = DynamicalWeb::getMemoryObject('sws');
 
     if($sws->WebManager()->isCookieValid('web_session') == true)

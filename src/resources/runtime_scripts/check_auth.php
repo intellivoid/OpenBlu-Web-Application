@@ -67,21 +67,3 @@
     define('CLIENT_AUTHORIZED', $Cookie->Data['client_authorized'], false);
     define('CLIENT_ACCOUNT_ID', $Cookie->Data['client_account_id'], false);
     define('CLIENT_AUTH_EXPIRES', $Cookie->Data['client_auth_expires'], false);
-
-    HTML::importScript('client_mode');
-    if($Cookie->Data['client_mode_enabled'] == true)
-    {
-        if($Cookie->Data['session_active'] == false)
-        {
-            switch(APP_CURRENT_PAGE)
-            {
-                case 'login': break;
-
-                case 'register': break;
-
-                default:
-                    header('Location: /login');
-                    break;
-            }
-        }
-    }

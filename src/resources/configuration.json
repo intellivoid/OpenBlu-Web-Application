@@ -40,7 +40,7 @@
     },
     "runtime_scripts": {
         "initialize": [],
-        "on_page_load": ["check_auth.php"],
+        "on_page_load": ["check_auth.php", "client_mode.php"],
         "page_loaded": [],
         "after_request": [],
         "on_request": [],

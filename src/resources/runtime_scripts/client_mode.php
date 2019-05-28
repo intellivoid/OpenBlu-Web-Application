@@ -218,6 +218,24 @@ use OpenBlu\Abstracts\SearchMethods\ClientSearchMethod;
         exit();
     }
 
+    if(CLIENT_MODE_ENABLED == true)
+    {
+        if(WEB_SESSION_ACTIVE == false)
+        {
+            switch(APP_CURRENT_PAGE)
+            {
+                case 'login': break;
+
+                case 'register': break;
+
+                default:
+                    header('Location: /login');
+                    exit();
+                    break;
+            }
+        }
+    }
+
     if(isset($_GET['mode']))
     {
         if($_GET['mode'] == 'client')
