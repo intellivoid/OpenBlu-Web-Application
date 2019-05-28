@@ -1,4 +1,12 @@
 {
     "home_page": "index",
-    "primary_language": "en"
+    "primary_language": "en",
+    "libraries": {},
+    "runtime_scripts": {
+        "initialize": [],
+        "page_loaded": [],
+        "after_request": [],
+        "on_request": [],
+        "on_import": []
+    }
 }

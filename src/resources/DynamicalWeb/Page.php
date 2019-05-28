@@ -36,6 +36,7 @@
          * Loads the content for the requested page
          *
          * @param string $name
+         * @throws \Exception
          */
         public static function load(string $name)
         {
@@ -66,6 +67,7 @@
                     include_once(APP_CURRENT_PAGE_DIRECTORY . DIRECTORY_SEPARATOR . 'contents.php');
                 }
 
+                Runtime::runEventScripts('page_loaded');
                 return ;
             }
 
@@ -78,6 +80,7 @@
             /** @noinspection PhpIncludeInspection */
             include_once(APP_CURRENT_PAGE_DIRECTORY . DIRECTORY_SEPARATOR . 'contents.php');
 
+            Runtime::runEventScripts('page_loaded');
             return;
         }
 
