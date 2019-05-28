@@ -1,7 +1,43 @@
 {
     "home_page": "index",
     "primary_language": "en",
-    "libraries": {},
+    "libraries": {
+        "IntellivoidAccounts": {
+            "directory_name": "IntellivoidAccounts",
+            "autoloader": "IntellivoidAccounts.php",
+            "check_class_exists": true,
+            "namespace": "IntellivoidAccounts",
+            "main_class": "IntellivoidAccounts"
+        },
+        "Logixal": {
+            "directory_name": "Logixal",
+            "autoloader": "Logixal.php",
+            "check_class_exists": true,
+            "namespace": "Logixal",
+            "main_class": "Logixal"
+        },
+        "ModularAPI": {
+            "directory_name": "ModularAPI",
+            "autoloader": "ModularAPI.php",
+            "check_class_exists": true,
+            "namespace": "ModularAPI",
+            "main_class": "ModularAPI"
+        },
+        "OpenBlu": {
+            "directory_name": "OpenBlu",
+            "autoloader": "OpenBlu.php",
+            "check_class_exists": true,
+            "namespace": "OpenBlu",
+            "main_class": "OpenBlu"
+        },
+        "SecuredWebSessions": {
+            "directory_name": "sws",
+            "autoloader": "sws.php",
+            "check_class_exists": true,
+            "namespace": "sws",
+            "main-class": "sws"
+        }
+    },
     "runtime_scripts": {
         "initialize": [],
         "page_loaded": [],
