@@ -1,14 +1,26 @@
 <?PHP
     /** @noinspection PhpUnhandledExceptionInspection */
-
+    use DynamicalWeb\DynamicalWeb;
     use DynamicalWeb\HTML;
+    use DynamicalWeb\Runtime;
     use OpenBlu\Objects\VPN;
     use OpenBlu\OpenBlu;
+
+    Runtime::import('OpenBlu');
 
     HTML::importScript('toggle_sidebar');
     HTML::importScript('time_human');
 
-    $OpenBlu = new OpenBlu();
+    if(isset(DynamicalWeb::$globalObjects['openblu']) == false)
+    {
+        /** @var OpenBlu $OpenBlu */
+        $OpenBlu = DynamicalWeb::setMemoryObject('openblu', new OpenBlu());
+    }
+    else
+    {
+        /** @var OpenBlu $OpenBlu */
+        $OpenBlu = DynamicalWeb::getMemoryObject('openblu');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="<?PHP HTML::print(APP_LANGUAGE_ISO_639); ?>">
