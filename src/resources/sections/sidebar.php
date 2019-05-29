@@ -9,7 +9,7 @@
                 ?>
                     <li class="nav-item account-dropdown">
                         <a class="nav-link" data-toggle="collapse" href="#account-dropdown" aria-expanded="false" aria-controls="account-dropdown">
-                            <img class="img-sm rounded-circle" src="/default_avatar" alt="User Avatar">
+                            <canvas id="user-avatar" class="letterpic" title="<?PHP HTML::print(WEB_ACCOUNT_USERNAME); ?>" width="42" height="42" style="margin-right: 5px; border-radius: 30px;"></canvas>
                             <p class="mb-0 ml-3 text-light" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"><?PHP HTML::print(WEB_ACCOUNT_USERNAME); ?></p>
                             <?PHP
                                 if(CLIENT_MODE_ENABLED == false)
