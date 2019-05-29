@@ -1,11 +1,6 @@
 <?PHP
     /** @noinspection PhpUnhandledExceptionInspection */
-
     use DynamicalWeb\HTML;
-    use OpenBlu\Objects\VPN;
-    use OpenBlu\OpenBlu;
-
-    $OpenBlu = new OpenBlu();
 ?>
 <!DOCTYPE html>
 <html lang="<?PHP HTML::print(APP_LANGUAGE_ISO_639); ?>">

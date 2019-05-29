@@ -1,6 +1,7 @@
 <?php
 
     use DynamicalWeb\DynamicalWeb;
+    use DynamicalWeb\Runtime;
     use ModularAPI\Abstracts\AccessKeySearchMethod;
     use ModularAPI\Exceptions\AccessKeyNotFoundException;
     use ModularAPI\Exceptions\NoResultsFoundException;
@@ -10,11 +11,15 @@
     use OpenBlu\Exceptions\ConfigurationNotFoundException;
     use OpenBlu\Exceptions\DatabaseException;
     use OpenBlu\Exceptions\InvalidSearchMethodException;
+    use OpenBlu\Exceptions\PlanNotFoundException;
     use OpenBlu\Exceptions\UpdateRecordNotFoundException;
     use OpenBlu\OpenBlu;
-use sws\sws;
+    use sws\sws;
 
-// TODO: Add callbacks to dashboard
+    Runtime::import('OpenBlu');
+    Runtime::import('ModularAPI');
+
+    // TODO: Add callbacks to dashboard
     if(isset($_GET['action']))
     {
         switch($_GET['action'])
@@ -58,7 +63,6 @@ use sws\sws;
                 }
                 catch(Exception $exception)
                 {
-                    die(var_dump($exception));
                     header('Location: /api?callback=103'); // Dashboard callback
                     exit();
                 }
@@ -76,14 +80,23 @@ use sws\sws;
      */
     function update_signatures()
     {
-        $OpenBlu = new OpenBlu();
+        if(isset(DynamicalWeb::$globalObjects['openblu']) == false)
+        {
+            /** @var OpenBlu $OpenBlu */
+            $OpenBlu = DynamicalWeb::setMemoryObject('openblu', new OpenBlu());
+        }
+        else
+        {
+            /** @var OpenBlu $OpenBlu */
+            $OpenBlu = DynamicalWeb::getMemoryObject('openblu');
+        }
 
         $Plan = $OpenBlu->getPlanManager()->getPlan(PlanSearchMethod::byAccountId, WEB_ACCOUNT_ID);
         $OpenBlu->getPlanManager()->updateSignatures($Plan);
     }
 
     /**
-     * @return string
+     * @return array
      * @throws ConfigurationNotFoundException
      * @throws DatabaseException
      * @throws InvalidSearchMethodException
@@ -93,13 +106,27 @@ use sws\sws;
      */
     function get_certificate(): array
     {
-        if(class_exists('ModularAPI\ModularAPI') == false)
+        if(isset(DynamicalWeb::$globalObjects['openblu']) == false)
         {
-            DynamicalWeb::loadLibrary('ModularAPI', 'ModularAPI', 'ModularAPI');
+            /** @var OpenBlu $OpenBlu */
+            $OpenBlu = DynamicalWeb::setMemoryObject('openblu', new OpenBlu());
+        }
+        else
+        {
+            /** @var OpenBlu $OpenBlu */
+            $OpenBlu = DynamicalWeb::getMemoryObject('openblu');
         }
 
-        $OpenBlu = new OpenBlu();
-        $ModularAPI = new ModularAPI();
+        if(isset(DynamicalWeb::$globalObjects['modular_api']) == false)
+        {
+            /** @var ModularAPI $ModularAPI */
+            $ModularAPI = DynamicalWeb::setMemoryObject('modular_api', new ModularAPI());
+        }
+        else
+        {
+            /** @var ModularAPI $ModularAPI */
+            $ModularAPI = DynamicalWeb::getMemoryObject('modular_api');
+        }
 
         $Plan = $OpenBlu->getPlanManager()->getPlan(PlanSearchMethod::byAccountId, WEB_ACCOUNT_ID);
         $AccessKeyObject = $ModularAPI->AccessKeys()->Manager->get(AccessKeySearchMethod::byID, $Plan->AccessKeyId);
@@ -118,15 +145,27 @@ use sws\sws;
      * @throws NoResultsFoundException
      * @throws UnsupportedSearchMethodException
      * @throws UpdateRecordNotFoundException
-     * @throws \OpenBlu\Exceptions\PlanNotFoundException
+     * @throws PlanNotFoundException
      */
     function cancel_plan()
     {
-        $OpenBlu = new OpenBlu();
+        if(isset(DynamicalWeb::$globalObjects['openblu']) == false)
+        {
+            /** @var OpenBlu $OpenBlu */
+            $OpenBlu = DynamicalWeb::setMemoryObject('openblu', new OpenBlu());
+        }
+        else
+        {
+            /** @var OpenBlu $OpenBlu */
+            $OpenBlu = DynamicalWeb::getMemoryObject('openblu');
+        }
+
         $OpenBlu->getPlanManager()->cancelPlan(WEB_ACCOUNT_ID);
 
         // Force update the cache
-        $sws = new sws();
+        /** @var sws $sws */
+        $sws = DynamicalWeb::getMemoryObject('sws');
+
         $Cookie = $sws->WebManager()->getCookie('web_session');
         $Cookie->Data['cache_refresh'] = 0;
 

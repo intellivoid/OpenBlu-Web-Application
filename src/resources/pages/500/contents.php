@@ -1,9 +1,6 @@
 <?PHP
     /** @noinspection PhpUnhandledExceptionInspection */
-
     use DynamicalWeb\HTML;
-    use OpenBlu\Objects\VPN;
-    use OpenBlu\OpenBlu;
 
 ?>
 <!DOCTYPE html>

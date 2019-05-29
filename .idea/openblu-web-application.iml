@@ -102,6 +102,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/500" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/resources/markdown" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/about" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/runtime_scripts" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/database" />
     </content>
     <orderEntry type="inheritedJdk" />

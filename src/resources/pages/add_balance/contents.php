@@ -2,7 +2,6 @@
     /** @noinspection PhpUnhandledExceptionInspection */
 
     use DynamicalWeb\HTML;
-
     HTML::importScript('require_authentication');
 
 ?>
