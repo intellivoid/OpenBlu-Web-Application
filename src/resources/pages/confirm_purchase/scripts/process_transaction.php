@@ -1,14 +1,23 @@
 <?php
 
     use DynamicalWeb\DynamicalWeb;
+    use DynamicalWeb\Runtime;
     use IntellivoidAccounts\Abstracts\AccountStatus;
     use IntellivoidAccounts\Abstracts\SearchMethods\AccountSearchMethod;
     use IntellivoidAccounts\IntellivoidAccounts;
     use OpenBlu\Abstracts\APIPlan;
-    use OpenBlu\Abstracts\SearchMethods\PlanSearchMethod;
-    use OpenBlu\Objects\Plan;
     use OpenBlu\OpenBlu;
     use sws\sws;
+
+    try
+    {
+        Runtime::import('OpenBlu');
+        Runtime::import('IntellivoidAccounts');
+    }
+    catch(Exception $exception)
+    {
+        header('Location: /500');
+    }
 
     function returnCallback(int $callbackCode)
     {
@@ -54,13 +63,16 @@
         }
     }
 
-    /** @noinspection PhpUnhandledExceptionInspection */
-    DynamicalWeb::loadLibrary('IntellivoidAccounts', 'IntellivoidAccounts', 'IntellivoidAccounts.php');
-
-    /** @noinspection PhpUnhandledExceptionInspection */
-    DynamicalWeb::loadLibrary('OpenBlu', 'OpenBlu', 'OpenBlu.php');
-
-    $IntellivoidAccounts = new IntellivoidAccounts();
+    if(isset(DynamicalWeb::$globalObjects['intellivoid_accounts']) == false)
+    {
+        /** @var IntellivoidAccounts $IntellivoidAccounts */
+        $IntellivoidAccounts = DynamicalWeb::setMemoryObject('intellivoid_accounts', new IntellivoidAccounts());
+    }
+    else
+    {
+        /** @var IntellivoidAccounts $IntellivoidAccounts */
+        $IntellivoidAccounts = DynamicalWeb::getMemoryObject('intellivoid_accounts');
+    }
 
     /** @noinspection PhpUnhandledExceptionInspection */
     $Account = $IntellivoidAccounts->getAccountManager()->getAccount(AccountSearchMethod::byId, WEB_ACCOUNT_ID);
@@ -81,7 +93,16 @@
         returnCallback(102);
     }
 
-    $OpenBlu = new OpenBlu();
+    if(isset(DynamicalWeb::$globalObjects['openblu']) == false)
+    {
+        /** @var OpenBlu $OpenBlu */
+        $OpenBlu = DynamicalWeb::setMemoryObject('openblu', new OpenBlu());
+    }
+    else
+    {
+        /** @var OpenBlu $OpenBlu */
+        $OpenBlu = DynamicalWeb::getMemoryObject('openblu');
+    }
 
     $BillingCycle = 0;
     if(PLAN_BILLING_CYCLE_C == 'MONTHLY')
@@ -113,20 +134,29 @@
             exit();
     }
 
-    $Plan = $OpenBlu->getPlanManager()->startPlan(
-        $Account->ID,
-        $PlanType,
-        PLAN_CALLS_MONTHLY_C,
-        $BillingCycle,
-        PLAN_PRICE_C,
-        PROMOTION_CODE
-    );
+    try
+    {
+        $Plan = $OpenBlu->getPlanManager()->startPlan(
+            $Account->ID,
+            $PlanType,
+            PLAN_CALLS_MONTHLY_C,
+            $BillingCycle,
+            PLAN_PRICE_C,
+            PROMOTION_CODE
+        );
+    }
+    catch(Exception $exception)
+    {
+        header('Location: /500');
+        exit();
+    }
 
     $Account->Configuration->Balance -= PLAN_PRICE_C;
     /** @noinspection PhpUnhandledExceptionInspection */
     $IntellivoidAccounts->getAccountManager()->updateAccount($Account);
 
-    $sws = new sws();
+    /** @var sws $sws */
+    $sws = DynamicalWeb::getMemoryObject('sws');
     $Cookie = $sws->WebManager()->getCookie('web_session');
 
     // Force refresh cache
