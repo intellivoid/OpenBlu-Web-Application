@@ -5,7 +5,6 @@
 
     HTML::importScript('action.download');
     HTML::importScript('check_selection');
-    HTML::importScript('cache');
     HTML::importScript('time_human');
 ?>
 

@@ -3,8 +3,6 @@
 
     use DynamicalWeb\HTML;
 
-    HTML::importScript('cache');
-
     if(WEB_SESSION_ACTIVE == false)
     {
         header('Location: /');

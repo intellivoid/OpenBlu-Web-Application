@@ -17,7 +17,6 @@
         }
     }
 
-    HTML::importScript('cache');
     HTML::importScript('time_human');
     HTML::importScript('table');
     HTML::importScript('alert');

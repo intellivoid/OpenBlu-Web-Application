@@ -5,7 +5,6 @@
     use OpenBlu\Objects\VPN;
     use OpenBlu\OpenBlu;
 
-    HTML::importScript('cache');
     HTML::importScript('toggle_sidebar');
     HTML::importScript('time_human');
 

@@ -5,9 +5,6 @@
     use OpenBlu\Objects\VPN;
     use OpenBlu\OpenBlu;
 
-    HTML::importScript('cache');
-
-    $OpenBlu = new OpenBlu();
 ?>
 <!DOCTYPE html>
 <html lang="<?PHP HTML::print(APP_LANGUAGE_ISO_639); ?>">

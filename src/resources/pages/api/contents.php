@@ -3,8 +3,6 @@
 
     use DynamicalWeb\HTML;
 
-    HTML::importScript('cache');
-
     if(CACHE_SUBSCRIPTION_ACTIVE == true)
     {
         HTML::importScript('dashboard_actions');

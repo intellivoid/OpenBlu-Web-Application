@@ -4,7 +4,6 @@
     use DynamicalWeb\HTML;
 
     HTML::importScript('require_authentication');
-    HTML::importScript('cache');
 
 ?>
 <!DOCTYPE html>

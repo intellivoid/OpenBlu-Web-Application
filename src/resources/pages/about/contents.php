@@ -5,8 +5,6 @@
     use OpenBlu\Objects\VPN;
     use OpenBlu\OpenBlu;
 
-    HTML::importScript('cache');
-
     $OpenBlu = new OpenBlu();
 ?>
 <!DOCTYPE html>
