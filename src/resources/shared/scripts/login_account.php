@@ -1,6 +1,7 @@
 <?php
 
-    use DynamicalWeb\Runtime;
+use DynamicalWeb\DynamicalWeb;
+use DynamicalWeb\Runtime;
     use IntellivoidAccounts\Abstracts\AccountStatus;
     use IntellivoidAccounts\Abstracts\LoginStatus;
     use IntellivoidAccounts\Abstracts\SearchMethods\AccountSearchMethod;
@@ -18,6 +19,10 @@
     use OpenBlu\Exceptions\ClientNotFoundException;
     use OpenBlu\OpenBlu;
     use sws\sws;
+
+    Runtime::import('IntellivoidAccounts');
+    Runtime::import('OpenBlu');
+    Runtime::import('IntellivoidAccounts');
 
     if(CLIENT_MODE_ENABLED == true)
     {
@@ -169,8 +174,6 @@
             exit();
         }
 
-        Runtime::import('IntellivoidAccounts');
-
         if(Validate::username($_POST['username_email']) == false)
         {
             if(Validate::email($_POST['username_email']) == false)
@@ -186,7 +189,16 @@
             exit();
         }
 
-        $IntellivoidAccounts = new IntellivoidAccounts();
+        if(isset(DynamicalWeb::$globalObjects['intellivoid_accounts']) == false)
+        {
+            /** @var IntellivoidAccounts $IntellivoidAccounts */
+            $IntellivoidAccounts = DynamicalWeb::setMemoryObject('intellivoid_accounts', new IntellivoidAccounts());
+        }
+        else
+        {
+            /** @var IntellivoidAccounts $IntellivoidAccounts */
+            $IntellivoidAccounts = DynamicalWeb::getMemoryObject('intellivoid_accounts');
+        }
 
         try
         {
@@ -210,7 +222,8 @@
                 $Account->ID, getClientIP(), LoginStatus::Successful, 'OpenBlu WebApplication'
             );
 
-            $sws = new sws();
+            /** @var sws $sws */
+            $sws = DynamicalWeb::getMemoryObject('sws');
 
             $Cookie = $sws->WebManager()->getCookie('web_session');
             $Cookie->Data['session_active'] = true;
@@ -222,8 +235,16 @@
             // If client mode is enabled
             if($Cookie->Data['client_mode_enabled'] == true)
             {
-                Runtime::import('OpenBlu');
-                $OpenBlu = new OpenBlu();
+                if(isset(DynamicalWeb::$globalObjects['openblu']) == false)
+                {
+                    /** @var OpenBlu $OpenBlu */
+                    $OpenBlu = DynamicalWeb::setMemoryObject('openblu', new OpenBlu());
+                }
+                else
+                {
+                    /** @var OpenBlu $OpenBlu */
+                    $OpenBlu = DynamicalWeb::getMemoryObject('openblu');
+                }
 
                 $Client = $OpenBlu->getClientManager()->getClient(ClientSearchMethod::byClientUid, $Cookie->Data['client_uid']);
                 $Client->AccountID = $Account->ID;
@@ -304,13 +325,30 @@
      */
     function AutoLogin()
     {
-        Runtime::import('IntellivoidAccounts');
-        Runtime::import('OpenBlu');
+        if(isset(DynamicalWeb::$globalObjects['intellivoid_accounts']) == false)
+        {
+            /** @var IntellivoidAccounts $IntellivoidAccounts */
+            $IntellivoidAccounts = DynamicalWeb::setMemoryObject('intellivoid_accounts', new IntellivoidAccounts());
+        }
+        else
+        {
+            /** @var IntellivoidAccounts $IntellivoidAccounts */
+            $IntellivoidAccounts = DynamicalWeb::getMemoryObject('intellivoid_accounts');
+        }
 
-        $IntellivoidAccounts = new IntellivoidAccounts();
-        $OpenBlu = new OpenBlu();
-        $sws = new sws();
+        if(isset(DynamicalWeb::$globalObjects['openblu']) == false)
+        {
+            /** @var OpenBlu $OpenBlu */
+            $OpenBlu = DynamicalWeb::setMemoryObject('openblu', new OpenBlu());
+        }
+        else
+        {
+            /** @var OpenBlu $OpenBlu */
+            $OpenBlu = DynamicalWeb::getMemoryObject('openblu');
+        }
 
+        /** @var sws $sws */
+        $sws = DynamicalWeb::getMemoryObject('sws');
         $Cookie = $sws->WebManager()->getCookie('web_session');
 
         try

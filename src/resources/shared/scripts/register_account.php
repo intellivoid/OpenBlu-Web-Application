@@ -1,11 +1,14 @@
 <?php
 
+    use DynamicalWeb\DynamicalWeb;
     use DynamicalWeb\Runtime;
     use IntellivoidAccounts\Exceptions\ConfigurationNotFoundException;
     use IntellivoidAccounts\Exceptions\DatabaseException;
     use IntellivoidAccounts\Exceptions\InvalidSearchMethodException;
     use IntellivoidAccounts\IntellivoidAccounts;
     use IntellivoidAccounts\Utilities\Validate;
+
+    Runtime::import('IntellivoidAccounts');
 
     if($_SERVER['REQUEST_METHOD'] == 'POST')
     {
@@ -112,8 +115,6 @@
             exit();
         }
 
-        Runtime::import('IntellivoidAccounts');
-
         if(isset($_POST['username']) == false)
         {
             header('Location: ' . getRedirectLocation() . 'callback=100');
@@ -150,7 +151,16 @@
             exit();
         }
 
-        $IntellivoidAccounts = new IntellivoidAccounts();
+        if(isset(DynamicalWeb::$globalObjects['intellivoid_accounts']) == false)
+        {
+            /** @var IntellivoidAccounts $IntellivoidAccounts */
+            $IntellivoidAccounts = DynamicalWeb::setMemoryObject('intellivoid_accounts', new IntellivoidAccounts());
+        }
+        else
+        {
+            /** @var IntellivoidAccounts $IntellivoidAccounts */
+            $IntellivoidAccounts = DynamicalWeb::getMemoryObject('intellivoid_accounts');
+        }
         
         if($IntellivoidAccounts->getAccountManager()->usernameExists($_POST['username']) == true)
         {

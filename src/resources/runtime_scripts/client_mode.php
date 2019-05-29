@@ -214,6 +214,7 @@ use OpenBlu\Abstracts\SearchMethods\ClientSearchMethod;
         }
 
         $sws->CookieManager()->updateCookie($Cookie);
+        DynamicalWeb::setMemoryObject('(cookie)web_session', $Cookie);
         header('Location: /');
         exit();
     }

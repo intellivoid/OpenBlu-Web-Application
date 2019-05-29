@@ -1,7 +1,7 @@
 <?php
 
-    use DynamicalWeb\DynamicalWeb;
-    use DynamicalWeb\Runtime;
+use DynamicalWeb\DynamicalWeb;
+use DynamicalWeb\Runtime;
     use OpenBlu\Abstracts\SearchMethods\VPN;
     use OpenBlu\Exceptions\VPNNotFoundException;
     use OpenBlu\OpenBlu;
@@ -15,7 +15,16 @@
 
     /** @noinspection PhpUnhandledExceptionInspection */
     Runtime::import('OpenBlu');
-    $OpenBlu = new OpenBlu();
+    if(isset(DynamicalWeb::$globalObjects['openblu']) == false)
+    {
+        /** @var OpenBlu $OpenBlu */
+        $OpenBlu = DynamicalWeb::setMemoryObject('openblu', new OpenBlu());
+    }
+    else
+    {
+        /** @var OpenBlu $OpenBlu */
+        $OpenBlu = DynamicalWeb::getMemoryObject('openblu');
+    }
 
     try
     {

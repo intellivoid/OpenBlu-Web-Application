@@ -1,6 +1,7 @@
 <?php
 
-    use sws\sws;
+    use DynamicalWeb\DynamicalWeb;
+    use sws\Objects\Cookie;
 
     if(isset($_GET['update']))
     {
@@ -10,8 +11,8 @@
             {
                 if($_GET['action'] == 'toggle-sidebar')
                 {
-                    $sws = new sws();
-                    $Cookie = $sws->WebManager()->getCookie('web_session');
+                    /** @var Cookie $Cookie */
+                    $Cookie = DynamicalWeb::getMemoryObject('(cookie)web_session');
 
                     if($Cookie->Data['cache']['ui']['sidebar_expanded'] == true)
                     {
