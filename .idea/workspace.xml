@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13744565-c04a-4ec4-8a5b-01f6fe867a44" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/openblu-web-application.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/openblu-web-application.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/pages/404/contents.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/pages/404/contents.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/pages/500/contents.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/pages/500/contents.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/pages/about/contents.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/pages/about/contents.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/pages/add_balance/contents.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/pages/add_balance/contents.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/pages/api/scripts/dashboard_actions.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/pages/api/scripts/dashboard_actions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/sections/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/sections/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/pages/api/scripts/render_charts_js.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/pages/api/scripts/render_charts_js.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -83,14 +76,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/resources/pages/api/scripts/dashboard_actions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="166" column="49" selection-start-line="166" selection-start-column="49" selection-end-line="166" selection-end-column="49" />
+            <state relative-caret-position="425">
+              <caret line="128" column="9" lean-forward="true" selection-start-line="119" selection-start-column="8" selection-end-line="128" selection-end-column="9" />
               <folding>
                 <element signature="e#11#41#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/resources/pages/api/scripts/render_charts_js.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="516">
+              <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
             </state>
           </provider>
         </entry>
@@ -112,15 +114,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
               <caret line="7" column="39" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resources/configuration.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="38" column="9" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -159,7 +152,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/resources/libraries/OpenBlu/Managers/VPNManager.php" />
         <option value="$PROJECT_DIR$/src/resources/libraries/OpenBlu/openblu.json" />
         <option value="$PROJECT_DIR$/src/resources/shared/scripts/check_vpn.php" />
         <option value="$PROJECT_DIR$/src/resources/shared/scripts/alert.php" />
@@ -210,6 +202,7 @@
         <option value="$PROJECT_DIR$/src/resources/pages/about/contents.php" />
         <option value="$PROJECT_DIR$/src/resources/pages/add_balance/contents.php" />
         <option value="$PROJECT_DIR$/src/resources/pages/api/scripts/dashboard_actions.php" />
+        <option value="$PROJECT_DIR$/src/resources/pages/api/scripts/render_charts_js.php" />
       </list>
     </option>
   </component>
@@ -503,12 +496,12 @@
       <workItem from="1559011337264" duration="2202000" />
       <workItem from="1559054318684" duration="3680000" />
       <workItem from="1559095308504" duration="998000" />
-      <workItem from="1559140042442" duration="799000" />
+      <workItem from="1559140042442" duration="923000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116826000" />
+    <option name="totallyTimeSpent" value="116950000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -590,13 +583,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/resources/libraries/OpenBlu/openblu.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/pages/loading/contents.php" />
     <entry file="file://$PROJECT_DIR$/src/resources/markdown/about/en.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
@@ -938,11 +924,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/pages/api/scripts/dashboard_actions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="166" column="49" selection-start-line="166" selection-start-column="49" selection-end-line="166" selection-end-column="49" />
+        <state relative-caret-position="425">
+          <caret line="128" column="9" lean-forward="true" selection-start-line="119" selection-start-column="8" selection-end-line="128" selection-end-column="9" />
           <folding>
             <element signature="e#11#41#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/pages/api/scripts/render_charts_js.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="516">
+          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
         </state>
       </provider>
     </entry>

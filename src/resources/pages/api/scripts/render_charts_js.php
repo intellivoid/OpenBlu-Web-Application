@@ -1,15 +1,23 @@
 <?PHP
 
     use DynamicalWeb\DynamicalWeb;
-    use ModularAPI\Abstracts\AccessKeySearchMethod;
+use DynamicalWeb\Runtime;
+use ModularAPI\Abstracts\AccessKeySearchMethod;
     use ModularAPI\ModularAPI;
 
-    if(class_exists('ModularAPI\ModularAPI') == false)
+    Runtime::import('ModularAPI');
+
+    if(isset(DynamicalWeb::$globalObjects['modular_api']) == false)
     {
-        DynamicalWeb::loadLibrary('ModularAPI', 'ModularAPI', 'ModularAPI');
+        /** @var ModularAPI $ModularAPI */
+        $ModularAPI = DynamicalWeb::setMemoryObject('modular_api', new ModularAPI());
+    }
+    else
+    {
+        /** @var ModularAPI $ModularAPI */
+        $ModularAPI = DynamicalWeb::getMemoryObject('modular_api');
     }
 
-    $ModularAPI = new ModularAPI();
     $AccessKeyObject = $ModularAPI->AccessKeys()->Manager->get(AccessKeySearchMethod::byID, CACHE_SUBSCRIPTION_ACCESS_KEY_ID);
 
     $Javascript = "$(function() { 'use strict'; if ($('#api-usage-chart').length) { Morris.Line({";
