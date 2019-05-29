@@ -2,10 +2,13 @@
 
     use DynamicalWeb\DynamicalWeb;
     use DynamicalWeb\Page;
-    use OpenBlu\Abstracts\SearchMethods\VPN;
+use DynamicalWeb\Runtime;
+use OpenBlu\Abstracts\SearchMethods\VPN;
     use OpenBlu\Exceptions\VPNNotFoundException;
     use OpenBlu\OpenBlu;
     use sws\sws;
+
+    Runtime::import('OpenBlu');
 
     if(isset($_GET['action']))
     {
@@ -26,11 +29,11 @@
      */
     function send_configuration_direct(string $token)
     {
-        DynamicalWeb::loadLibrary('OpenBlu', 'OpenBlu', 'OpenBlu.php');
-        DynamicalWeb::loadLibrary('sws', 'sws', 'sws.php');
 
         // Verify the token
-        $sws = new sws();
+
+        /** @var sws $sws */
+        $sws = DynamicalWeb::getMemoryObject('sws');
         $Cookie = $sws->WebManager()->getCookie('web_session');
 
         if(hash('sha256', $Cookie->Data['download_token']) !== hash('sha256', $token))
@@ -40,7 +43,16 @@
         }
 
         // Gets the selected VPN
-        $OpenBlu = new OpenBlu();
+        if(isset(DynamicalWeb::$globalObjects['openblu']) == false)
+        {
+            /** @var OpenBlu $OpenBlu */
+            $OpenBlu = DynamicalWeb::setMemoryObject('openblu', new OpenBlu());
+        }
+        else
+        {
+            /** @var OpenBlu $OpenBlu */
+            $OpenBlu = DynamicalWeb::getMemoryObject('openblu');
+        }
 
         try
         {
