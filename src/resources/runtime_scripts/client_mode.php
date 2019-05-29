@@ -1,8 +1,8 @@
 <?php
 
     use DynamicalWeb\DynamicalWeb;
-use DynamicalWeb\Runtime;
-use OpenBlu\Abstracts\SearchMethods\ClientSearchMethod;
+    use DynamicalWeb\Runtime;
+    use OpenBlu\Abstracts\SearchMethods\ClientSearchMethod;
     use OpenBlu\Exceptions\ClientNotFoundException;
     use OpenBlu\Exceptions\ConfigurationNotFoundException;
     use OpenBlu\Exceptions\DatabaseException;
