@@ -2,19 +2,37 @@
 
     use DynamicalWeb\DynamicalWeb;
     use DynamicalWeb\HTML;
+    use DynamicalWeb\Runtime;
     use ModularAPI\Abstracts\AccessKeySearchMethod;
     use ModularAPI\ModularAPI;
     use OpenBlu\Abstracts\APIPlan;
     use OpenBlu\Abstracts\SearchMethods\PlanSearchMethod;
     use OpenBlu\OpenBlu;
 
-    if(class_exists('ModularAPI\ModularAPI') == false)
+    Runtime::import('OpenBlu');
+    Runtime::import('ModularAPI');
+
+    if(isset(DynamicalWeb::$globalObjects['modular_api']) == false)
     {
-        DynamicalWeb::loadLibrary('ModularAPI', 'ModularAPI', 'ModularAPI');
+        /** @var ModularAPI $ModularAPI */
+        $ModularAPI = DynamicalWeb::setMemoryObject('modular_api', new ModularAPI());
+    }
+    else
+    {
+        /** @var ModularAPI $ModularAPI */
+        $ModularAPI = DynamicalWeb::getMemoryObject('modular_api');
     }
 
-    $ModularAPI = new ModularAPI();
-    $OpenBlu = new OpenBlu();
+    if(isset(DynamicalWeb::$globalObjects['openblu']) == false)
+    {
+        /** @var OpenBlu $OpenBlu */
+        $OpenBlu = DynamicalWeb::setMemoryObject('openblu', new OpenBlu());
+    }
+    else
+    {
+        /** @var OpenBlu $OpenBlu */
+        $OpenBlu = DynamicalWeb::getMemoryObject('openblu');
+    }
 
     $AccessKeyObject = $ModularAPI->AccessKeys()->Manager->get(AccessKeySearchMethod::byID, CACHE_SUBSCRIPTION_ACCESS_KEY_ID);
     $Plan = $OpenBlu->getPlanManager()->getPlan(PlanSearchMethod::byAccountId, WEB_ACCOUNT_ID);

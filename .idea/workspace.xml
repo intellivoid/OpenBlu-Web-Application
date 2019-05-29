@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13744565-c04a-4ec4-8a5b-01f6fe867a44" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/resources/pages/api/scripts/render_charts_js.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/pages/api/scripts/render_charts_js.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/pages/api/scripts/render_dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/pages/api/scripts/render_dashboard.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,15 +26,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resources/sections/footer.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/resources/pages/404/contents.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -79,8 +70,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/resources/pages/api/scripts/dashboard_actions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="128" column="9" lean-forward="true" selection-start-line="119" selection-start-column="8" selection-end-line="128" selection-end-column="9" />
+            <state relative-caret-position="238">
+              <caret line="117" column="9" lean-forward="true" selection-start-line="108" selection-start-column="8" selection-end-line="117" selection-end-column="9" />
               <folding>
                 <element signature="e#11#41#0#PHP" expanded="true" />
               </folding>
@@ -89,10 +80,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/resources/pages/api/scripts/render_charts_js.php">
+        <entry file="file://$PROJECT_DIR$/src/resources/pages/api/scripts/render_dashboard.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="516">
-              <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
+            <state relative-caret-position="85">
+              <caret line="11" column="48" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -152,7 +143,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/resources/libraries/OpenBlu/openblu.json" />
         <option value="$PROJECT_DIR$/src/resources/shared/scripts/check_vpn.php" />
         <option value="$PROJECT_DIR$/src/resources/shared/scripts/alert.php" />
         <option value="$PROJECT_DIR$/src/resources/libraries/OpenBlu/Abstracts/SearchMethods/VPN.php" />
@@ -203,6 +193,7 @@
         <option value="$PROJECT_DIR$/src/resources/pages/add_balance/contents.php" />
         <option value="$PROJECT_DIR$/src/resources/pages/api/scripts/dashboard_actions.php" />
         <option value="$PROJECT_DIR$/src/resources/pages/api/scripts/render_charts_js.php" />
+        <option value="$PROJECT_DIR$/src/resources/pages/api/scripts/render_dashboard.php" />
       </list>
     </option>
   </component>
@@ -496,12 +487,12 @@
       <workItem from="1559011337264" duration="2202000" />
       <workItem from="1559054318684" duration="3680000" />
       <workItem from="1559095308504" duration="998000" />
-      <workItem from="1559140042442" duration="923000" />
+      <workItem from="1559140042442" duration="1008000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116950000" />
+    <option name="totallyTimeSpent" value="117035000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -524,7 +515,7 @@
       <window_info anchor="bottom" id="Database Console" order="2" weight="0.32998326" />
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" weight="0.32943144" />
       <window_info anchor="bottom" id="Version Control" order="4" weight="0.32645404" />
-      <window_info anchor="bottom" id="Terminal" order="5" weight="0.32608697" />
+      <window_info anchor="bottom" id="Terminal" order="5" visible="true" weight="0.32608697" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" weight="0.32998326" />
       <window_info anchor="bottom" id="Run" order="8" />
@@ -583,7 +574,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/resources/pages/loading/contents.php" />
     <entry file="file://$PROJECT_DIR$/src/resources/markdown/about/en.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -922,20 +912,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/pages/api/scripts/render_charts_js.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/pages/api/scripts/dashboard_actions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="128" column="9" lean-forward="true" selection-start-line="119" selection-start-column="8" selection-end-line="128" selection-end-column="9" />
+        <state relative-caret-position="238">
+          <caret line="117" column="9" lean-forward="true" selection-start-line="108" selection-start-column="8" selection-end-line="117" selection-end-column="9" />
           <folding>
             <element signature="e#11#41#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/pages/api/scripts/render_charts_js.php">
+    <entry file="file://$PROJECT_DIR$/src/resources/pages/api/scripts/render_dashboard.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="516">
-          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
+        <state relative-caret-position="85">
+          <caret line="11" column="48" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
         </state>
       </provider>
     </entry>
