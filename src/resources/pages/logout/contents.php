@@ -1,10 +1,12 @@
 <?php
 
     use DynamicalWeb\DynamicalWeb;
-    use DynamicalWeb\HTML;
+    use DynamicalWeb\Runtime;
     use OpenBlu\Abstracts\SearchMethods\ClientSearchMethod;
     use OpenBlu\OpenBlu;
     use sws\sws;
+
+    Runtime::import('OpenBlu');
 
     if(WEB_SESSION_ACTIVE == false)
     {
@@ -13,9 +15,9 @@
     }
 
     /** @noinspection PhpUnhandledExceptionInspection */
-    DynamicalWeb::loadLibrary('sws', 'sws', 'sws.php');
 
-    $sws = new sws();
+    /** @var sws $sws */
+    $sws = DynamicalWeb::getMemoryObject('sws');
     $Cookie = $sws->WebManager()->getCookie('web_session');
 
     $Cookie->Data['cache_refresh'] = 0;
@@ -28,8 +30,16 @@
 
     if(CLIENT_MODE_ENABLED == true)
     {
-        DynamicalWeb::loadLibrary('OpenBlu', 'OpenBlu', 'OpenBlu.php');
-        $OpenBlu = new OpenBlu();
+        if(isset(DynamicalWeb::$globalObjects['openblu']) == false)
+        {
+            /** @var OpenBlu $OpenBlu */
+            $OpenBlu = DynamicalWeb::setMemoryObject('openblu', new OpenBlu());
+        }
+        else
+        {
+            /** @var OpenBlu $OpenBlu */
+            $OpenBlu = DynamicalWeb::getMemoryObject('openblu');
+        }
 
         try
         {

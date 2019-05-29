@@ -39,7 +39,7 @@
                 {
                     ?>
                     <div class="container-fluid page-body-wrapper full-page-wrapper">
-                        <div class="row w-100" style="margin-left: 0px;margin-right: 0px;">
+                        <div class="row w-100" style="margin-left: 0; margin-right: 0;">
                             <div class="content-wrapper full-page-wrapper auth-pages login-2">
                                 <div class="card">
                                     <div class="card-body px-5 py-5">
