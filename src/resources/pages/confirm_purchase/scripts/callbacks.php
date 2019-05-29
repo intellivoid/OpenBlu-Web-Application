@@ -5,19 +5,19 @@
         switch((int)$_GET['callback'])
         {
             case 100:
-                render_alert('Invalid Promotion Code', 'warning', 'alert-circle');
+                render_alert(TEXT_CALLBACK_100, 'warning', 'alert-circle');
                 break;
 
             case 101:
-                render_alert('You have insufficient funds in your account to start this subscription', 'danger', 'alert-circle');
+                render_alert(TEXT_CALLBACK_101, 'danger', 'alert-circle');
                 break;
 
             case 102:
-                render_alert('You are not allowed to make any purchases, please contact support.', 'warning', 'alert-circle');
+                render_alert(TEXT_CALLBACK_102, 'warning', 'alert-circle');
                 break;
 
             case 103:
-                render_alert('A subscription is already active, this transaction cannot be completed', 'warning', 'alert-circle');
+                render_alert(TEXT_CALLBACK_103, 'warning', 'alert-circle');
                 break;
         }
     }

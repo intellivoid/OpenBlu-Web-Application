@@ -157,7 +157,8 @@
             "AUTHENTICATION_CARD_UPDATE_SIGNATURES_BUTTON": "Update Signatures",
             "API_USAGE_CARD_TITLE": "API Usage",
             "API_USAGE_GRAPH_CURRENT_MONTH": "Current Month",
-            "API_USAGE_GRAPH_LAST_MONTH": "Last Month"
+            "API_USAGE_GRAPH_LAST_MONTH": "Last Month",
+            "CALLBACK_100": "Your plan has been canceled"
 
         },
         "login": {
@@ -216,7 +217,11 @@
             "PROMOTION_LABEL": "Promotion Code",
             "PROMOTION_PLACEHOLDER": "Enter Promotion Code",
             "PROMOTION_SUBMIT_BUTTON": "Verify",
-            "CONFIRM_PURCHASE_BUTTON": "Confirm Purchase"
+            "CONFIRM_PURCHASE_BUTTON": "Confirm Purchase",
+            "CALLBACK_100": "Invalid Promotion Code",
+            "CALLBACK_101": "You have insufficient funds in your account to start this subscription",
+            "CALLBACK_102": "You are not allowed to make any purchases, please contact support",
+            "CALLBACK_103": "A subscription is already active, this transaction cannot be completed"
         },
         "404": {
             "PAGE_TITLE": "OpenBlu - Page Not Found",
@@ -243,13 +248,19 @@
         }
     },
     "sections": {
-        "navigation": {
-            "NAVBAR_BRAND": "DynamicalWeb",
-            "NAVBAR_LANGUAGE_DROPDOWN": "Language",
-            "NAVBAR_PAGE_HOME": "Home"
-        },
-        "footer": {
-            "FOOTER_TEXT": "DynamicalWeb Version 1.0.0.0 | Written by Zi Xing Narrakas"
+        "sidebar": {
+            "SIDEBAR_ADD_TO_BALANCE": "Add to balance",
+            "SIDEBAR_LOGOUT": "Logout",
+            "SIDEBAR_NOT_LOGGED_IN": "Not Logged In",
+            "SIDEBAR_LOGIN": "Login",
+            "SIDEBAR_REGISTER": "Register",
+            "SIDEBAR_NAV_HEADER": "Navigation",
+            "SIDEBAR_NAV_HOME": "Home",
+            "SIDEBAR_NAV_SERVERS": "VPN Servers",
+            "SIDEBAR_NAV_API": "API",
+            "SIDEBAR_NAV_GUIDE": "How to connect",
+            "SIDEBAR_NAV_SUPPORT": "Support",
+            "SIDEBAR_NAV_ABOUT": "About"
         }
     }
 }

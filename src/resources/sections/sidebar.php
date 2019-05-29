@@ -34,7 +34,7 @@
                                                 <span class="menu-icon">
                                                     <i class="mdi mdi-bank"></i>
                                                 </span>
-                                                <span class="menu-title">Add to balance</span>
+                                                <span class="menu-title"><?PHP HTML::print(TEXT_SIDEBAR_ADD_TO_BALANCE); ?></span>
                                             </a>
                                         </li>
                                         <?PHP
@@ -46,7 +46,7 @@
                                         <span class="menu-icon">
                                             <i class="mdi mdi-power"></i>
                                         </span>
-                                        <span class="menu-title">Logout</span>
+                                        <span class="menu-title"><?PHP HTML::print(TEXT_SIDEBAR_LOGOUT); ?></span>
                                     </a>
                                 </li>
 
@@ -60,7 +60,7 @@
                 ?>
                 <li class="nav-item account-dropdown">
                     <a class="nav-link" data-toggle="collapse" href="#account-dropdown" aria-expanded="false" aria-controls="account-dropdown">
-                        <p class="mb-0 ml-3 text-light" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">Not Logged In</p>
+                        <p class="mb-0 ml-3 text-light" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"><?PHP HTML::print(TEXT_SIDEBAR_NOT_LOGGED_IN); ?></p>
                         <i class="menu-arrow"></i>
                     </a>
                     <div class="collapse" id="account-dropdown">
@@ -71,7 +71,7 @@
                                         <span class="menu-icon">
                                             <i class="mdi mdi-login"></i>
                                         </span>
-                                    <span class="menu-title">Login</span>
+                                    <span class="menu-title"><?PHP HTML::print(TEXT_SIDEBAR_LOGIN); ?></span>
                                 </a>
                             </li>
 
@@ -80,7 +80,7 @@
                                         <span class="menu-icon">
                                             <i class="mdi mdi-account-plus"></i>
                                         </span>
-                                    <span class="menu-title">Register</span>
+                                    <span class="menu-title"><?PHP HTML::print(TEXT_SIDEBAR_REGISTER); ?></span>
                                 </a>
                             </li>
 
@@ -91,14 +91,14 @@
             }
         ?>
         <li class="nav-item nav-category">
-            <span class="nav-link">Navigation</span>
+            <span class="nav-link"><?PHP HTML::print(TEXT_SIDEBAR_NAV_HEADER); ?></span>
         </li>
         <li class="nav-item menu-items<?PHP if(APP_CURRENT_PAGE == 'index'){ HTML::print(' active'); } ?>">
             <a class="nav-link" href="/">
                 <span class="menu-icon">
                   <i class="mdi mdi-home"></i>
                 </span>
-                <span class="menu-title">Home</span>
+                <span class="menu-title"><?PHP HTML::print(TEXT_SIDEBAR_NAV_HOME); ?></span>
             </a>
         </li>
         <li class="nav-item menu-items<?PHP if(APP_CURRENT_PAGE == 'servers' || APP_CURRENT_PAGE == 'server'){ HTML::print(' active'); } ?>">
@@ -106,7 +106,7 @@
                 <span class="menu-icon">
                   <i class="mdi mdi-server-network"></i>
                 </span>
-                <span class="menu-title">VPN Servers</span>
+                <span class="menu-title"><?PHP HTML::print(TEXT_SIDEBAR_NAV_SERVERS); ?></span>
             </a>
         </li>
         <?PHP
@@ -118,7 +118,7 @@
                 <span class="menu-icon">
                   <i class="mdi mdi-console"></i>
                 </span>
-                        <span class="menu-title">API</span>
+                        <span class="menu-title"><?PHP HTML::print(TEXT_SIDEBAR_NAV_API); ?></span>
                     </a>
                 </li>
                 <li class="nav-item menu-items<?PHP if(APP_CURRENT_PAGE == 'guide'){ HTML::print(' active'); } ?>">
@@ -126,7 +126,7 @@
                 <span class="menu-icon">
                   <i class="mdi mdi-help"></i>
                 </span>
-                        <span class="menu-title">How to connect</span>
+                        <span class="menu-title"><?PHP HTML::print(TEXT_SIDEBAR_NAV_GUIDE); ?></span>
                     </a>
                 </li>
                 <?PHP
@@ -137,7 +137,7 @@
                 <span class="menu-icon">
                   <i class="mdi mdi-lifebuoy"></i>
                 </span>
-                <span class="menu-title">Support</span>
+                <span class="menu-title"><?PHP HTML::print(TEXT_SIDEBAR_NAV_SUPPORT); ?></span>
             </a>
         </li>
         <li class="nav-item menu-items<?PHP if(APP_CURRENT_PAGE == 'about'){ HTML::print(' active'); } ?>">
@@ -145,7 +145,7 @@
                 <span class="menu-icon">
                   <i class="mdi mdi-information-outline"></i>
                 </span>
-                <span class="menu-title">About</span>
+                <span class="menu-title"><?PHP HTML::print(TEXT_SIDEBAR_NAV_ABOUT); ?></span>
             </a>
         </li>
     </ul>
