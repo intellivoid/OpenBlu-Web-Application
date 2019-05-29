@@ -81,7 +81,17 @@
     function api_prices_get_free(string $code = 'NORMAL'): PricingDetails
     {
         /** @noinspection PhpUnhandledExceptionInspection */
-        $Configuration = DynamicalWeb::getConfiguration('prices');
+
+        if(isset(DynamicalWeb::$globalVariables['db 0x83']['config_prices']) == false)
+        {
+            /** @var array $Configuration */
+            $Configuration = DynamicalWeb::setArray('config_prices', DynamicalWeb::getConfiguration('prices'));
+        }
+        else
+        {
+            /** @var array $Configuration */
+            $Configuration = DynamicalWeb::getArray('config_prices');
+        }
 
         if(isset($Configuration['FREE'][$code]) == false)
         {
@@ -99,7 +109,16 @@
     function api_prices_get_basic(string $code = 'NORMAL'): PricingDetails
     {
         /** @noinspection PhpUnhandledExceptionInspection */
-        $Configuration = DynamicalWeb::getConfiguration('prices');
+        if(isset(DynamicalWeb::$globalVariables['db 0x83']['config_prices']) == false)
+        {
+            /** @var array $Configuration */
+            $Configuration = DynamicalWeb::setArray('config_prices', DynamicalWeb::getConfiguration('prices'));
+        }
+        else
+        {
+            /** @var array $Configuration */
+            $Configuration = DynamicalWeb::getArray('config_prices');
+        }
 
         if(isset($Configuration['BASIC'][$code]) == false)
         {
@@ -117,7 +136,16 @@
     function api_prices_get_enterprise(string $code = 'NORMAL'): PricingDetails
     {
         /** @noinspection PhpUnhandledExceptionInspection */
-        $Configuration = DynamicalWeb::getConfiguration('prices');
+        if(isset(DynamicalWeb::$globalVariables['db 0x83']['config_prices']) == false)
+        {
+            /** @var array $Configuration */
+            $Configuration = DynamicalWeb::setArray('config_prices', DynamicalWeb::getConfiguration('prices'));
+        }
+        else
+        {
+            /** @var array $Configuration */
+            $Configuration = DynamicalWeb::getArray('config_prices');
+        }
 
         if(isset($Configuration['ENTERPRISE'][$code]) == false)
         {
