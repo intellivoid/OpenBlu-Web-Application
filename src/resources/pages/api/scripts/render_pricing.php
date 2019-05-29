@@ -50,6 +50,7 @@
     <div class="card animated fadeInUp">
         <div class="card-body">
             <h4 class="card-title">API Plans</h4>
+            <?PHP HTML::importScript('callbacks'); ?>
             <div class="container text-center pt-5">
                 <h4 class="mb-3 mt-5"><?PHP HTML::print(TEXT_PRICING_HEADER); ?></h4>
                 <p class="w-75 mx-auto mb-5"><?PHP HTML::print(TEXT_PRICING_DESC); ?></p>
