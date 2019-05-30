@@ -36,6 +36,15 @@ use OpenBlu\Abstracts\SearchMethods\VPN;
         $sws = DynamicalWeb::getMemoryObject('sws');
         $Cookie = $sws->WebManager()->getCookie('web_session');
 
+        if(WEB_SESSION_ACTIVE == false)
+        {
+            if($Cookie->Data['downloads'] > 3)
+            {
+                header('Location: /login_required');
+                exit();
+            }
+        }
+
         if(hash('sha256', $Cookie->Data['download_token']) !== hash('sha256', $token))
         {
             header('Location: /');
@@ -73,8 +82,10 @@ use OpenBlu\Abstracts\SearchMethods\VPN;
             exit();
         }
 
-        $Token = $Cookie->Data['download_token'];
+        $Cookie->Data['downloads'] += 1;
+        $sws->CookieManager()->updateCookie($Cookie);
 
+        $Token = $Cookie->Data['download_token'];
         header("Content-Type: application/x-openvpn-profile");
         header("Content-disposition: attachment; filename=\"openblu_$Token.ovpn\"");
         print($VPN->createConfiguration());

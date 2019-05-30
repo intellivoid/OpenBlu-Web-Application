@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="13744565-c04a-4ec4-8a5b-01f6fe867a44" name="Default" comment="" />
+    <list default="true" id="13744565-c04a-4ec4-8a5b-01f6fe867a44" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/resources/pages/login_required/contents.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/openblu-web-application.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/openblu-web-application.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/languages/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/languages/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/pages/server/scripts/action.download.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/pages/server/scripts/action.download.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,20 +31,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resources/shared/prices.json">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resources/shared/recaptcha.json">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resources/runtime_scripts/cache.php">
+        <entry file="file://$PROJECT_DIR$/src/resources/pages/login_required/contents.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="39" column="13" lean-forward="true" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+            <state>
+              <caret lean-forward="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/resources/pages/server/scripts/action.download.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="448">
+              <caret line="85" column="53" selection-start-line="85" selection-start-column="53" selection-end-line="85" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -46,17 +51,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/resources/runtime_scripts/check_auth.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="52" column="54" lean-forward="true" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="54" />
+            <state relative-caret-position="289">
+              <caret line="22" column="22" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/resources/runtime_scripts/client_mode.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resources/languages/en.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+            <state relative-caret-position="119">
+              <caret line="229" column="34" lean-forward="true" selection-start-line="229" selection-start-column="34" selection-end-line="229" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -97,6 +102,7 @@
       <find>cookie</find>
       <find>api</find>
       <find>confirm_p</find>
+      <find>login_required</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -105,7 +111,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/resources/pages/servers/scripts/table.php" />
         <option value="$PROJECT_DIR$/src/assets/js/app-table-animations.js" />
         <option value="$PROJECT_DIR$/src/resources/libraries/OpenBlu/ModularAPI/Managers/AccessKeyManager.php" />
         <option value="$PROJECT_DIR$/src/resources/libraries/OpenBlu/ModularAPI/Objects/AccessKey/Permissions.php" />
@@ -145,7 +150,6 @@
         <option value="$PROJECT_DIR$/src/resources/pages/login/contents.php" />
         <option value="$PROJECT_DIR$/src/resources/pages/logout/contents.php" />
         <option value="$PROJECT_DIR$/src/resources/pages/register/contents.php" />
-        <option value="$PROJECT_DIR$/src/resources/pages/server/scripts/action.download.php" />
         <option value="$PROJECT_DIR$/src/resources/shared/scripts/check_selection.php" />
         <option value="$PROJECT_DIR$/src/resources/shared/scripts/login_account.php" />
         <option value="$PROJECT_DIR$/src/resources/shared/scripts/register_account.php" />
@@ -153,9 +157,11 @@
         <option value="$PROJECT_DIR$/src/resources/shared/scripts/toggle_sidebar.php" />
         <option value="$PROJECT_DIR$/src/resources/pages/api/scripts/callbacks.php" />
         <option value="$PROJECT_DIR$/src/resources/pages/confirm_purchase/scripts/callbacks.php" />
-        <option value="$PROJECT_DIR$/src/resources/languages/en.json" />
         <option value="$PROJECT_DIR$/src/resources/sections/sidebar.php" />
         <option value="$PROJECT_DIR$/src/resources/runtime_scripts/client_mode.php" />
+        <option value="$PROJECT_DIR$/src/resources/languages/en.json" />
+        <option value="$PROJECT_DIR$/src/resources/pages/login_required/contents.php" />
+        <option value="$PROJECT_DIR$/src/resources/pages/server/scripts/action.download.php" />
       </list>
     </option>
   </component>
@@ -171,6 +177,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -193,28 +200,7 @@
               <item name="OpenBlu-Web-Application" type="b2602c69:ProjectViewProjectNode" />
               <item name="OpenBlu-Web-Application" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OpenBlu-Web-Application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OpenBlu-Web-Application" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="vendors" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OpenBlu-Web-Application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OpenBlu-Web-Application" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OpenBlu-Web-Application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OpenBlu-Web-Application" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="DynamicalWeb" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="OpenBlu-Web-Application" type="b2602c69:ProjectViewProjectNode" />
@@ -228,6 +214,13 @@
               <item name="OpenBlu-Web-Application" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="libraries" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OpenBlu-Web-Application" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OpenBlu-Web-Application" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -236,124 +229,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="404" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OpenBlu-Web-Application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OpenBlu-Web-Application" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="500" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OpenBlu-Web-Application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OpenBlu-Web-Application" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="about" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OpenBlu-Web-Application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OpenBlu-Web-Application" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="add_balance" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OpenBlu-Web-Application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OpenBlu-Web-Application" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="add_balance" type="462c0819:PsiDirectoryNode" />
-              <item name="scripts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OpenBlu-Web-Application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OpenBlu-Web-Application" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OpenBlu-Web-Application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OpenBlu-Web-Application" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="scripts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OpenBlu-Web-Application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OpenBlu-Web-Application" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="confirm_purchase" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OpenBlu-Web-Application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OpenBlu-Web-Application" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="confirm_purchase" type="462c0819:PsiDirectoryNode" />
-              <item name="scripts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OpenBlu-Web-Application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OpenBlu-Web-Application" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="index" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OpenBlu-Web-Application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OpenBlu-Web-Application" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OpenBlu-Web-Application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OpenBlu-Web-Application" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
-              <item name="scripts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OpenBlu-Web-Application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OpenBlu-Web-Application" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="logout" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OpenBlu-Web-Application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OpenBlu-Web-Application" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="register" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OpenBlu-Web-Application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OpenBlu-Web-Application" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="register" type="462c0819:PsiDirectoryNode" />
-              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="login_required" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="OpenBlu-Web-Application" type="b2602c69:ProjectViewProjectNode" />
@@ -371,14 +247,6 @@
               <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="scripts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OpenBlu-Web-Application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OpenBlu-Web-Application" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="servers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="OpenBlu-Web-Application" type="b2602c69:ProjectViewProjectNode" />
@@ -387,47 +255,24 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="runtime_scripts" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="OpenBlu-Web-Application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OpenBlu-Web-Application" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="sections" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OpenBlu-Web-Application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OpenBlu-Web-Application" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="shared" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OpenBlu-Web-Application" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OpenBlu-Web-Application" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="shared" type="462c0819:PsiDirectoryNode" />
-              <item name="scripts" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/resources/pages/api/scripts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/resources/pages" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Netkas\Documents\gits\OpenBlu-Web-Application\src\resources\pages\api\scripts" />
       <recent name="C:\Users\Netkas\Documents\gits\OpenBlu-Web-Application\src\resources\pages" />
+      <recent name="C:\Users\Netkas\Documents\gits\OpenBlu-Web-Application\src\resources\pages\api\scripts" />
       <recent name="C:\Users\Netkas\Documents\gits\OpenBlu-Web-Application\src\resources\shared\scripts" />
       <recent name="C:\Users\Netkas\Documents\gits\openblu-web-application\src\resources" />
       <recent name="C:\Users\Netkas\Documents\gits\openblu-web-application\src\resources\libraries" />
@@ -500,11 +345,13 @@
       <workItem from="1559054318684" duration="3680000" />
       <workItem from="1559095308504" duration="998000" />
       <workItem from="1559140042442" duration="6478000" />
+      <workItem from="1559177766928" duration="1208000" />
+      <workItem from="1559223464492" duration="2761000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125494000" />
+    <option name="totallyTimeSpent" value="129463000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -520,7 +367,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.22390318" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.22995462" />
       <window_info id="Structure" order="2" weight="0.15658094" />
       <window_info anchor="bottom" id="Database Changes" order="0" />
       <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
@@ -586,13 +433,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/resources/DynamicalWeb/HTML.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="31" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/configuration.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
@@ -859,13 +699,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/pages/server/scripts/action.download.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="42" column="9" lean-forward="true" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/pages/server/contents.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="321">
@@ -908,13 +741,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/languages/en.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="262" column="30" selection-start-line="262" selection-start-column="13" selection-end-line="262" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/sections/sidebar.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="202">
@@ -930,22 +756,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/runtime_scripts/cache.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="39" column="13" lean-forward="true" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/runtime_scripts/check_auth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="52" column="54" lean-forward="true" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="54" />
+        <state relative-caret-position="544">
+          <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/runtime_scripts/client_mode.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+        <state relative-caret-position="119">
+          <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/languages/en.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="229" column="34" lean-forward="true" selection-start-line="229" selection-start-column="34" selection-end-line="229" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/pages/login_required/contents.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/runtime_scripts/check_auth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="22" column="22" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/pages/server/scripts/action.download.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="85" column="53" selection-start-line="85" selection-start-column="53" selection-end-line="85" selection-end-column="53" />
         </state>
       </provider>
     </entry>
