@@ -1,6 +1,12 @@
 <?PHP
     /** @noinspection PhpUnhandledExceptionInspection */
     use DynamicalWeb\HTML;
+    
+    if(WEB_SESSION_ACTIVE == true)
+    {
+        header('Location: /');
+        exit();
+    }
 
 ?>
 <!DOCTYPE html>
