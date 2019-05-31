@@ -63,7 +63,8 @@
             "TABLE_ACTIONS": "Actions",
             "ROW_PING": "%s ms",
             "PAGE_NOT_FOUND_ERROR": "The requested page was not found, it might have been moved",
-            "RELOAD_PAGE_LINK": "Reload Page"
+            "RELOAD_PAGE_LINK": "Reload Page",
+            "CALLBACK_100": "The server you requested was not found or is not available on OpenBlu anymore"
         },
         "server": {
             "PAGE_TITLE": "OpenBlu - VPN Server %s",

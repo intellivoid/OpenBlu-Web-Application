@@ -2,9 +2,12 @@
 
     /** @noinspection PhpUnhandledExceptionInspection */
 
-    use DynamicalWeb\DynamicalWeb;
-    use DynamicalWeb\HTML;
+use DynamicalWeb\DynamicalWeb;
+use DynamicalWeb\HTML;
+    use DynamicalWeb\Runtime;
     use OpenBlu\OpenBlu;
+
+    Runtime::import('OpenBlu');
 
     if(isset($_GET['action']))
     {
@@ -20,9 +23,17 @@
     HTML::importScript('time_human');
     HTML::importScript('table');
     HTML::importScript('alert');
-    DynamicalWeb::loadLibrary('OpenBlu', 'OpenBlu', 'OpenBlu.php');
 
-    $OpenBlu = new OpenBlu();
+    if(isset(DynamicalWeb::$globalObjects['openblu']) == false)
+    {
+        /** @var OpenBlu $OpenBlu */
+        $OpenBlu = DynamicalWeb::setMemoryObject('openblu', new OpenBlu());
+    }
+    else
+    {
+        /** @var OpenBlu $OpenBlu */
+        $OpenBlu = DynamicalWeb::getMemoryObject('openblu');
+    }
 
 ?>
 <!DOCTYPE html>
@@ -38,6 +49,7 @@
                 <?PHP HTML::importSection('sidebar'); ?>
                 <div class="main-panel">
                     <div class="content-wrapper">
+                        <?PHP HTML::importScript('callbacks'); ?>
                         <div class="row grid-margin">
                             <div class="col-12">
                                 <div class="card" id="servers_table">
