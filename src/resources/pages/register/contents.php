@@ -24,7 +24,7 @@
                 {
                     ?>
                     <div class="container-fluid page-body-wrapper full-page-wrapper">
-                        <div class="row w-100">
+                        <div class="row w-100" style="margin-right: 0px; margin-left: 0px;">
                             <div class="content-wrapper full-page-wrapper auth-pages option-2">
                                 <div class="card col-lg-4">
                                     <div class="card-body px-5 py-5">

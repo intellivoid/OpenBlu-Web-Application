@@ -17327,7 +17327,7 @@ div.tagsinput {
 /* === Landing screens === */
 /* Auth */
 .auth-pages {
-  background: url("../images/samples/Login_bg.jpg") no-repeat center center;
+  background: url("../images/samples/login.jpg") no-repeat center center;
   background-size: cover; }
   .auth-pages .forgot-pass {
     font-size: 0.875rem;
@@ -17360,10 +17360,10 @@ div.tagsinput {
     .auth-pages.login-2 .card, .auth-pages.option-2 .card {
       min-height: 100vh; }
     .auth-pages.login-2.option-2, .auth-pages.option-2.option-2 {
-      background-image: url("../images/samples/Login_bg2.jpg");
+      background-image: url("/assets/images/register.jpg");
       background-size: cover; }
     .auth-pages.login-2.login-2, .auth-pages.option-2.login-2 {
-      background-image: url("../images/samples/Login_bg.jpg");
+      background-image: url("/assets/images/login.jpg");
       background-size: cover;
       background-position: right bottom; }
 

@@ -2,12 +2,144 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13744565-c04a-4ec4-8a5b-01f6fe867a44" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/resources/pages/servers/scripts/callbacks.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/languages/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/languages/en.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/pages/login_required/contents.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/pages/login_required/contents.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/pages/server/contents.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/pages/server/contents.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/pages/servers/contents.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/pages/servers/contents.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/carousel/banner_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/carousel/banner_10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/carousel/banner_11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/carousel/banner_12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/carousel/banner_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/carousel/banner_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/carousel/banner_4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/carousel/banner_5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/carousel/banner_6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/carousel/banner_7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/carousel/banner_8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/carousel/banner_9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/faces-clipart/pic-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/faces-clipart/pic-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/faces-clipart/pic-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/faces-clipart/pic-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/faces-clipart/pic-8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/faces/face1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/faces/face10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/faces/face11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/faces/face12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/faces/face13.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/faces/face14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/faces/face15.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/faces/face16.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/faces/face17.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/faces/face18.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/faces/face19.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/faces/face2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/faces/face20.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/faces/face21.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/faces/face22.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/faces/face23.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/faces/face24.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/faces/face25.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/faces/face26.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/faces/face27.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/faces/face3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/faces/face4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/faces/face5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/faces/face6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/faces/face7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/faces/face8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/faces/face9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/file-icons/128/001-interface-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/file-icons/128/002-tool.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/file-icons/128/003-interface.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/file-icons/128/004-folder-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/file-icons/128/005-database.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/file-icons/128/006-record.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/file-icons/128/007-folder.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/file-icons/128/008-archive.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/file-icons/256/001-interface-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/file-icons/256/002-tool.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/file-icons/256/003-interface.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/file-icons/256/004-folder-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/file-icons/256/005-database.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/file-icons/256/006-record.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/file-icons/256/007-folder.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/file-icons/256/008-archive.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/file-icons/512/001-interface-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/file-icons/512/002-tool.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/file-icons/512/003-interface.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/file-icons/512/004-folder-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/file-icons/512/005-database.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/file-icons/512/006-record.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/file-icons/512/007-folder.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/file-icons/512/008-archive.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/file-icons/64/001-interface-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/file-icons/64/002-tool.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/file-icons/64/003-interface.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/file-icons/64/004-folder-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/file-icons/64/005-database.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/file-icons/64/006-record.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/file-icons/64/007-folder.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/file-icons/64/008-archive.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/lightbox/play-button.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/lightbox/thumb-v-v-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/lightbox/thumb-v-v-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/lightbox/thumb-v-y-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/lightbox/thumb-v-y-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/1280x768/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/1280x768/10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/1280x768/11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/1280x768/12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/1280x768/13.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/1280x768/14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/1280x768/15.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/1280x768/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/1280x768/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/1280x768/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/1280x768/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/1280x768/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/1280x768/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/1280x768/8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/1280x768/9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/300x300/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/300x300/10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/300x300/11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/300x300/12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/300x300/13.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/300x300/14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/300x300/15.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/300x300/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/300x300/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/300x300/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/300x300/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/300x300/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/300x300/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/300x300/8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/300x300/9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/Banner_bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/Login_bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/Login_bg2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/Mac.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/angular-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/bootstrap-stack.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/charts.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/dashboard.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/e-commerce.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/editors.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/email.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/forms.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/html5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/lockscreen-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/modal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/popup.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/samples/widgets.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/sprites/blue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/sprites/dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/sprites/flag.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/sprites/green.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/sprites/jsgrid-icons.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/sprites/logo-mini.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/sprites/red.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/sprites/yellow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/pages/login/contents.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/pages/login/contents.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,28 +164,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resources/pages/login_required/contents.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="25" column="49" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/resources/pages/servers/scripts/callbacks.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
               <caret line="7" column="55" selection-start-line="7" selection-start-column="55" selection-end-line="7" selection-end-column="55" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resources/languages/en.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="48" column="44" lean-forward="true" selection-start-line="48" selection-start-column="44" selection-end-line="50" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -67,14 +181,66 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/resources/pages/servers/contents.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
-              <caret line="28" column="36" lean-forward="true" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+            <state relative-caret-position="118">
+              <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
               <folding>
                 <element signature="e#65#95#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resources/pages/login/contents.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="151">
+              <caret line="25" column="47" lean-forward="true" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="91" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/resources/pages/register/contents.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="26" column="91" selection-start-line="26" selection-start-column="91" selection-end-line="26" selection-end-column="91" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resources/pages/login/scripts/callbacks.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resources/pages/login/scripts/login_contents.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="45" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/assets/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="17344" column="28" lean-forward="true" selection-start-line="17344" selection-start-column="28" selection-end-line="17344" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -88,7 +254,7 @@
         <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/check_selection.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
-              <caret line="26" column="5" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="26" selection-end-column="5" />
+              <caret line="26" column="5" selection-start-line="17" selection-start-column="4" selection-end-line="26" selection-end-column="5" />
               <folding>
                 <element signature="e#7#37#0#PHP" expanded="true" />
               </folding>
@@ -133,6 +299,8 @@
       <find>api</find>
       <find>confirm_p</find>
       <find>login_required</find>
+      <find>images</find>
+      <find>images/samples</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -141,7 +309,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/resources/libraries/OpenBlu/ModularAPI/Managers/AccessKeyManager.php" />
         <option value="$PROJECT_DIR$/src/resources/libraries/OpenBlu/ModularAPI/Objects/AccessKey/Permissions.php" />
         <option value="$PROJECT_DIR$/src/resources/libraries/OpenBlu/Managers/PlanManager.php" />
         <option value="$PROJECT_DIR$/src/resources/pages/login/scripts/login_contents.php" />
@@ -174,9 +341,7 @@
         <option value="$PROJECT_DIR$/src/assets/js/app.js" />
         <option value="$PROJECT_DIR$/src/resources/sections/js_scripts.php" />
         <option value="$PROJECT_DIR$/src/resources/pages/index/contents.php" />
-        <option value="$PROJECT_DIR$/src/resources/pages/login/contents.php" />
         <option value="$PROJECT_DIR$/src/resources/pages/logout/contents.php" />
-        <option value="$PROJECT_DIR$/src/resources/pages/register/contents.php" />
         <option value="$PROJECT_DIR$/src/resources/shared/scripts/check_selection.php" />
         <option value="$PROJECT_DIR$/src/resources/shared/scripts/login_account.php" />
         <option value="$PROJECT_DIR$/src/resources/shared/scripts/register_account.php" />
@@ -192,6 +357,9 @@
         <option value="$PROJECT_DIR$/src/resources/pages/login_required/contents.php" />
         <option value="$PROJECT_DIR$/src/resources/pages/server/contents.php" />
         <option value="$PROJECT_DIR$/src/resources/pages/servers/contents.php" />
+        <option value="$PROJECT_DIR$/src/assets/css/style.css" />
+        <option value="$PROJECT_DIR$/src/resources/pages/login/contents.php" />
+        <option value="$PROJECT_DIR$/src/resources/pages/register/contents.php" />
       </list>
     </option>
   </component>
@@ -230,6 +398,13 @@
               <item name="OpenBlu-Web-Application" type="b2602c69:ProjectViewProjectNode" />
               <item name="OpenBlu-Web-Application" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OpenBlu-Web-Application" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OpenBlu-Web-Application" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -262,6 +437,31 @@
               <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="confirm_purchase" type="462c0819:PsiDirectoryNode" />
               <item name="scripts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OpenBlu-Web-Application" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OpenBlu-Web-Application" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="login" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OpenBlu-Web-Application" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OpenBlu-Web-Application" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="login" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OpenBlu-Web-Application" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OpenBlu-Web-Application" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="register" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="OpenBlu-Web-Application" type="b2602c69:ProjectViewProjectNode" />
@@ -388,12 +588,12 @@
       <workItem from="1559177766928" duration="1208000" />
       <workItem from="1559223464492" duration="3070000" />
       <workItem from="1559310189423" duration="2741000" />
-      <workItem from="1559345733017" duration="916000" />
+      <workItem from="1559345733017" duration="1990000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="133429000" />
+    <option name="totallyTimeSpent" value="134503000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -416,7 +616,7 @@
       <window_info anchor="bottom" id="Database Console" order="2" weight="0.32998326" />
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" weight="0.32943144" />
       <window_info anchor="bottom" id="Version Control" order="4" weight="0.32645404" />
-      <window_info anchor="bottom" id="Terminal" order="5" weight="0.32608697" />
+      <window_info anchor="bottom" id="Terminal" order="5" visible="true" weight="0.32608697" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" weight="0.32998326" />
       <window_info anchor="bottom" id="Run" order="8" />
@@ -475,13 +675,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/resources/DynamicalWeb/Runtime.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="82" column="13" lean-forward="true" selection-start-line="82" selection-start-column="13" selection-end-line="82" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/pages/default_avatar/contents.php" />
     <entry file="file://$PROJECT_DIR$/src/assets/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -507,30 +700,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/pages/login/contents.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/pages/login/scripts/callbacks.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="35" column="25" selection-start-line="7" selection-start-column="29" selection-end-line="35" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/pages/login/scripts/login_contents.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/pages/logout/contents.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -547,16 +716,6 @@
     <entry file="file://$PROJECT_DIR$/src/resources/pages/register/scripts/register_contents.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-285" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/pages/register/contents.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="47" column="42" lean-forward="true" selection-start-line="47" selection-start-column="42" selection-end-line="47" selection-end-column="42" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/loading_splash.php">
@@ -789,7 +948,7 @@
     <entry file="file://$PROJECT_DIR$/src/resources/languages/en.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="159">
-          <caret line="48" column="44" lean-forward="true" selection-start-line="48" selection-start-column="44" selection-end-line="50" selection-end-column="50" />
+          <caret line="48" column="44" selection-start-line="48" selection-start-column="44" selection-end-line="50" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -820,7 +979,7 @@
     <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/check_selection.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
-          <caret line="26" column="5" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="26" selection-end-column="5" />
+          <caret line="26" column="5" selection-start-line="17" selection-start-column="4" selection-end-line="26" selection-end-column="5" />
           <folding>
             <element signature="e#7#37#0#PHP" expanded="true" />
           </folding>
@@ -829,10 +988,52 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/pages/servers/contents.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="28" column="36" lean-forward="true" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+        <state relative-caret-position="118">
+          <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
           <folding>
             <element signature="e#65#95#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="17344" column="28" lean-forward="true" selection-start-line="17344" selection-start-column="28" selection-end-line="17344" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/pages/login/scripts/login_contents.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="45" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/pages/login/scripts/callbacks.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/pages/login/contents.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="25" column="47" lean-forward="true" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="91" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/pages/register/contents.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="26" column="91" selection-start-line="26" selection-start-column="91" selection-end-line="26" selection-end-column="91" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
