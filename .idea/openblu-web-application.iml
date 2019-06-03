@@ -104,6 +104,12 @@
       <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/about" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/resources/runtime_scripts" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/login_required" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/Support" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/Support/Abstracts" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/Support/Exceptions" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/Support/Managers" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/Support/Objects" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/Support/Utilities" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/database" />
     </content>
     <orderEntry type="inheritedJdk" />

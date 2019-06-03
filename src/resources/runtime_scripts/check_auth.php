@@ -72,8 +72,6 @@ use DynamicalWeb\Runtime;
     define('WEB_ACCOUNT_EMAIL', $Cookie->Data['account_email'], false);
     define('WEB_ACCOUNT_USERNAME', $Cookie->Data['account_username'], false);
     define('WEB_DOWNLOADS', $Cookie->Data['downloads'], false);
-
-    // Client properties and client session properties
     define('CLIENT_MODE_ENABLED', $Cookie->Data['client_mode_enabled'], false);
     define('CLIENT_UID', $Cookie->Data['client_authorized'], false);
     define('CLIENT_NAME', $Cookie->Data['client_name'], false);
