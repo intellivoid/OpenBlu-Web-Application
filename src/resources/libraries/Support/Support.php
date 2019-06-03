@@ -5,6 +5,7 @@
 
     use mysqli;
     use Support\Exceptions\ConfigurationNotFoundException;
+    use Support\Managers\TicketManager;
 
     include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Abstracts' . DIRECTORY_SEPARATOR . 'ExceptionCodes.php');
     include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Abstracts' . DIRECTORY_SEPARATOR . 'SupportTicketSearchMethod.php');
@@ -44,6 +45,11 @@
         private $configuration;
 
         /**
+         * @var TicketManager
+         */
+        private $TicketManager;
+
+        /**
          * Support constructor.
          * @throws ConfigurationNotFoundException
          */
@@ -63,6 +69,8 @@
                 $this->configuration['DatabaseName'],
                 $this->configuration['DatabasePort']
             );
+
+            $this->TicketManager = new TicketManager($this);
         }
 
         /**
@@ -71,5 +79,13 @@
         public function getDatabase()
         {
             return $this->database;
+        }
+
+        /**
+         * @return TicketManager
+         */
+        public function getTicketManager(): TicketManager
+        {
+            return $this->TicketManager;
         }
     }
