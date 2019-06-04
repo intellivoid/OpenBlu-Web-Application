@@ -23,6 +23,7 @@
                         $Cookie->Data['cache']['ui']['sidebar_expanded'] = true;
                     }
 
+                    $sws = DynamicalWeb::getMemoryObject('sws');
                     $sws->CookieManager()->updateCookie($Cookie);
                     print(hash('sha256', time() . 'utc-do-not-change'));
                     exit();

@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13744565-c04a-4ec4-8a5b-01f6fe867a44" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/languages/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/languages/en.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/pages/support/contents.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/pages/support/contents.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/pages/support/scripts/callbacks.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/pages/support/scripts/callbacks.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/pages/support/scripts/submit_report.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/pages/support/scripts/submit_report.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/shared/recaptcha.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/shared/recaptcha.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/shared/scripts/toggle_sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/shared/scripts/toggle_sidebar.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +63,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/resources/pages/support/scripts/callbacks.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="168">
@@ -76,6 +71,24 @@
               <folding>
                 <element signature="e#11#36#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/toggle_sidebar.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="25" column="64" selection-start-line="25" selection-start-column="64" selection-end-line="25" selection-end-column="64" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/login_account.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="225" column="56" lean-forward="true" selection-start-line="225" selection-start-column="12" selection-end-line="225" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -173,7 +186,6 @@
         <option value="$PROJECT_DIR$/src/resources/shared/scripts/check_selection.php" />
         <option value="$PROJECT_DIR$/src/resources/shared/scripts/login_account.php" />
         <option value="$PROJECT_DIR$/src/resources/shared/scripts/register_account.php" />
-        <option value="$PROJECT_DIR$/src/resources/shared/scripts/toggle_sidebar.php" />
         <option value="$PROJECT_DIR$/src/resources/pages/api/scripts/callbacks.php" />
         <option value="$PROJECT_DIR$/src/resources/pages/confirm_purchase/scripts/callbacks.php" />
         <option value="$PROJECT_DIR$/src/resources/sections/sidebar.php" />
@@ -196,6 +208,7 @@
         <option value="$PROJECT_DIR$/src/resources/pages/support/scripts/submit_report.php" />
         <option value="$PROJECT_DIR$/src/resources/languages/en.json" />
         <option value="$PROJECT_DIR$/src/resources/pages/support/scripts/callbacks.php" />
+        <option value="$PROJECT_DIR$/src/resources/shared/scripts/toggle_sidebar.php" />
       </list>
     </option>
   </component>
@@ -393,12 +406,12 @@
       <workItem from="1559577600916" duration="393000" />
       <workItem from="1559594901914" duration="1863000" />
       <workItem from="1559611247636" duration="4483000" />
-      <workItem from="1559675650860" duration="7849000" />
+      <workItem from="1559675650860" duration="7925000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152495000" />
+    <option name="totallyTimeSpent" value="152571000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -480,13 +493,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/api_prices.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/pages/404/contents.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="202">
@@ -799,13 +805,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/login_account.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="174" column="9" lean-forward="true" selection-start-line="170" selection-start-column="8" selection-end-line="174" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/languages/en.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="290">
@@ -844,6 +843,20 @@
           <folding>
             <element signature="e#11#36#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/login_account.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="225" column="56" lean-forward="true" selection-start-line="225" selection-start-column="12" selection-end-line="225" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/toggle_sidebar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="25" column="64" selection-start-line="25" selection-start-column="64" selection-end-line="25" selection-end-column="64" />
         </state>
       </provider>
     </entry>
