@@ -8,6 +8,12 @@
 
     if($_SERVER['REQUEST_METHOD'] == 'POST')
     {
+        if(verify_recaptcha() == false)
+        {
+            header('Location: /support?callback=106');
+            exit();
+        }
+
         if(isset($_POST['email']) == false)
         {
             header('Location: /support?callback=100');

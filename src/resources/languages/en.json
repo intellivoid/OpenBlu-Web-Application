@@ -273,7 +273,8 @@
             "CALLBACK_102": "The given Subject is invalid, it must be greater than 5 characters but no greater than 130",
             "CALLBACK_103": "The given Message is invalid, it must be greater than 20 characters but no greater than 2500",
             "CALLBACK_104": "There was an unknown error while trying to process your report, please wait till Intellivoid resolves this issue",
-            "CALLBACK_105": "Your report has been submitted, we will reach you shortly. Your ticket number is #%s"
+            "CALLBACK_105": "Your report has been submitted, we will reach you shortly. Your ticket number is #%s",
+            "CALLBACK_106": "The captcha was solved incorrectly"
         }
     },
     "sections": {

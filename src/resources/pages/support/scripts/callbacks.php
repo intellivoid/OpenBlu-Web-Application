@@ -53,8 +53,12 @@
                 }
 
                 $TicketNumber = htmlspecialchars($_GET['ticket_number'], ENT_QUOTES, 'UTF-8');
-                render_alert(str_ireplace('%s', $TicketNumber, TEXT_CALLBACK_105), 'danger', 'alert-circle');
+                render_alert(str_ireplace('%s', $TicketNumber, TEXT_CALLBACK_105), 'success', 'check-circle-outline');
 
+                break;
+
+            case 106:
+                render_alert(TEXT_CALLBACK_106, 'danger', 'alert-circle');
                 break;
         }
     }

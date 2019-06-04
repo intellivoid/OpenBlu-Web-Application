@@ -2,6 +2,7 @@
     /** @noinspection PhpUnhandledExceptionInspection */
     use DynamicalWeb\HTML;
 
+    HTML::importScript('recaptcha');
     HTML::importScript('submit_report');
     HTML::importScript('alert');
 ?>
@@ -9,6 +10,7 @@
 <html lang="<?PHP HTML::print(APP_LANGUAGE_ISO_639); ?>">
     <head>
         <?PHP HTML::importSection('header'); ?>
+        <?PHP HTML::print(re_import(), false); ?>
         <title><?PHP HTML::print(TEXT_PAGE_TITLE); ?></title>
     </head>
 
@@ -42,6 +44,10 @@
                                             <div class="form-group">
                                                 <label for="message"><?PHP HTML::print(TEXT_MESSAGE_LABEL); ?></label>
                                                 <textarea class="form-control" id="message" name="message" rows="20"></textarea>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <?PHP HTML::print(re_render(), false); ?>
                                             </div>
 
                                             <input type="submit" class="btn btn-xs btn-inverse-success mr-2" value="<?PHP HTML::print(TEXT_SUBMIT_BUTTON); ?>">
