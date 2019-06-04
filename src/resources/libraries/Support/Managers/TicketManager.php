@@ -89,7 +89,7 @@
 
             if($QueryResults == true)
             {
-                $this->getSupportTicket(SupportTicketSearchMethod::byTicketNumber, $TicketNumber);
+                return $this->getSupportTicket(SupportTicketSearchMethod::byTicketNumber, $TicketNumber);
             }
 
             throw new DatabaseException($Query, $this->support->getDatabase()->error);

@@ -257,6 +257,23 @@
             "FAQ_HEADER": "Please read the information presented below before adding money to your account balance (English Only)",
             "ADD_BALANCE_HEADER": "Add balance using PayPal",
             "ADD_BALANCE_DESC": "Please make sure that your Intellivoid Account's email is the same as your PayPal email, if they are different then send an email to %s with your PayPal transaction ID (after the purchase) and your Intellivoid Account username or email. If you fail to provide us with the required information then you will be refunded"
+        },
+        "support": {
+            "PAGE_TITLE": "OpenBlu - Support",
+            "CARD_TITLE": "OpenBlu Contact/Support",
+            "CARD_DESC": "Using this form below you can contact us to request technical support regarding OpenBlu or ask questions/make requests. Upon submitting your support form, you will receive a ticket number which will be used as a reference once we get back to you via Email.",
+            "EMAIL_LABEL": "Email (Must be valid to get a response)",
+            "EMAIL_PLACEHOLDER": "Email Address",
+            "SUBJECT_LABEL": "Subject (Minimum 5 characters, Maximum 130 characters)",
+            "SUBJECT_PLACEHOLDER": "Subject",
+            "MESSAGE_LABEL": "Message (Minimum 20 characters, Maximum 2500 characters)",
+            "SUBMIT_BUTTON": "Submit",
+            "CALLBACK_100": "There was an issue with your request, please make sure your browser is up to date",
+            "CALLBACK_101": "The given Email address is invalid",
+            "CALLBACK_102": "The given Subject is invalid, it must be greater than 5 characters but no greater than 130",
+            "CALLBACK_103": "The given Message is invalid, it must be greater than 20 characters but no greater than 2500",
+            "CALLBACK_104": "There was an unknown error while trying to process your report, please wait till Intellivoid resolves this issue",
+            "CALLBACK_105": "Your report has been submitted, we will reach you shortly. Your ticket number is #%s"
         }
     },
     "sections": {

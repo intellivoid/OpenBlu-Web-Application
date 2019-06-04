@@ -2,6 +2,8 @@
     /** @noinspection PhpUnhandledExceptionInspection */
     use DynamicalWeb\HTML;
 
+    HTML::importScript('submit_report');
+    HTML::importScript('alert');
 ?>
 <!DOCTYPE html>
 <html lang="<?PHP HTML::print(APP_LANGUAGE_ISO_639); ?>">
@@ -18,16 +20,33 @@
                 <?PHP HTML::importSection('sidebar'); ?>
                 <div class="main-panel">
                     <div class="content-wrapper">
-
                         <div class="row">
                             <div class="col-12 grid-margin">
+                                <?PHP HTML::importScript('callbacks'); ?>
                                 <div class="card animated fadeInUp">
                                     <div class="card-body">
-                                        <h4 class="card-title"><?PHP HTML::print(TEXT_CARD_HEADER); ?></h4>
-                                        <div class="card-description"><?PHP HTML::print(TEXT_CARD_DESCRIPTION); ?></div>
-                                        <button class="btn btn-primary" onclick="location.href='/'">
-                                            <i class="mdi mdi-home"></i><?PHP HTML::print(TEXT_BUTTON_HOME); ?>
-                                        </button>
+                                        <h4 class="card-title"><?PHP HTML::print(TEXT_CARD_TITLE); ?></h4>
+                                        <div class="card-description border-bottom"><?PHP HTML::print(TEXT_CARD_DESC); ?></div>
+
+                                        <form action="/support" method="POST">
+                                            <div class="form-group">
+                                                <label for="email"><?PHP HTML::print(TEXT_EMAIL_LABEL); ?></label>
+                                                <input type="email" class="form-control" id="email" name="email" placeholder="<?PHP HTML::print(TEXT_EMAIL_PLACEHOLDER); ?>">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="subject"><?PHP HTML::print(TEXT_SUBJECT_LABEL); ?></label>
+                                                <input type="text" class="form-control" id="subject" name="subject" placeholder="<?PHP HTML::print(TEXT_SUBJECT_PLACEHOLDER); ?>">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="message"><?PHP HTML::print(TEXT_MESSAGE_LABEL); ?></label>
+                                                <textarea class="form-control" id="message" name="message" rows="20"></textarea>
+                                            </div>
+
+                                            <input type="submit" class="btn btn-xs btn-inverse-success mr-2" value="<?PHP HTML::print(TEXT_SUBMIT_BUTTON); ?>">
+                                        </form>
+
                                     </div>
                                 </div>
                             </div>
