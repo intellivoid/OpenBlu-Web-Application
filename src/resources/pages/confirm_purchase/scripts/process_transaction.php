@@ -4,6 +4,8 @@
     use DynamicalWeb\Runtime;
     use IntellivoidAccounts\Abstracts\AccountStatus;
     use IntellivoidAccounts\Abstracts\SearchMethods\AccountSearchMethod;
+    use IntellivoidAccounts\Abstracts\TransactionType;
+    use IntellivoidAccounts\Exceptions\InsufficientFundsException;
     use IntellivoidAccounts\IntellivoidAccounts;
     use OpenBlu\Abstracts\APIPlan;
     use OpenBlu\OpenBlu;
@@ -77,16 +79,6 @@
     /** @noinspection PhpUnhandledExceptionInspection */
     $Account = $IntellivoidAccounts->getAccountManager()->getAccount(AccountSearchMethod::byId, WEB_ACCOUNT_ID);
 
-    // Check if the plan costs anything
-    if(PLAN_PRICE_C > 0)
-    {
-        // Check if the account has sufficient funds
-        if($Account->Configuration->Balance < PLAN_PRICE_C)
-        {
-            returnCallback(101);
-        }
-    }
-
     // Check if the account si active and available for making purchases
     if($Account->Status !== AccountStatus::Active)
     {
@@ -138,8 +130,12 @@
     {
         $IntellivoidAccounts->getTransactionRecordManager()->createTransaction(
             $Account->ID, -PLAN_PRICE_C, 'Intellivoid',
-            \IntellivoidAccounts\Abstracts\TransactionType::SubscriptionPayment
+            TransactionType::SubscriptionPayment
         );
+    }
+    catch(InsufficientFundsException $insufficientFundsException)
+    {
+        returnCallback(101);
     }
     catch(Exception $exception)
     {

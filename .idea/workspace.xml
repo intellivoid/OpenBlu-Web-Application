@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13744565-c04a-4ec4-8a5b-01f6fe867a44" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dac48649-8897-4110-a852-69e6da5a9f26.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/dac48649-8897-4110-a852-69e6da5a9f26.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/libraries/IntellivoidAccounts/Managers/TransactionRecordManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/libraries/IntellivoidAccounts/Managers/TransactionRecordManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/libraries/IntellivoidAccounts/intellivoid_accounts.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/libraries/IntellivoidAccounts/intellivoid_accounts.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/pages/confirm_purchase/scripts/process_transaction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/pages/confirm_purchase/scripts/process_transaction.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,11 +46,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/resources/pages/confirm_purchase/scripts/process_transaction.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="146" column="15" selection-start-line="146" selection-start-column="15" selection-end-line="146" selection-end-column="15" />
-              <folding>
-                <element signature="e#11#41#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="136">
+              <caret line="8" column="39" lean-forward="true" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -387,12 +381,13 @@
       <workItem from="1559594901914" duration="1863000" />
       <workItem from="1559611247636" duration="4483000" />
       <workItem from="1559675650860" duration="8074000" />
-      <workItem from="1559938914208" duration="2330000" />
+      <workItem from="1559938914208" duration="2414000" />
+      <workItem from="1559941977913" duration="124000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="155050000" />
+    <option name="totallyTimeSpent" value="155258000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -408,7 +403,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.21482602" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.21785174" />
       <window_info id="Structure" order="2" weight="0.15658094" />
       <window_info anchor="bottom" id="Database Changes" order="0" />
       <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
@@ -803,13 +798,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://dac48649-8897-4110-a852-69e6da5a9f26/schema/intellivoid/table/balance_transactions">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://dac48649-8897-4110-a852-69e6da5a9f26/schema/intellivoid/table/balance_transactions" />
     <entry file="file://$PROJECT_DIR$/src/resources/libraries/IntellivoidAccounts/intellivoid_accounts.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -833,11 +822,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/pages/confirm_purchase/scripts/process_transaction.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="146" column="15" selection-start-line="146" selection-start-column="15" selection-end-line="146" selection-end-column="15" />
-          <folding>
-            <element signature="e#11#41#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="136">
+          <caret line="8" column="39" lean-forward="true" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
         </state>
       </provider>
     </entry>
