@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="13744565-c04a-4ec4-8a5b-01f6fe867a44" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/resources/shared/scripts/toggle_sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/shared/scripts/toggle_sidebar.php" afterDir="false" />
-    </list>
+    <list default="true" id="13744565-c04a-4ec4-8a5b-01f6fe867a44" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -406,12 +404,12 @@
       <workItem from="1559577600916" duration="393000" />
       <workItem from="1559594901914" duration="1863000" />
       <workItem from="1559611247636" duration="4483000" />
-      <workItem from="1559675650860" duration="7925000" />
+      <workItem from="1559675650860" duration="8074000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152571000" />
+    <option name="totallyTimeSpent" value="152720000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -424,17 +422,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.2118003" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.2118003" />
       <window_info id="Structure" order="2" weight="0.15658094" />
       <window_info anchor="bottom" id="Database Changes" order="0" />
       <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Console" order="2" weight="0.32943144" />
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" weight="0.32943144" />
       <window_info anchor="bottom" id="Version Control" order="4" weight="0.32645404" />
-      <window_info anchor="bottom" id="Terminal" order="5" visible="true" weight="0.32608697" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="5" visible="true" weight="0.32608697" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" weight="0.32998326" />
       <window_info anchor="bottom" id="Run" order="8" />
