@@ -10,6 +10,11 @@
      */
     function re_render()
     {
+        if(CLIENT_MODE_ENABLED == true)
+        {
+            return '';
+        }
+
         $configuration = DynamicalWeb::getConfiguration('recaptcha');
 
         if($configuration['enabled'] == true)
@@ -26,6 +31,11 @@
      */
     function re_import()
     {
+        if(CLIENT_MODE_ENABLED == true)
+        {
+            return '';
+        }
+
         $configuration = DynamicalWeb::getConfiguration('recaptcha');
 
         if($configuration['enabled'] == true)
@@ -45,6 +55,11 @@
      */
     function verify_recaptcha(): bool
     {
+        if(CLIENT_MODE_ENABLED == true)
+        {
+            return true;
+        }
+
         $configuration = DynamicalWeb::getConfiguration('recaptcha');
 
         if($configuration['enabled'] == false)

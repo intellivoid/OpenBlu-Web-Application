@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13744565-c04a-4ec4-8a5b-01f6fe867a44" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/pages/confirm_purchase/scripts/process_transaction.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/pages/confirm_purchase/scripts/process_transaction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/shared/scripts/recaptcha.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/shared/scripts/recaptcha.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,11 +42,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/resources/pages/confirm_purchase/scripts/process_transaction.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="39" lean-forward="true" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
+            <state relative-caret-position="414">
+              <caret line="136" column="5" lean-forward="true" selection-start-line="136" selection-start-column="5" selection-end-line="136" selection-end-column="5" />
+              <folding>
+                <element signature="e#11#41#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/recaptcha.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="59" column="23" selection-start-line="59" selection-start-column="23" selection-end-line="59" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -142,7 +153,6 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/dac48649-8897-4110-a852-69e6da5a9f26/console.sql" />
         <option value="$PROJECT_DIR$/src/resources/libraries/Support/Managers/TicketManager.php" />
         <option value="$PROJECT_DIR$/src/resources/shared/recaptcha.json" />
-        <option value="$PROJECT_DIR$/src/resources/shared/scripts/recaptcha.php" />
         <option value="$PROJECT_DIR$/src/resources/pages/support/contents.php" />
         <option value="$PROJECT_DIR$/src/resources/pages/support/scripts/submit_report.php" />
         <option value="$PROJECT_DIR$/src/resources/languages/en.json" />
@@ -151,6 +161,7 @@
         <option value="$PROJECT_DIR$/src/resources/libraries/IntellivoidAccounts/Managers/TransactionRecordManager.php" />
         <option value="$PROJECT_DIR$/src/resources/libraries/IntellivoidAccounts/intellivoid_accounts.json" />
         <option value="$PROJECT_DIR$/src/resources/pages/confirm_purchase/scripts/process_transaction.php" />
+        <option value="$PROJECT_DIR$/src/resources/shared/scripts/recaptcha.php" />
       </list>
     </option>
   </component>
@@ -382,12 +393,12 @@
       <workItem from="1559611247636" duration="4483000" />
       <workItem from="1559675650860" duration="8074000" />
       <workItem from="1559938914208" duration="2414000" />
-      <workItem from="1559941977913" duration="124000" />
+      <workItem from="1559941977913" duration="320000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="155258000" />
+    <option name="totallyTimeSpent" value="155454000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -722,13 +733,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/recaptcha.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="15" column="9" lean-forward="true" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/pages/login/scripts/login_contents.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -822,8 +826,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/pages/confirm_purchase/scripts/process_transaction.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="39" lean-forward="true" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
+        <state relative-caret-position="414">
+          <caret line="136" column="5" lean-forward="true" selection-start-line="136" selection-start-column="5" selection-end-line="136" selection-end-column="5" />
+          <folding>
+            <element signature="e#11#41#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/shared/scripts/recaptcha.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="59" column="23" selection-start-line="59" selection-start-column="23" selection-end-line="59" selection-end-column="23" />
         </state>
       </provider>
     </entry>
