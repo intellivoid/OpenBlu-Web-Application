@@ -136,6 +136,19 @@
 
     try
     {
+        $IntellivoidAccounts->getTransactionRecordManager()->createTransaction(
+            $Account->ID, -PLAN_PRICE_C, 'Intellivoid',
+            \IntellivoidAccounts\Abstracts\TransactionType::SubscriptionPayment
+        );
+    }
+    catch(Exception $exception)
+    {
+        header('Location: /500');
+        exit();
+    }
+
+    try
+    {
         $Plan = $OpenBlu->getPlanManager()->startPlan(
             $Account->ID,
             $PlanType,
@@ -150,10 +163,6 @@
         header('Location: /500');
         exit();
     }
-
-    $Account->Configuration->Balance -= PLAN_PRICE_C;
-    /** @noinspection PhpUnhandledExceptionInspection */
-    $IntellivoidAccounts->getAccountManager()->updateAccount($Account);
 
     /** @var sws $sws */
     $sws = DynamicalWeb::getMemoryObject('sws');
