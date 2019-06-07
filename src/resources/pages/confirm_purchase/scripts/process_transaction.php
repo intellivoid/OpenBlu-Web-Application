@@ -145,6 +145,31 @@
 
     try
     {
+        if(PROMOTION_SET == true)
+        {
+            $PlanDetails = api_prices_get_basic(PROMOTION_CODE);
+            if($PlanDetails->IsAffiliated == true)
+            {
+                $AffiliationAccount = $IntellivoidAccounts->getAccountManager()->getAccount(
+                    AccountSearchMethod::byUsername, $PlanDetails->AffiliationUsername
+                );
+
+                $IntellivoidAccounts->getTransactionRecordManager()->createTransaction(
+                    $AffiliationAccount->ID, $PlanDetails->AffiliationShare, 'Intellivoid',
+                    TransactionType::Payment
+                );
+            }
+
+        }
+    }
+    catch(Exception $exception)
+    {
+        header('Location: /500');
+        exit();
+    }
+
+    try
+    {
         $Plan = $OpenBlu->getPlanManager()->startPlan(
             $Account->ID,
             $PlanType,
