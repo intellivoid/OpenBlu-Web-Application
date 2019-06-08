@@ -104,7 +104,20 @@
                             <div class="flex-grow">
                                 <h6 class="preview-subject"><?PHP HTML::print(TEXT_CURRENT_PLAN_ROW_MONTHLY_CALLS_TITLE); ?>
                                     <span class="float-right small">
-                                        <span class="text-muted border-right pr-3"><?PHP HTML::print(str_ireplace('%s', $Plan->MonthlyCalls, TEXT_CURRENT_PLAN_ROW_MONTHLY_CALLS_PLACEHOLDER)); ?></span>
+                                        <?PHP
+                                            if($Plan->MonthlyCalls == 0)
+                                            {
+                                                ?>
+                                                <span class="text-muted border-right pr-3"><?PHP HTML::print(TEXT_CURRENT_PLAN_ROW_MONTHLY_CALLS_UNLIMITED_USAGE); ?></span>
+                                                <?PHP
+                                            }
+                                            else
+                                            {
+                                                ?>
+                                                <span class="text-muted border-right pr-3"><?PHP HTML::print(str_ireplace('%s', $Plan->MonthlyCalls, TEXT_CURRENT_PLAN_ROW_MONTHLY_CALLS_PLACEHOLDER)); ?></span>
+                                                <?PHP
+                                            }
+                                        ?>
                                         <span class="text-muted pl-3"><?PHP HTML::print(str_ireplace('%s', $UsageCurrentMonth, TEXT_CURRENT_PLAN_ROW_MONTHLY_CALLS_CURRENT_USAGE_PLACEHOLDER)); ?></span>
                                     </span>
                                 </h6>

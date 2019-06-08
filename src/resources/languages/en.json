@@ -141,6 +141,7 @@
             "CURRENT_PLAN_ROW_MONTHLY_CALLS_PLACEHOLDER": "%s Monthly calls",
             "CURRENT_PLAN_ROW_MONTHLY_CALLS_CURRENT_USAGE_PLACEHOLDER": "%s Calls this month",
             "CURRENT_PLAN_ROW_MONTHLY_CALLS_DESC": "The amount of monthly calls you can make with this plan",
+            "CURRENT_PLAN_ROW_MONTHLY_CALLS_UNLIMITED_USAGE": "Unlimited Calls",
             "CURRENT_PLAN_ROW_BILLING_CYCLE_TITLE": "Next Billing Cycle",
             "CURRENT_PLAN_ROW_BILLING_CYCLE_DESC": "The date for when the system will process your next billing cycle",
             "CANCEL_PLAN_BUTTON": "Cancel Plan",

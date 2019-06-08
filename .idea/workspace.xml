@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="13744565-c04a-4ec4-8a5b-01f6fe867a44" name="Default" comment="" />
+    <list default="true" id="13744565-c04a-4ec4-8a5b-01f6fe867a44" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/src/resources/languages/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/languages/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/pages/api/scripts/render_dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/pages/api/scripts/render_dashboard.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +42,38 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resources/pages/api/scripts/dashboard_actions.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="536">
+              <caret line="152" column="9" selection-start-line="152" selection-start-column="9" selection-end-line="152" selection-end-column="9" />
+              <folding>
+                <element signature="e#11#41#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/resources/pages/api/scripts/render_dashboard.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="110" column="160" selection-start-line="110" selection-start-column="160" selection-end-line="110" selection-end-column="160" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resources/languages/en.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="213">
+              <caret line="143" column="59" selection-start-line="143" selection-start-column="13" selection-end-line="143" selection-end-column="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -101,7 +135,6 @@
         <option value="$PROJECT_DIR$/src/resources/pages/add_balance/contents.php" />
         <option value="$PROJECT_DIR$/src/resources/pages/api/scripts/dashboard_actions.php" />
         <option value="$PROJECT_DIR$/src/resources/pages/api/scripts/render_charts_js.php" />
-        <option value="$PROJECT_DIR$/src/resources/pages/api/scripts/render_dashboard.php" />
         <option value="$PROJECT_DIR$/src/resources/shared/scripts/api_prices.php" />
         <option value="$PROJECT_DIR$/src/resources/pages/api/scripts/render_pricing.php" />
         <option value="$PROJECT_DIR$/src/resources/pages/api/contents.php" />
@@ -132,13 +165,14 @@
         <option value="$PROJECT_DIR$/src/resources/shared/recaptcha.json" />
         <option value="$PROJECT_DIR$/src/resources/pages/support/contents.php" />
         <option value="$PROJECT_DIR$/src/resources/pages/support/scripts/submit_report.php" />
-        <option value="$PROJECT_DIR$/src/resources/languages/en.json" />
         <option value="$PROJECT_DIR$/src/resources/pages/support/scripts/callbacks.php" />
         <option value="$PROJECT_DIR$/src/resources/shared/scripts/toggle_sidebar.php" />
         <option value="$PROJECT_DIR$/src/resources/libraries/IntellivoidAccounts/Managers/TransactionRecordManager.php" />
         <option value="$PROJECT_DIR$/src/resources/libraries/IntellivoidAccounts/intellivoid_accounts.json" />
         <option value="$PROJECT_DIR$/src/resources/shared/scripts/recaptcha.php" />
         <option value="$PROJECT_DIR$/src/resources/pages/confirm_purchase/scripts/process_transaction.php" />
+        <option value="$PROJECT_DIR$/src/resources/languages/en.json" />
+        <option value="$PROJECT_DIR$/src/resources/pages/api/scripts/render_dashboard.php" />
       </list>
     </option>
   </component>
@@ -154,6 +188,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -172,11 +207,41 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="OpenBlu-Web-Application" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OpenBlu-Web-Application" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="languages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OpenBlu-Web-Application" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OpenBlu-Web-Application" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OpenBlu-Web-Application" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OpenBlu-Web-Application" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OpenBlu-Web-Application" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OpenBlu-Web-Application" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -276,11 +341,12 @@
       <workItem from="1559675650860" duration="8074000" />
       <workItem from="1559938914208" duration="2414000" />
       <workItem from="1559941977913" duration="2417000" />
+      <workItem from="1560010865602" duration="385000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="157551000" />
+    <option name="totallyTimeSpent" value="157936000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -293,9 +359,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.21785174" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.22087745" />
       <window_info id="Structure" order="2" weight="0.15658094" />
       <window_info anchor="bottom" id="Database Changes" order="0" />
       <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
@@ -361,27 +428,10 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/resources/pages/add_balance/contents.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="148" column="38" lean-forward="true" selection-start-line="148" selection-start-column="38" selection-end-line="148" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/pages/api/scripts/callbacks.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/pages/api/scripts/dashboard_actions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2486">
-          <caret line="152" column="9" lean-forward="true" selection-start-line="152" selection-start-column="9" selection-end-line="152" selection-end-column="9" />
-          <folding>
-            <element signature="e#11#41#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -652,13 +702,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/languages/en.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4692">
-          <caret line="276" column="63" selection-start-line="276" selection-start-column="63" selection-end-line="276" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/shared/recaptcha.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -721,6 +764,30 @@
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/pages/api/scripts/dashboard_actions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="536">
+          <caret line="152" column="9" selection-start-line="152" selection-start-column="9" selection-end-line="152" selection-end-column="9" />
+          <folding>
+            <element signature="e#11#41#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/languages/en.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="143" column="59" selection-start-line="143" selection-start-column="13" selection-end-line="143" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/pages/api/scripts/render_dashboard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="110" column="160" selection-start-line="110" selection-start-column="160" selection-end-line="110" selection-end-column="160" />
         </state>
       </provider>
     </entry>
