@@ -1,10 +1,12 @@
 <?php
 
     use DynamicalWeb\DynamicalWeb;
-    use DynamicalWeb\Runtime;
+use DynamicalWeb\Page;
+use DynamicalWeb\Runtime;
     use IntellivoidAccounts\Abstracts\SearchMethods\AccountSearchMethod;
     use IntellivoidAccounts\IntellivoidAccounts;
-    use OpenBlu\Abstracts\SearchMethods\PlanSearchMethod;
+use OpenBlu\Abstracts\SearchMethods\ClientSearchMethod;
+use OpenBlu\Abstracts\SearchMethods\PlanSearchMethod;
     use OpenBlu\OpenBlu;
 use sws\Objects\Cookie;
 use sws\sws;
@@ -22,6 +24,33 @@ use sws\sws;
         {
             // No need to set these values to MMS since they will be used once
             $OpenBlu = new OpenBlu();
+
+            if(CLIENT_MODE_ENABLED == true)
+            {
+                try
+                {
+                    $Client = $OpenBlu->getClientManager()->getClient(ClientSearchMethod::byClientUid, CLIENT_UID);
+                }
+                catch(Exception $exception)
+                {
+                    Page::staticResponse(
+                        "OpenBlu - Error",
+                        "Client Error",
+                        "There was an issue while trying to verify your client, please make restart your client."
+                    );
+                    exit();
+                }
+
+                if($Client->Blocked == true)
+                {
+                    Page::staticResponse(
+                        "OpenBlu - Error",
+                        "Client Blocked",
+                        "Your client has been blocked by the System Administrator, please contact support if needed"
+                    );
+                    exit();
+                }
+            }
 
             $Cookie->Data['cache']['total_servers'] = $OpenBlu->getVPNManager()->totalServers();
             $Cookie->Data['cache']['total_sessions'] = $OpenBlu->getVPNManager()->totalSessions();

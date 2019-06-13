@@ -87,7 +87,6 @@
 
         $OpenBlu = new OpenBlu();
         $Client = new Client();
-
         $ip = null;
 
         if(!empty($_SERVER['HTTP_CLIENT_IP']))
@@ -157,43 +156,39 @@
         $sws = new sws();
         $Cookie = null;
 
-        if($sws->WebManager()->isCookieValid('web_session') == false)
+        if($sws->WebManager()->isCookieValid('web_session') == true)
         {
-            $Cookie = $sws->CookieManager()->newCookie('web_session', 86400, false);
-
-            $Cookie->Data = array(
-                'session_active' => false,
-                'account_pubid' => null,
-                'account_id' => null,
-                'account_email' => null,
-                'account_username' => null,
-                'downloads' => 0,
-                'cache' => array(),
-                'cache_refresh' => 0,
-
-                // Client Mode Properties
-                'client_mode_enabled' => false,
-                'client_uid' => null,
-                'client_name' => null,
-                'client_version' => null,
-                'client_authorized' => false,
-                'client_account_id' => 0,
-                'client_auth_expires' => 0
-            );
-
-            $sws->CookieManager()->updateCookie($Cookie);
-            $sws->WebManager()->setCookie($Cookie);
-
-            if($Cookie->Name == null)
-            {
-                print('There was an issue with the security check, Please refresh the page');
-                exit();
-            }
-
+            $sws->WebManager()->disposeCookie('web_session');
         }
-        else
+
+        $Cookie = $sws->CookieManager()->newCookie('web_session', 86400, false);
+        $Cookie->Data = array(
+            'session_active' => false,
+            'account_pubid' => null,
+            'account_id' => null,
+            'account_email' => null,
+            'account_username' => null,
+            'downloads' => 0,
+            'cache' => array(),
+            'cache_refresh' => 0,
+
+            // Client Mode Properties
+            'client_mode_enabled' => false,
+            'client_uid' => null,
+            'client_name' => null,
+            'client_version' => null,
+            'client_authorized' => false,
+            'client_account_id' => 0,
+            'client_auth_expires' => 0
+        );
+
+        $sws->CookieManager()->updateCookie($Cookie);
+        $sws->WebManager()->setCookie($Cookie);
+
+        if($Cookie->Name == null)
         {
-            $Cookie = $sws->WebManager()->getCookie('web_session');
+            print('There was an issue with the security check, Please refresh the page');
+            exit();
         }
 
         $Cookie->Data['client_mode_enabled'] = true;
@@ -217,24 +212,6 @@
         DynamicalWeb::setMemoryObject('(cookie)web_session', $Cookie);
         header('Location: /');
         exit();
-    }
-
-    if(CLIENT_MODE_ENABLED == true)
-    {
-        if(WEB_SESSION_ACTIVE == false)
-        {
-            switch(APP_CURRENT_PAGE)
-            {
-                case 'login': break;
-
-                case 'register': break;
-
-                default:
-                    header('Location: /login');
-                    exit();
-                    break;
-            }
-        }
     }
 
     if(isset($_GET['mode']))
