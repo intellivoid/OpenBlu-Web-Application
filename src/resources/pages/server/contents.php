@@ -31,7 +31,7 @@
                                             <i class="flag-icon flag-icon-<?PHP HTML::print(strtolower(CACHE_VPN_COUNTRY_SHORT)); ?> text-primary icon-md"></i>
                                             <div class="ml-3">
                                                 <h6 class="text-primary"><?PHP HTML::print(CACHE_VPN_IP); ?></h6>
-                                                <p class="mt-2 text-muted card-text"><?PHP HTML::print(str_ireplace('%s', CACHE_VPN_SESSIONS, TEXT_HEADER_CURRENT_SESSIONS)); ?></p>
+                                                <p class="mt-2 text-muted card-text"><?PHP HTML::print(str_ireplace('%s', number_format(CACHE_VPN_SESSIONS), TEXT_HEADER_CURRENT_SESSIONS)); ?></p>
                                             </div>
                                         </div>
                                     </div>
@@ -101,7 +101,7 @@
                                                                 <p><?PHP HTML::print(TEXT_CARD_SERVER_DETAILS_CURRENT_SESSIONS_DESC); ?></p>
                                                             </div>
                                                             <div class="mr-auto text-right">
-                                                                <p class="text-info"><?PHP HTML::print(str_ireplace('%s', CACHE_VPN_SESSIONS, TEXT_PLACEHOLDER_SESSIONS)); ?></p>
+                                                                <p class="text-info"><?PHP HTML::print(str_ireplace('%s', number_format(CACHE_VPN_SESSIONS), TEXT_PLACEHOLDER_SESSIONS)); ?></p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -119,7 +119,7 @@
                                                                 <p><?PHP HTML::print(TEXT_CARD_SERVER_DETAILS_TOTAL_SESSIONS_DESC); ?></p>
                                                             </div>
                                                             <div class="mr-auto text-right">
-                                                                <p class="text-info"><?PHP HTML::print(str_ireplace('%s', CACHE_VPN_TOTAL_SESSIONS, TEXT_PLACEHOLDER_SESSIONS)); ?></p>
+                                                                <p class="text-info"><?PHP HTML::print(str_ireplace('%s', number_format(CACHE_VPN_TOTAL_SESSIONS), TEXT_PLACEHOLDER_SESSIONS)); ?></p>
                                                             </div>
                                                         </div>
                                                     </div>

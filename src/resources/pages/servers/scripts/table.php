@@ -133,8 +133,8 @@
                             '<i class="flag-icon flag-icon-' . strtolower($VPNObject->CountryShort) . '"></i> ' . $VPNObject->Country,
                             $VPNObject->IP,
                             str_ireplace('%s', $VPNObject->Ping, TEXT_ROW_PING),
-                            $VPNObject->Sessions,
-                            $VPNObject->TotalSessions,
+                            number_format($VPNObject->Sessions),
+                            number_format($VPNObject->TotalSessions),
                             time_elapsed_string($VPNObject->LastUpdated),
                             $ActionView
                         ];

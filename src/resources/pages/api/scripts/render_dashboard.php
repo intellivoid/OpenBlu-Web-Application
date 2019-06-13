@@ -114,11 +114,11 @@
                                             else
                                             {
                                                 ?>
-                                                <span class="text-muted border-right pr-3"><?PHP HTML::print(str_ireplace('%s', $Plan->MonthlyCalls, TEXT_CURRENT_PLAN_ROW_MONTHLY_CALLS_PLACEHOLDER)); ?></span>
+                                                <span class="text-muted border-right pr-3"><?PHP HTML::print(str_ireplace('%s', number_format($Plan->MonthlyCalls), TEXT_CURRENT_PLAN_ROW_MONTHLY_CALLS_PLACEHOLDER)); ?></span>
                                                 <?PHP
                                             }
                                         ?>
-                                        <span class="text-muted pl-3"><?PHP HTML::print(str_ireplace('%s', $UsageCurrentMonth, TEXT_CURRENT_PLAN_ROW_MONTHLY_CALLS_CURRENT_USAGE_PLACEHOLDER)); ?></span>
+                                        <span class="text-muted pl-3"><?PHP HTML::print(str_ireplace('%s', number_format($UsageCurrentMonth), TEXT_CURRENT_PLAN_ROW_MONTHLY_CALLS_CURRENT_USAGE_PLACEHOLDER)); ?></span>
                                     </span>
                                 </h6>
                                 <p><?PHP HTML::print(TEXT_CURRENT_PLAN_ROW_MONTHLY_CALLS_DESC); ?></p>
