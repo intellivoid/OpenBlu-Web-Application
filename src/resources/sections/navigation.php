@@ -11,7 +11,7 @@
         <button class="navbar-toggler navbar-toggler align-self-center" id="toggle-sidebar" type="button">
             <span class="mdi mdi-format-list-bulleted"></span>
         </button>
-        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" id="toggle-sidebar-mini" type="button" data-toggle="offcanvas">
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" id="toggle-mini-sidebar">
             <span class="mdi mdi-format-list-bulleted"></span>
         </button>
     </div>

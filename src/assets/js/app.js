@@ -1,12 +1,14 @@
 $("#toggle-sidebar").click(function(){
     $("body").toggleClass("sidebar-icon-only");
+    $("#sidebar").toggleClass("active");
     $.ajax({
         url: '/?update=ui&action=toggle-sidebar'
     });
 });
 
-$("#toggle-sidebar-mini").click(function(){
+$("#toggle-mini-sidebar").click(function(){
     $("body").toggleClass("sidebar-icon-only");
+    $("#sidebar").toggleClass("active");
     $.ajax({
         url: '/?update=ui&action=toggle-sidebar'
     });

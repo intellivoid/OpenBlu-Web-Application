@@ -100,9 +100,11 @@ use sws\sws;
         if($Cookie->Data['cache']['ui']['sidebar_expanded'] == false)
         {
             define('SIDEBAR_STATE', ' class="sidebar-icon-only"', false);
+            define('SIDEBAR_STATE_MINI', '', false);
         }
         else
         {
             define('SIDEBAR_STATE', '', false);
+            define('SIDEBAR_STATE_MINI', ' active', false);
         }
     }

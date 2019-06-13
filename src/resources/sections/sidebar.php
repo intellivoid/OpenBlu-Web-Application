@@ -1,7 +1,7 @@
 <?PHP
     use DynamicalWeb\HTML;
 ?>
-<nav class="sidebar sidebar-offcanvas" id="sidebar">
+<nav class="sidebar sidebar-offcanvas<?PHP HTML::print(SIDEBAR_STATE_MINI); ?>" id="sidebar">
     <ul class="nav">
         <?PHP
             if(WEB_SESSION_ACTIVE == true)
