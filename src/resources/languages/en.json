@@ -64,6 +64,7 @@
             "TABLE_ACTIONS": "Actions",
             "ROW_PING": "%s ms",
             "PAGE_NOT_FOUND_ERROR": "The requested page was not found, it might have been moved",
+            "NO_SERVERS_AVAILABLE_ERROR": "There are no servers available at the moment, please try again in a moment",
             "RELOAD_PAGE_LINK": "Reload Page",
             "CALLBACK_100": "The server you requested was not found or is not available on OpenBlu anymore"
         },

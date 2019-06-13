@@ -64,7 +64,12 @@ use DynamicalWeb\HTML;
 
                                             $total_pages = $OpenBlu->getVPNManager()->totalServerPages();
 
-                                            if($current_page < 1)
+                                            if($total_pages == 0)
+                                            {
+                                                render_alert(TEXT_NO_SERVERS_AVAILABLE_ERROR, 'primary', 'alert-circle');
+                                                HTML::print('<a href="servers">' . TEXT_RELOAD_PAGE_LINK . '</a>', false);
+                                            }
+                                            elseif($current_page < 1)
                                             {
                                                 render_alert(TEXT_PAGE_NOT_FOUND_ERROR, 'danger', 'alert-circle');
                                                 HTML::print('<a href="servers">' . TEXT_RELOAD_PAGE_LINK . '</a>', false);
