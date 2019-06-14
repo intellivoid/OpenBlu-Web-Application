@@ -62,6 +62,9 @@
     </div>
     <p class="sign-up text-center"><?PHP HTML::print(TEXT_LOGIN); ?><a href="<?PHP HTML::print($LoginLocation, false); ?>"> <?PHP HTML::print(TEXT_LOGIN_LINK); ?></a></p>
     <p class="terms">
-        <a href="#"> <?PHP HTML::print(TEXT_TOS); ?></a>
+        <a href="https://intellivoid.info/terms"> <?PHP HTML::print(TEXT_TOS); ?></a>
+    </p>
+    <p class="terms">
+        <a href="https://intellivoid.info/privacy"> <?PHP HTML::print(TEXT_PRIVACY); ?></a>
     </p>
 </form>
