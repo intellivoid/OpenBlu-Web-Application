@@ -313,6 +313,10 @@
             "SIDEBAR_NAV_GUIDE": "How to connect",
             "SIDEBAR_NAV_SUPPORT": "Support",
             "SIDEBAR_NAV_ABOUT": "About"
+        },
+        "navigation": {
+            "LANGUAGES_DROPDOWN": "Languages",
+            "ADD_TRANSLATION": "Add Translation"
         }
     }
 }
