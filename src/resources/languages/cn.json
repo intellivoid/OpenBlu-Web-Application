@@ -248,15 +248,15 @@
             "CALLBACK_103": "A subscription is already active, this transaction cannot be completed"
         },
         "login_required": {
-            "PAGE_TITLE": "OpenBlu - Login Required",
-            "CARD_TITLE": "Login Required",
-            "CARD_DESC": "You need to be logged in to continue downloading more configurations, this helps us prevent crawlers and spam",
-            "LOGIN_BLOCK_TITLE": "Login",
-            "LOGIN_BLOCK_DESC": "Login to an existing Account",
-            "LOGIN_BLOCK_BUTTON": "Login",
-            "REGISTER_BLOCK_TITLE": "Register",
-            "REGISTER_BLOCK_DESC": "Create a new Account",
-            "REGISTER_BLOCK_BUTTON": "Create Account"
+            "PAGE_TITLE": "OpenBlu - 要求登录",
+            "CARD_TITLE": "要求登录",
+            "CARD_DESC": "您需要登录才能继续下载更多配置，这有助于我们防止抓取工具和垃圾邮件",
+            "LOGIN_BLOCK_TITLE": "登录",
+            "LOGIN_BLOCK_DESC": "登录现有帐户",
+            "LOGIN_BLOCK_BUTTON": "登录",
+            "REGISTER_BLOCK_TITLE": "寄存器",
+            "REGISTER_BLOCK_DESC": "创建一个新账户",
+            "REGISTER_BLOCK_BUTTON": "创建帐号"
         },
         "404": {
             "PAGE_TITLE": "OpenBlu - 网页未找到",
