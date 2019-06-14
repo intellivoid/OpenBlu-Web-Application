@@ -41,6 +41,16 @@
                     </a>
                     <div class="dropdown-divider"></div>
 
+                    <a class="dropdown-item preview-item" href="/?set_language=de">
+                        <div class="preview-thumbnail">
+                            <i class="flag-icon flag-icon-de"></i>
+                        </div>
+                        <div class="preview-item-content">
+                            <p class="preview-subject mb-1">Deutsche</p>
+                        </div>
+                    </a>
+                    <div class="dropdown-divider"></div>
+
                     <p class="p-3 mb-0 text-center" onclick="window.open('https://github.com/intellivoid/Translations');"><?PHP \DynamicalWeb\HTML::print(TEXT_ADD_TRANSLATION); ?></p>
                 </div>
             </li>
