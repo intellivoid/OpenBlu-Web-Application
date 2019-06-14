@@ -28,12 +28,12 @@
                 try
                 {
                     update_signatures();
-                    header('Location: /api'); // Redirect to dashboard
+                    header('Location: /api?callback=101'); // Redirect to dashboard
                     exit();
                 }
                 catch(Exception $exception)
                 {
-                    header('Location: /api?callback=100'); // Dashboard callback
+                    header('Location: /api?callback=102'); // Dashboard callback
                     exit();
                 }
 
@@ -50,7 +50,7 @@
                 }
                 catch(Exception $exception)
                 {
-                    header('Location: /api?callback=101'); // Dashboard Callback
+                    header('Location: /api?callback=103'); // Dashboard Callback
                     exit();
                 }
 
@@ -63,7 +63,7 @@
                 }
                 catch(Exception $exception)
                 {
-                    header('Location: /api?callback=103'); // Dashboard callback
+                    header('Location: /api?callback=104'); // Dashboard callback
                     exit();
                 }
         }

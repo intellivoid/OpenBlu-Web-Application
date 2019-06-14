@@ -60,9 +60,9 @@
             break;
     }
 
+    HTML::importScript('dashboard_callbacks');
 ?>
 <div class="row">
-
     <div class="col-md-6 grid-margin stretch-card">
         <div class="card animated fadeInLeft">
             <div class="card-body">
