@@ -275,29 +275,29 @@
             "CARD_HEADER": "About OpenBlu"
         },
         "add_balance": {
-            "PAGE_TITLE": "OpenBlu - Add Balance",
-            "CARD_HEADER": "Add To Balance",
-            "FAQ_HEADER": "Please read the information presented below before adding money to your account balance (English Only)",
-            "ADD_BALANCE_HEADER": "Add balance using PayPal",
-            "ADD_BALANCE_DESC": "Please make sure that your Intellivoid Account's email is the same as your PayPal email, if they are different then send an email to %s with your PayPal transaction ID (after the purchase) and your Intellivoid Account username or email. If you fail to provide us with the required information then you will be refunded"
+            "PAGE_TITLE": "OpenBlu - 添加余额",
+            "CARD_HEADER": "添加到余额",
+            "FAQ_HEADER": "在向帐户余额中添加资金之前，请先阅读以下信息（仅限英文）",
+            "ADD_BALANCE_HEADER": "使用PayPal添加余额",
+            "ADD_BALANCE_DESC": "请确保您的Intellivoid帐户的电子邮件与您的PayPal电子邮件相同，如果它们不同，则使用您的PayPal交易ID（购买后）和您的Intellivoid帐户用户名或电子邮件向％s发送电子邮件。 如果您未能向我们提供所需信息，那么您将获得退款"
         },
         "support": {
-            "PAGE_TITLE": "OpenBlu - Support",
-            "CARD_TITLE": "OpenBlu Contact/Support",
-            "CARD_DESC": "Using this form below you can contact us to request technical support regarding OpenBlu or ask questions/make requests. Upon submitting your support form, you will receive a ticket number which will be used as a reference once we get back to you via Email.",
-            "EMAIL_LABEL": "Email (Must be valid to get a response)",
-            "EMAIL_PLACEHOLDER": "Email Address",
-            "SUBJECT_LABEL": "Subject (Minimum 5 characters, Maximum 130 characters)",
-            "SUBJECT_PLACEHOLDER": "Subject",
-            "MESSAGE_LABEL": "Message (Minimum 20 characters, Maximum 2500 characters)",
-            "SUBMIT_BUTTON": "Submit",
-            "CALLBACK_100": "There was an issue with your request, please make sure your browser is up to date",
-            "CALLBACK_101": "The given Email address is invalid",
-            "CALLBACK_102": "The given Subject is invalid, it must be greater than 5 characters but no greater than 130",
-            "CALLBACK_103": "The given Message is invalid, it must be greater than 20 characters but no greater than 2500",
-            "CALLBACK_104": "There was an unknown error while trying to process your report, please wait till Intellivoid resolves this issue",
-            "CALLBACK_105": "Your report has been submitted, we will reach you shortly. Your ticket number is #%s",
-            "CALLBACK_106": "The captcha was solved incorrectly"
+            "PAGE_TITLE": "OpenBlu - 支持",
+            "CARD_TITLE": "OpenBlu联系/支持",
+            "CARD_DESC": "使用下面的表格，您可以联系我们以获取有关OpenBlu的技术支持或提出问题/提出要求。 提交支持表格后，您将收到一个票号，一旦我们通过电子邮件回复您，将作为参考。",
+            "EMAIL_LABEL": "电子邮件（必须有效才能获得回复）",
+            "EMAIL_PLACEHOLDER": "电子邮件地址",
+            "SUBJECT_LABEL": "主题（最少5个字符，最多130个字符）",
+            "SUBJECT_PLACEHOLDER": "学科",
+            "MESSAGE_LABEL": "消息（最少20个字符，最多2500个字符）",
+            "SUBMIT_BUTTON": "提交",
+            "CALLBACK_100": "您的请求存在问题，请确保您的浏览器是最新的",
+            "CALLBACK_101": "给定的电子邮件地址无效",
+            "CALLBACK_102": "给定的主题无效，必须大于5个字符但不得大于130",
+            "CALLBACK_103": "给定的消息无效，必须大于20个字符但不大于2500",
+            "CALLBACK_104": "尝试处理您的报告时出现未知错误，请等到Intellivoid解决此问题",
+            "CALLBACK_105": "您的报告已提交，我们会尽快与您联系。 您的票号为#%s",
+            "CALLBACK_106": "验证码被错误地解决了"
         }
     },
     "sections": {
