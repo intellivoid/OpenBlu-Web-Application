@@ -112,6 +112,8 @@
       <sourceFolder url="file://$MODULE_DIR$/src/resources/libraries/Support/Utilities" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/support" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/support/scripts" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/pages/guide" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources/markdown/guide_windows" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/database" />
     </content>
     <orderEntry type="inheritedJdk" />

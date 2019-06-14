@@ -180,7 +180,9 @@
             "CALLBACK_103": "There was an error while trying download the certificate, please contact support.",
             "CALLBACK_104": "There was an error while trying cancel your plan, please contact support.",
             "API_DOCUMENTATION_BUTTON": "API Documentation (EN)",
-            "WARNING_INACTIVE_PLAN": "Your plan is currently not active due to insufficient funds in your account"
+            "WARNING_INACTIVE_PLAN": "Your plan is currently not active due to insufficient funds in your account",
+            "CURRENT_USAGE_WARNING": "You have %s requests available till your next billing cycle, if you need more requests you should consider upgrading",
+            "CURRENT_USAGE_ERROR": "You have used up your monthly calls, on the next billing cycle will your current usage will reset. If you need more requests you should consider upgrading"
         },
         "login": {
             "PAGE_TITLE": "Login to OpenBlu",

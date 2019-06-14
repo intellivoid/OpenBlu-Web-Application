@@ -66,7 +66,19 @@
     {
         render_alert(TEXT_WARNING_INACTIVE_PLAN, 'warning', 'alert-circle');
     }
-    
+
+    if($Plan->MonthlyCalls !== 0)
+    {
+        if($Plan->MonthlyCalls - $UsageCurrentMonth < 100)
+        {
+            render_alert(str_ireplace('%s', $Plan->MonthlyCalls - $UsageCurrentMonth, TEXT_CURRENT_USAGE_WARNING), 'info', 'alert-circle');
+        }
+
+        if($Plan->MonthlyCalls == $UsageCurrentMonth)
+        {
+            render_alert(TEXT_CURRENT_USAGE_ERROR, 'danger', 'alert-circle');
+        }
+    }
 ?>
 <div class="row">
     <div class="col-md-6 grid-margin stretch-card">

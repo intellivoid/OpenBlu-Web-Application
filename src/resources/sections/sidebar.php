@@ -31,9 +31,7 @@
                                         ?>
                                         <li class="nav-item">
                                             <a class="nav-link pl-5" onclick="location.href='/add_balance';">
-                                                <span class="menu-icon">
-                                                    <i class="mdi mdi-bank"></i>
-                                                </span>
+                                                <span class="menu-icon"><i class="mdi mdi-bank"></i></span>
                                                 <span class="menu-title"><?PHP HTML::print(TEXT_SIDEBAR_ADD_TO_BALANCE); ?></span>
                                             </a>
                                         </li>
@@ -43,9 +41,7 @@
 
                                 <li class="nav-item">
                                     <a class="nav-link pl-5" onclick="location.href='/logout';">
-                                        <span class="menu-icon">
-                                            <i class="mdi mdi-power"></i>
-                                        </span>
+                                        <span class="menu-icon"><i class="mdi mdi-power"></i></span>
                                         <span class="menu-title"><?PHP HTML::print(TEXT_SIDEBAR_LOGOUT); ?></span>
                                     </a>
                                 </li>
@@ -68,18 +64,14 @@
 
                             <li class="nav-item">
                                 <a class="nav-link pl-5" onclick="location.href='/login';">
-                                        <span class="menu-icon">
-                                            <i class="mdi mdi-login"></i>
-                                        </span>
+                                    <span class="menu-icon"><i class="mdi mdi-login"></i></span>
                                     <span class="menu-title"><?PHP HTML::print(TEXT_SIDEBAR_LOGIN); ?></span>
                                 </a>
                             </li>
 
                             <li class="nav-item">
                                 <a class="nav-link pl-5" onclick="location.href='/register';">
-                                        <span class="menu-icon">
-                                            <i class="mdi mdi-account-plus"></i>
-                                        </span>
+                                    <span class="menu-icon"><i class="mdi mdi-account-plus"></i></span>
                                     <span class="menu-title"><?PHP HTML::print(TEXT_SIDEBAR_REGISTER); ?></span>
                                 </a>
                             </li>
@@ -95,17 +87,13 @@
         </li>
         <li class="nav-item menu-items<?PHP if(APP_CURRENT_PAGE == 'index'){ HTML::print(' active'); } ?>">
             <a class="nav-link" href="/">
-                <span class="menu-icon">
-                  <i class="mdi mdi-home"></i>
-                </span>
+                <span class="menu-icon"><i class="mdi mdi-home"></i></span>
                 <span class="menu-title"><?PHP HTML::print(TEXT_SIDEBAR_NAV_HOME); ?></span>
             </a>
         </li>
         <li class="nav-item menu-items<?PHP if(APP_CURRENT_PAGE == 'servers' || APP_CURRENT_PAGE == 'server'){ HTML::print(' active'); } ?>">
             <a class="nav-link" href="/servers">
-                <span class="menu-icon">
-                  <i class="mdi mdi-server-network"></i>
-                </span>
+                <span class="menu-icon"><i class="mdi mdi-server-network"></i></span>
                 <span class="menu-title"><?PHP HTML::print(TEXT_SIDEBAR_NAV_SERVERS); ?></span>
             </a>
         </li>
@@ -115,18 +103,8 @@
                 ?>
                 <li class="nav-item menu-items<?PHP if(APP_CURRENT_PAGE == 'api' || APP_CURRENT_PAGE == 'confirm_purchase'){ HTML::print(' active'); } ?>">
                     <a class="nav-link" href="/api">
-                <span class="menu-icon">
-                  <i class="mdi mdi-console"></i>
-                </span>
+                        <span class="menu-icon"><i class="mdi mdi-console"></i></span>
                         <span class="menu-title"><?PHP HTML::print(TEXT_SIDEBAR_NAV_API); ?></span>
-                    </a>
-                </li>
-                <li class="nav-item menu-items<?PHP if(APP_CURRENT_PAGE == 'guide'){ HTML::print(' active'); } ?>">
-                    <a class="nav-link" href="/guide">
-                <span class="menu-icon">
-                  <i class="mdi mdi-help"></i>
-                </span>
-                        <span class="menu-title"><?PHP HTML::print(TEXT_SIDEBAR_NAV_GUIDE); ?></span>
                     </a>
                 </li>
                 <?PHP
@@ -134,17 +112,13 @@
         ?>
         <li class="nav-item menu-items<?PHP if(APP_CURRENT_PAGE == 'support'){ HTML::print(' active'); } ?>">
             <a class="nav-link" href="/support">
-                <span class="menu-icon">
-                  <i class="mdi mdi-lifebuoy"></i>
-                </span>
+                <span class="menu-icon"><i class="mdi mdi-lifebuoy"></i></span>
                 <span class="menu-title"><?PHP HTML::print(TEXT_SIDEBAR_NAV_SUPPORT); ?></span>
             </a>
         </li>
         <li class="nav-item menu-items<?PHP if(APP_CURRENT_PAGE == 'about'){ HTML::print(' active'); } ?>">
             <a class="nav-link" href="/about">
-                <span class="menu-icon">
-                  <i class="mdi mdi-information-outline"></i>
-                </span>
+                <span class="menu-icon"><i class="mdi mdi-information-outline"></i></span>
                 <span class="menu-title"><?PHP HTML::print(TEXT_SIDEBAR_NAV_ABOUT); ?></span>
             </a>
         </li>
