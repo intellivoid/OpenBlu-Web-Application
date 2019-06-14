@@ -90,8 +90,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/resources/languages/cn.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="222" column="45" selection-start-line="222" selection-start-column="45" selection-end-line="222" selection-end-column="45" />
+            <state relative-caret-position="473">
+              <caret line="202" column="52" selection-start-line="202" selection-start-column="52" selection-end-line="202" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -450,12 +450,12 @@
       <workItem from="1560197951816" duration="283000" />
       <workItem from="1560371733370" duration="606000" />
       <workItem from="1560395811134" duration="1015000" />
-      <workItem from="1560458351243" duration="30813000" />
+      <workItem from="1560458351243" duration="30944000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="194971000" />
+    <option name="totallyTimeSpent" value="195102000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -912,8 +912,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/languages/cn.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="222" column="45" selection-start-line="222" selection-start-column="45" selection-end-line="222" selection-end-column="45" />
+        <state relative-caret-position="473">
+          <caret line="202" column="52" selection-start-line="202" selection-start-column="52" selection-end-line="202" selection-end-column="52" />
         </state>
       </provider>
     </entry>
