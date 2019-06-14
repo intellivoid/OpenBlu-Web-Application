@@ -83,9 +83,11 @@ use OpenBlu\Abstracts\SearchMethods\VPN;
         }
 
         $Cookie->Data['downloads'] += 1;
-        $sws->CookieManager()->updateCookie($Cookie);
-
         $Token = $Cookie->Data['download_token'];
+        $Cookie->Data['download_token'] = null;
+        $Cookie->Data['download_target'] = null;
+        $sws->CookieManager()->updateCookie($Cookie);
+        
         header("Content-Type: application/x-openvpn-profile");
         header("Content-disposition: attachment; filename=\"openblu_$Token.ovpn\"");
         print($VPN->createConfiguration());
