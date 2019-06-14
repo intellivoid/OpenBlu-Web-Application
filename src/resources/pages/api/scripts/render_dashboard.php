@@ -61,6 +61,12 @@
     }
 
     HTML::importScript('dashboard_callbacks');
+
+    if($Plan->Active == false)
+    {
+        render_alert(TEXT_WARNING_INACTIVE_PLAN, 'warning', 'alert-circle');
+    }
+    
 ?>
 <div class="row">
     <div class="col-md-6 grid-margin stretch-card">

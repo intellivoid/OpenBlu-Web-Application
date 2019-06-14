@@ -179,7 +179,8 @@
             "CALLBACK_102": "There was an error while trying to re-generate signatures, please contact support.",
             "CALLBACK_103": "There was an error while trying download the certificate, please contact support.",
             "CALLBACK_104": "There was an error while trying cancel your plan, please contact support.",
-            "API_DOCUMENTATION_BUTTON": "API Documentation (EN)"
+            "API_DOCUMENTATION_BUTTON": "API Documentation (EN)",
+            "WARNING_INACTIVE_PLAN": "Your plan is currently not active due to insufficient funds in your account"
         },
         "login": {
             "PAGE_TITLE": "Login to OpenBlu",
