@@ -271,8 +271,8 @@
             "BUTTON_HOME": "Go Home"
         },
         "about": {
-            "PAGE_TITLE": "OpenBlu - About",
-            "CARD_HEADER": "About OpenBlu"
+            "PAGE_TITLE": "OpenBlu - 关于",
+            "CARD_HEADER": "关于OpenBlu"
         },
         "add_balance": {
             "PAGE_TITLE": "OpenBlu - 添加余额",
