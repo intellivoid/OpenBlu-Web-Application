@@ -259,10 +259,10 @@
             "REGISTER_BLOCK_BUTTON": "Create Account"
         },
         "404": {
-            "PAGE_TITLE": "OpenBlu - Page Not Found",
-            "CARD_HEADER": "404 Not Found",
-            "CARD_DESCRIPTION": "The page you were looking for was not found",
-            "BUTTON_HOME": "Go Home"
+            "PAGE_TITLE": "OpenBlu - 网页未找到",
+            "CARD_HEADER": "404未找到",
+            "CARD_DESCRIPTION": "找不到您要查找的页面",
+            "BUTTON_HOME": "回家"
         },
         "500": {
             "PAGE_TITLE": "OpenBlu - 内部服务器错误",
