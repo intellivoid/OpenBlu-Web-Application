@@ -1,3 +1,4 @@
+<!-- Generated Content, Reference ID <?PHP print(strtoupper(hash('sha256', time() . 'REF') . '(INTELLIVOID-TECHNOLOGIES)')); ?> -->
 <?PHP \DynamicalWeb\HTML::importScript('google_analytics'); ?>
 
 <!-- Required meta tags -->
