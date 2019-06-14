@@ -1,7 +1,7 @@
 <?PHP
     /** @noinspection PhpUnhandledExceptionInspection */
     use DynamicalWeb\HTML;
-
+    http_response_code(500);
 ?>
 <!DOCTYPE html>
 <html lang="<?PHP HTML::print(APP_LANGUAGE_ISO_639); ?>">
