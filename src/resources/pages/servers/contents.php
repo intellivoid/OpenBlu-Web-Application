@@ -95,5 +95,45 @@ use DynamicalWeb\HTML;
         </div>
         <?PHP HTML::importSection('js_scripts'); ?>
         <script src="/assets/js/app-table-animations.js"></script>
+        <script>
+            function process_download(server_id)
+            {
+                $.ajax({
+                    type: "GET",
+                    url: "/server?action=gen_token&pub_id={0}".format(server_id),
+                    success: function(results)
+                    {
+                        if(results.success === false)
+                        {
+                            if(results.message === "authentication_required")
+                            {
+                                show_notification(
+                                    "Authentication Required",
+                                    "To prevent spam & abuse, you need to login/register to download this configuration file",
+                                    "error"
+                                );
+                            }
+                            else
+                            {
+                                show_notification(
+                                    "Download Error",
+                                    "There was an error while trying to process your request, try refreshing this page.",
+                                    "error"
+                                );
+                            }
+                        }
+                        else
+                        {
+                            show_notification(
+                                "Download Started",
+                                "Your OpenVPN Configuration file should start downloading",
+                                "success"
+                            );
+                            location.href = '/server?action=download&token={0}'.format(results.download_token);
+                        }
+                    }
+                });
+            }
+        </script>
     </body>
 </html>

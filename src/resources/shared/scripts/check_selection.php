@@ -1,7 +1,7 @@
 <?php
 
-use DynamicalWeb\DynamicalWeb;
-use DynamicalWeb\Runtime;
+    use DynamicalWeb\DynamicalWeb;
+    use DynamicalWeb\Runtime;
     use OpenBlu\Abstracts\SearchMethods\VPN;
     use OpenBlu\Exceptions\VPNNotFoundException;
     use OpenBlu\OpenBlu;
@@ -62,3 +62,30 @@ use DynamicalWeb\Runtime;
     define('CACHE_VPN_COUNTRY_SHORT', $VPN->CountryShort, false);
     define('CACHE_VPN_LAST_UPDATED', $VPN->LastUpdated, false);
     define('CACHE_VPN_TOKEN', $Cookie->Data['download_token'], false);
+
+    if(isset($_GET['action']) == 'gen_token')
+    {
+        if(WEB_SESSION_ACTIVE == false)
+        {
+            if($Cookie->Data['downloads'] > 3)
+            {
+                $results = array(
+                    'success' => false,
+                    'message' => 'authentication_required'
+                );
+                header('Content-Type: application/json');
+                print(json_encode($results));
+                exit();
+            }
+        }
+
+        $results = array(
+            'success' => true,
+            'download_token' => $Cookie->Data['download_token'],
+            'download_target' => $VPN->PublicID,
+            'file_type' => 'ovpn'
+        );
+        header('Content-Type: application/json');
+        print(json_encode($results));
+        exit();
+    }

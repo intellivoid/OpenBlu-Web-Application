@@ -201,7 +201,7 @@
                                                 else
                                                 {
                                                     ?>
-                                                    <button type="button" onclick="location.href='/server?action=download&token=<?PHP HTML::print(CACHE_VPN_TOKEN); ?>'" class="btn btn-block btn-lg btn-inverse-info">
+                                                    <button type="button" onclick="process_download();" class="btn btn-block btn-lg btn-inverse-info">
                                                         <i class="mdi mdi-cloud-download"></i> <?PHP HTML::print(TEXT_CARD_CONNECT_OPENVPN_DOWNLOAD_BUTTON); ?>
                                                     </button>
                                                     <?PHP
@@ -222,5 +222,46 @@
             <?PHP HTML::importSection('footer'); ?>
         </div>
         <?PHP HTML::importSection('js_scripts'); ?>
+        <script>
+            function process_download()
+            {
+
+                $.ajax({
+                    type: "GET",
+                    url: "/server?action=gen_token&pub_id=<?PHP print(urlencode(CACHE_VPN_PUBLIC_ID)); ?>",
+                    success: function(results)
+                    {
+                        if(results.success === false)
+                        {
+                            if(results.message === "authentication_required")
+                            {
+                                show_notification(
+                                    "Authentication Required",
+                                    "To prevent spam & abuse, you need to login/register to download this configuration file",
+                                    "error"
+                                );
+                            }
+                            else
+                            {
+                                show_notification(
+                                    "Download Error",
+                                    "There was an error while trying to process your request, try refreshing this page.",
+                                    "error"
+                                );
+                            }
+                        }
+                        else
+                        {
+                            show_notification(
+                                "Download Started",
+                                "Your OpenVPN Configuration file should start downloading",
+                                "success"
+                            );
+                            location.href = '/server?action=download&token={0}'.format(results.download_token);
+                        }
+                    }
+                });
+            }
+        </script>
     </body>
 </html>
