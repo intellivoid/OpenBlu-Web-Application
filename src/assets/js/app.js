@@ -28,8 +28,3 @@ function show_notification(heading, text, icon)
         position: 'top-right'
     });
 }
-
-function getDownloadToken(server_id)
-{
-
-}
