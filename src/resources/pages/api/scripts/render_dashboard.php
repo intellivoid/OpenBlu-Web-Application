@@ -148,6 +148,9 @@
                 <button type="button" class="btn btn-inverse-danger" data-toggle="modal" data-target="#cancel-plan-dialog">
                     <i class="mdi mdi-cancel"></i><?PHP HTML::print(TEXT_CANCEL_PLAN_BUTTON); ?>
                 </button>
+                <button type="button" class="btn btn-inverse-warning" onclick="window.open('https://gist.github.com/Netkas/584b0648c93620060f60d89b1878564f');">
+                    <i class="mdi mdi-book"></i> <?PHP HTML::print(TEXT_API_DOCUMENTATION_BUTTON); ?>
+                </button>
 
             </div>
         </div>

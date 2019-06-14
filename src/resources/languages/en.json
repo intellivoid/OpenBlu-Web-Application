@@ -174,8 +174,8 @@
             "API_USAGE_CARD_TITLE": "API Usage",
             "API_USAGE_GRAPH_CURRENT_MONTH": "Current Month",
             "API_USAGE_GRAPH_LAST_MONTH": "Last Month",
-            "CALLBACK_100": "Your plan has been canceled"
-
+            "CALLBACK_100": "Your plan has been canceled",
+            "API_DOCUMENTATION_BUTTON": "API Documentation (EN)"
         },
         "login": {
             "PAGE_TITLE": "Login to OpenBlu",
