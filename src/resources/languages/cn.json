@@ -315,8 +315,8 @@
             "SIDEBAR_NAV_ABOUT": "关于"
         },
         "navigation": {
-            "LANGUAGES_DROPDOWN": "Languages",
-            "ADD_TRANSLATION": "Add Translation"
+            "LANGUAGES_DROPDOWN": "语言",
+            "ADD_TRANSLATION": "添加翻译"
         }
     }
 }
