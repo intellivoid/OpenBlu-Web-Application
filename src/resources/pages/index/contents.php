@@ -126,28 +126,8 @@
                                 <div class="card animated fadeInUp">
                                     <div class="card-body">
                                         <h4 class="card-title"><?PHP HTML::print(TEXT_CARD_ANALYTICS_HEADER); ?></h4>
-
-                                        <div class="row mt-3">
-                                            <div class="col-12 bg-gray-dark d-flex flex-row py-3 px-4 rounded">
-                                                <div class="align-self-top">
-                                                    <h6 class="mb-1"><?PHP HTML::print(TEXT_CARD_ANALYTICS_TOTAL_CURRENT_SESSIONS_TEXT); ?></h6>
-                                                </div>
-                                                <div class="align-self-center flex-grow text-right">
-                                                    <h6 class="font-weight-bold mb-0"><?PHP HTML::print(number_format(CACHE_CURRENT_SESSIONS)); ?></h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row mt-3">
-                                            <div class="col-12 bg-gray-dark d-flex flex-row py-3 px-4 rounded">
-                                                <div class="align-self-top">
-                                                    <h6 class="mb-1"><?PHP HTML::print(TEXT_CARD_ANALYTICS_TOTAL_VPN_SERVERS); ?></h6>
-                                                </div>
-                                                <div class="align-self-center flex-grow text-right">
-                                                    <h6 class="font-weight-bold mb-0"><?PHP HTML::print(number_format(CACHE_TOTAL_SERVERS)); ?></h6>
-                                                </div>
-                                            </div>
-                                        </div>
-
+                                        <div id="basic-analytics" class="morris-chart"></div>
+                                        <div id="legend" class="donut-legend"></div>
                                     </div>
                                 </div>
                             </div>
@@ -198,6 +178,6 @@
         </div>
 
         <?PHP HTML::importSection('js_scripts'); ?>
-
+        <?PHP HTML::importScript('render_donut_chart'); ?>
     </body>
 </html>

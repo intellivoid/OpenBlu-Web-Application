@@ -38,7 +38,10 @@
             "CARD_POPULAR_SERVERS_TEXT": "The most popular servers with the most sessions",
             "CARD_POPULAR_SERVERS_VIEW_SERVERS": "View All Servers",
             "CARD_POPULAR_SERVERS_VPN_SESSIONS": "%s sessions",
-            "CARD_POPULAR_SERVERS_NO_ITEMS": "No Servers Available"
+            "CARD_POPULAR_SERVERS_NO_ITEMS": "No Servers Available",
+            "ANALYTICS_TOTAL_SESSIONS": "Total Sessions",
+            "ANALYTICS_SESSIONS": "Sessions",
+            "ANALYTICS_SERVERS": "Servers"
         },
         "servers": {
             "PAGE_TITLE": "OpenBlu - Servers",
