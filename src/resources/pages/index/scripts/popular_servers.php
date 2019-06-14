@@ -81,7 +81,7 @@
         {
             $VPN = VPN::fromArray($popular_servers[3]);
             ?>
-            <div class="preview-item<?PHP if(count($popular_servers) == 4){ print(" border-bottom"); } ?>" onclick="location.href='/server?pub_id=<?PHP HTML::print($VPN->PublicID) ?>';">
+            <div class="preview-item<?PHP if(count($popular_servers) !== 4){ print(" border-bottom"); } ?>" onclick="location.href='/server?pub_id=<?PHP HTML::print($VPN->PublicID) ?>';">
                 <div class="preview-thumbnail">
                     <div class="preview-icon">
                         <i class="flag-icon flag-icon-<?PHP HTML::print(strtolower($VPN->CountryShort)); ?>"></i>
