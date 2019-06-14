@@ -265,10 +265,10 @@
             "BUTTON_HOME": "Go Home"
         },
         "500": {
-            "PAGE_TITLE": "OpenBlu - Internal Server Error",
-            "CARD_HEADER": "Internal Server Error",
-            "CARD_DESCRIPTION": "There was an issue while processing your request, please try again or report to support",
-            "BUTTON_HOME": "Go Home"
+            "PAGE_TITLE": "OpenBlu - 内部服务器错误",
+            "CARD_HEADER": "内部服务器错误",
+            "CARD_DESCRIPTION": "处理您的请求时出现问题，请重试或报告支持",
+            "BUTTON_HOME": "回家"
         },
         "about": {
             "PAGE_TITLE": "OpenBlu - 关于",
