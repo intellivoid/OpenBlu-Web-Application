@@ -69,7 +69,7 @@
                                 <li><?PHP HTML::print(TEXT_PRICING_FREE_FEATURE_3); ?></li>
                             </ul>
                             <div class="wrapper">
-                                <a href="<?PHP HTML::print($FreeLocation, false); ?>" class="btn btn-inverse-primary btn-block">Get API Key</a href="#">
+                                <a href="<?PHP HTML::print($FreeLocation, false); ?>" class="btn btn-inverse-primary btn-block"><?PHP HTML::print(TEXT_PRICING_FREE_SUBMIT); ?></a href="#">
                             </div>
                         </div>
                     </div>
