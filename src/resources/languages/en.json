@@ -32,8 +32,6 @@
             "API_TEXT": "If you want to use OpenBlu in your software, projects or servers you can easily access all available servers using the OpenBlu API. You can start off with a free tier (limited requests) and decide if it works for you.",
             "API_BUTTON_TEXT": "View API Plans",
             "CARD_ANALYTICS_HEADER": "Analytics",
-            "CARD_ANALYTICS_TOTAL_CURRENT_SESSIONS_TEXT": "Total Current Sessions",
-            "CARD_ANALYTICS_TOTAL_VPN_SERVERS": "Total VPN Servers",
             "CARD_POPULAR_SERVERS_HEADER": "Popular Servers",
             "CARD_POPULAR_SERVERS_TEXT": "The most popular servers with the most sessions",
             "CARD_POPULAR_SERVERS_VIEW_SERVERS": "View All Servers",

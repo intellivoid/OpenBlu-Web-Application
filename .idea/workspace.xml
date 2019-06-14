@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13744565-c04a-4ec4-8a5b-01f6fe867a44" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/resources/pages/index/scripts/render_donut_chart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/languages/cn.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/languages/cn.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/languages/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/languages/en.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/pages/index/contents.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/pages/index/contents.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,11 +67,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/resources/pages/index/scripts/render_donut_chart.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="10" column="79" selection-start-line="10" selection-start-column="79" selection-end-line="10" selection-end-column="79" />
+            <state relative-caret-position="480">
+              <caret line="20" column="7" lean-forward="true" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
               <folding>
                 <element signature="e#10#16#1" expanded="true" />
               </folding>
@@ -81,11 +79,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/resources/languages/en.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="42" column="31" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="31" />
+            <state relative-caret-position="216">
+              <caret line="39" column="51" selection-start-line="39" selection-start-column="51" selection-end-line="39" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -188,8 +186,8 @@
         <option value="$PROJECT_DIR$/src/resources/languages/cn.json" />
         <option value="$PROJECT_DIR$/src/resources/pages/index/scripts/popular_servers.php" />
         <option value="$PROJECT_DIR$/src/resources/pages/index/contents.php" />
-        <option value="$PROJECT_DIR$/src/resources/languages/en.json" />
         <option value="$PROJECT_DIR$/src/resources/pages/index/scripts/render_donut_chart.php" />
+        <option value="$PROJECT_DIR$/src/resources/languages/en.json" />
       </list>
     </option>
   </component>
@@ -426,12 +424,12 @@
       <workItem from="1560197951816" duration="283000" />
       <workItem from="1560371733370" duration="606000" />
       <workItem from="1560395811134" duration="1015000" />
-      <workItem from="1560458351243" duration="25735000" />
+      <workItem from="1560458351243" duration="26161000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="189893000" />
+    <option name="totallyTimeSpent" value="190319000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -841,13 +839,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/languages/cn.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="29" column="45" lean-forward="true" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/pages/api/contents.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-929" />
@@ -867,6 +858,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/pages/index/scripts/render_donut_chart.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="20" column="7" lean-forward="true" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+          <folding>
+            <element signature="e#10#16#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/runtime_scripts/cache.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
@@ -874,20 +875,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/languages/en.json">
+    <entry file="file://$PROJECT_DIR$/src/resources/languages/cn.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="42" column="31" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="31" />
+        <state relative-caret-position="192">
+          <caret line="29" column="45" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/pages/index/scripts/render_donut_chart.php">
+    <entry file="file://$PROJECT_DIR$/src/resources/languages/en.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="10" column="79" selection-start-line="10" selection-start-column="79" selection-end-line="10" selection-end-column="79" />
-          <folding>
-            <element signature="e#10#16#1" expanded="true" />
-          </folding>
+        <state relative-caret-position="216">
+          <caret line="39" column="51" selection-start-line="39" selection-start-column="51" selection-end-line="39" selection-end-column="51" />
         </state>
       </provider>
     </entry>
