@@ -135,15 +135,14 @@
                             <div class="flex-grow">
                                 <h6 class="preview-subject"><?PHP HTML::print(TEXT_CURRENT_PLAN_ROW_BILLING_CYCLE_TITLE); ?>
                                     <span class="float-right small">
-                                        <span class="text-muted pr-3"><?PHP HTML::print(gmdate("Y-m-d", $Plan->NextBillingCycle)); ?></span>
+                                        <span class="border-right pr-3"><?PHP HTML::print(gmdate("Y-m-d", $Plan->NextBillingCycle)); ?></span>
+                                        <span class="text-muted pl-3"><?PHP HTML::print('$' . $Plan->PricePerCycle . ' U.S.'); ?></span>
                                     </span>
                                 </h6>
                                 <p><?PHP HTML::print(TEXT_CURRENT_PLAN_ROW_BILLING_CYCLE_DESC); ?></p>
                             </div>
                         </div>
                     </div>
-
-
                 </div>
 
                 <button type="button" class="btn btn-inverse-danger" data-toggle="modal" data-target="#cancel-plan-dialog">
