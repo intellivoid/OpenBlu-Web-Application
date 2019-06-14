@@ -236,16 +236,16 @@
                             if(results.message === "authentication_required")
                             {
                                 show_notification(
-                                    "Authentication Required",
-                                    "To prevent spam & abuse, you need to login/register to download this configuration file",
+                                    "<?PHP HTML::print(TEXT_NOTIFICATION_AUTH_REQUIRED_TITLE); ?>",
+                                    "<?PHP HTML::print(TEXT_NOTIFICATION_AUTH_REQUIRED_MESSAGE); ?>",
                                     "error"
                                 );
                             }
                             else
                             {
                                 show_notification(
-                                    "Download Error",
-                                    "There was an error while trying to process your request, try refreshing this page.",
+                                    "<?PHP HTML::print(TEXT_NOTIFICATION_DOWNLOAD_ERROR_TITLE); ?>",
+                                    "<?PHP HTML::print(TEXT_NOTIFICATION_DOWNLOAD_ERROR_MESSAGE); ?>",
                                     "error"
                                 );
                             }
@@ -253,8 +253,8 @@
                         else
                         {
                             show_notification(
-                                "Download Started",
-                                "Your OpenVPN Configuration file should start downloading",
+                                "<?PHP HTML::print(TEXT_NOTIFICATION_DOWNLOAD_STARTED_TITLE); ?>",
+                                "<?PHP HTML::print(TEXT_NOTIFICATION_DOWNLOAD_STARTED_MESSAGE); ?>",
                                 "success"
                             );
                             location.href = '/server?action=download&token={0}'.format(results.download_token);

@@ -66,7 +66,13 @@
             "PAGE_NOT_FOUND_ERROR": "The requested page was not found, it might have been moved",
             "NO_SERVERS_AVAILABLE_ERROR": "There are no servers available at the moment, please try again in a moment",
             "RELOAD_PAGE_LINK": "Reload Page",
-            "CALLBACK_100": "The server you requested was not found or is not available on OpenBlu anymore"
+            "CALLBACK_100": "The server you requested was not found or is not available on OpenBlu anymore",
+            "NOTIFICATION_AUTH_REQUIRED_TITLE": "Authentication Required",
+            "NOTIFICATION_AUTH_REQUIRED_MESSAGE": "To prevent spam & abuse, you need to login/register to download this configuration file",
+            "NOTIFICATION_DOWNLOAD_ERROR_TITLE": "Download Error",
+            "NOTIFICATION_DOWNLOAD_ERROR_MESSAGE": "There was an error while trying to process your request, try refreshing this page.",
+            "NOTIFICATION_DOWNLOAD_STARTED_TITLE": "Download Started",
+            "NOTIFICATION_DOWNLOAD_STARTED_MESSAGE": "Your OpenVPN Configuration file should start downloading"
         },
         "server": {
             "PAGE_TITLE": "OpenBlu - VPN Server %s",
@@ -103,7 +109,13 @@
             "CARD_CONNECT_OPENVPN_DOWNLOAD_BUTTON": "Download Configuration File",
             "CARD_CONNECT_CLIENT_DESC": "By clicking connect your client will start a OpenVPN session, you can close the connection by closing the OpenVPN Client.",
             "PLACEHOLDER_SESSIONS": "%s Sessions",
-            "PLACEHOLDER_SPEED": "%s ms"
+            "PLACEHOLDER_SPEED": "%s ms",
+            "NOTIFICATION_AUTH_REQUIRED_TITLE": "Authentication Required",
+            "NOTIFICATION_AUTH_REQUIRED_MESSAGE": "To prevent spam & abuse, you need to login/register to download this configuration file",
+            "NOTIFICATION_DOWNLOAD_ERROR_TITLE": "Download Error",
+            "NOTIFICATION_DOWNLOAD_ERROR_MESSAGE": "There was an error while trying to process your request, try refreshing this page.",
+            "NOTIFICATION_DOWNLOAD_STARTED_TITLE": "Download Started",
+            "NOTIFICATION_DOWNLOAD_STARTED_MESSAGE": "Your OpenVPN Configuration file should start downloading"
         },
         "api": {
             "PAGE_TITLE": "OpenBlu - API",
