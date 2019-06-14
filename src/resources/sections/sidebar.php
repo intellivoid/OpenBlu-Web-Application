@@ -132,7 +132,7 @@
                 <?PHP
             }
         ?>
-        <li class="nav-item menu-items<?PHP if(APP_CURRENT_PAGE == 'support'){ HTML::print(' support'); } ?>">
+        <li class="nav-item menu-items<?PHP if(APP_CURRENT_PAGE == 'support'){ HTML::print(' active'); } ?>">
             <a class="nav-link" href="/support">
                 <span class="menu-icon">
                   <i class="mdi mdi-lifebuoy"></i>
