@@ -38,7 +38,7 @@
             "CARD_POPULAR_SERVERS_VPN_SESSIONS": "%s sessions",
             "CARD_POPULAR_SERVERS_NO_ITEMS": "No Servers Available",
             "ANALYTICS_TOTAL_SESSIONS": "Total Sessions",
-            "ANALYTICS_SESSIONS": "Sessions",
+            "ANALYTICS_SESSIONS": "Current Sessions",
             "ANALYTICS_SERVERS": "Servers"
         },
         "servers": {
