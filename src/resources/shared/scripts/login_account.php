@@ -219,7 +219,7 @@ use DynamicalWeb\Runtime;
             }
 
             $IntellivoidAccounts->getLoginRecordManager()->createLoginRecord(
-                $Account->ID, getClientIP(), LoginStatus::Successful, 'OpenBlu WebApplication'
+                $Account->ID, getClientIP(), LoginStatus::Successful, 'OpenBlu Web Application'
             );
 
             /** @var sws $sws */
