@@ -290,7 +290,7 @@ use DynamicalWeb\Runtime;
                 }
 
                 $IntellivoidAccounts->getLoginRecordManager()->createLoginRecord(
-                    $Account->ID, getClientIP(), LoginStatus::IncorrectCredentials, 'OpenBlu WebApplication'
+                    $Account->ID, getClientIP(), LoginStatus::IncorrectCredentials, 'OpenBlu Web Application'
                 );
             }
             catch(AccountNotFoundException $accountNotFoundException)
