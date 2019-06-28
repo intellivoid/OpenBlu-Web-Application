@@ -31,3 +31,22 @@
 <meta name="msapplication-TileColor" content="#2d89ef">
 <meta name="msapplication-config" content="/assets/favicon/browserconfig.xml?v=Kmnx6w0N7E">
 <meta name="theme-color" content="#191c20">
+
+<!-- Primary Meta Tags -->
+<title>OpenBlu VPN</title>
+<meta name="title" content="OpenBlu VPN">
+<meta name="description" content="Free VPN Service powered by volunteers, get access to over 500 OpenVPN Servers to use with any device or server">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://openblu.intellivoid.info/">
+<meta property="og:title" content="OpenBlu VPN">
+<meta property="og:description" content="Free VPN Service powered by volunteers, get access to over 500 OpenVPN Servers to use with any device or server">
+<meta property="og:image" content="">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://openblu.intellivoid.info/">
+<meta property="twitter:title" content="OpenBlu VPN">
+<meta property="twitter:description" content="Free VPN Service powered by volunteers, get access to over 500 OpenVPN Servers to use with any device or server">
+<meta property="twitter:image" content="">
