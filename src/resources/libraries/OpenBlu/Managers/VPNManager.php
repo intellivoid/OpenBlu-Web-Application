@@ -332,7 +332,7 @@
                 }
                 else
                 {
-                    return ceil($QueryResults->num_rows / 40);
+                    return ceil($QueryResults->num_rows / 100);
                 }
             }
         }
@@ -362,7 +362,7 @@
             $Query = null;
             if($page == 1)
             {
-                $Query = "SELECT id, public_id, host_name, ip_address, score, ping, country, country_short, sessions, total_sessions, last_updated, created FROM `vpns` ORDER BY `sessions` DESC LIMIT 0, 40";
+                $Query = "SELECT id, public_id, host_name, ip_address, score, ping, country, country_short, sessions, total_sessions, last_updated, created FROM `vpns` ORDER BY `sessions` DESC LIMIT 0, 100";
             }
             else
             {
@@ -372,14 +372,14 @@
                 while(true)
                 {
                     $CurrentPage += 1;
-                    $StartingItem += 40;
+                    $StartingItem += 100;
                     if($CurrentPage == $page - 1)
                     {
                         break;
                     }
                 }
 
-                $Query = "SELECT id, public_id, host_name, ip_address, score, ping, country, country_short, sessions, total_sessions, last_updated, created FROM `vpns` ORDER BY `sessions` DESC LIMIT $StartingItem, 40";
+                $Query = "SELECT id, public_id, host_name, ip_address, score, ping, country, country_short, sessions, total_sessions, last_updated, created FROM `vpns` ORDER BY `sessions` DESC LIMIT $StartingItem, 100";
             }
 
             $QueryResults = $this->openBlu->database->query($Query);
