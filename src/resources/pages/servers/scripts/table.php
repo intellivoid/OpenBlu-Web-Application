@@ -45,7 +45,7 @@
             $current_page = (int)$_GET['page'];
         }
 
-        print("<nav><ul class=\"pagination\">");
+        print("<nav><ul class=\"pagination flex-wrap\">");
 
         if($current_page == 1)
         {
