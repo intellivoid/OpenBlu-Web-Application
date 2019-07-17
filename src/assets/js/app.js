@@ -9,9 +9,7 @@ $("#toggle-sidebar").click(function(){
     toggle_sidebar_state();
 });
 $("#toggle-mini-sidebar").click(function(){
-    $("body").toggleClass("sidebar-icon-only");
     $("#sidebar").toggleClass("active");
-    toggle_sidebar_state();
 });
 function toggle_sidebar_state()
 {
