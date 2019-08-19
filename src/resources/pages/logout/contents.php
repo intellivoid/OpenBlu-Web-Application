@@ -28,7 +28,7 @@
     $Cookie->Data['account_username'] = null;
     $Cookie->Data['downloads'] = 0;
 
-    if(CLIENT_MODE_ENABLED == true)
+    if(WEB_CLIENT_MODE_ENABLED == true)
     {
         if(isset(DynamicalWeb::$globalObjects['openblu']) == false)
         {
