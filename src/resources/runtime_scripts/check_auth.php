@@ -78,6 +78,7 @@ use DynamicalWeb\Runtime;
     define('WEB_CLIENT_VERSION', $Cookie->Data['client_version'], false);
     define('WEB_CLIENT_AUTHORIZED', $Cookie->Data['client_authorized'], false);
     define('WEB_CLIENT_ACCOUNT_ID', $Cookie->Data['client_account_id'], false);
+    define('WEB_CLIENT_ACCOUNT_ID', $Cookie->Data['client_account_id'], false);
     define('WEB_CLIENT_AUTH_EXPIRES', $Cookie->Data['client_auth_expires'], false);
 
 
