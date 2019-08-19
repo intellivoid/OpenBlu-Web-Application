@@ -80,7 +80,7 @@
             $ip_address = hash('haval256,5', $ip_address);
 
             $crc1 = hash('sha256', $account_id . $unix_timestamp . $status);
-            $crc2 = hash('sha256', $origin, $ip_address);
+            $crc2 = hash('sha256', $origin . $ip_address);
 
             return $crc1 . $crc2;
         }
