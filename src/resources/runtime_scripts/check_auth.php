@@ -72,16 +72,16 @@ use DynamicalWeb\Runtime;
     define('WEB_ACCOUNT_EMAIL', $Cookie->Data['account_email'], false);
     define('WEB_ACCOUNT_USERNAME', $Cookie->Data['account_username'], false);
     define('WEB_DOWNLOADS', $Cookie->Data['downloads'], false);
-    define('CLIENT_MODE_ENABLED', $Cookie->Data['client_mode_enabled'], false);
-    define('CLIENT_UID', $Cookie->Data['client_uid'], false);
-    define('CLIENT_NAME', $Cookie->Data['client_name'], false);
-    define('CLIENT_VERSION', $Cookie->Data['client_version'], false);
-    define('CLIENT_AUTHORIZED', $Cookie->Data['client_authorized'], false);
-    define('CLIENT_ACCOUNT_ID', $Cookie->Data['client_account_id'], false);
-    define('CLIENT_AUTH_EXPIRES', $Cookie->Data['client_auth_expires'], false);
+    define('WEB_CLIENT_MODE_ENABLED', $Cookie->Data['client_mode_enabled'], false);
+    define('WEB_CLIENT_UID', $Cookie->Data['client_uid'], false);
+    define('WEB_CLIENT_NAME', $Cookie->Data['client_name'], false);
+    define('WEB_CLIENT_VERSION', $Cookie->Data['client_version'], false);
+    define('WEB_CLIENT_AUTHORIZED', $Cookie->Data['client_authorized'], false);
+    define('WEB_CLIENT_ACCOUNT_ID', $Cookie->Data['client_account_id'], false);
+    define('WEB_CLIENT_AUTH_EXPIRES', $Cookie->Data['client_auth_expires'], false);
 
 
-    if(CLIENT_MODE_ENABLED == true)
+    if(WEB_CLIENT_MODE_ENABLED == true)
     {
         if(WEB_SESSION_ACTIVE == false)
         {

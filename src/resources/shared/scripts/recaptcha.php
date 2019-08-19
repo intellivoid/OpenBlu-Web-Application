@@ -10,7 +10,7 @@
      */
     function re_render()
     {
-        if(CLIENT_MODE_ENABLED == true)
+        if(WEB_CLIENT_MODE_ENABLED == true)
         {
             return '';
         }
@@ -31,7 +31,7 @@
      */
     function re_import()
     {
-        if(CLIENT_MODE_ENABLED == true)
+        if(WEB_CLIENT_MODE_ENABLED == true)
         {
             return '';
         }

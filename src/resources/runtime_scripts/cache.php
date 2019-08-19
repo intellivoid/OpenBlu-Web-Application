@@ -25,7 +25,7 @@ use sws\sws;
             // No need to set these values to MMS since they will be used once
             $OpenBlu = new OpenBlu();
 
-            if(CLIENT_MODE_ENABLED == true)
+            if(WEB_CLIENT_MODE_ENABLED == true)
             {
                 try
                 {

@@ -1,7 +1,7 @@
 <?PHP
     use DynamicalWeb\HTML;
 
-    if(CLIENT_MODE_ENABLED == false)
+    if(WEB_CLIENT_MODE_ENABLED == false)
     {
         ?>
         <footer class="footer">

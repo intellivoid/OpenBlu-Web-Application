@@ -82,7 +82,7 @@
                         </div>
 
                         <?PHP
-                            if(CLIENT_MODE_ENABLED == false)
+                            if(WEB_CLIENT_MODE_ENABLED == false)
                             {
                                 ?>
                                 <div class="row">

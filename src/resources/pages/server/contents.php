@@ -173,7 +173,7 @@
 
                                         <h4 class="card-title"><?PHP HTML::print(TEXT_CARD_CONNECT_TITLE); ?></h4>
                                         <?PHP
-                                            if(CLIENT_MODE_ENABLED == true)
+                                            if(WEB_CLIENT_MODE_ENABLED == true)
                                             {
                                                 ?>
                                                 <p class="card-description"><?PHP HTML::print(TEXT_CARD_CONNECT_CLIENT_DESC); ?></p>
@@ -190,7 +190,7 @@
                                         <div class="row mt-3">
 
                                             <?PHP
-                                                if(CLIENT_MODE_ENABLED == true)
+                                                if(WEB_CLIENT_MODE_ENABLED == true)
                                                 {
                                                     ?>
                                                     <button type="button" onclick="location.href='/server?action=download&token=<?PHP HTML::print(CACHE_VPN_TOKEN); ?>'" class="btn btn-block btn-lg btn-inverse-success">

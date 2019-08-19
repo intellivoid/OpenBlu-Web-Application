@@ -12,7 +12,7 @@
                             <canvas id="user-avatar" class="letterpic" title="<?PHP HTML::print(WEB_ACCOUNT_USERNAME); ?>" width="42" height="42" style="margin-right: 5px; border-radius: 30px;"></canvas>
                             <p class="mb-0 ml-3 text-light" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"><?PHP HTML::print(WEB_ACCOUNT_USERNAME); ?></p>
                             <?PHP
-                                if(CLIENT_MODE_ENABLED == false)
+                                if(WEB_CLIENT_MODE_ENABLED == false)
                                 {
                                     if(CACHE_BALANCE_AVAILABLE == true)
                                     {
@@ -26,7 +26,7 @@
                             <ul class="nav flex-column sub-menu pl-0">
 
                                 <?PHP
-                                    if(CLIENT_MODE_ENABLED == false)
+                                    if(WEB_CLIENT_MODE_ENABLED == false)
                                     {
                                         ?>
                                         <li class="nav-item">
@@ -98,7 +98,7 @@
             </a>
         </li>
         <?PHP
-            if(CLIENT_MODE_ENABLED == false)
+            if(WEB_CLIENT_MODE_ENABLED == false)
             {
                 ?>
                 <li class="nav-item menu-items<?PHP if(APP_CURRENT_PAGE == 'api' || APP_CURRENT_PAGE == 'confirm_purchase'){ HTML::print(' active'); } ?>">

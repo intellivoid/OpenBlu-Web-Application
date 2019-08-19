@@ -20,7 +20,7 @@
     <body>
         <div class="container-scroller">
             <?PHP
-                if(CLIENT_MODE_ENABLED == false)
+                if(WEB_CLIENT_MODE_ENABLED == false)
                 {
                     ?>
                     <div class="container-fluid page-body-wrapper full-page-wrapper">

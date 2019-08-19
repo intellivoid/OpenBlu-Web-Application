@@ -24,9 +24,9 @@ use DynamicalWeb\Runtime;
     Runtime::import('OpenBlu');
     Runtime::import('IntellivoidAccounts');
 
-    if(CLIENT_MODE_ENABLED == true)
+    if(WEB_CLIENT_MODE_ENABLED == true)
     {
-        if(CLIENT_AUTHORIZED == true)
+        if(WEB_CLIENT_AUTHORIZED == true)
         {
             AutoLogin();
         }
