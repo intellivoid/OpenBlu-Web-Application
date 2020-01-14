@@ -6,9 +6,10 @@
         {"path": "/support", "page": "support"},
         {"path": "/support/about", "page": "about"},
         {"path": "/servers", "page": "servers"},
-        {"path": "/servers/view", "page": "server"}
-        {"path": "/api", "page": "server"}
+        {"path": "/servers/view", "page": "server"},
+        {"path": "/api", "page": "server"},
         {"path": "/auth/login_required", "page": "login_required"}
+        {"path": "/auth/logout", "page": "logout"}
     ],
     "libraries": {
         "IntellivoidAccounts": {
