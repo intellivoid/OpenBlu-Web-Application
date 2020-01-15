@@ -19,8 +19,8 @@ use DynamicalWeb\Runtime;
             'session_active' => false,
             'account_pubid' => null,
             'account_id' => null,
-            'account_email' => null,
             'account_username' => null,
+            'access_token' => null,
             'downloads' => 0,
             'cache' => array(),
             'cache_refresh' => 0,
@@ -69,8 +69,8 @@ use DynamicalWeb\Runtime;
     define('WEB_SESSION_ACTIVE', $Cookie->Data['session_active'], false);
     define('WEB_ACCOUNT_PUBID', $Cookie->Data['account_pubid'], false);
     define('WEB_ACCOUNT_ID', $Cookie->Data['account_id'], false);
-    define('WEB_ACCOUNT_EMAIL', $Cookie->Data['account_email'], false);
     define('WEB_ACCOUNT_USERNAME', $Cookie->Data['account_username'], false);
+    define('WEB_ACCESS_TOKEN', $Cookie->Data['access_token'], false);
     define('WEB_DOWNLOADS', $Cookie->Data['downloads'], false);
     define('WEB_CLIENT_MODE_ENABLED', $Cookie->Data['client_mode_enabled'], false);
     define('WEB_CLIENT_UID', $Cookie->Data['client_uid'], false);
