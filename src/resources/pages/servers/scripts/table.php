@@ -54,7 +54,7 @@
         else
         {
             $previous_page = $current_page - 1;
-            $location = "servers?page=$previous_page";
+            $location = \DynamicalWeb\DynamicalWeb::getRoute('servers', array('page' => $previous_page));
             print("<li class=\"page-item\"><a class=\"page-link\" onclick=\"location.href='$location'\"><i class=\"mdi mdi-chevron-left\"></i></a></li>");
         }
 
@@ -71,7 +71,7 @@
             }
             else
             {
-                $location = "servers?page=$current_ilt";
+                $location = \DynamicalWeb\DynamicalWeb::getRoute('servers', array('page' => $current_ilt));
                 print("<li class=\"page-item\"><a onclick=\"location.href='$location'\" class=\"page-link\">$current_ilt</a></li>");
             }
 
@@ -91,7 +91,7 @@
             else
             {
                 $next_page = $current_page + 1;
-                $location = "servers?page=$next_page";
+                $location = \DynamicalWeb\DynamicalWeb::getRoute('servers', array('page' => $next_page));
                 print("<li class=\"page-item\"><a onclick=\"location.href='$location'\" class=\"page-link\"><i class=\"mdi mdi-chevron-right\"></i></a></li>");
             }
         }
@@ -128,7 +128,7 @@
                     foreach($openBlu->getVPNManager()->getServerPage($current_page) as $VPN)
                     {
                         $VPNObject = \OpenBlu\Objects\VPN::fromArray($VPN);
-                        $ActionView = '<a href="server?pub_id=' . urlencode($VPNObject->PublicID) . '" class="btn btn-sm btn-inverse-primary"><i class="mdi mdi-information" style="margin-right: 0;"></i></a>';
+                        $ActionView = '<a href="' . \DynamicalWeb\DynamicalWeb::getRoute('server', array('pub_id' => $VPNObject->PublicID)) . '" class="btn btn-sm btn-inverse-primary"><i class="mdi mdi-information" style="margin-right: 0;"></i></a>';
                         if(WEB_CLIENT_MODE_ENABLED == false)
                         {
                             $ActionDownload = '<button onclick="process_download(\'' . $VPNObject->PublicID . '\');" class="btn btn-sm btn-inverse-success"><i class="mdi mdi-download" style="margin-right: 0;"></i></button>';
