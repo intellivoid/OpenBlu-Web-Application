@@ -8,8 +8,10 @@
 
     Runtime::import('OpenBlu');
 
+    HTML::importScript('authenticate_coa');
     HTML::importScript('toggle_sidebar');
     HTML::importScript('time_human');
+    HTML::importScript('alert');
 
     if(isset(DynamicalWeb::$globalObjects['openblu']) == false)
     {
@@ -37,7 +39,7 @@
                 <?PHP HTML::importSection('sidebar'); ?>
                 <div class="main-panel">
                     <div class="content-wrapper">
-
+                        <?PHP HTML::importScript('callbacks'); ?>
                         <div class="row">
                             <div class="col-md-6 grid-margin">
                                 <div class="card animated bounceInLeft">

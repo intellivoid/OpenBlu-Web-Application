@@ -318,4 +318,21 @@
             $GetParameters = '?' . http_build_query($Parameters);
             return COA_SNIFFLE_ENDPOINT . '/auth/coa' . $GetParameters;
         }
+
+        /**
+         * Gets the URL for a user's avatar
+         *
+         * @param string $resource
+         * @param string $userPublicId
+         * @return string
+         */
+        public static function getAvatarUrl(string $resource, string $userPublicId): string
+        {
+            $Parameters = array(
+                'user_id' => $userPublicId,
+                'resource' => $resource
+            );
+
+            return COA_SNIFFLE_ENDPOINT . '/user/contents/public/avatar?' . http_build_query($Parameters);
+        }
     }

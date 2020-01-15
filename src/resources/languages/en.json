@@ -39,7 +39,13 @@
             "CARD_POPULAR_SERVERS_NO_ITEMS": "No Servers Available",
             "ANALYTICS_TOTAL_SESSIONS": "Total Sessions",
             "ANALYTICS_SESSIONS": "Current Sessions",
-            "ANALYTICS_SERVERS": "Servers"
+            "ANALYTICS_SERVERS": "Servers",
+            "CALLBACK_100": "There was an unexpected error while trying to process your request",
+            "CALLBACK_101": "Intellivoid Accounts returned a response that was not understood by the server",
+            "CALLBACK_102": "There was an error while trying to process your authentication: %s",
+            "CALLBACK_103": "Intellivoid Accounts cannot be reached at this time",
+            "CALLBACK_104": "The authentication method that was used isn't supported by this server",
+            "CALLBACK_105": "You've logged in successfully!"
         },
         "servers": {
             "PAGE_TITLE": "OpenBlu - Servers",
