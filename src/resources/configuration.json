@@ -63,7 +63,7 @@
         }
     },
     "runtime_scripts": {
-        "initialize": [],
+        "initialize": ["coa_sniffles.php"],
         "on_page_load": ["client_mode.php", "check_auth.php", "cache.php"],
         "page_loaded": [],
         "after_request": [],
