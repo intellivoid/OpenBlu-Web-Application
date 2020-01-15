@@ -12,7 +12,7 @@
                 ?>
                     <li class="nav-item account-dropdown">
                         <a class="nav-link" data-toggle="collapse" href="#account-dropdown" aria-expanded="false" aria-controls="account-dropdown">
-                            <canvas id="user-avatar" class="letterpic" title="<?PHP HTML::print(WEB_ACCOUNT_USERNAME); ?>" width="42" height="42" style="margin-right: 5px; border-radius: 30px;"></canvas>
+                            <img id="user-avatar" class="letterpic" src="<?PHP \COASniffle\Handlers\COA:: ?>" title="<?PHP HTML::print(WEB_ACCOUNT_USERNAME); ?>" width="42" height="42" style="margin-right: 5px; border-radius: 30px;">
                             <p class="mb-0 ml-3 text-light" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"><?PHP HTML::print(WEB_ACCOUNT_USERNAME); ?></p>
                             <?PHP
                                 if(WEB_CLIENT_MODE_ENABLED == false)
