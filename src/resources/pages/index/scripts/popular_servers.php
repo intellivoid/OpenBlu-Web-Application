@@ -1,6 +1,7 @@
 <?php
 
-    use DynamicalWeb\HTML;
+use DynamicalWeb\DynamicalWeb;
+use DynamicalWeb\HTML;
     use OpenBlu\Objects\VPN;
 
     function renderPopularServers(array $popular_servers)
@@ -9,7 +10,7 @@
         {
             $VPN = VPN::fromArray($popular_servers[0]);
             ?>
-            <div class="preview-item<?PHP if(count($popular_servers) !== 1){ print(" border-bottom"); } ?>" onclick="location.href='/server?pub_id=<?PHP HTML::print($VPN->PublicID) ?>';">
+            <div class="preview-item<?PHP if(count($popular_servers) !== 1){ print(" border-bottom"); } ?>" onclick="location.href='<?PHP DynamicalWeb::getRoute('server', array('pub_id' => $VPN->PublicID), true); ?>';">
                 <div class="preview-thumbnail">
                     <div class="preview-icon">
                         <i class="flag-icon flag-icon-<?PHP HTML::print(strtolower($VPN->CountryShort)); ?>"></i>
@@ -33,7 +34,7 @@
         {
             $VPN = VPN::fromArray($popular_servers[1]);
             ?>
-            <div class="preview-item<?PHP if(count($popular_servers) !== 2){ print(" border-bottom"); } ?>" onclick="location.href='/server?pub_id=<?PHP HTML::print($VPN->PublicID) ?>';">
+            <div class="preview-item<?PHP if(count($popular_servers) !== 2){ print(" border-bottom"); } ?>" onclick="location.href='<?PHP DynamicalWeb::getRoute('server', array('pub_id' => $VPN->PublicID), true); ?>';">
                 <div class="preview-thumbnail">
                     <div class="preview-icon">
                         <i class="flag-icon flag-icon-<?PHP HTML::print(strtolower($VPN->CountryShort)); ?>"></i>
@@ -57,7 +58,7 @@
         {
             $VPN = VPN::fromArray($popular_servers[2]);
             ?>
-            <div class="preview-item<?PHP if(count($popular_servers) !== 3){ print(" border-bottom"); } ?>" onclick="location.href='/server?pub_id=<?PHP HTML::print($VPN->PublicID) ?>';">
+            <div class="preview-item<?PHP if(count($popular_servers) !== 3){ print(" border-bottom"); } ?>" onclick="location.href='<?PHP DynamicalWeb::getRoute('server', array('pub_id' => $VPN->PublicID), true); ?>'';">
                 <div class="preview-thumbnail">
                     <div class="preview-icon">
                         <i class="flag-icon flag-icon-<?PHP HTML::print(strtolower($VPN->CountryShort)); ?>"></i>
@@ -81,7 +82,7 @@
         {
             $VPN = VPN::fromArray($popular_servers[3]);
             ?>
-            <div class="preview-item<?PHP if(count($popular_servers) !== 4){ print(" border-bottom"); } ?>" onclick="location.href='/server?pub_id=<?PHP HTML::print($VPN->PublicID) ?>';">
+            <div class="preview-item<?PHP if(count($popular_servers) !== 4){ print(" border-bottom"); } ?>" onclick="location.href='<?PHP DynamicalWeb::getRoute('server', array('pub_id' => $VPN->PublicID), true); ?>';">
                 <div class="preview-thumbnail">
                     <div class="preview-icon">
                         <i class="flag-icon flag-icon-<?PHP HTML::print(strtolower($VPN->CountryShort)); ?>"></i>
@@ -105,7 +106,7 @@
         {
             $VPN = VPN::fromArray($popular_servers[4]);
             ?>
-            <div class="preview-item" onclick="location.href='/server?pub_id=<?PHP HTML::print($VPN->PublicID) ?>';">
+            <div class="preview-item" onclick="location.href='<?PHP DynamicalWeb::getRoute('server', array('pub_id' => $VPN->PublicID), true); ?>';">
                 <div class="preview-thumbnail">
                     <div class="preview-icon">
                         <i class="flag-icon flag-icon-<?PHP HTML::print(strtolower($VPN->CountryShort)); ?>"></i>

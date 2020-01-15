@@ -141,7 +141,7 @@
                                             </div>
                                             <div class="align-self-center flex-grow text-right">
                                                 <p class="text-muted">
-                                                    <a href="servers"><?PHP HTML::print(TEXT_CARD_POPULAR_SERVERS_VIEW_SERVERS); ?></a>
+                                                    <a href="<?PHP DynamicalWeb::getRoute('servers', array(), true); ?>"><?PHP HTML::print(TEXT_CARD_POPULAR_SERVERS_VIEW_SERVERS); ?></a>
                                                 </p>
                                             </div>
                                         </div>
