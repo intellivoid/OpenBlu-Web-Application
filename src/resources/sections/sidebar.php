@@ -1,4 +1,7 @@
 <?PHP
+
+    use COASniffle\COASniffle;
+    use DynamicalWeb\DynamicalWeb;
     use DynamicalWeb\HTML;
 ?>
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
@@ -25,7 +28,7 @@
                         <div class="collapse" id="account-dropdown">
                             <ul class="nav flex-column sub-menu pl-0">
                                 <li class="nav-item">
-                                    <a class="nav-link pl-5" onclick="location.href='<?PHP \DynamicalWeb\DynamicalWeb::getRoute('logout', array(), true); ?>';">
+                                    <a class="nav-link pl-5" onclick="location.href='<?PHP DynamicalWeb::getRoute('logout', array(), true); ?>';">
                                         <span class="menu-icon"><i class="mdi mdi-power"></i></span>
                                         <span class="menu-title"><?PHP HTML::print(TEXT_SIDEBAR_LOGOUT); ?></span>
                                     </a>
@@ -45,9 +48,15 @@
                     </a>
                     <div class="collapse" id="account-dropdown">
                         <ul class="nav flex-column sub-menu pl-0">
-
+                            <?PHP
+                                /** @var COASniffle $COASniffle */
+                                $COASniffle = DynamicalWeb::getMemoryObject('coasniffle');
+                                $Protocol = strtolower(substr($_SERVER["SERVER_PROTOCOL"],0,strpos( $_SERVER["SERVER_PROTOCOL"],'/'))).'://';
+                                $RedirectURL = $Protocol . $_SERVER['HTTP_HOST'] . DynamicalWeb::getRoute('index');
+                                $AuthenticationURL = $COASniffle->getCOA()->getAuthenticationURL($RedirectURL);
+                            ?>
                             <li class="nav-item">
-                                <a class="nav-link pl-5" onclick="location.href='#';"> <!-- TODO: Add COA Authentication URL here -->
+                                <a class="nav-link pl-5" onclick="location.href='<?PHP HTML::print($AuthenticationURL, false); ?>';"> <!-- TODO: Add COA Authentication URL here -->
                                     <span class="menu-icon"><i class="mdi mdi-login"></i></span>
                                     <span class="menu-title"><?PHP HTML::print(TEXT_SIDEBAR_LOGIN); ?></span>
                                 </a>
@@ -63,13 +72,13 @@
             <span class="nav-link"><?PHP HTML::print(TEXT_SIDEBAR_NAV_HEADER); ?></span>
         </li>
         <li class="nav-item menu-items<?PHP if(APP_CURRENT_PAGE == 'index'){ HTML::print(' active'); } ?>">
-            <a class="nav-link" href="<?PHP \DynamicalWeb\DynamicalWeb::getRoute('index', array(), true); ?>">
+            <a class="nav-link" href="<?PHP DynamicalWeb::getRoute('index', array(), true); ?>">
                 <span class="menu-icon"><i class="mdi mdi-home"></i></span>
                 <span class="menu-title"><?PHP HTML::print(TEXT_SIDEBAR_NAV_HOME); ?></span>
             </a>
         </li>
         <li class="nav-item menu-items<?PHP if(APP_CURRENT_PAGE == 'servers' || APP_CURRENT_PAGE == 'server'){ HTML::print(' active'); } ?>">
-            <a class="nav-link" href="<?PHP \DynamicalWeb\DynamicalWeb::getRoute('servers', array(), true); ?>">
+            <a class="nav-link" href="<?PHP DynamicalWeb::getRoute('servers', array(), true); ?>">
                 <span class="menu-icon"><i class="mdi mdi-server-network"></i></span>
                 <span class="menu-title"><?PHP HTML::print(TEXT_SIDEBAR_NAV_SERVERS); ?></span>
             </a>
@@ -79,7 +88,7 @@
             {
                 ?>
                 <li class="nav-item menu-items<?PHP if(APP_CURRENT_PAGE == 'api'){ HTML::print(' active'); } ?>">
-                    <a class="nav-link" href="<?PHP \DynamicalWeb\DynamicalWeb::getRoute('api', array(), true); ?>">
+                    <a class="nav-link" href="<?PHP DynamicalWeb::getRoute('api', array(), true); ?>">
                         <span class="menu-icon"><i class="mdi mdi-console"></i></span>
                         <span class="menu-title"><?PHP HTML::print(TEXT_SIDEBAR_NAV_API); ?></span>
                     </a>
@@ -88,13 +97,13 @@
             }
         ?>
         <li class="nav-item menu-items<?PHP if(APP_CURRENT_PAGE == 'support'){ HTML::print(' active'); } ?>">
-            <a class="nav-link" href="<?PHP \DynamicalWeb\DynamicalWeb::getRoute('support', array(), true); ?>">
+            <a class="nav-link" href="<?PHP DynamicalWeb::getRoute('support', array(), true); ?>">
                 <span class="menu-icon"><i class="mdi mdi-lifebuoy"></i></span>
                 <span class="menu-title"><?PHP HTML::print(TEXT_SIDEBAR_NAV_SUPPORT); ?></span>
             </a>
         </li>
         <li class="nav-item menu-items<?PHP if(APP_CURRENT_PAGE == 'about'){ HTML::print(' active'); } ?>">
-            <a class="nav-link" href="<?PHP \DynamicalWeb\DynamicalWeb::getRoute('about', array(), true); ?>">
+            <a class="nav-link" href="<?PHP DynamicalWeb::getRoute('about', array(), true); ?>">
                 <span class="menu-icon"><i class="mdi mdi-information-outline"></i></span>
                 <span class="menu-title"><?PHP HTML::print(TEXT_SIDEBAR_NAV_ABOUT); ?></span>
             </a>
