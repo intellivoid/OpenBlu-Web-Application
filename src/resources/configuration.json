@@ -12,13 +12,6 @@
         {"path": "/auth/logout", "page": "logout"}
     ],
     "libraries": {
-        "IntellivoidAccounts": {
-            "directory_name": "IntellivoidAccounts",
-            "autoloader": "IntellivoidAccounts.php",
-            "check_class_exists": true,
-            "namespace": "IntellivoidAccounts",
-            "main_class": "IntellivoidAccounts"
-        },
         "Logixal": {
             "directory_name": "Logixal",
             "autoloader": "Logixal.php",
