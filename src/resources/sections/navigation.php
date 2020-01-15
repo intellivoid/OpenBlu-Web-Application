@@ -1,9 +1,9 @@
 <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
     <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo" onclick="location.href='/'">
+        <a class="navbar-brand brand-logo" onclick="location.href='<?PHP \DynamicalWeb\DynamicalWeb::getRoute('index', array(), true); ?>'">
             <img src="/assets/images/banner.png" alt="logo"/>
         </a>
-        <a class="navbar-brand brand-logo-mini" onclick="location.href='/'">
+        <a class="navbar-brand brand-logo-mini" onclick="location.href='<?PHP \DynamicalWeb\DynamicalWeb::getRoute('index', array(), true); ?>'">
             <img src="/assets/images/logo.png" alt="logo"/>
         </a>
     </div>
@@ -21,7 +21,7 @@
                     <h6 class="p-3 mb-0"><?PHP \DynamicalWeb\HTML::print(TEXT_LANGUAGES_DROPDOWN); ?></h6>
                     <div class="dropdown-divider"></div>
 
-                    <a class="dropdown-item preview-item" href="/?set_language=en">
+                    <a class="dropdown-item preview-item" href="<?PHP \DynamicalWeb\DynamicalWeb::getRoute('change_language', array('language' => 'en', 'cache' => hash('sha256', time())), true); ?>">
                         <div class="preview-thumbnail">
                             <i class="flag-icon flag-icon-gb"></i>
                         </div>
@@ -31,7 +31,7 @@
                     </a>
                     <div class="dropdown-divider"></div>
 
-                    <a class="dropdown-item preview-item" href="/?set_language=cn">
+                    <a class="dropdown-item preview-item" href="<?PHP \DynamicalWeb\DynamicalWeb::getRoute('change_language', array('language' => 'cn', 'cache' => hash('sha256', time())), true); ?>">
                         <div class="preview-thumbnail">
                             <i class="flag-icon flag-icon-cn"></i>
                         </div>
@@ -41,7 +41,7 @@
                     </a>
                     <div class="dropdown-divider"></div>
 
-                    <a class="dropdown-item preview-item" href="/?set_language=de">
+                    <a class="dropdown-item preview-item" href="<?PHP \DynamicalWeb\DynamicalWeb::getRoute('change_language', array('language' => 'de', 'cache' => hash('sha256', time())), true); ?>">
                         <div class="preview-thumbnail">
                             <i class="flag-icon flag-icon-de"></i>
                         </div>

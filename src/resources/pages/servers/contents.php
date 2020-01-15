@@ -2,8 +2,8 @@
 
     /** @noinspection PhpUnhandledExceptionInspection */
 
-use DynamicalWeb\DynamicalWeb;
-use DynamicalWeb\HTML;
+    use DynamicalWeb\DynamicalWeb;
+    use DynamicalWeb\HTML;
     use DynamicalWeb\Runtime;
     use OpenBlu\OpenBlu;
 
@@ -67,17 +67,17 @@ use DynamicalWeb\HTML;
                                             if($total_pages == 0)
                                             {
                                                 render_alert(TEXT_NO_SERVERS_AVAILABLE_ERROR, 'primary', 'alert-circle');
-                                                HTML::print('<a href="servers">' . TEXT_RELOAD_PAGE_LINK . '</a>', false);
+                                                HTML::print('<a href="' . DynamicalWeb::getRoute('servers') . '">' . TEXT_RELOAD_PAGE_LINK . '</a>', false);
                                             }
                                             elseif($current_page < 1)
                                             {
                                                 render_alert(TEXT_PAGE_NOT_FOUND_ERROR, 'danger', 'alert-circle');
-                                                HTML::print('<a href="servers">' . TEXT_RELOAD_PAGE_LINK . '</a>', false);
+                                                HTML::print('<a href="' . DynamicalWeb::getRoute('servers') . '">' . TEXT_RELOAD_PAGE_LINK . '</a>', false);
                                             }
                                             elseif($current_page > $total_pages)
                                             {
                                                 render_alert(TEXT_PAGE_NOT_FOUND_ERROR, 'danger', 'alert-circle');
-                                                HTML::print('<a href="servers">' . TEXT_RELOAD_PAGE_LINK . '</a>', false);
+                                                HTML::print('<a href="' . DynamicalWeb::getRoute('servers') . '">' . TEXT_RELOAD_PAGE_LINK . '</a>', false);
                                             }
                                             else
                                             {
@@ -100,7 +100,7 @@ use DynamicalWeb\HTML;
             {
                 $.ajax({
                     type: "GET",
-                    url: "/server?action=gen_token&pub_id={0}".format(server_id),
+                    url: "<?PHP DynamicalWeb::getRoute('server', array('action' => 'gen_token', 'token' => '{0}'), true); ?>".format(server_id),
                     success: function(results)
                     {
                         if(results.success === false)
@@ -129,7 +129,7 @@ use DynamicalWeb\HTML;
                                 "<?PHP HTML::print(TEXT_NOTIFICATION_DOWNLOAD_STARTED_MESSAGE); ?>",
                                 "success"
                             );
-                            location.href = '/server?action=download&token={0}'.format(results.download_token);
+                            location.href = '<?PHP DynamicalWeb::getRoute('server', array('action' => 'download', 'token' => '{0}'), true); ?>'.format(results.download_token);
                         }
                     }
                 });

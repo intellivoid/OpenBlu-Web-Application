@@ -1,6 +1,16 @@
 {
-    "home_page": "index",
     "primary_language": "en",
+    "debugging_mode": true,
+    "router": [
+        {"path": "/", "page": "index"},
+        {"path": "/support", "page": "support"},
+        {"path": "/support/about", "page": "about"},
+        {"path": "/servers", "page": "servers"},
+        {"path": "/servers/view", "page": "server"},
+        {"path": "/api", "page": "api"},
+        {"path": "/auth/login_required", "page": "login_required"},
+        {"path": "/auth/logout", "page": "logout"}
+    ],
     "libraries": {
         "IntellivoidAccounts": {
             "directory_name": "IntellivoidAccounts",
