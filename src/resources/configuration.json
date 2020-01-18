@@ -19,13 +19,6 @@
             "namespace": "Logixal",
             "main_class": "Logixal"
         },
-        "ModularAPI": {
-            "directory_name": "ModularAPI",
-            "autoloader": "ModularAPI.php",
-            "check_class_exists": true,
-            "namespace": "ModularAPI",
-            "main_class": "ModularAPI"
-        },
         "IntellivoidSubscriptionManager": {
             "directory_name": "IntellivoidSubscriptionManager",
             "autoloader": "IntellivoidSubscriptionManager.php",
