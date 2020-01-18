@@ -26,6 +26,13 @@
             "namespace": "ModularAPI",
             "main_class": "ModularAPI"
         },
+        "IntellivoidSubscriptionManager": {
+            "directory_name": "IntellivoidSubscriptionManager",
+            "autoloader": "IntellivoidSubscriptionManager.php",
+            "check_class_exists": true,
+            "namespace": "IntellivoidSubscriptionManager",
+            "main_class": "IntellivoidSubscriptionManager"
+        },
         "OpenBlu": {
             "directory_name": "OpenBlu",
             "autoloader": "OpenBlu.php",
