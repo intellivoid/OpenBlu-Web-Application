@@ -13,6 +13,7 @@
     use COASniffle\Exceptions\RequestFailedException;
     use COASniffle\Exceptions\UnsupportedAuthMethodException;
     use COASniffle\Objects\Permissions;
+    use COASniffle\Objects\SubscriptionPurchaseResults;
     use COASniffle\Objects\UserInformation;
     use COASniffle\Utilities\RequestBuilder;
 
@@ -334,5 +335,51 @@
             );
 
             return COA_SNIFFLE_ENDPOINT . '/user/contents/public/avatar?' . http_build_query($Parameters);
+        }
+
+        /**
+         * @param string $access_token
+         * @param string $plan_name
+         * @param string $promotion_code
+         * @return SubscriptionPurchaseResults
+         * @throws BadResponseException
+         * @throws CoaAuthenticationException
+         * @throws RequestFailedException
+         * @throws UnsupportedAuthMethodException
+         */
+        public function createSubscription(string $access_token, string $plan_name, string $promotion_code="None"): SubscriptionPurchaseResults
+        {
+            $RequestPayload = array(
+                'application_id' => COA_SNIFFLE_APP_PUBLIC_ID,
+                'secret_key' => COA_SNIFFLE_APP_SECRET_KEY,
+                'access_token' => $access_token,
+                'plan_name' => $plan_name,
+            );
+
+            if($promotion_code !== "None")
+            {
+                $RequestPayload['promotion_code'] = $promotion_code;
+            }
+
+            $Response = RequestBuilder::sendRequest(
+                'coa',
+                array(
+                    'action' => "create_subscription",
+                ),
+                $RequestPayload
+            );
+
+            $ResponseJson = json_decode($Response['content'], true);
+            if($ResponseJson == false)
+            {
+                throw new BadResponseException();
+            }
+
+            if($ResponseJson['status'] == false)
+            {
+                throw new CoaAuthenticationException($ResponseJson['error_code']);
+            }
+
+            return SubscriptionPurchaseResults::fromArray($ResponseJson['payload']);
         }
     }
