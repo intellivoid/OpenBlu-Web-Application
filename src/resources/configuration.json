@@ -8,6 +8,7 @@
         {"path": "/servers", "page": "servers"},
         {"path": "/servers/view", "page": "server"},
         {"path": "/api", "page": "api"},
+        {"path": "/purchase", "page": "purchase"},
         {"path": "/auth/login_required", "page": "login_required"},
         {"path": "/auth/logout", "page": "logout"}
     ],

@@ -7,7 +7,13 @@
     use COASniffle\Exceptions\UnsupportedAuthMethodException;
     use DynamicalWeb\Actions;
     use DynamicalWeb\DynamicalWeb;
+    use DynamicalWeb\Runtime;
+    use OpenBlu\Abstracts\SearchMethods\UserSubscriptionSearchMethod;
+    use OpenBlu\Exceptions\UserSubscriptionRecordNotFoundException;
     use sws\sws;
+
+    Runtime::import('OpenBlu');
+    Runtime::import('IntellivoidSubscriptionManager');
 
     if(WEB_SESSION_ACTIVE == false)
     {
@@ -21,6 +27,7 @@
     {
         /** @var COASniffle $COASniffle */
         $COASniffle = DynamicalWeb::getMemoryObject('coasniffle');
+        $OpenBlu = new OpenBlu\OpenBlu();
 
         try
         {
@@ -71,6 +78,28 @@
         if(isset($Cookie->Data['cache_refresh']) == true)
         {
             $Cookie->Data['cache_refresh'] = 0;
+        }
+
+
+        try
+        {
+            $UserSubscription = $OpenBlu->getUserSubscriptionManager()->getUserSubscription(
+                UserSubscriptionSearchMethod::byAccountID, $UserInformation->Tag
+            );
+
+            $Cookie->Data['subscription_active'] = true;
+            $Cookie->Data['user_subscription_id'] = $UserSubscription->ID;
+        }
+        catch (UserSubscriptionRecordNotFoundException $e)
+        {
+            $Cookie->Data['subscription_active'] = false;
+            $Cookie->Data['user_subscription_id'] = 0;
+        }
+        catch(Exception $e)
+        {
+            Actions::redirect(DynamicalWeb::getRoute(
+                'index', array('callback' => '100')
+            ));
         }
 
         $sws->CookieManager()->updateCookie($Cookie);

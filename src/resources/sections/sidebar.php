@@ -76,19 +76,12 @@ use DynamicalWeb\DynamicalWeb;
                 <span class="menu-title"><?PHP HTML::print(TEXT_SIDEBAR_NAV_SERVERS); ?></span>
             </a>
         </li>
-        <?PHP
-            if(WEB_CLIENT_MODE_ENABLED == false)
-            {
-                ?>
-                <li class="nav-item menu-items<?PHP if(APP_CURRENT_PAGE == 'api'){ HTML::print(' active'); } ?>">
-                    <a class="nav-link" href="<?PHP DynamicalWeb::getRoute('api', array(), true); ?>">
-                        <span class="menu-icon"><i class="mdi mdi-console"></i></span>
-                        <span class="menu-title"><?PHP HTML::print(TEXT_SIDEBAR_NAV_API); ?></span>
-                    </a>
-                </li>
-                <?PHP
-            }
-        ?>
+        <li class="nav-item menu-items<?PHP if(APP_CURRENT_PAGE == 'api'){ HTML::print(' active'); } ?>">
+            <a class="nav-link" href="<?PHP DynamicalWeb::getRoute('api', array(), true); ?>">
+                <span class="menu-icon"><i class="mdi mdi-console"></i></span>
+                <span class="menu-title"><?PHP HTML::print(TEXT_SIDEBAR_NAV_API); ?></span>
+            </a>
+        </li>
         <li class="nav-item menu-items<?PHP if(APP_CURRENT_PAGE == 'support'){ HTML::print(' active'); } ?>">
             <a class="nav-link" href="<?PHP DynamicalWeb::getRoute('support', array(), true); ?>">
                 <span class="menu-icon"><i class="mdi mdi-lifebuoy"></i></span>

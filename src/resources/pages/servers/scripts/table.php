@@ -129,14 +129,8 @@
                     {
                         $VPNObject = \OpenBlu\Objects\VPN::fromArray($VPN);
                         $ActionView = '<a href="' . \DynamicalWeb\DynamicalWeb::getRoute('server', array('pub_id' => $VPNObject->PublicID)) . '" class="btn btn-sm btn-inverse-primary"><i class="mdi mdi-information" style="margin-right: 0;"></i></a>';
-                        if(WEB_CLIENT_MODE_ENABLED == false)
-                        {
-                            $ActionDownload = '<button onclick="process_download(\'' . $VPNObject->PublicID . '\');" class="btn btn-sm btn-inverse-success"><i class="mdi mdi-download" style="margin-right: 0;"></i></button>';
-                        }
-                        else
-                        {
-                            $ActionDownload = '<button onclick="process_download(\'' . $VPNObject->PublicID . '\');" class="btn btn-sm btn-inverse-warning"><i class="mdi mdi-lan-connect" style="margin-right: 0;"></i></button>';
-                        }
+                        $ActionDownload = '<button onclick="process_download(\'' . $VPNObject->PublicID . '\');" class="btn btn-sm btn-inverse-success"><i class="mdi mdi-download" style="margin-right: 0;"></i></button>';
+
                         $RowData = [
                             '<i class="flag-icon flag-icon-' . strtolower($VPNObject->CountryShort) . '"></i> ' . $VPNObject->Country,
                             $VPNObject->IP,

@@ -27,7 +27,7 @@
                     <div class="content-wrapper">
 
                         <?PHP
-                            if(CACHE_SUBSCRIPTION_ACTIVE == false)
+                            if(WEB_SUBSCRIPTION_ACTIVE == false)
                             {
                                 HTML::importScript('render_pricing');
                             }
@@ -46,7 +46,7 @@
 
         <?PHP HTML::importSection('js_scripts'); ?>
         <?PHP
-            if(CACHE_SUBSCRIPTION_ACTIVE == true)
+            if(WEB_SUBSCRIPTION_ACTIVE == true)
             {
                 HTML::importScript('render_charts_js');
             }

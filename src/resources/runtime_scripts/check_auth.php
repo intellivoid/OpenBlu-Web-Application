@@ -22,17 +22,10 @@ use DynamicalWeb\Runtime;
             'account_username' => null,
             'access_token' => null,
             'downloads' => 0,
+            'subscription_active' => false,
+            'user_subscription_id' => 0,
             'cache' => array(),
             'cache_refresh' => 0,
-
-            // Client Mode Properties
-            'client_mode_enabled' => false,
-            'client_uid' => null,
-            'client_name' => null,
-            'client_version' => null,
-            'client_authorized' => false,
-            'client_account_id' => 0,
-            'client_auth_expires' => 0
         );
 
         $sws->CookieManager()->updateCookie($Cookie);
@@ -72,29 +65,5 @@ use DynamicalWeb\Runtime;
     define('WEB_ACCOUNT_USERNAME', $Cookie->Data['account_username'], false);
     define('WEB_ACCESS_TOKEN', $Cookie->Data['access_token'], false);
     define('WEB_DOWNLOADS', $Cookie->Data['downloads'], false);
-    define('WEB_CLIENT_MODE_ENABLED', $Cookie->Data['client_mode_enabled'], false);
-    define('WEB_CLIENT_UID', $Cookie->Data['client_uid'], false);
-    define('WEB_CLIENT_NAME', $Cookie->Data['client_name'], false);
-    define('WEB_CLIENT_VERSION', $Cookie->Data['client_version'], false);
-    define('WEB_CLIENT_AUTHORIZED', $Cookie->Data['client_authorized'], false);
-    define('WEB_CLIENT_ACCOUNT_ID', $Cookie->Data['client_account_id'], false);
-    define('WEB_CLIENT_AUTH_EXPIRES', $Cookie->Data['client_auth_expires'], false);
-
-
-    if(WEB_CLIENT_MODE_ENABLED == true)
-    {
-        if(WEB_SESSION_ACTIVE == false)
-        {
-            switch(APP_CURRENT_PAGE)
-            {
-                case 'login': break;
-
-                case 'register': break;
-
-                default:
-                    header('Location: /login');
-                    exit();
-                    break;
-            }
-        }
-    }
+    define('WEB_SUBSCRIPTION_ACTIVE', $Cookie->Data['subscription_active'], false);
+    define('WEB_USER_SUBSCRIPTION_ID', $Cookie->Data['user_subscription_id'], false);
