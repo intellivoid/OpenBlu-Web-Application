@@ -1,7 +1,8 @@
 <?PHP
     /** @noinspection PhpUnhandledExceptionInspection */
 
-    use DynamicalWeb\HTML;
+use DynamicalWeb\DynamicalWeb;
+use DynamicalWeb\HTML;
 
     HTML::importScript('action.download');
     HTML::importScript('check_selection');
@@ -193,10 +194,9 @@
         <script>
             function process_download()
             {
-
                 $.ajax({
                     type: "GET",
-                    url: "/server?action=gen_token&pub_id=<?PHP print(urlencode(CACHE_VPN_PUBLIC_ID)); ?>",
+                    url: "<?PHP DynamicalWeb::getRoute('server', array('action' => 'gen_token', 'pub_id' => CACHE_VPN_PUBLIC_ID), true); ?>",
                     success: function(results)
                     {
                         if(results.success === false)
@@ -225,7 +225,7 @@
                                 "<?PHP HTML::print(TEXT_NOTIFICATION_DOWNLOAD_STARTED_MESSAGE); ?>",
                                 "success"
                             );
-                            location.href = '/server?action=download&token={0}'.format(results.download_token);
+                            location.href = '<?PHP DynamicalWeb::getRoute('server', array('action' => 'download'), true); ?>&token={0}'.format(results.download_token);
                         }
                     }
                 });
