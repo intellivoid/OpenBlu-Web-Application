@@ -105,6 +105,25 @@
         $sws->CookieManager()->updateCookie($Cookie);
         $sws->WebManager()->setCookie($Cookie);
 
+        $Redirect = "None";
+
+        if(isset($_GET['redirect']))
+        {
+            $Redirect = $_GET['redirect'];
+        }
+
+        switch($Redirect)
+        {
+            case 'confirm_purchase':
+                if(isset($_GET['plan']))
+                {
+                    Actions::redirect(DynamicalWeb::getRoute(
+                        'purchase', array('plan' => $_GET['plan'])
+                    ));
+                }
+                break;
+        }
+
         Actions::redirect(DynamicalWeb::getRoute(
             'index', array('callback' => '105')
         ));

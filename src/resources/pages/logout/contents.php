@@ -2,7 +2,6 @@
 
     use DynamicalWeb\DynamicalWeb;
     use DynamicalWeb\Runtime;
-    use OpenBlu\Abstracts\SearchMethods\ClientSearchMethod;
     use OpenBlu\OpenBlu;
     use sws\sws;
 
@@ -14,7 +13,6 @@
         exit();
     }
 
-    /** @noinspection PhpUnhandledExceptionInspection */
 
     /** @var sws $sws */
     $sws = DynamicalWeb::getMemoryObject('sws');
@@ -28,33 +26,19 @@
     $Cookie->Data['account_username'] = null;
     $Cookie->Data['downloads'] = 0;
 
-    if(WEB_CLIENT_MODE_ENABLED == true)
+    if(isset(DynamicalWeb::$globalObjects['openblu']) == false)
     {
-        if(isset(DynamicalWeb::$globalObjects['openblu']) == false)
-        {
-            /** @var OpenBlu $OpenBlu */
-            $OpenBlu = DynamicalWeb::setMemoryObject('openblu', new OpenBlu());
-        }
-        else
-        {
-            /** @var OpenBlu $OpenBlu */
-            $OpenBlu = DynamicalWeb::getMemoryObject('openblu');
-        }
-
-        try
-        {
-            $Client = $OpenBlu->getClientManager()->getClient(ClientSearchMethod::byClientUid, $Cookie->Data['client_uid']);
-            $Client->AuthExpires = 0;
-            $OpenBlu->getClientManager()->updateClient($Client);
-        }
-        catch(Exception $exception)
-        {
-            // TODO: Fix issue where clients are not available
-        }
-
-        $Cookie->Data['client_authorized'] = false;
-        $Cookie->Data['client_auth_expires'] = 0;
+        /** @var OpenBlu $OpenBlu */
+        $OpenBlu = DynamicalWeb::setMemoryObject('openblu', new OpenBlu());
     }
+    else
+    {
+        /** @var OpenBlu $OpenBlu */
+        $OpenBlu = DynamicalWeb::getMemoryObject('openblu');
+    }
+
+    $Cookie->Data['client_authorized'] = false;
+    $Cookie->Data['client_auth_expires'] = 0;
 
     $sws->CookieManager()->updateCookie($Cookie);
 

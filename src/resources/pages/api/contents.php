@@ -3,7 +3,7 @@
 
     use DynamicalWeb\HTML;
 
-    if(CACHE_SUBSCRIPTION_ACTIVE == true)
+    if(WEB_SUBSCRIPTION_ACTIVE == true)
     {
         HTML::importScript('dashboard_actions');
     }
