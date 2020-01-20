@@ -208,7 +208,7 @@
                 </div>
 
                 <div class="form-group text-right">
-                    <button type="button" class="btn btn-inverse-primary" onclick="location.href='/api?action=update_signatures';">
+                    <button type="button" class="btn btn-inverse-primary" onclick="location.href='<?PHP DynamicalWeb::getRoute('api', array('action' => 'generate_access_key'), true); ?>';">
                         <i class="mdi mdi-refresh"></i><?PHP HTML::print("Generate new Access Key"); ?>
                     </button>
                 </div>
