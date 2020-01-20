@@ -1,19 +1,19 @@
 <?PHP
 
+    use DynamicalWeb\Actions;
     use DynamicalWeb\DynamicalWeb;
     use DynamicalWeb\HTML;
     use DynamicalWeb\Runtime;
-use IntellivoidAPI\Abstracts\SearchMethods\AccessRecordSearchMethod;
-use IntellivoidAPI\IntellivoidAPI;
-use IntellivoidSubscriptionManager\Abstracts\SearchMethods\SubscriptionSearchMethod;
-use IntellivoidSubscriptionManager\IntellivoidSubscriptionManager;
-use IntellivoidSubscriptionManager\Objects\Subscription\Feature;
-use ModularAPI\Abstracts\AccessKeySearchMethod;
-    use ModularAPI\ModularAPI;
-    use OpenBlu\Abstracts\APIPlan;
-    use OpenBlu\Abstracts\SearchMethods\PlanSearchMethod;
-use OpenBlu\Abstracts\SearchMethods\UserSubscriptionSearchMethod;
-use OpenBlu\OpenBlu;
+    use IntellivoidAPI\Abstracts\SearchMethods\AccessRecordSearchMethod;
+    use IntellivoidAPI\Exceptions\AccessRecordNotFoundException;
+    use IntellivoidAPI\IntellivoidAPI;
+    use IntellivoidSubscriptionManager\Abstracts\SearchMethods\SubscriptionSearchMethod;
+    use IntellivoidSubscriptionManager\Exceptions\SubscriptionNotFoundException;
+    use IntellivoidSubscriptionManager\IntellivoidSubscriptionManager;
+    use IntellivoidSubscriptionManager\Objects\Subscription\Feature;
+    use OpenBlu\Abstracts\SearchMethods\UserSubscriptionSearchMethod;
+    use OpenBlu\Exceptions\UserSubscriptionRecordNotFoundException;
+    use OpenBlu\OpenBlu;
 
     Runtime::import('OpenBlu');
     Runtime::import('IntellivoidSubscriptionManager');
@@ -52,17 +52,63 @@ use OpenBlu\OpenBlu;
         $OpenBlu = DynamicalWeb::getMemoryObject('openblu');
     }
 
-    $UserSubscription = $OpenBlu->getUserSubscriptionManager()->getUserSubscription(
+    try
+    {
+        $UserSubscription = $OpenBlu->getUserSubscriptionManager()->getUserSubscription(
             UserSubscriptionSearchMethod::byAccountID, WEB_ACCOUNT_ID
-    );
+        );
+    }
+    catch (UserSubscriptionRecordNotFoundException $e)
+    {
+        Actions::redirect(DynamicalWeb::getRoute('service_error', array(
+            'error_type' => 'rd_us_not_found'
+        )));
+    }
+    catch(Exception $e)
+    {
+        Actions::redirect(DynamicalWeb::getRoute('service_error', array(
+            'error_type' => 'rd_us_cluster_error'
+        )));
+    }
 
-    $Subscription = $IntellivoidSubscriptionManager->getSubscriptionManager()->getSubscription(
+
+    try
+    {
+        $Subscription = $IntellivoidSubscriptionManager->getSubscriptionManager()->getSubscription(
             SubscriptionSearchMethod::byId, $UserSubscription->SubscriptionID
-    );
+        );
+    }
+    catch (SubscriptionNotFoundException $e)
+    {
+        Actions::redirect(DynamicalWeb::getRoute('service_error', array(
+            'error_type' => 'rd_s_not_found'
+        )));
+    }
+    catch(Exception $e)
+    {
+        Actions::redirect(DynamicalWeb::getRoute('service_error', array(
+            'error_type' => 'rd_s_cluster_error'
+        )));
+    }
 
-    $AccessRecord = $IntellivoidAPI->getAccessKeyManager()->getAccessRecord(
+    try
+    {
+        $AccessRecord = $IntellivoidAPI->getAccessKeyManager()->getAccessRecord(
             AccessRecordSearchMethod::byId, $UserSubscription->AccessRecordID
-    );
+        );
+    }
+    catch (AccessRecordNotFoundException $e)
+    {
+        Actions::redirect(DynamicalWeb::getRoute('service_error', array(
+            'error_type' => 'rd_ar_not_found'
+        )));
+    }
+    catch(Exception $e)
+    {
+        Actions::redirect(DynamicalWeb::getRoute('service_error', array(
+            'error_type' => 'rd_ar_cluster_error'
+        )));
+    }
 
     $ConfiguredServerConfigurations = "Unknown";
     $UsedServerConfigurations = "Unknown";
@@ -157,7 +203,7 @@ use OpenBlu\OpenBlu;
                 <h4 class="card-title"><?PHP HTML::print(TEXT_AUTHENTICATION_CARD_TITLE); ?></h4>
                 <p class="card-description"><?PHP HTML::print(TEXT_AUTHENTICATION_CARD_DESC); ?></p>
                 <div class="form-group border-bottom mt-5">
-                    <label for="api_key" class="card-subtitle"><?PHP HTML::print("Access Key"); ?></label>
+                    <label for="access_key" class="card-subtitle"><?PHP HTML::print("Access Key"); ?></label>
                     <input type="text" id="access_key" name="access_key" class="form-control" value="<?PHP HTML::print($AccessRecord->AccessKey); ?>" readonly>
                 </div>
 
