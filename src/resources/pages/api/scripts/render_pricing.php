@@ -6,9 +6,9 @@
     use DynamicalWeb\Runtime;
     use IntellivoidSubscriptionManager\Exceptions\SubscriptionPlanNotFoundException;
     use IntellivoidSubscriptionManager\IntellivoidSubscriptionManager;
-use IntellivoidSubscriptionManager\Objects\Subscription\Feature;
+    use IntellivoidSubscriptionManager\Objects\Subscription\Feature;
 
-Runtime::import('IntellivoidSubscriptionManager');
+    Runtime::import('IntellivoidSubscriptionManager');
 
     $IntellivoidSubscriptionManager = new IntellivoidSubscriptionManager();
     $ApplicationConfiguration = DynamicalWeb::getConfiguration('coasniffle');

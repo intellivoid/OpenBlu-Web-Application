@@ -6,51 +6,98 @@
     use COASniffle\Exceptions\RequestFailedException;
     use COASniffle\Exceptions\UnsupportedAuthMethodException;
     use COASniffle\Objects\SubscriptionPurchaseResults;
-    use DynamicalWeb\DynamicalWeb;
+use DynamicalWeb\Actions;
+use DynamicalWeb\DynamicalWeb;
     use DynamicalWeb\HTML;
 
     /** @var COASniffle $COASniffle */
     $COASniffle = DynamicalWeb::getMemoryObject('coasniffle');
+    HTML::importScript('alert');
+
+    if(isset($_GET['plan']) == false)
+    {
+        Actions::redirect(DynamicalWeb::getRoute('api'));
+    }
 
     try
     {
         /** @var SubscriptionPurchaseResults $Subscription */
-        $Subscription = $COASniffle->getCOA()->createSubscription(WEB_ACCESS_TOKEN, $_GET['plan']);
+        if(isset($_GET['promotion_code']))
+        {
+            $Subscription = $COASniffle->getCOA()->createSubscription(WEB_ACCESS_TOKEN, $_GET['plan'], $_GET['promotion_code']);
+        }
+        else
+        {
+            $Subscription = $COASniffle->getCOA()->createSubscription(WEB_ACCESS_TOKEN, $_GET['plan']);
+        }
     }
     catch (BadResponseException $e)
     {
+        Actions::redirect(DynamicalWeb::getRoute(
+            'index', array('callback' => '101')
+        ));
     }
     catch (CoaAuthenticationException $e)
     {
         switch($e->getCode())
         {
             case 43:
-                // Plan not found
+                Actions::redirect(DynamicalWeb::getRoute('api', array(
+                    'callback' => '101'
+                )));
+                break;
 
             case 44:
-                // Promotion not found
+                Actions::redirect(DynamicalWeb::getRoute('purchase', array(
+                    'plan' => $_GET['plan'],
+                    'callback' => '100'
+                )));
+                break;
 
             case 45:
-                // Plan not available
+                Actions::redirect(DynamicalWeb::getRoute('api', array(
+                    'callback' => '102'
+                )));
+                break;
 
             case 46:
-                // Promotion not available
+                Actions::redirect(DynamicalWeb::getRoute('purchase', array(
+                    'plan' => $_GET['plan'],
+                    'callback' => '101'
+                )));
+                break;
 
             case 47:
-                // Promotion expired
+                Actions::redirect(DynamicalWeb::getRoute('purchase', array(
+                    'plan' => $_GET['plan'],
+                    'callback' => '102'
+                )));
+                break;
 
             case 48:
-                // Promotion code not applicable to plan
+                Actions::redirect(DynamicalWeb::getRoute('purchase', array(
+                    'plan' => $_GET['plan'],
+                    'callback' => '103'
+                )));
+                break;
 
             default:
-                // COA Error
+                Actions::redirect(DynamicalWeb::getRoute(
+                    'index', array('callback' => '102', 'coa_error' => (string)$e->getCode())
+                ));
         }
     }
     catch (RequestFailedException $e)
     {
+        Actions::redirect(DynamicalWeb::getRoute(
+            'index', array('callback' => '103')
+        ));
     }
     catch (UnsupportedAuthMethodException $e)
     {
+        Actions::redirect(DynamicalWeb::getRoute(
+            'index', array('callback' => '104')
+        ));
     }
 ?>
 <!DOCTYPE html>
@@ -70,7 +117,7 @@
                     <div class="content-wrapper">
 
                         <div class="col-12">
-                            <?PHP //HTML::importScript('callbacks'); ?>
+                            <?PHP HTML::importScript('callbacks'); ?>
                             <div class="card animated fadeInUp">
                                 <div class="card-body">
 
@@ -116,7 +163,7 @@
                                                 <h1 class="font-weight-normal mb-4 text-success">$<?PHP HTML::print($Subscription->SubscriptionDetails->InitialPrice); ?> USD</h1>
                                                 <p>
                                                     <?PHP
-                                                        $Text = "And every %bc days you pay $%cp USD ";
+                                                        $Text = "You pay $%cp USD every %bc";
                                                         $Text = str_ireplace('%bc', intval(abs($Subscription->SubscriptionDetails->BillingCycle)/60/60/24), $Text);
                                                         $Text = str_ireplace('%cp', $Subscription->SubscriptionDetails->CyclePrice, $Text);
                                                         HTML::print($Text);
@@ -136,8 +183,8 @@
                                     <div class="card-body animated fadeIn">
                                         <h4 class="card-title"><?PHP HTML::print(TEXT_PROMOTION_HEADER); ?></h4>
                                         <p class="card-description"><?PHP HTML::print(TEXT_PROMOTION_DESC); ?></p>
-                                        <form action="<?PHP DynamicalWeb::getRoute('purchase', $_GET, true); ?>" method="GET">
-                                            <input type="hidden" name="plan" id="plan" value="test">
+                                        <form action="<?PHP DynamicalWeb::getRoute('purchase', array(), true); ?>" method="GET">
+                                            <input type="hidden" name="plan" id="plan" value="<?PHP HTML::print( $_GET['plan']); ?>">
                                             <div class="form-group">
                                                 <label for="promotion_code"><?PHP HTML::print(TEXT_PROMOTION_LABEL); ?></label>
                                                 <input type="text" class="form-control" name="promotion_code" id="promotion_code" placeholder="<?PHP HTML::print(TEXT_PROMOTION_PLACEHOLDER); ?>">
