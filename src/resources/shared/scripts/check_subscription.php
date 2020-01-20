@@ -36,7 +36,16 @@ use OpenBlu\Objects\UserSubscription;
 
     function verify_subscription()
     {
-        $OpenBlu = new OpenBlu();
+        if(isset(DynamicalWeb::$globalObjects['openblu']) == false)
+        {
+            /** @var OpenBlu $OpenBlu */
+            $OpenBlu = DynamicalWeb::setMemoryObject('openblu', new OpenBlu());
+        }
+        else
+        {
+            /** @var OpenBlu $OpenBlu */
+            $OpenBlu = DynamicalWeb::getMemoryObject('openblu');
+        }
 
         try
         {
@@ -57,7 +66,16 @@ use OpenBlu\Objects\UserSubscription;
             )));
         }
 
-        $IntellivoidSubscriptionManager = new IntellivoidSubscriptionManager();
+        if(isset(DynamicalWeb::$globalObjects['intellivoid_subscription_manager']) == false)
+        {
+            /** @var IntellivoidSubscriptionManager $IntellivoidSubscriptionManager */
+            $IntellivoidSubscriptionManager = DynamicalWeb::setMemoryObject('intellivoid_subscription_manager', new IntellivoidSubscriptionManager());
+        }
+        else
+        {
+            /** @var IntellivoidSubscriptionManager $IntellivoidSubscriptionManager */
+            $IntellivoidSubscriptionManager = DynamicalWeb::getMemoryObject('intellivoid_subscription_manager');
+        }
 
         try
         {
@@ -94,8 +112,27 @@ use OpenBlu\Objects\UserSubscription;
             )));
         }
 
-        $OpenBlu = new OpenBlu();
-        $IntellivoidSubscriptionManager = new IntellivoidSubscriptionManager();
+        if(isset(DynamicalWeb::$globalObjects['openblu']) == false)
+        {
+            /** @var OpenBlu $OpenBlu */
+            $OpenBlu = DynamicalWeb::setMemoryObject('openblu', new OpenBlu());
+        }
+        else
+        {
+            /** @var OpenBlu $OpenBlu */
+            $OpenBlu = DynamicalWeb::getMemoryObject('openblu');
+        }
+
+        if(isset(DynamicalWeb::$globalObjects['intellivoid_subscription_manager']) == false)
+        {
+            /** @var IntellivoidSubscriptionManager $IntellivoidSubscriptionManager */
+            $IntellivoidSubscriptionManager = DynamicalWeb::setMemoryObject('intellivoid_subscription_manager', new IntellivoidSubscriptionManager());
+        }
+        else
+        {
+            /** @var IntellivoidSubscriptionManager $IntellivoidSubscriptionManager */
+            $IntellivoidSubscriptionManager = DynamicalWeb::getMemoryObject('intellivoid_subscription_manager');
+        }
 
         $UserSubscription = check_user_subscription($OpenBlu);
         if(is_null($UserSubscription))
@@ -229,7 +266,16 @@ use OpenBlu\Objects\UserSubscription;
 
     function register_subscription(OpenBlu $openBlu, Subscription $subscription, int $application_id): UserSubscription
     {
-        $IntellivoidAPI = new IntellivoidAPI();
+        if(isset(DynamicalWeb::$globalObjects['intellivoid_api']) == false)
+        {
+            /** @var IntellivoidAPI $IntellivoidAPI */
+            $IntellivoidAPI = DynamicalWeb::setMemoryObject('intellivoid_api', new IntellivoidAPI());
+        }
+        else
+        {
+            /** @var IntellivoidAPI $IntellivoidAPI */
+            $IntellivoidAPI = DynamicalWeb::getMemoryObject('intellivoid_api');
+        }
 
         try
         {

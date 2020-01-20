@@ -7,7 +7,7 @@
 
     if(WEB_SUBSCRIPTION_ACTIVE == true)
     {
-        HTML::importScript('dashboard_actions');
+        //HTML::importScript('dashboard_actions');
     }
 
     HTML::importScript('alert');
@@ -50,7 +50,7 @@
         <?PHP
             if(WEB_SUBSCRIPTION_ACTIVE == true)
             {
-                HTML::importScript('render_charts_js');
+                //HTML::importScript('render_charts_js');
             }
        ?>
     </body>
