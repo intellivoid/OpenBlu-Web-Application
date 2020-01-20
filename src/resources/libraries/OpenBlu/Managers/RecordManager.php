@@ -1,9 +1,7 @@
 <?php
 
     namespace OpenBlu\Managers;
-    use AnalyticsManager\Abstracts\RecordSearchMethod;
-    use AnalyticsManager\Exceptions\RecordAlreadyExistsException as RecordAlreadyExistsExceptionAlias;
-    use AnalyticsManager\Exceptions\RecordNotFoundException;
+    use msqg\QueryBuilder;
     use OpenBlu\Exceptions\DatabaseException;
     use OpenBlu\Exceptions\InvalidIPAddressException;
     use OpenBlu\Exceptions\InvalidSearchMethodException;
@@ -51,7 +49,10 @@
             $PublicID = $this->openBlu->database->real_escape_string(Hashing::calculateUpdateRecordPublicID($data));
             $RequestTime = (int)time();
 
-            $Query = "INSERT INTO `update_records` (public_id, request_time) VALUES ('$PublicID', $RequestTime)";
+            $Query = QueryBuilder::insert_into('update_records', array(
+                'public_id' => $PublicID,
+                'request_time' => $RequestTime
+            ));
             $QueryResults = $this->openBlu->database->query($Query);
 
             if($QueryResults == true)
@@ -80,7 +81,7 @@
             {
                 case \OpenBlu\Abstracts\SearchMethods\UpdateRecord::byPublicID:
                     $searchMethod = $this->openBlu->database->real_escape_string($searchMethod);
-                    $input = "\"" . $this->openBlu->database->real_escape_string($input) . "\"";
+                    $input = $this->openBlu->database->real_escape_string($input);
                     break;
 
                 case \OpenBlu\Abstracts\SearchMethods\UpdateRecord::byID:
@@ -92,7 +93,11 @@
                     throw new InvalidSearchMethodException();
             }
 
-            $Query = "SELECT id, public_id, request_time FROM `update_records` WHERE $searchMethod=$input";
+            $Query = QueryBuilder::select('update_records', [
+                'id',
+                'public_id',
+                'request_time'
+            ], $searchMethod, $input);
             $QueryResults = $this->openBlu->database->query($Query);
 
             if($QueryResults == false)
@@ -114,17 +119,15 @@
          * Syncs the database with updated information
          *
          * @param string $endpoint
+         * @param bool $cli_logging
          * @throws DatabaseException
          * @throws InvalidIPAddressException
          * @throws InvalidSearchMethodException
-         * @throws RecordAlreadyExistsExceptionAlias
-         * @throws RecordNotFoundException
          * @throws SyncException
          * @throws UpdateRecordNotFoundException
          * @throws VPNNotFoundException
-         * @throws \AnalyticsManager\Exceptions\DatabaseException
          */
-        public function sync(string $endpoint = "http://www.vpngate.net/api/iphone")
+        public function sync(string $endpoint = "http://www.vpngate.net/api/iphone", bool $cli_logging=False)
         {
             // Get cURL resource
             $curl = curl_init();
@@ -140,17 +143,23 @@
                 CURLOPT_USERAGENT => 'OpenBlu/1.0 (Library)'
             ));
 
+            if($cli_logging){ print("Making HTTP request to Gateway ..." . PHP_EOL); }
             $Response = curl_exec($curl);
             $Error = curl_error($curl);
             curl_close($curl);
+            if($cli_logging){ print("HTTP Connection closed" . PHP_EOL); }
 
             if($Error)
             {
+                if($cli_logging){ print("HTTP Error: " . $Error . PHP_EOL); }
                 throw new SyncException($Error);
             }
 
             $PublicID = Hashing::calculateUpdateRecordPublicID($Response);
             $RecordFile = $this->writeRecordFile($PublicID, $Response);
+
+            if($cli_logging){ print("Record ID: " . $PublicID . PHP_EOL); }
+            if($cli_logging){ print("Record File: " . $RecordFile . PHP_EOL); }
 
             try
             {
@@ -164,7 +173,8 @@
 
             $Response = null; // Free up Memory
 
-            $this->importCSV($RecordFile);
+            if($cli_logging){ print("Importing CSV File to Database" . PHP_EOL); }
+            $this->importCSV($RecordFile, $cli_logging);
         }
 
         /**
@@ -199,15 +209,13 @@
          * Imports contents of a CSV file to the database
          *
          * @param string $RecordFile
+         * @param bool $cli_logging
          * @throws DatabaseException
-         * @throws InvalidSearchMethodException
-         * @throws \AnalyticsManager\Exceptions\DatabaseException
-         * @throws RecordAlreadyExistsExceptionAlias
-         * @throws RecordNotFoundException
          * @throws InvalidIPAddressException
+         * @throws InvalidSearchMethodException
          * @throws VPNNotFoundException
          */
-        private function importCSV(string $RecordFile)
+        private function importCSV(string $RecordFile, $cli_logging=False)
         {
             if(($handle = fopen($RecordFile, 'r')) !== false)
             {
@@ -218,6 +226,7 @@
                 {
                     if($LineCounter > 1)
                     {
+                        if($cli_logging){ print("Processing line " . $LineCounter . PHP_EOL); }
                         if(isset($data[0]) == false)
                         {
                             continue;
@@ -285,6 +294,8 @@
                                 $VPNObject->Country = 'N/A';
                             }
 
+                            if($cli_logging){ print("Processing server " . $VPNObject->IP . ' (' . $VPNObject->HostName . ')' . PHP_EOL); }
+
                             $this->openBlu->getVPNManager()->syncVPN($VPNObject);
                         }
                     }
@@ -292,17 +303,10 @@
                     unset($data);
                     $LineCounter += 1;
                 }
+                if($cli_logging){ print("File imported successfully" . PHP_EOL); }
                 fclose($handle);
             }
 
-            if($this->openBlu->getAnalyticsManager()->getManager()->nameExists('vpn_analytics', 'sessions') == false)
-            {
-                $this->openBlu->getAnalyticsManager()->getManager()->createRecord('vpn_analytics', 'sessions');
-            }
-
-            $Record = $this->openBlu->getAnalyticsManager()->getManager()->getRecord('vpn_analytics', RecordSearchMethod::byName, 'sessions');
-            $Record->tally($this->openBlu->getVPNManager()->currentSessions(), false, true);
-            $this->openBlu->getAnalyticsManager()->getManager()->updateRecord('vpn_analytics',  $Record);
 
         }
     }

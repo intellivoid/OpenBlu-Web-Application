@@ -4,55 +4,43 @@
 
     use acm\acm;
     use acm\Objects\Schema;
-    use AnalyticsManager\AnalyticsManager;
     use Exception;
     use mysqli;
-    use OpenBlu\Managers\APIManager;
-    use OpenBlu\Managers\ClientManager;
-    use OpenBlu\Managers\PlanManager;
     use OpenBlu\Managers\RecordManager;
+    use OpenBlu\Managers\UserSubscriptionManager;
     use OpenBlu\Managers\VPNManager;
 
-    include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Abstracts' . DIRECTORY_SEPARATOR . 'SearchMethods' . DIRECTORY_SEPARATOR . 'ClientSearchMethod.php');
-    include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Abstracts' . DIRECTORY_SEPARATOR . 'SearchMethods' . DIRECTORY_SEPARATOR . 'PlanSearchMethod.php');
     include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Abstracts' . DIRECTORY_SEPARATOR . 'SearchMethods' . DIRECTORY_SEPARATOR . 'UpdateRecord.php');
+    include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Abstracts' . DIRECTORY_SEPARATOR . 'SearchMethods' . DIRECTORY_SEPARATOR . 'UserSubscriptionSearchMethod.php');
     include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Abstracts' . DIRECTORY_SEPARATOR . 'SearchMethods' . DIRECTORY_SEPARATOR . 'VPN.php');
-    include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Abstracts' . DIRECTORY_SEPARATOR . 'APIPlan.php');
-    include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Abstracts' . DIRECTORY_SEPARATOR . 'BillingCycle.php');
     include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Abstracts' . DIRECTORY_SEPARATOR . 'DefaultValues.php');
     include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Abstracts' . DIRECTORY_SEPARATOR . 'ExceptionCodes.php');
     include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Abstracts' . DIRECTORY_SEPARATOR . 'FilterType.php');
     include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Abstracts' . DIRECTORY_SEPARATOR . 'OrderBy.php');
     include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Abstracts' . DIRECTORY_SEPARATOR . 'OrderDirection.php');
+    include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Abstracts' . DIRECTORY_SEPARATOR . 'UserSubscriptionStatus.php');
 
-    include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Exceptions' . DIRECTORY_SEPARATOR . 'ClientNotFoundException.php');
     include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Exceptions' . DIRECTORY_SEPARATOR . 'ConfigurationNotFoundException.php');
     include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Exceptions' . DIRECTORY_SEPARATOR . 'DatabaseException.php');
-    include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Exceptions' . DIRECTORY_SEPARATOR . 'InvalidApiPlanTypeException.php');
-    include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Exceptions' . DIRECTORY_SEPARATOR . 'InvalidClientPropertyException.php');
     include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Exceptions' . DIRECTORY_SEPARATOR . 'InvalidFilterTypeException.php');
     include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Exceptions' . DIRECTORY_SEPARATOR . 'InvalidFilterValueException.php');
     include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Exceptions' . DIRECTORY_SEPARATOR . 'InvalidIPAddressException.php');
     include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Exceptions' . DIRECTORY_SEPARATOR . 'InvalidOrderByTypeException.php');
     include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Exceptions' . DIRECTORY_SEPARATOR . 'InvalidOrderDirectionException.php');
     include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Exceptions' . DIRECTORY_SEPARATOR . 'InvalidSearchMethodException.php');
-    include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Exceptions' . DIRECTORY_SEPARATOR . 'LimitExceedingException.php');
     include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Exceptions' . DIRECTORY_SEPARATOR . 'NoResultsFoundException.php');
     include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Exceptions' . DIRECTORY_SEPARATOR . 'PageNotFoundException.php');
-    include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Exceptions' . DIRECTORY_SEPARATOR . 'PlanNotFoundException.php');
     include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Exceptions' . DIRECTORY_SEPARATOR . 'SyncException.php');
     include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Exceptions' . DIRECTORY_SEPARATOR . 'UpdateRecordNotFoundException.php');
+    include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Exceptions' . DIRECTORY_SEPARATOR . 'UserSubscriptionRecordNotFoundException.php');
     include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Exceptions' . DIRECTORY_SEPARATOR . 'VPNNotFoundException.php');
 
-    include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Managers' . DIRECTORY_SEPARATOR . 'APIManager.php');
-    include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Managers' . DIRECTORY_SEPARATOR . 'ClientManager.php');
-    include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Managers' . DIRECTORY_SEPARATOR . 'PlanManager.php');
     include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Managers' . DIRECTORY_SEPARATOR . 'RecordManager.php');
+    include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Managers' . DIRECTORY_SEPARATOR . 'UserSubscriptionManager.php');
     include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Managers' . DIRECTORY_SEPARATOR . 'VPNManager.php');
 
-    include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Objects' . DIRECTORY_SEPARATOR . 'Client.php');
-    include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Objects' . DIRECTORY_SEPARATOR . 'Plan.php');
     include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Objects' . DIRECTORY_SEPARATOR . 'UpdateRecord.php');
+    include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Objects' . DIRECTORY_SEPARATOR . 'UserSubscription.php');
     include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Objects' . DIRECTORY_SEPARATOR . 'VPN.php');
 
     include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Utilities' . DIRECTORY_SEPARATOR . 'Corrector.php');
@@ -60,19 +48,14 @@
     include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Utilities' . DIRECTORY_SEPARATOR . 'OpenVPNConfiguration.php');
     include_once(__DIR__ . DIRECTORY_SEPARATOR . 'Utilities' . DIRECTORY_SEPARATOR . 'Validate.php');
 
-    if(class_exists('AnalyticsManager\AnalyticsManager') == false)
-    {
-        include_once(__DIR__ . DIRECTORY_SEPARATOR . 'AnalyticsManager' . DIRECTORY_SEPARATOR . 'AnalyticsManager.php');
-    }
-
-    if(class_exists('ModularAPI\ModularAPI') == false)
-    {
-        include_once(__DIR__ . DIRECTORY_SEPARATOR . 'ModularAPI' . DIRECTORY_SEPARATOR . 'ModularAPI.php');
-    }
-
     if(class_exists('acm\acm') == false)
     {
         include_once(__DIR__ . DIRECTORY_SEPARATOR . 'acm' . DIRECTORY_SEPARATOR . 'acm.php');
+    }
+
+    if(class_exists('msqg\msqg') == false)
+    {
+        include_once(__DIR__ . DIRECTORY_SEPARATOR . 'msqg' . DIRECTORY_SEPARATOR . 'msqg.php');
     }
 
     include_once(__DIR__ . DIRECTORY_SEPARATOR . 'AutoConfig.php');
@@ -100,26 +83,6 @@
         private $VPNManager;
 
         /**
-         * @var AnalyticsManager
-         */
-        private $AnalyticsManager;
-
-        /**
-         * @var APIManager
-         */
-        private $APIManager;
-        
-        /**
-         * @var PlanManager
-         */
-        private $PlanManager;
-
-        /**
-         * @var ClientManager
-         */
-        private $ClientManager;
-
-        /**
          * @var acm
          */
         private $acm;
@@ -133,6 +96,11 @@
          * @var mixed
          */
         private $RecordDirectoryConfiguration;
+
+        /**
+         * @var UserSubscriptionManager
+         */
+        private $UserSubscriptionManager;
 
         /**
          * OpenBlu constructor.
@@ -158,12 +126,6 @@
 
             $this->DatabaseConfiguration = $this->acm->getConfiguration('Database');
             $this->RecordDirectoryConfiguration = $this->acm->getConfiguration('RecordDirectory');
-            //if(file_exists(__DIR__ . DIRECTORY_SEPARATOR . 'configuration.ini') == false)
-            //{
-            //    throw new ConfigurationNotFoundException();
-            //}
-
-            //$this->configuration = parse_ini_file(__DIR__ . DIRECTORY_SEPARATOR . 'configuration.ini');
 
             $this->database = new mysqli(
                 $this->DatabaseConfiguration['Host'],
@@ -174,11 +136,8 @@
             );
 
             $this->RecordManager = new RecordManager($this);
+            $this->UserSubscriptionManager = new UserSubscriptionManager($this);
             $this->VPNManager = new VPNManager($this);
-            $this->AnalyticsManager = new AnalyticsManager($this->DatabaseConfiguration['Name']);
-            $this->APIManager = new APIManager($this);
-            $this->PlanManager = new PlanManager($this);
-            $this->ClientManager = new ClientManager($this);
         }
 
         /**
@@ -198,44 +157,12 @@
         }
 
         /**
-         * @return AnalyticsManager
-         */
-        public function getAnalyticsManager(): AnalyticsManager
-        {
-            return $this->AnalyticsManager;
-        }
-
-        /**
          * @param string $file
          * @return string
          */
         public static function getResource(string $file): string
         {
             return(file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . 'Resources' . DIRECTORY_SEPARATOR . $file));
-        }
-
-        /**
-         * @return APIManager
-         */
-        public function getAPIManager(): APIManager
-        {
-            return $this->APIManager;
-        }
-
-        /**
-         * @return PlanManager
-         */
-        public function getPlanManager(): PlanManager
-        {
-            return $this->PlanManager;
-        }
-
-        /**
-         * @return ClientManager
-         */
-        public function getClientManager(): ClientManager
-        {
-            return $this->ClientManager;
         }
 
         /**
@@ -260,5 +187,13 @@
         public function getAcm(): acm
         {
             return $this->acm;
+        }
+
+        /**
+         * @return UserSubscriptionManager
+         */
+        public function getUserSubscriptionManager(): UserSubscriptionManager
+        {
+            return $this->UserSubscriptionManager;
         }
     }

@@ -1,7 +1,8 @@
 <?PHP
     /** @noinspection PhpUnhandledExceptionInspection */
 
-    use DynamicalWeb\HTML;
+use DynamicalWeb\DynamicalWeb;
+use DynamicalWeb\HTML;
 
     HTML::importScript('action.download');
     HTML::importScript('check_selection');
@@ -170,44 +171,12 @@
                             <div class="col-md-4 grid-margin stretch-card">
                                 <div class="card animated slideInRight">
                                     <div class="card-body">
-
                                         <h4 class="card-title"><?PHP HTML::print(TEXT_CARD_CONNECT_TITLE); ?></h4>
-                                        <?PHP
-                                            if(WEB_CLIENT_MODE_ENABLED == true)
-                                            {
-                                                ?>
-                                                <p class="card-description"><?PHP HTML::print(TEXT_CARD_CONNECT_CLIENT_DESC); ?></p>
-                                                <?PHP
-                                            }
-                                            else
-                                            {
-                                                ?>
-                                                <p class="card-description"><?PHP HTML::print(TEXT_CARD_CONNECT_OPENVPN_DESC); ?></p>
-                                                <?PHP
-                                            }
-                                        ?>
-
+                                        <p class="card-description"><?PHP HTML::print(TEXT_CARD_CONNECT_OPENVPN_DESC); ?></p>
                                         <div class="row mt-3">
-
-                                            <?PHP
-                                                if(WEB_CLIENT_MODE_ENABLED == true)
-                                                {
-                                                    ?>
-                                                    <button type="button" onclick="location.href='/server?action=download&token=<?PHP HTML::print(CACHE_VPN_TOKEN); ?>'" class="btn btn-block btn-lg btn-inverse-success">
-                                                        <i class="mdi mdi-lan-connect"></i> Connect
-                                                    </button>
-                                                    <?PHP
-                                                }
-                                                else
-                                                {
-                                                    ?>
-                                                    <button type="button" onclick="process_download();" class="btn btn-block btn-lg btn-inverse-info">
-                                                        <i class="mdi mdi-cloud-download"></i> <?PHP HTML::print(TEXT_CARD_CONNECT_OPENVPN_DOWNLOAD_BUTTON); ?>
-                                                    </button>
-                                                    <?PHP
-                                                }
-                                            ?>
-
+                                            <button type="button" onclick="process_download();" class="btn btn-block btn-lg btn-inverse-info">
+                                                <i class="mdi mdi-cloud-download"></i> <?PHP HTML::print(TEXT_CARD_CONNECT_OPENVPN_DOWNLOAD_BUTTON); ?>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -225,10 +194,9 @@
         <script>
             function process_download()
             {
-
                 $.ajax({
                     type: "GET",
-                    url: "/server?action=gen_token&pub_id=<?PHP print(urlencode(CACHE_VPN_PUBLIC_ID)); ?>",
+                    url: "<?PHP DynamicalWeb::getRoute('server', array('action' => 'gen_token', 'pub_id' => CACHE_VPN_PUBLIC_ID), true); ?>",
                     success: function(results)
                     {
                         if(results.success === false)
@@ -257,7 +225,7 @@
                                 "<?PHP HTML::print(TEXT_NOTIFICATION_DOWNLOAD_STARTED_MESSAGE); ?>",
                                 "success"
                             );
-                            location.href = '/server?action=download&token={0}'.format(results.download_token);
+                            location.href = '<?PHP DynamicalWeb::getRoute('server', array('action' => 'download'), true); ?>&token={0}'.format(results.download_token);
                         }
                     }
                 });

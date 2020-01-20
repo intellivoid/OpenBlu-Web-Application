@@ -229,7 +229,7 @@
             "CALLBACK_107": "Your account has been created!",
             "CALLBACK_108": "Captcha verification failed, please solve the captcha correctly"
         },
-        "confirm_purchase": {
+        "purchase": {
             "PAGE_TITLE": "OpenBlu - Confirm Purchase",
             "PLACEHOLDER_PRICE_FREE": "Free",
             "PLACEHOLDER_PRICE": "US $%s",

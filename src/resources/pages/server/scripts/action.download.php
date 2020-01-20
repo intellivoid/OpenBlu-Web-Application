@@ -2,8 +2,8 @@
 
     use DynamicalWeb\DynamicalWeb;
     use DynamicalWeb\Page;
-use DynamicalWeb\Runtime;
-use OpenBlu\Abstracts\SearchMethods\VPN;
+    use DynamicalWeb\Runtime;
+    use OpenBlu\Abstracts\SearchMethods\VPN;
     use OpenBlu\Exceptions\VPNNotFoundException;
     use OpenBlu\OpenBlu;
     use sws\sws;

@@ -1,5 +1,89 @@
 <?PHP
+
+    use DynamicalWeb\DynamicalWeb;
     use DynamicalWeb\HTML;
+    use DynamicalWeb\Page;
+    use DynamicalWeb\Runtime;
+    use IntellivoidSubscriptionManager\Exceptions\SubscriptionPlanNotFoundException;
+    use IntellivoidSubscriptionManager\IntellivoidSubscriptionManager;
+    use IntellivoidSubscriptionManager\Objects\Subscription\Feature;
+
+    Runtime::import('IntellivoidSubscriptionManager');
+
+    $IntellivoidSubscriptionManager = new IntellivoidSubscriptionManager();
+    $ApplicationConfiguration = DynamicalWeb::getConfiguration('coasniffle');
+
+    try
+    {
+        $FreeSubscriptionPlan = $IntellivoidSubscriptionManager->getPlanManager()->getSubscriptionPlanByName(
+            $ApplicationConfiguration['APPLICATION_INTERNAL_ID'], "Free"
+        );
+    }
+    catch (SubscriptionPlanNotFoundException $e)
+    {
+        Page::staticResponse(
+            "Configuration Error", "Intellivoid Accounts Error",
+            "The subscription plan for 'FREE' is not configured properly"
+        );
+        exit();
+    }
+    catch(Exception $e)
+    {
+        Page::staticResponse(
+            "Configuration Error", "Intellivoid Accounts Error",
+            "The subscription plan for 'FREE' raised an unknown error"
+        );
+        exit();
+    }
+
+    try
+    {
+        $BasicSubscriptionPlan = $IntellivoidSubscriptionManager->getPlanManager()->getSubscriptionPlanByName(
+            $ApplicationConfiguration['APPLICATION_INTERNAL_ID'], "Basic"
+        );
+    }
+    catch (SubscriptionPlanNotFoundException $e)
+    {
+        Page::staticResponse(
+            "Configuration Error", "Intellivoid Accounts Error",
+            "The subscription plan for 'BASIC' is not configured properly"
+        );
+        exit();
+    }
+    catch(Exception $e)
+    {
+        Page::staticResponse(
+            "Configuration Error", "Intellivoid Accounts Error",
+            "The subscription plan for 'BASIC' raised an unknown error"
+        );
+        exit();
+    }
+
+    try
+    {
+        $EnterpriseSubscriptionPlan = $IntellivoidSubscriptionManager->getPlanManager()->getSubscriptionPlanByName(
+            $ApplicationConfiguration['APPLICATION_INTERNAL_ID'], "Enterprise"
+        );
+    }
+    catch (SubscriptionPlanNotFoundException $e)
+    {
+        Page::staticResponse(
+            "Configuration Error", "Intellivoid Accounts Error",
+            "The subscription plan for 'ENTERPRISE' is not configured properly"
+        );
+        exit();
+    }
+    catch(Exception $e)
+    {
+        Page::staticResponse(
+            "Configuration Error", "Intellivoid Accounts Error",
+            "The subscription plan for 'ENTERPRISE' raised an unknown error"
+        );
+        exit();
+    }
+
+    $COASniffle = DynamicalWeb::getMemoryObject('coasniffle');
+    $Protocol = strtolower(substr($_SERVER["SERVER_PROTOCOL"],0,strpos( $_SERVER["SERVER_PROTOCOL"],'/'))).'://';
 
     $FreeLocation = '';
     $BasicLocation = '';
@@ -7,44 +91,30 @@
 
     if(WEB_SESSION_ACTIVE == false)
     {
-        $FreeLocation = '/register?redirect=purchase_plan&type=free';
-        $BasicLocation = '/register?redirect=purchase_plan&type=basic';
-        $EnterpriseLocation = '/register?redirect=purchase_plan&type=enterprise';
+        $FreeLocation = $COASniffle->getCOA()->getAuthenticationURL(
+            $Protocol . $_SERVER['HTTP_HOST'] . DynamicalWeb::getRoute('index', array(
+                'redirect' => 'confirm_purchase', 'plan' => 'free'
+            ))
+        );
+        $BasicLocation = $COASniffle->getCOA()->getAuthenticationURL(
+            $Protocol . $_SERVER['HTTP_HOST'] . DynamicalWeb::getRoute('index', array(
+                'redirect' => 'confirm_purchase', 'plan' => 'basic'
+            ))
+        );
+        $EnterpriseLocation = $COASniffle->getCOA()->getAuthenticationURL(
+            $Protocol . $_SERVER['HTTP_HOST'] . DynamicalWeb::getRoute('index', array(
+                'redirect' => 'confirm_purchase', 'plan' => 'enterprise'
+            ))
+        );
     }
     else
     {
-        $FreeLocation = '/confirm_purchase?plan=free';
-        $BasicLocation = '/confirm_purchase?plan=basic';
-        $EnterpriseLocation = '/confirm_purchase?plan=enterprise';
+        $FreeLocation = DynamicalWeb::getRoute('purchase', array('plan' => 'free'));
+        $BasicLocation = DynamicalWeb::getRoute('purchase', array('plan' => 'basic'));
+        $EnterpriseLocation = DynamicalWeb::getRoute('purchase', array('plan' => 'enterprise'));
     }
 
-    /** @noinspection PhpUnhandledExceptionInspection */
-    HTML::importScript('api_prices');
 
-    /** @noinspection PhpUnhandledExceptionInspection */
-    $Free = api_prices_get_free();
-
-    /** @noinspection PhpUnhandledExceptionInspection */
-    $Basic = api_prices_get_basic();
-
-    /** @noinspection PhpUnhandledExceptionInspection */
-    $Enterprise = api_prices_get_enterprise();
-
-    $FreePrice = "$0.00";
-    $BasicPrice = "$0.00";
-    $EnterprisePrice = "$0.00";
-
-    if($Free->Price > 0) { $FreePrice = '$' . $Free->Price; }
-    if($Basic->Price > 0) { $BasicPrice = '$' . $Basic->Price; }
-    if($Enterprise->Price > 0) { $EnterprisePrice = '$' . $Enterprise->Price; }
-
-    $FreeCalls = TEXT_UNLIMITED_CALLS;
-    $BasicCalls = TEXT_UNLIMITED_CALLS;
-    $EnterpriseCalls = TEXT_UNLIMITED_CALLS;
-
-    if($Free->CallsMonthly > 0 ) { $FreeCalls = str_ireplace('%s', $Free->CallsMonthly, TEXT_CALLS_PER_MONTH); }
-    if($Basic->CallsMonthly > 0 ) { $BasicCalls = str_ireplace('%s', $Basic->CallsMonthly, TEXT_CALLS_PER_MONTH); }
-    if($Enterprise->CallsMonthly > 0 ) { $EnterpriseCalls = str_ireplace('%s', $Enterprise->CallsMonthly, TEXT_CALLS_PER_MONTH); }
 ?>
 <div class="col-12">
     <div class="card animated fadeInUp">
@@ -52,21 +122,42 @@
             <h4 class="card-title">API Plans</h4>
             <?PHP HTML::importScript('callbacks'); ?>
             <div class="container text-center pt-5">
-                <h4 class="mb-3 mt-5"><?PHP HTML::print(TEXT_PRICING_HEADER); ?></h4>
+                <h4 class="mb-3 mt-2"><?PHP HTML::print(TEXT_PRICING_HEADER); ?></h4>
                 <p class="w-75 mx-auto mb-5"><?PHP HTML::print(TEXT_PRICING_DESC); ?></p>
                 <div class="row pricing-table">
                     <div class="col-md-4 grid-margin stretch-card pricing-card">
                         <div class="card border-primary border pricing-card-body">
                             <div class="text-center pricing-card-head">
-                                <h3> <i class="mdi mdi-console-line"></i> <?PHP HTML::print(TEXT_PRICING_FREE_HEADER); ?></h3>
-                                <p><?PHP HTML::print(TEXT_PRICING_FREE_SUB_HEADER); ?></p>
-                                <h1 class="font-weight-normal mb-4"><?PHP HTML::print($FreePrice); ?></h1>
+                                <h3>
+                                    <i class="mdi mdi-console-line"></i>
+                                    <?PHP HTML::print($FreeSubscriptionPlan->PlanName); ?>
+                                </h3>
+                                <p class="text-muted">Renewed every month for free</p>
                             </div>
                             <ul class="list-unstyled plan-features">
-                                <li><?PHP HTML::print($FreeCalls); ?></li>
-                                <li><?PHP HTML::print(TEXT_PRICING_FREE_FEATURE_1); ?></li>
-                                <li><?PHP HTML::print(TEXT_PRICING_FREE_FEATURE_2); ?></li>
-                                <li><?PHP HTML::print(TEXT_PRICING_FREE_FEATURE_3); ?></li>
+                                <?PHP
+                                    /** @var Feature $feature */
+                                    foreach($FreeSubscriptionPlan->Features as $feature)
+                                    {
+                                        switch($feature->Name)
+                                        {
+                                            case 'SERVER_CONFIGS':
+                                                $Text = "%s VPN Server configurations";
+                                                if($feature->Value > 0)
+                                                {
+                                                    $Text = str_ireplace('%s', $feature->Value, $Text);
+                                                }
+                                                else
+                                                {
+                                                    $Text = str_ireplace('%s', "Unlimited", $Text);
+                                                }
+                                                ?><li><?PHP HTML::print($Text); ?></li><?PHP
+                                                break;
+                                        }
+                                    }
+                                ?>
+                                <li>Public Server Listings</li>
+                                <li>Configuration Parameters</li>
                             </ul>
                             <div class="wrapper">
                                 <a href="<?PHP HTML::print($FreeLocation, false); ?>" class="btn btn-inverse-primary btn-block"><?PHP HTML::print(TEXT_PRICING_FREE_SUBMIT); ?></a href="#">
@@ -76,46 +167,95 @@
                     <div class="col-md-4 grid-margin stretch-card pricing-card">
                         <div class="card border border-success pricing-card-body">
                             <div class="text-center pricing-card-head">
-                                <h3 class="text-success"> <i class="mdi mdi-console-line"></i> <?PHP HTML::print(TEXT_PRICING_BASIC_HEADER); ?></h3>
-                                <p><?PHP HTML::print(TEXT_PRICING_BASIC_SUB_HEADER); ?></p>
-                                <h1 class="font-weight-normal mb-4">
-                                    <?PHP HTML::print($BasicPrice); ?></h1>
-                                    <p class="text-muted"><?PHP HTML::print(TEXT_PRICING_BASIC_CYCLE); ?></p>
-                                </h1>
-
+                                <h3 class="text-success">
+                                    <i class="mdi mdi-console-line"></i>
+                                    <?PHP HTML::print($BasicSubscriptionPlan->PlanName); ?>
+                                </h3>
+                                <?PHP
+                                    $Text = "$%s USD Every month";
+                                    $Text = str_ireplace('%s', $BasicSubscriptionPlan->CyclePrice, $Text);
+                                ?>
+                                <p><?PHP HTML::print($Text); ?></p>
                             </div>
                             <ul class="list-unstyled plan-features">
-                                <li><?PHP HTML::print($BasicCalls); ?></li>
-                                <li><?PHP HTML::print(TEXT_PRICING_BASIC_FEATURE_1) ?></li>
-                                <li><?PHP HTML::print(TEXT_PRICING_BASIC_FEATURE_2); ?></li>
-                                <li><?PHP HTML::print(TEXT_PRICING_BASIC_FEATURE_3); ?></li>
+                                <?PHP
+                                /** @var Feature $feature */
+                                foreach($BasicSubscriptionPlan->Features as $feature)
+                                {
+                                    switch($feature->Name)
+                                    {
+                                        case 'SERVER_CONFIGS':
+                                            $Text = "%s VPN Server configurations";
+                                            if($feature->Value > 0)
+                                            {
+                                                $Text = str_ireplace('%s', $feature->Value, $Text);
+                                            }
+                                            else
+                                            {
+                                                $Text = str_ireplace('%s', "Unlimited", $Text);
+                                            }
+                                            ?><li><?PHP HTML::print($Text); ?></li><?PHP
+                                            break;
+                                    }
+                                }
+                                ?>
+                                <li>Public Server Listings</li>
+                                <li>Configuration Parameters</li>
                             </ul>
                             <div class="wrapper">
-                                <a href="<?PHP HTML::print($BasicLocation, false); ?>" class="btn btn-inverse-success btn-block"><?PHP HTML::print(TEXT_PRICING_BASIC_SUBMIT); ?></a>
+                                <a href="<?PHP HTML::print($BasicLocation, false); ?>" class="btn btn-inverse-success btn-block">
+                                    <?PHP HTML::print(str_ireplace('%s', $BasicSubscriptionPlan->InitialPrice, "Purchase now ($%s USD)")); ?>
+                                </a>
                             </div>
                         </div>
                     </div>
+
                     <div class="col-md-4 grid-margin stretch-card pricing-card">
                         <div class="card border border-danger pricing-card-body">
                             <div class="text-center pricing-card-head">
-                                <h3 class="text-danger"> <i class="mdi mdi-console-line"></i> <?PHP HTML::print(TEXT_PRICING_ENTERPRISE_HEADER); ?></h3>
-                                <p><?PHP HTML::print(TEXT_PRICING_ENTERPRISE_SUB_HEADER); ?></p>
-                                <h1 class="font-weight-normal mb-4">
-                                    <?PHP HTML::print($EnterprisePrice); ?></h1>
-                                    <p class="text-muted"><?PHP HTML::print(TEXT_PRICING_ENTERPRISE_CYCLE); ?></p>
-                                </h1>
+                                <h3 class="text-danger">
+                                    <i class="mdi mdi-console-line"></i>
+                                    <?PHP HTML::print($EnterpriseSubscriptionPlan->PlanName); ?>
+                                </h3>
+                                <?PHP
+                                $Text = "$%s USD Every month";
+                                $Text = str_ireplace('%s', $EnterpriseSubscriptionPlan->CyclePrice, $Text);
+                                ?>
+                                <p><?PHP HTML::print($Text); ?></p>
                             </div>
                             <ul class="list-unstyled plan-features">
-                                <li><?PHP HTML::print($EnterpriseCalls); ?></li>
-                                <li><?PHP HTML::print(TEXT_PRICING_ENTERPRISE_FEATURE_1); ?></li>
-                                <li><?PHP HTML::print(TEXT_PRICING_ENTERPRISE_FEATURE_2); ?></li>
-                                <li><?PHP HTML::print(TEXT_PRICING_ENTERPRISE_FEATURE_3); ?></li>
+                                <?PHP
+                                /** @var Feature $feature */
+                                foreach($EnterpriseSubscriptionPlan->Features as $feature)
+                                {
+                                    switch($feature->Name)
+                                    {
+                                        case 'SERVER_CONFIGS':
+                                            $Text = "%s VPN Server configurations";
+                                            if($feature->Value > 0)
+                                            {
+                                                $Text = str_ireplace('%s', $feature->Value, $Text);
+                                            }
+                                            else
+                                            {
+                                                $Text = str_ireplace('%s', "Unlimited", $Text);
+                                            }
+                                            ?><li><?PHP HTML::print($Text); ?></li><?PHP
+                                            break;
+                                    }
+                                }
+                                ?>
+                                <li>Public Server Listings</li>
+                                <li>Configuration Parameters</li>
                             </ul>
                             <div class="wrapper">
-                                <a href="<?PHP HTML::print($EnterpriseLocation, false); ?>" class="btn btn-inverse-danger btn-block"><?PHP HTML::print(TEXT_PRICING_ENTERPRISE_SUBMIT); ?></a>
+                                <a href="<?PHP HTML::print($EnterpriseLocation, false); ?>" class="btn btn-inverse-danger btn-block">
+                                    <?PHP HTML::print(str_ireplace('%s', $EnterpriseSubscriptionPlan->InitialPrice, "Purchase now ($%s USD)")); ?>
+                                </a>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>

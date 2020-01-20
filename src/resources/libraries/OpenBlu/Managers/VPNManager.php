@@ -2,6 +2,7 @@
 
     namespace OpenBlu\Managers;
 
+    use msqg\QueryBuilder;
     use OpenBlu\Abstracts\FilterType;
     use OpenBlu\Abstracts\OrderBy;
     use OpenBlu\Abstracts\OrderDirection;
@@ -12,7 +13,6 @@
     use OpenBlu\Exceptions\InvalidOrderByTypeException;
     use OpenBlu\Exceptions\InvalidOrderDirectionException;
     use OpenBlu\Exceptions\InvalidSearchMethodException;
-    use OpenBlu\Exceptions\LimitExceedingException;
     use OpenBlu\Exceptions\NoResultsFoundException;
     use OpenBlu\Exceptions\PageNotFoundException;
     use OpenBlu\Exceptions\VPNNotFoundException;
@@ -42,10 +42,13 @@
         }
 
         /**
+         * Registers a VPN server to the server
+         *
          * @param VPN $vpn
          * @return bool
          * @throws DatabaseException
          * @throws InvalidIPAddressException
+         * @noinspection DuplicatedCode
          */
         public function registerVPN(VPN $vpn): bool
         {
@@ -72,7 +75,25 @@
             $Certificate = $this->openBlu->database->real_escape_string($vpn->Certificate);
             $Key = $this->openBlu->database->real_escape_string($vpn->Key);
 
-            $Query = "INSERT INTO `vpns` (public_id, host_name, ip_address, score, ping, country, country_short, sessions, total_sessions, configuration_parameters, certificate_authority, certificate, `key`, last_updated, created) VALUES ('$PublicID', '$HostName', '$IPAddress', $Score, $Ping, '$Country', '$CountryShort', $Sessions, $TotalSessions, '$ConfigurationParameters', '$CertificateAuthority', '$Certificate', '$Key', $LastUpdated, $Created)";
+            $Query = QueryBuilder::insert_into(
+                'vpns', array(
+                    'public_id' => $PublicID,
+                    'host_name' => $HostName,
+                    'ip_address' => $IPAddress,
+                    'score' => $Score,
+                    'ping' => $Ping,
+                    'country' => $Country,
+                    'country_short' => $CountryShort,
+                    'sessions' => $Sessions,
+                    'total_sessions' => $TotalSessions,
+                    'configuration_parameters' => $ConfigurationParameters,
+                    'certificate_authority' => $CertificateAuthority,
+                    'certificate' => $Certificate,
+                    '`key`' => $Key,
+                    'last_updated' => $LastUpdated,
+                    'created' => $Created
+                )
+            );
             $QueryResults = $this->openBlu->database->query($Query);
 
             if($QueryResults == true)
@@ -99,9 +120,10 @@
         {
             switch($searchMethod)
             {
+                case \OpenBlu\Abstracts\SearchMethods\VPN::byIP:
                 case \OpenBlu\Abstracts\SearchMethods\VPN::byPublicID:
                     $searchMethod = $this->openBlu->database->real_escape_string($searchMethod);
-                    $input = "\"" . $this->openBlu->database->real_escape_string($input) . "\"";
+                    $input = $this->openBlu->database->real_escape_string($input);
                     break;
 
                 case \OpenBlu\Abstracts\SearchMethods\VPN::byID:
@@ -109,16 +131,28 @@
                     $input = (int)$input;
                     break;
 
-                case \OpenBlu\Abstracts\SearchMethods\VPN::byIP:
-                    $searchMethod = $this->openBlu->database->real_escape_string($searchMethod);
-                    $input = "\"" . $this->openBlu->database->real_escape_string($input) . "\"";
-                    break;
-
                 default:
                     throw new InvalidSearchMethodException();
             }
 
-            $Query = "SELECT id, public_id, host_name, ip_address, score, ping, country, country_short, sessions, total_sessions, configuration_parameters, certificate_authority, certificate, `key`, created, last_updated FROM `vpns` WHERE $searchMethod=$input";
+            $Query = QueryBuilder::select('vpns', [
+                'id',
+                'public_id',
+                'host_name',
+                'ip_address',
+                'score',
+                'ping',
+                'country',
+                'country_short',
+                'sessions',
+                'total_sessions',
+                'configuration_parameters',
+                'certificate_authority',
+                'certificate',
+                '`key`',
+                'last_updated',
+                'created'
+            ], $searchMethod, $input);
             $QueryResults = $this->openBlu->database->query($Query);
 
             if($QueryResults == false)
@@ -147,6 +181,7 @@
          * @throws InvalidIPAddressException
          * @throws VPNNotFoundException
          * @throws InvalidSearchMethodException
+         * @noinspection DuplicatedCode
          */
         public function updateVPN(VPN $vpn): bool
         {
@@ -176,7 +211,21 @@
             $Certificate = $this->openBlu->database->real_escape_string($vpn->Certificate);
             $Key = $this->openBlu->database->real_escape_string($vpn->Key);
 
-            $Query = "UPDATE `vpns` SET host_name='$HostName', ip_address='$IPAddress', score=$Score, ping=$Ping, country='$Country', country_short='$CountryShort', sessions=$Sessions, total_sessions=$TotalSessions, configuration_parameters='$ConfigurationParameters', certificate_authority='$CertificateAuthority', certificate='$Certificate', `key`='$Key', last_updated=$LastUpdated WHERE id=$ID";
+            $Query = QueryBuilder::update('vpns', array(
+                'host_name' => $HostName,
+                'ip_address' => $IPAddress,
+                'score' => $Score,
+                'ping' => $Ping,
+                'country' => $Country,
+                'country_short' => $CountryShort,
+                'sessions' => $Sessions,
+                'total_sessions' => $TotalSessions,
+                'configuration_parameters' => $ConfigurationParameters,
+                'certificate_authority' => $CertificateAuthority,
+                'certificate' => $Certificate,
+                '`key`' => $Key,
+                'last_updated' => $LastUpdated
+            ), 'id', $ID);
             $QueryResults = $this->openBlu->database->query($Query);
 
             if($QueryResults == true)
@@ -245,6 +294,7 @@
          * Returns the total amount of servers available in the database
          *
          * @return int
+         * @noinspection PhpUnused
          */
         public function totalServers(): int
         {
@@ -263,6 +313,7 @@
          * Returns the current amount of sessions in total
          *
          * @return int
+         * @noinspection PhpUnused
          */
         public function currentSessions(): int
         {
@@ -288,6 +339,7 @@
          * Returns the total amount of sessions in total
          *
          * @return int
+         * @noinspection PhpUnused
          */
         public function totalSessions(): int
         {
@@ -344,6 +396,7 @@
          * @return array
          * @throws DatabaseException
          * @throws PageNotFoundException
+         * @noinspection PhpUnused
          */
         public function getServerPage(int $page): array
         {
@@ -405,6 +458,7 @@
          *
          * @return array
          * @throws DatabaseException
+         * @noinspection PhpUnused
          */
         public function getPopularServers(): array
         {

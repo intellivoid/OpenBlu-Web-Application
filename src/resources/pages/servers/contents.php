@@ -100,7 +100,7 @@
             {
                 $.ajax({
                     type: "GET",
-                    url: "<?PHP DynamicalWeb::getRoute('server', array('action' => 'gen_token', 'token' => '{0}'), true); ?>".format(server_id),
+                    url: "<?PHP DynamicalWeb::getRoute('server', array('action' => 'gen_token'), true); ?>&pub_id={0}".format(server_id),
                     success: function(results)
                     {
                         if(results.success === false)
@@ -129,7 +129,7 @@
                                 "<?PHP HTML::print(TEXT_NOTIFICATION_DOWNLOAD_STARTED_MESSAGE); ?>",
                                 "success"
                             );
-                            location.href = '<?PHP DynamicalWeb::getRoute('server', array('action' => 'download', 'token' => '{0}'), true); ?>'.format(results.download_token);
+                            location.href = '<?PHP DynamicalWeb::getRoute('server', array('action' => 'download'), true); ?>&token={0}'.format(results.download_token);
                         }
                     }
                 });

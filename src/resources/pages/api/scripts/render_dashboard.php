@@ -3,24 +3,38 @@
     use DynamicalWeb\DynamicalWeb;
     use DynamicalWeb\HTML;
     use DynamicalWeb\Runtime;
-    use ModularAPI\Abstracts\AccessKeySearchMethod;
+use IntellivoidAPI\IntellivoidAPI;
+use IntellivoidSubscriptionManager\IntellivoidSubscriptionManager;
+use ModularAPI\Abstracts\AccessKeySearchMethod;
     use ModularAPI\ModularAPI;
     use OpenBlu\Abstracts\APIPlan;
     use OpenBlu\Abstracts\SearchMethods\PlanSearchMethod;
     use OpenBlu\OpenBlu;
 
     Runtime::import('OpenBlu');
-    Runtime::import('ModularAPI');
+    Runtime::import('IntellivoidSubscriptionManager');
+    Runtime::import('IntellivoidAPI');
 
-    if(isset(DynamicalWeb::$globalObjects['modular_api']) == false)
+    if(isset(DynamicalWeb::$globalObjects['intellivoid_api']) == false)
     {
-        /** @var ModularAPI $ModularAPI */
-        $ModularAPI = DynamicalWeb::setMemoryObject('modular_api', new ModularAPI());
+        /** @var IntellivoidAPI $IntellivoidAPI */
+        $IntellivoidAPI = DynamicalWeb::setMemoryObject('intellivoid_api', new IntellivoidAPI());
     }
     else
     {
-        /** @var ModularAPI $ModularAPI */
-        $ModularAPI = DynamicalWeb::getMemoryObject('modular_api');
+        /** @var IntellivoidAPI $IntellivoidAPI */
+        $IntellivoidAPI = DynamicalWeb::getMemoryObject('intellivoid_api');
+    }
+
+    if(isset(DynamicalWeb::$globalObjects['intellivoid_subscription_manager']) == false)
+    {
+        /** @var IntellivoidSubscriptionManager $IntellivoidSubscriptionManager */
+        $IntellivoidSubscriptionManager = DynamicalWeb::setMemoryObject('intellivoid_subscription_manager', new IntellivoidSubscriptionManager());
+    }
+    else
+    {
+        /** @var IntellivoidSubscriptionManager $IntellivoidSubscriptionManager */
+        $IntellivoidSubscriptionManager = DynamicalWeb::getMemoryObject('intellivoid_subscription_manager');
     }
 
     if(isset(DynamicalWeb::$globalObjects['openblu']) == false)
@@ -34,142 +48,12 @@
         $OpenBlu = DynamicalWeb::getMemoryObject('openblu');
     }
 
-    $AccessKeyObject = $ModularAPI->AccessKeys()->Manager->get(AccessKeySearchMethod::byID, CACHE_SUBSCRIPTION_ACCESS_KEY_ID);
-    $Plan = $OpenBlu->getPlanManager()->getPlan(PlanSearchMethod::byAccountId, WEB_ACCOUNT_ID);
-
-    $UsageCurrentMonth = 0;
-    foreach($AccessKeyObject->Analytics->CurrentMonthUsage as $Month => $Usage)
-    {
-        $UsageCurrentMonth += $Usage;
-    }
-
-    $PlanTypeName = TEXT_PLAN_TYPE_UNKNOWN;
-
-    switch($Plan->PlanType)
-    {
-        case APIPlan::Free:
-            $PlanTypeName = TEXT_PLAN_TYPE_FREE;
-            break;
-
-        case APIPlan::Basic:
-            $PlanTypeName = TEXT_PLAN_TYPE_BASIC;
-            break;
-
-        case APIPlan::Enterprise:
-            $PlanTypeName = TEXT_PLAN_TYPE_ENTERPRISE;
-            break;
-    }
-
-    HTML::importScript('dashboard_callbacks');
-
-    if($Plan->Active == false)
-    {
-        render_alert(TEXT_WARNING_INACTIVE_PLAN, 'warning', 'alert-circle');
-    }
-
-    if($Plan->MonthlyCalls !== 0)
-    {
-        if($Plan->MonthlyCalls - $UsageCurrentMonth < 100)
-        {
-            render_alert(str_ireplace('%s', $Plan->MonthlyCalls - $UsageCurrentMonth, TEXT_CURRENT_USAGE_WARNING), 'info', 'alert-circle');
-        }
-
-        if($Plan->MonthlyCalls == $UsageCurrentMonth)
-        {
-            render_alert(TEXT_CURRENT_USAGE_ERROR, 'danger', 'alert-circle');
-        }
-    }
 ?>
 <div class="row">
     <div class="col-md-6 grid-margin stretch-card">
         <div class="card animated fadeInLeft">
             <div class="card-body">
-                <h4 class="card-title"><?PHP HTML::print(TEXT_CURRENT_PLAN_CARD_TITLE); ?></h4>
-                <div class="alert alert-fill-primary" role="alert"><?PHP HTML::print(TEXT_CURRENT_PLAN_ALERT); ?></div>
-                <div class="preview-list">
-                    <div class="preview-item border-bottom">
-                        <div class="preview-thumbnail">
-                            <div class="preview-icon bg-inverse-primary rounded">
-                                <i class="mdi mdi-chart-pie"></i>
-                            </div>
-                        </div>
-                        <div class="preview-item-content d-flex flex-grow">
-                            <div class="flex-grow">
-                                <h6 class="preview-subject"><?PHP HTML::print(TEXT_CURRENT_PLAN_ROW_PLAN_TYPE_TITLE); ?>
-                                    <span class="float-right small">
-                                        <span class="text-muted pr-3"><?PHP HTML::print($PlanTypeName); ?></span>
-                                        <?PHP
-                                            if($Plan->PromotionCode !== 'NORMAL')
-                                            {
-                                                HTML::print("<span class=\"text-muted border-left pl-3\">", false);
-                                                HTML::print($Plan->PromotionCode, true);
-                                                HTML::print("</span>", false);
-                                            }
-                                        ?>
-                                    </span>
-                                </h6>
-                                <p><?PHP HTML::print(TEXT_CURRENT_PLAN_ROW_PLAN_TYPE_DESC); ?></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="preview-item border-bottom">
-                        <div class="preview-thumbnail">
-                            <div class="preview-icon bg-inverse-primary rounded">
-                                <i class="mdi mdi-server-network"></i>
-                            </div>
-                        </div>
-                        <div class="preview-item-content d-flex flex-grow">
-                            <div class="flex-grow">
-                                <h6 class="preview-subject"><?PHP HTML::print(TEXT_CURRENT_PLAN_ROW_MONTHLY_CALLS_TITLE); ?>
-                                    <span class="float-right small">
-                                        <?PHP
-                                            if($Plan->MonthlyCalls == 0)
-                                            {
-                                                ?>
-                                                <span class="text-muted border-right pr-3"><?PHP HTML::print(TEXT_CURRENT_PLAN_ROW_MONTHLY_CALLS_UNLIMITED_USAGE); ?></span>
-                                                <?PHP
-                                            }
-                                            else
-                                            {
-                                                ?>
-                                                <span class="text-muted border-right pr-3"><?PHP HTML::print(str_ireplace('%s', number_format($Plan->MonthlyCalls), TEXT_CURRENT_PLAN_ROW_MONTHLY_CALLS_PLACEHOLDER)); ?></span>
-                                                <?PHP
-                                            }
-                                        ?>
-                                        <span class="text-muted pl-3"><?PHP HTML::print(str_ireplace('%s', number_format($UsageCurrentMonth), TEXT_CURRENT_PLAN_ROW_MONTHLY_CALLS_CURRENT_USAGE_PLACEHOLDER)); ?></span>
-                                    </span>
-                                </h6>
-                                <p><?PHP HTML::print(TEXT_CURRENT_PLAN_ROW_MONTHLY_CALLS_DESC); ?></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="preview-item">
-                        <div class="preview-thumbnail">
-                            <div class="preview-icon bg-inverse-primary rounded">
-                                <i class="mdi mdi-receipt"></i>
-                            </div>
-                        </div>
-                        <div class="preview-item-content d-flex flex-grow">
-                            <div class="flex-grow">
-                                <h6 class="preview-subject"><?PHP HTML::print(TEXT_CURRENT_PLAN_ROW_BILLING_CYCLE_TITLE); ?>
-                                    <span class="float-right small">
-                                        <span class="border-right pr-3"><?PHP HTML::print(gmdate("Y-m-d", $Plan->NextBillingCycle)); ?></span>
-                                        <span class="text-muted pl-3"><?PHP HTML::print('$' . $Plan->PricePerCycle . ' U.S.'); ?></span>
-                                    </span>
-                                </h6>
-                                <p><?PHP HTML::print(TEXT_CURRENT_PLAN_ROW_BILLING_CYCLE_DESC); ?></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <button type="button" class="btn btn-inverse-danger" data-toggle="modal" data-target="#cancel-plan-dialog">
-                    <i class="mdi mdi-cancel"></i><?PHP HTML::print(TEXT_CANCEL_PLAN_BUTTON); ?>
-                </button>
-                <button type="button" class="btn btn-inverse-warning" onclick="window.open('https://gist.github.com/Netkas/584b0648c93620060f60d89b1878564f');">
-                    <i class="mdi mdi-book"></i> <?PHP HTML::print(TEXT_API_DOCUMENTATION_BUTTON); ?>
-                </button>
-
+                <h4 class="card-title"><?PHP HTML::print("Subscription Details"); ?></h4>
             </div>
         </div>
     </div>
@@ -179,28 +63,6 @@
             <div class="card-body">
                 <h4 class="card-title"><?PHP HTML::print(TEXT_AUTHENTICATION_CARD_TITLE); ?></h4>
                 <p class="card-description"><?PHP HTML::print(TEXT_AUTHENTICATION_CARD_DESC); ?></p>
-
-                <div class="form-group">
-                    <label for="api_key" class="card-subtitle"><?PHP HTML::print(TEXT_AUTHENTICATION_CARD_API_KEY_TITLE); ?></label>
-                    <input type="text" id="api_key" name="api_key" class="form-control" value="<?PHP HTML::print($AccessKeyObject->PublicKey); ?>" readonly>
-                </div>
-
-                <div class="form-group">
-                    <label for="certificate" class="card-subtitle"><?PHP HTML::print(TEXT_AUTHENTICATION_CARD_CERTIFICATE_TITLE); ?></label>
-                    <textarea id="certificate" name="certificate" class="form-control" rows="13" readonly><?PHP HTML::print($AccessKeyObject->Signatures->createCertificate()); ?></textarea>
-                </div>
-
-                <hr/>
-
-                <div class="form-group text-right">
-                    <button type="button" class="btn btn-inverse-success" onclick="location.href='/api?action=download_certificate';">
-                        <i class="mdi mdi-cloud-download"></i><?PHP HTML::print(TEXT_AUTHENTICATION_CARD_DOWNLOAD_CERTIFICATE_BUTTON); ?>
-                    </button>
-                    <button type="button" class="btn btn-inverse-primary" onclick="location.href='/api?action=update_signatures';">
-                        <i class="mdi mdi-refresh"></i><?PHP HTML::print(TEXT_AUTHENTICATION_CARD_UPDATE_SIGNATURES_BUTTON); ?>
-                    </button>
-                </div>
-
             </div>
         </div>
     </div>
@@ -212,36 +74,13 @@
         <div class="card animated fadeInUp">
             <div class="card-body">
                 <h4 class="card-title"><?PHP HTML::print(TEXT_API_USAGE_CARD_TITLE); ?></h4>
-                <div id="api-usage-chart"></div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="cancel-plan-dialog" tabindex="-1" role="dialog" aria-labelledby="cancel-plan-label" style="display: none;" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="cancel-plan-label"><?PHP HTML::print(TEXT_CANCEL_DIALOG_TITLE); ?></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">
-                        <i class="mdi mdi-close"></i>
-                    </span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="alert alert-fill-danger" role="alert">
-                    <i class="mdi mdi-alert-circle"></i>
-                    <?PHP HTML::print(TEXT_CANCEL_DIALOG_ALERT); ?>
+                <div id="api-usage-chart">
+                    <div class="d-flex flex-column justify-content-center align-items-center" style="height:30vh;">
+                        <div class="p-2 my-flex-item">
+                            <h4 class="text-muted">Coming soon</h4>
+                        </div>
+                    </div>
                 </div>
-                <p><?PHP HTML::print(TEXT_CANCEL_DIALOG_TEXT); ?></p>
-                <p class="text-danger">
-                    <?PHP HTML::print(TEXT_CANCEL_DIALOG_WARNING); ?> <i class="mdi mdi-alert"></i>
-                </p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-light" data-dismiss="modal"><?PHP HTML::print(TEXT_CANCEL_DIALOG_DISMISS_BUTTON); ?></button>
-                <button type="button" class="btn btn-danger" onclick="location.href='/api?action=cancel_plan';"><?PHP HTML::print(TEXT_CANCEL_DIALOG_CANCEL_SUBSCRIPTION_BUTTON); ?></button>
             </div>
         </div>
     </div>

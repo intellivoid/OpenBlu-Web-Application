@@ -20,11 +20,7 @@
 
     $RecordDirectorySchema = new Schema();
     $RecordDirectorySchema->setDefinition('WIN_RecordDirectory', 'c:\openblu\records');
-    $RecordDirectorySchema->setDefinition('UNIX_RecordDirectory', '\var\openblu\records');
+    $RecordDirectorySchema->setDefinition('UNIX_RecordDirectory', '/var/vpn_records');
     $acm->defineSchema('RecordDirectory', $RecordDirectorySchema);
-
-    $ModularApiSchema = new Schema();
-    $ModularApiSchema->setDefinition('IssuerName', 'example');
-    $acm->defineSchema('ModularAPI', $ModularApiSchema);
 
     $acm->processCommandLine();
