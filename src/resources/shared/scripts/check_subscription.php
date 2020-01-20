@@ -1,29 +1,98 @@
 <?php
 
+    use DynamicalWeb\Actions;
     use DynamicalWeb\DynamicalWeb;
     use DynamicalWeb\Runtime;
-use IntellivoidSubscriptionManager\Exceptions\DatabaseException;
-use IntellivoidSubscriptionManager\IntellivoidSubscriptionManager;
-use IntellivoidSubscriptionManager\Objects\Subscription;
-use IntellivoidSubscriptionManager\Objects\SubscriptionPlan;
+    use IntellivoidAPI\Abstracts\RateLimitName;
+    use IntellivoidAPI\Exceptions\AccessRecordNotFoundException;
+    use IntellivoidAPI\IntellivoidAPI;
+    use IntellivoidSubscriptionManager\Abstracts\SearchMethods\SubscriptionSearchMethod;
+    use IntellivoidSubscriptionManager\Exceptions\DatabaseException;
+    use IntellivoidSubscriptionManager\Exceptions\SubscriptionNotFoundException;
+    use IntellivoidSubscriptionManager\IntellivoidSubscriptionManager;
+    use IntellivoidSubscriptionManager\Objects\Subscription;
+    use IntellivoidSubscriptionManager\Objects\SubscriptionPlan;
     use OpenBlu\Abstracts\SearchMethods\UserSubscriptionSearchMethod;
+use OpenBlu\Exceptions\UserSubscriptionRecordNotFoundException;
 use OpenBlu\Objects\UserSubscription;
-use OpenBlu\OpenBlu;
+    use OpenBlu\OpenBlu;
+    use sws\sws;
 
     Runtime::import('OpenBlu');
     Runtime::import('IntellivoidSubscriptionManager');
+    Runtime::import('IntellivoidAPI');
 
     if(WEB_SESSION_ACTIVE)
     {
-        if(WEB_SUBSCRIPTION_ACTIVE == false)
+        if(WEB_SUBSCRIPTION_ACTIVE)
+        {
+            verify_subscription();
+        }
+        else
         {
             check_subscription();
         }
     }
 
+    function verify_subscription()
+    {
+        $OpenBlu = new OpenBlu();
+
+        try
+        {
+            $UserSubscription = $OpenBlu->getUserSubscriptionManager()->getUserSubscription(
+                UserSubscriptionSearchMethod::byAccountID, WEB_ACCOUNT_ID
+            );
+        }
+        catch (UserSubscriptionRecordNotFoundException $e)
+        {
+            remove_subscription();
+            Actions::redirect(DynamicalWeb::getRoute('api'));
+            return;
+        }
+        catch(Exception $e)
+        {
+            Actions::redirect(DynamicalWeb::getRoute('service_error', array(
+                'error_type' => 'user_subscription_fetch_failure'
+            )));
+        }
+
+        $IntellivoidSubscriptionManager = new IntellivoidSubscriptionManager();
+
+        try
+        {
+            $IntellivoidSubscriptionManager->getSubscriptionManager()->getSubscription(
+                SubscriptionSearchMethod::byId, $UserSubscription->SubscriptionID
+            );
+        }
+        catch (SubscriptionNotFoundException $e)
+        {
+            remove_subscription();
+            Actions::redirect(DynamicalWeb::getRoute('api'));
+            return;
+        }
+        catch(Exception $e)
+        {
+            Actions::redirect(DynamicalWeb::getRoute('service_error', array(
+                'error_type' => 'user_subscription_fetch_failure'
+            )));
+        }
+
+        return;
+    }
+
     function check_subscription()
     {
-        $ApplicationConfiguration = DynamicalWeb::getConfiguration('coasniffle');
+        try
+        {
+            $ApplicationConfiguration = DynamicalWeb::getConfiguration('coasniffle');
+        }
+        catch (Exception $e)
+        {
+            Actions::redirect(DynamicalWeb::getRoute('service_error', array(
+                'error_type' => 'configuration_read_error'
+            )));
+        }
 
         $OpenBlu = new OpenBlu();
         $IntellivoidSubscriptionManager = new IntellivoidSubscriptionManager();
@@ -31,7 +100,17 @@ use OpenBlu\OpenBlu;
         $UserSubscription = check_user_subscription($OpenBlu);
         if(is_null($UserSubscription))
         {
-            $ActiveSubscription = find_active_subscription($IntellivoidSubscriptionManager, $ApplicationConfiguration);
+            try
+            {
+                $ActiveSubscription = find_active_subscription($IntellivoidSubscriptionManager, $ApplicationConfiguration);
+            }
+            catch (Exception $e)
+            {
+                Actions::redirect(DynamicalWeb::getRoute('service_error', array(
+                    'error_type' => 'find_active_subscription_error'
+                )));
+                return;
+            }
 
             if(is_null($ActiveSubscription))
             {
@@ -39,13 +118,153 @@ use OpenBlu\OpenBlu;
             }
             else
             {
-
-
-                $UserSubscription = $OpenBlu->getUserSubscriptionManager()->registerUserSubscription(
-                    WEB_ACCOUNT_ID, $ActiveSubscription->ID,
+                $UserSubscription = register_subscription(
+                    $OpenBlu, $ActiveSubscription,
+                    $ApplicationConfiguration['APPLICATION_INTERNAL_ID']
                 );
+
+                set_subscription($UserSubscription);
+                return;
             }
         }
+        else
+        {
+
+            if($UserSubscription->SubscriptionID > 0)
+            {
+                try
+                {
+                    $IntellivoidSubscriptionManager->getSubscriptionManager()->getSubscription(
+                        SubscriptionSearchMethod::byId, $UserSubscription->SubscriptionID
+                    );
+                    set_subscription($UserSubscription);
+                    return;
+                }
+                catch (SubscriptionNotFoundException $e)
+                {
+                    $UserSubscription->SubscriptionID = 0;
+                    try
+                    {
+                        $OpenBlu->getUserSubscriptionManager()->updateUserSubscription($UserSubscription);
+                    }
+                    catch(Exception $e)
+                    {
+                        Actions::redirect(DynamicalWeb::getRoute('service_error', array(
+                            'error_type' => 'us_update_failure::clause(snfe)'
+                        )));
+                    }
+                    remove_subscription();
+                    Actions::redirect(DynamicalWeb::getRoute('api'));
+                    return;
+                }
+                catch(Exception $exception)
+                {
+                    Actions::redirect(DynamicalWeb::getRoute('service_error', array(
+                        'error_type' => 'subscription_fetch_failure'
+                    )));
+                }
+            }
+            else
+            {
+                try
+                {
+                    $ActiveSubscription = find_active_subscription($IntellivoidSubscriptionManager, $ApplicationConfiguration);
+                }
+                catch (Exception $e)
+                {
+                    Actions::redirect(DynamicalWeb::getRoute('service_error', array(
+                        'error_type' => 'find_active_subscription_error'
+                    )));
+                    return;
+                }
+
+                if(is_null($ActiveSubscription))
+                {
+                    return;
+                }
+                else
+                {
+                    $UserSubscription->SubscriptionID = $ActiveSubscription->ID;
+                    try
+                    {
+                        $OpenBlu->getUserSubscriptionManager()->updateUserSubscription($UserSubscription);
+                    }
+                    catch(Exception $e)
+                    {
+                        Actions::redirect(DynamicalWeb::getRoute('service_error', array(
+                            'error_type' => 'us_update_failure::clause(snfe)'
+                        )));
+                    }
+                    set_subscription($UserSubscription);
+                    return;
+                }
+            }
+        }
+    }
+
+    function set_subscription(UserSubscription $userSubscription)
+    {
+        /** @var sws $sws */
+        $sws = DynamicalWeb::getMemoryObject('sws');
+
+        $Cookie = $sws->WebManager()->getCookie('web_session');
+        $Cookie->Data['subscription_active'] = true;
+        $Cookie->Data['user_subscription_id'] = $userSubscription->SubscriptionID;
+
+        $sws->CookieManager()->updateCookie($Cookie);
+        Actions::redirect(DynamicalWeb::getRoute('api'));
+    }
+
+    function remove_subscription()
+    {
+        /** @var sws $sws */
+        $sws = DynamicalWeb::getMemoryObject('sws');
+
+        $Cookie = $sws->WebManager()->getCookie('web_session');
+        $Cookie->Data['subscription_active'] = false;
+        $Cookie->Data['user_subscription_id'] = 0;
+
+        $sws->CookieManager()->updateCookie($Cookie);
+    }
+
+    function register_subscription(OpenBlu $openBlu, Subscription $subscription, int $application_id): UserSubscription
+    {
+        $IntellivoidAPI = new IntellivoidAPI();
+
+        try
+        {
+            $AccessRecord = $IntellivoidAPI->getAccessKeyManager()->createAccessRecord(
+                $application_id, $subscription->ID,
+                RateLimitName::None, array()
+            );
+        }
+        catch (AccessRecordNotFoundException $e)
+        {
+            Actions::redirect(DynamicalWeb::getRoute('service_error', array(
+                'error_type' => 'access_record_not_found'
+            )));
+        }
+        catch(Exception $e)
+        {
+            Actions::redirect(DynamicalWeb::getRoute('service_error', array(
+                'error_type' => 'create_access_record_error'
+            )));
+        }
+
+        try
+        {
+            return $openBlu->getUserSubscriptionManager()->registerUserSubscription(
+                WEB_ACCOUNT_ID, $subscription->ID, $AccessRecord->ID
+            );
+        }
+        catch(Exception $e)
+        {
+            Actions::redirect(DynamicalWeb::getRoute('service_error', array(
+                'error_type' => 'register_user_subscription_error'
+            )));
+        }
+
+        return null;
     }
 
     /**
@@ -54,14 +273,22 @@ use OpenBlu\OpenBlu;
      * @param IntellivoidSubscriptionManager $intellivoidSubscriptionManager
      * @param array $applicationConfiguration
      * @return Subscription|null
-     * @throws DatabaseException
      */
     function find_active_subscription(IntellivoidSubscriptionManager $intellivoidSubscriptionManager, array $applicationConfiguration)
     {
 
-        $SubscriptionPlans = $intellivoidSubscriptionManager->getPlanManager()->getSubscriptionPlansByApplication(
-            $applicationConfiguration['APPLICATION_INTERNAL_ID']
-        );
+        try
+        {
+            $SubscriptionPlans = $intellivoidSubscriptionManager->getPlanManager()->getSubscriptionPlansByApplication(
+                $applicationConfiguration['APPLICATION_INTERNAL_ID']
+            );
+        }
+        catch (DatabaseException $e)
+        {
+            Actions::redirect(DynamicalWeb::getRoute('service_error', array(
+                'error_type' => 'failure_plan_fetch'
+            )));
+        }
 
         $Subscription = null;
 
@@ -94,11 +321,9 @@ use OpenBlu\OpenBlu;
     {
         try
         {
-            $UserSubscription = $openBlu->getUserSubscriptionManager()->getUserSubscription(
+            return $openBlu->getUserSubscriptionManager()->getUserSubscription(
                 UserSubscriptionSearchMethod::byAccountID, WEB_ACCOUNT_ID
             );
-
-            return $UserSubscription;
         }
         catch(Exception $e)
         {

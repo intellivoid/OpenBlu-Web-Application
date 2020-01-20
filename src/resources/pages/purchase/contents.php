@@ -10,6 +10,13 @@ use DynamicalWeb\Actions;
 use DynamicalWeb\DynamicalWeb;
     use DynamicalWeb\HTML;
 
+    HTML::importScript('check_subscription');
+
+    if(WEB_SUBSCRIPTION_ACTIVE)
+    {
+        Actions::redirect(DynamicalWeb::getRoute('api'));
+    }
+
     /** @var COASniffle $COASniffle */
     $COASniffle = DynamicalWeb::getMemoryObject('coasniffle');
     HTML::importScript('alert');

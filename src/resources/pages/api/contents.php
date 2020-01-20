@@ -3,6 +3,8 @@
 
     use DynamicalWeb\HTML;
 
+    HTML::importScript('check_subscription');
+
     if(WEB_SUBSCRIPTION_ACTIVE == true)
     {
         HTML::importScript('dashboard_actions');

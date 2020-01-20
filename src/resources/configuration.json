@@ -3,12 +3,13 @@
     "debugging_mode": true,
     "router": [
         {"path": "/", "page": "index"},
+        {"path": "/service_error", "page": "service_error"},
         {"path": "/support", "page": "support"},
         {"path": "/support/about", "page": "about"},
         {"path": "/servers", "page": "servers"},
         {"path": "/servers/view", "page": "server"},
         {"path": "/api", "page": "api"},
-        {"path": "/purchase", "page": "purchase"},
+        {"path": "/api/purchase", "page": "purchase"},
         {"path": "/auth/login_required", "page": "login_required"},
         {"path": "/auth/logout", "page": "logout"}
     ],
