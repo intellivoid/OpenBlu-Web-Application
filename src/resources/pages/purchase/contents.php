@@ -197,7 +197,7 @@ use DynamicalWeb\DynamicalWeb;
                                 }
                                 ?>
                                 <div class="card-body">
-                                    <button type="button" onclick="location.href='<?PHP HTML::print($Subscription->ProcessTransactionURL); ?>';" class="btn btn-outline-primary float-right"><?PHP HTML::print(TEXT_CONFIRM_PURCHASE_BUTTON); ?></button>
+                                    <button type="button" onclick="window.open('<?PHP HTML::print($Subscription->ProcessTransactionURL); ?>');" class="btn btn-outline-primary float-right"><?PHP HTML::print(TEXT_CONFIRM_PURCHASE_BUTTON); ?></button>
                                 </div>
                             </div>
                         </div>
