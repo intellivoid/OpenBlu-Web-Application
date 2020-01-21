@@ -10,6 +10,12 @@
             "CARD_DESCRIPTION": "The page you were looking for was not found",
             "BUTTON_HOME": "Go Home"
         },
+        "500": {
+            "PAGE_TITLE": "OpenBlu - Internal Server Error",
+            "CARD_HEADER": "Internal Server Error",
+            "CARD_DESCRIPTION": "There was an issue while processing your request, please try again or report to support",
+            "BUTTON_HOME": "Go Home"
+        },
         "index": {
             "PAGE_TITLE": "OpenBlu",
             "UPDATED_TIME_YEAR": "year",
@@ -267,12 +273,7 @@
             "REGISTER_BLOCK_DESC": "Create a new Account",
             "REGISTER_BLOCK_BUTTON": "Create Account"
         },
-        "500": {
-            "PAGE_TITLE": "OpenBlu - Internal Server Error",
-            "CARD_HEADER": "Internal Server Error",
-            "CARD_DESCRIPTION": "There was an issue while processing your request, please try again or report to support",
-            "BUTTON_HOME": "Go Home"
-        },
+
         "about": {
             "PAGE_TITLE": "OpenBlu - About",
             "CARD_HEADER": "About OpenBlu"

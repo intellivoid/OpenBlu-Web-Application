@@ -9,9 +9,7 @@
         <?PHP HTML::importSection('header'); ?>
         <title><?PHP HTML::print(TEXT_PAGE_TITLE); ?></title>
     </head>
-
     <body<?PHP HTML::print(SIDEBAR_STATE, false); ?>>
-
         <div class="container-scrollbar">
             <?PHP HTML::importSection('navigation'); ?>
             <div class="container-fluid page-body-wrapper">
@@ -32,16 +30,11 @@
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
                 </div>
             </div>
-
             <?PHP HTML::importSection('footer'); ?>
         </div>
-
         <?PHP HTML::importSection('js_scripts'); ?>
-
     </body>
 </html>
