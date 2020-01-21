@@ -10,7 +10,6 @@
         {"path": "/servers/view", "page": "server"},
         {"path": "/api", "page": "api"},
         {"path": "/api/purchase", "page": "purchase"},
-        {"path": "/auth/login_required", "page": "login_required"},
         {"path": "/auth/logout", "page": "logout"}
     ],
     "libraries": {
