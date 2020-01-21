@@ -5,7 +5,9 @@
     use DynamicalWeb\DynamicalWeb;
     use DynamicalWeb\HTML;
     use DynamicalWeb\Runtime;
-    use OpenBlu\OpenBlu;
+use msqg\Abstracts\SortBy;
+use msqg\QueryBuilder;
+use OpenBlu\OpenBlu;
 
     Runtime::import('OpenBlu');
 
@@ -23,6 +25,7 @@
     HTML::importScript('time_human');
     HTML::importScript('table');
     HTML::importScript('alert');
+    HTML::importScript('db_render_helper');
 
     if(isset(DynamicalWeb::$globalObjects['openblu']) == false)
     {
@@ -34,6 +37,28 @@
         /** @var OpenBlu $OpenBlu */
         $OpenBlu = DynamicalWeb::getMemoryObject('openblu');
     }
+
+    $where = null;
+    $where_value = null;
+
+    if(isset($_GET['filter']))
+    {
+        if ($_GET['filter'] == 'country')
+        {
+            if (isset($_GET['value']))
+            {
+                $where = 'account_id';
+                $where_value = (int)$_GET['value'];
+            }
+        }
+    }
+
+    $Results = get_results($OpenBlu->database, 1000, 'vpns', 'id',
+        QueryBuilder::select(
+            'vpns', ['id', 'public_id', 'country', 'country_short', 'ping', 'sessions', 'total_sessions', 'last_updated'],
+            $where, $where_value, 'last_updated', SortBy::descending
+        ),
+        $where, $where_value);
 
 ?>
 <!DOCTYPE html>
@@ -53,8 +78,16 @@
                         <div class="row grid-margin">
                             <div class="col-12">
                                 <div class="card" id="servers_table">
+                                    <div class="card-header header-sm d-flex justify-content-between align-items-center">
+                                        <h4 class="card-title mt-auto mb-auto">Servers</h4>
+                                        <div class="wrapper d-flex align-items-center">
+                                            <button class="btn btn-transparent icon-btn arrow-disabled pl-2 pr-2 text-white text-small" data-toggle="modal" data-target="#filterDialog" type="button">
+                                                <i class="mdi mdi-filter"></i>
+                                            </button>
+                                        </div>
+                                    </div>
                                     <div class="card-body">
-                                        <h4 class="card-title">Servers</h4>
+
                                         <?PHP
                                             $current_page = 1;
                                             if(isset($_GET['page']))
@@ -62,7 +95,7 @@
                                                 $current_page = (int)$_GET['page'];
                                             }
 
-                                            $total_pages = $OpenBlu->getVPNManager()->totalServerPages();
+                                            $total_pages = $Results['total_pages'];
 
                                             if($total_pages == 0)
                                             {
@@ -81,7 +114,7 @@
                                             }
                                             else
                                             {
-                                                render_table($OpenBlu);
+                                                render_table($Results);
                                             }
                                         ?>
                                     </div>

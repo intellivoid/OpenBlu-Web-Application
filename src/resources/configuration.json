@@ -69,7 +69,7 @@
             "check_class_exists": true,
             "namespace": "msqg",
             "main_class": "msqg"
-        },
+        }
     },
     "runtime_scripts": {
         "initialize": ["coa_sniffles.php"],

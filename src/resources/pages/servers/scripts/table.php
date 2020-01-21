@@ -99,7 +99,7 @@
         print("</ul></nav>");
     }
 
-    function render_table(\OpenBlu\OpenBlu $openBlu)
+    function render_table(array $results)
     {
         ?>
         <div class="table-responsive">
@@ -125,14 +125,14 @@
                         $current_page = (int)$_GET['page'];
                     }
 
-                    foreach($openBlu->getVPNManager()->getServerPage($current_page) as $VPN)
+                    foreach($results['results'] as $VPN)
                     {
                         $VPNObject = \OpenBlu\Objects\VPN::fromArray($VPN);
                         $ActionView = '<a href="' . \DynamicalWeb\DynamicalWeb::getRoute('server', array('pub_id' => $VPNObject->PublicID)) . '" class="btn btn-sm btn-inverse-primary"><i class="mdi mdi-information" style="margin-right: 0;"></i></a>';
                         $ActionDownload = '<button onclick="process_download(\'' . $VPNObject->PublicID . '\');" class="btn btn-sm btn-inverse-success"><i class="mdi mdi-download" style="margin-right: 0;"></i></button>';
 
                         $RowData = [
-                            '<i class="flag-icon flag-icon-' . strtolower($VPNObject->CountryShort) . '"></i> ' . $VPNObject->Country,
+                            '<i class="flag-icon flag-icon-' . strtolower($VPNObject->CountryShort) . ' mr-3"></i> ' . $VPNObject->Country,
                             $VPNObject->IP,
                             str_ireplace('%s', $VPNObject->Ping, TEXT_ROW_PING),
                             number_format($VPNObject->Sessions),
@@ -148,5 +148,5 @@
         </div>
         <br/>
         <?PHP
-        create_navigation($openBlu->getVPNManager()->totalServerPages());
+        create_navigation($results['total_pages']);
     }
