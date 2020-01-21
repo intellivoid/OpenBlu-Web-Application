@@ -1,5 +1,9 @@
 <?php
 
+    use DynamicalWeb\DynamicalWeb;
+use DynamicalWeb\HTML;
+use OpenBlu\Objects\VPN;
+
     /**
      * Creates headers
      *
@@ -54,7 +58,7 @@
         else
         {
             $previous_page = $current_page - 1;
-            $location = \DynamicalWeb\DynamicalWeb::getRoute('servers', array('page' => $previous_page));
+            $location = DynamicalWeb::getRoute('servers', array('page' => $previous_page));
             print("<li class=\"page-item\"><a class=\"page-link\" onclick=\"location.href='$location'\"><i class=\"mdi mdi-chevron-left\"></i></a></li>");
         }
 
@@ -71,7 +75,7 @@
             }
             else
             {
-                $location = \DynamicalWeb\DynamicalWeb::getRoute('servers', array('page' => $current_ilt));
+                $location = DynamicalWeb::getRoute('servers', array('page' => $current_ilt));
                 print("<li class=\"page-item\"><a onclick=\"location.href='$location'\" class=\"page-link\">$current_ilt</a></li>");
             }
 
@@ -91,7 +95,7 @@
             else
             {
                 $next_page = $current_page + 1;
-                $location = \DynamicalWeb\DynamicalWeb::getRoute('servers', array('page' => $next_page));
+                $location = DynamicalWeb::getRoute('servers', array('page' => $next_page));
                 print("<li class=\"page-item\"><a onclick=\"location.href='$location'\" class=\"page-link\"><i class=\"mdi mdi-chevron-right\"></i></a></li>");
             }
         }
@@ -99,11 +103,83 @@
         print("</ul></nav>");
     }
 
+    function determine_order_tags(string $value): array
+    {
+        $Parameters = $_GET;
+        $Parameters['order_by'] = $value;
+
+        $ArrowCode = "";
+        if(isset($_GET['order_by']))
+        {
+            if($_GET['order_by'] == $value)
+            {
+                if(isset($_GET['sort_by']))
+                {
+                    if(strtolower($_GET['sort_by']) == 'ascending')
+                    {
+                        $ArrowCode = "<i class=\"mdi mdi-arrow-up-bold ml-1\"></i>";
+                        $Parameters['sort_by'] = 'descending';
+                    }
+
+                    if(strtolower($_GET['sort_by']) == 'descending')
+                    {
+                        $ArrowCode = "<i class=\"mdi mdi-arrow-down-bold ml-1\"></i>";
+                        $Parameters['sort_by'] = 'ascending';
+                    }
+                }
+                else
+                {
+                    $ArrowCode = "<i class=\"mdi mdi-arrow-down-bold ml-1\"></i>";
+                    $Parameters['sort_by'] = 'ascending';
+                }
+            }
+        }
+
+        $Location = DynamicalWeb::getRoute('servers', $Parameters);
+        return array(
+            'location' => $Location,
+            'arrow_code' => $ArrowCode
+        );
+    }
+
     function render_table(array $results)
     {
         ?>
         <div class="table-responsive">
             <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            <?PHP HTML::print(TEXT_TABLE_COUNTRY); ?>
+                        </th>
+                        <th>
+                            <?PHP HTML::print(TEXT_TABLE_IP); ?>
+                        </th>
+                        <?PHP $PingOrder = determine_order_tags('ping'); ?>
+                        <th onclick="location.href='<?PHP HTML::print($PingOrder['location'], false); ?>';">
+                            <?PHP HTML::print(TEXT_TABLE_PING); ?>
+                            <?PHP HTML::print($PingOrder['arrow_code'], false); ?>
+                        </th>
+                        <?PHP $CurrentSessionsOrder = determine_order_tags('sessions'); ?>
+                        <th onclick="location.href='<?PHP HTML::print($CurrentSessionsOrder['location'], false); ?>';">
+                            <?PHP HTML::print(TEXT_TABLE_CURRENT_SESSIONS); ?>
+                            <?PHP HTML::print($CurrentSessionsOrder['arrow_code'], false); ?>
+                        </th>
+                        <?PHP $TotalSessionsOrder = determine_order_tags('total_sessions'); ?>
+                        <th onclick="location.href='<?PHP HTML::print($TotalSessionsOrder['location'], false); ?>';">
+                            <?PHP HTML::print(TEXT_TABLE_TOTAL_SESSIONS); ?>
+                            <?PHP HTML::print($TotalSessionsOrder['arrow_code'], false); ?>
+                        </th>
+                        <?PHP $LastUpdatedOrder = determine_order_tags('last_updated'); ?>
+                        <th onclick="location.href='<?PHP HTML::print($LastUpdatedOrder['location'], false); ?>';">
+                            <?PHP HTML::print(TEXT_TABLE_LAST_UPDATED); ?>
+                            <?PHP HTML::print($LastUpdatedOrder['arrow_code'], false); ?>
+                        </th>
+                        <th>
+                            <?PHP HTML::print(TEXT_TABLE_ACTIONS); ?>
+                        </th>
+                    </tr>
+                </thead>
                 <?PHP
                 $headers = [
                     TEXT_TABLE_COUNTRY,
@@ -114,7 +190,7 @@
                     TEXT_TABLE_LAST_UPDATED,
                     TEXT_TABLE_ACTIONS
                 ];
-                create_headers($headers);
+                //create_headers($headers);
                 ?>
                 <tbody>
                 <?PHP
@@ -127,8 +203,8 @@
 
                     foreach($results['results'] as $VPN)
                     {
-                        $VPNObject = \OpenBlu\Objects\VPN::fromArray($VPN);
-                        $ActionView = '<a href="' . \DynamicalWeb\DynamicalWeb::getRoute('server', array('pub_id' => $VPNObject->PublicID)) . '" class="btn btn-sm btn-inverse-primary"><i class="mdi mdi-information" style="margin-right: 0;"></i></a>';
+                        $VPNObject = VPN::fromArray($VPN);
+                        $ActionView = '<a href="' . DynamicalWeb::getRoute('server', array('pub_id' => $VPNObject->PublicID)) . '" class="btn btn-sm btn-inverse-primary"><i class="mdi mdi-information" style="margin-right: 0;"></i></a>';
                         $ActionDownload = '<button onclick="process_download(\'' . $VPNObject->PublicID . '\');" class="btn btn-sm btn-inverse-success"><i class="mdi mdi-download" style="margin-right: 0;"></i></button>';
 
                         $RowData = [

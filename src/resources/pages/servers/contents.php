@@ -43,20 +43,53 @@ use OpenBlu\OpenBlu;
 
     if(isset($_GET['filter']))
     {
-        if ($_GET['filter'] == 'country')
+        if ($_GET['filter'] == 'country_short')
         {
             if (isset($_GET['value']))
             {
-                $where = 'account_id';
-                $where_value = (int)$_GET['value'];
+                if(strlen($_GET['value']) < 5)
+                {
+                    $where = 'country_short';
+                    $where_value = $OpenBlu->database->real_escape_string(strtolower($_GET['value']));
+                }
+
             }
+        }
+    }
+
+    $order_by = 'last_updated';
+    $sort_by = SortBy::descending;
+
+    if(isset($_GET['order_by']))
+    {
+        switch(strtolower($_GET['order_by']))
+        {
+            case 'last_updated':
+            case 'ping':
+            case 'sessions':
+                $order_by = strtolower($_GET['order_by']);
+                break;
+        }
+    }
+
+    if(isset($_GET['sort_by']))
+    {
+        switch(strtolower($_GET['sort_by']))
+        {
+            case 'ascending':
+                $sort_by = SortBy::ascending;
+                break;
+
+            case 'descending':
+                $sort_by = SortBy::descending;
+                break;
         }
     }
 
     $Results = get_results($OpenBlu->database, 1000, 'vpns', 'id',
         QueryBuilder::select(
             'vpns', ['id', 'public_id', 'country', 'country_short', 'ping', 'sessions', 'total_sessions', 'last_updated'],
-            $where, $where_value, 'last_updated', SortBy::descending
+            $where, $where_value, $order_by, $sort_by
         ),
         $where, $where_value);
 
@@ -81,6 +114,16 @@ use OpenBlu\OpenBlu;
                                     <div class="card-header header-sm d-flex justify-content-between align-items-center">
                                         <h4 class="card-title mt-auto mb-auto">Servers</h4>
                                         <div class="wrapper d-flex align-items-center">
+                                            <?PHP
+                                                if(isset($_GET['order_by']))
+                                                {
+                                                    ?>
+                                                    <button class="btn btn-transparent icon-btn arrow-disabled pl-2 pr-2 text-white text-small" onclick="location.href='<?PHP DynamicalWeb::getRoute('servers', array(), true); ?>';" type="button">
+                                                        <i class="mdi mdi-close"></i>
+                                                    </button>
+                                                    <?PHP
+                                                }
+                                            ?>
                                             <button class="btn btn-transparent icon-btn arrow-disabled pl-2 pr-2 text-white text-small" data-toggle="modal" data-target="#filterDialog" type="button">
                                                 <i class="mdi mdi-filter"></i>
                                             </button>
@@ -99,7 +142,7 @@ use OpenBlu\OpenBlu;
 
                                             if($total_pages == 0)
                                             {
-                                                render_alert(TEXT_NO_SERVERS_AVAILABLE_ERROR, 'primary', 'alert-circle');
+                                                render_alert("No results were found", 'primary', 'alert-circle');
                                                 HTML::print('<a href="' . DynamicalWeb::getRoute('servers') . '">' . TEXT_RELOAD_PAGE_LINK . '</a>', false);
                                             }
                                             elseif($current_page < 1)
@@ -122,6 +165,7 @@ use OpenBlu\OpenBlu;
                             </div>
                         </div>
                     </div>
+                    <?PHP HTML::importScript('filter_dialog'); ?>
                 </div>
             </div>
             <?PHP HTML::importSection('footer'); ?>
