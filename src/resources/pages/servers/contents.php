@@ -88,7 +88,7 @@ use OpenBlu\OpenBlu;
 
     $Results = get_results($OpenBlu->database, 1000, 'vpns', 'id',
         QueryBuilder::select(
-            'vpns', ['id', 'public_id', 'country', 'country_short', 'ping', 'sessions', 'total_sessions', 'last_updated'],
+            'vpns', ['id', 'public_id', 'ip_address',  'country', 'country_short', 'ping', 'sessions', 'total_sessions', 'last_updated'],
             $where, $where_value, $order_by, $sort_by
         ),
         $where, $where_value);
