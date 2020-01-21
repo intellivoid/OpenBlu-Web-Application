@@ -18,7 +18,6 @@
                 <?PHP HTML::importSection('sidebar'); ?>
                 <div class="main-panel">
                     <div class="content-wrapper">
-
                         <div class="row">
                             <div class="col-12 grid-margin">
                                 <div class="card animated fadeInUp">
@@ -32,16 +31,11 @@
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
                 </div>
             </div>
-
             <?PHP HTML::importSection('footer'); ?>
         </div>
-
         <?PHP HTML::importSection('js_scripts'); ?>
-
     </body>
 </html>

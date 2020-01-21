@@ -4,6 +4,12 @@
         "iso_639-1": "en"
     },
     "pages": {
+        "404": {
+            "PAGE_TITLE": "OpenBlu - Page Not Found",
+            "CARD_HEADER": "404 Not Found",
+            "CARD_DESCRIPTION": "The page you were looking for was not found",
+            "BUTTON_HOME": "Go Home"
+        },
         "index": {
             "PAGE_TITLE": "OpenBlu",
             "UPDATED_TIME_YEAR": "year",
@@ -260,12 +266,6 @@
             "REGISTER_BLOCK_TITLE": "Register",
             "REGISTER_BLOCK_DESC": "Create a new Account",
             "REGISTER_BLOCK_BUTTON": "Create Account"
-        },
-        "404": {
-            "PAGE_TITLE": "OpenBlu - Page Not Found",
-            "CARD_HEADER": "404 Not Found",
-            "CARD_DESCRIPTION": "The page you were looking for was not found",
-            "BUTTON_HOME": "Go Home"
         },
         "500": {
             "PAGE_TITLE": "OpenBlu - Internal Server Error",
