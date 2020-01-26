@@ -1,84 +1,49 @@
 <?php
 
+    use DynamicalWeb\Actions;
     use DynamicalWeb\DynamicalWeb;
-    use DynamicalWeb\Runtime;
-    use ModularAPI\Abstracts\AccessKeySearchMethod;
-    use ModularAPI\Exceptions\AccessKeyNotFoundException;
-    use ModularAPI\Exceptions\NoResultsFoundException;
-    use ModularAPI\Exceptions\UnsupportedSearchMethodException;
-    use ModularAPI\ModularAPI;
-    use OpenBlu\Abstracts\SearchMethods\PlanSearchMethod;
-    use OpenBlu\Exceptions\ConfigurationNotFoundException;
+    use IntellivoidAPI\Abstracts\SearchMethods\AccessRecordSearchMethod;
+    use IntellivoidAPI\Exceptions\AccessRecordNotFoundException;
+    use IntellivoidAPI\Exceptions\InvalidRateLimitConfiguration;
+    use IntellivoidAPI\IntellivoidAPI;
+    use OpenBlu\Abstracts\SearchMethods\UserSubscriptionSearchMethod;
     use OpenBlu\Exceptions\DatabaseException;
     use OpenBlu\Exceptions\InvalidSearchMethodException;
-    use OpenBlu\Exceptions\PlanNotFoundException;
-    use OpenBlu\Exceptions\UpdateRecordNotFoundException;
+    use OpenBlu\Exceptions\UserSubscriptionRecordNotFoundException;
     use OpenBlu\OpenBlu;
-    use sws\sws;
 
-    Runtime::import('OpenBlu');
-    Runtime::import('ModularAPI');
-
-    // TODO: Add callbacks to dashboard
     if(isset($_GET['action']))
     {
         switch($_GET['action'])
         {
-            case 'update_signatures':
+            case 'generate_access_key':
                 try
                 {
-                    update_signatures();
-                    header('Location: /api?callback=101'); // Redirect to dashboard
+                    generate_access_key();
+                    Actions::redirect(DynamicalWeb::getRoute('api', array('callback' => '103')));
                     exit();
                 }
                 catch(Exception $exception)
                 {
-                    header('Location: /api?callback=102'); // Dashboard callback
+                    Actions::redirect(DynamicalWeb::getRoute('api', array('callback' => '100')));
                     exit();
                 }
 
                 break;
-
-            case 'download_certificate':
-                try
-                {
-                    $results = get_certificate();
-                    header('Content-Type: application/x-x509-user-cert');
-                    header("Content-disposition: attachment; filename=\"" . $results['public_id'] . ".crt\"");
-                    print($results['certificate']);
-                    exit();
-                }
-                catch(Exception $exception)
-                {
-                    header('Location: /api?callback=103'); // Dashboard Callback
-                    exit();
-                }
-
-            case 'cancel_plan':
-                try
-                {
-                    cancel_plan();
-                    header('Location: /api?callback=100'); // API Callback
-                    exit();
-                }
-                catch(Exception $exception)
-                {
-                    header('Location: /api?callback=104'); // Dashboard callback
-                    exit();
-                }
         }
     }
 
+
     /**
-     * @throws AccessKeyNotFoundException
-     * @throws NoResultsFoundException
-     * @throws UnsupportedSearchMethodException
-     * @throws ConfigurationNotFoundException
+     * @throws AccessRecordNotFoundException
+     * @throws \IntellivoidAPI\Exceptions\DatabaseException
+     * @throws InvalidRateLimitConfiguration
+     * @throws \IntellivoidAPI\Exceptions\InvalidSearchMethodException
      * @throws DatabaseException
      * @throws InvalidSearchMethodException
-     * @throws UpdateRecordNotFoundException
+     * @throws UserSubscriptionRecordNotFoundException
      */
-    function update_signatures()
+    function generate_access_key()
     {
         if(isset(DynamicalWeb::$globalObjects['openblu']) == false)
         {
@@ -91,83 +56,25 @@
             $OpenBlu = DynamicalWeb::getMemoryObject('openblu');
         }
 
-        $Plan = $OpenBlu->getPlanManager()->getPlan(PlanSearchMethod::byAccountId, WEB_ACCOUNT_ID);
-        $OpenBlu->getPlanManager()->updateSignatures($Plan);
-    }
-
-    /**
-     * @return array
-     * @throws ConfigurationNotFoundException
-     * @throws DatabaseException
-     * @throws InvalidSearchMethodException
-     * @throws NoResultsFoundException
-     * @throws UnsupportedSearchMethodException
-     * @throws UpdateRecordNotFoundException
-     */
-    function get_certificate(): array
-    {
-        if(isset(DynamicalWeb::$globalObjects['openblu']) == false)
+        if(isset(DynamicalWeb::$globalObjects['intellivoid_api']) == false)
         {
-            /** @var OpenBlu $OpenBlu */
-            $OpenBlu = DynamicalWeb::setMemoryObject('openblu', new OpenBlu());
+            /** @var IntellivoidAPI $IntellivoidAPI */
+            $IntellivoidAPI = DynamicalWeb::setMemoryObject('intellivoid_api', new IntellivoidAPI());
         }
         else
         {
-            /** @var OpenBlu $OpenBlu */
-            $OpenBlu = DynamicalWeb::getMemoryObject('openblu');
+            /** @var IntellivoidAPI $IntellivoidAPI */
+            $IntellivoidAPI = DynamicalWeb::getMemoryObject('intellivoid_api');
         }
 
-        if(isset(DynamicalWeb::$globalObjects['modular_api']) == false)
-        {
-            /** @var ModularAPI $ModularAPI */
-            $ModularAPI = DynamicalWeb::setMemoryObject('modular_api', new ModularAPI());
-        }
-        else
-        {
-            /** @var ModularAPI $ModularAPI */
-            $ModularAPI = DynamicalWeb::getMemoryObject('modular_api');
-        }
-
-        $Plan = $OpenBlu->getPlanManager()->getPlan(PlanSearchMethod::byAccountId, WEB_ACCOUNT_ID);
-        $AccessKeyObject = $ModularAPI->AccessKeys()->Manager->get(AccessKeySearchMethod::byID, $Plan->AccessKeyId);
-
-        return array(
-            'certificate' => $AccessKeyObject->Signatures->createCertificate(),
-            'public_id' => $AccessKeyObject->PublicID
+        $UserSubscription = $OpenBlu->getUserSubscriptionManager()->getUserSubscription(
+            UserSubscriptionSearchMethod::byAccountID, WEB_ACCOUNT_ID
         );
-    }
 
-    /**
-     * @throws AccessKeyNotFoundException
-     * @throws ConfigurationNotFoundException
-     * @throws DatabaseException
-     * @throws InvalidSearchMethodException
-     * @throws NoResultsFoundException
-     * @throws UnsupportedSearchMethodException
-     * @throws UpdateRecordNotFoundException
-     * @throws PlanNotFoundException
-     */
-    function cancel_plan()
-    {
-        if(isset(DynamicalWeb::$globalObjects['openblu']) == false)
-        {
-            /** @var OpenBlu $OpenBlu */
-            $OpenBlu = DynamicalWeb::setMemoryObject('openblu', new OpenBlu());
-        }
-        else
-        {
-            /** @var OpenBlu $OpenBlu */
-            $OpenBlu = DynamicalWeb::getMemoryObject('openblu');
-        }
+        $AccessRecord = $IntellivoidAPI->getAccessKeyManager()->getAccessRecord(
+            AccessRecordSearchMethod::byId, $UserSubscription->AccessRecordID
+        );
 
-        $OpenBlu->getPlanManager()->cancelPlan(WEB_ACCOUNT_ID);
+        $IntellivoidAPI->getAccessKeyManager()->generateNewAccessKey($AccessRecord);
 
-        // Force update the cache
-        /** @var sws $sws */
-        $sws = DynamicalWeb::getMemoryObject('sws');
-
-        $Cookie = $sws->WebManager()->getCookie('web_session');
-        $Cookie->Data['cache_refresh'] = 0;
-
-        $sws->CookieManager()->updateCookie($Cookie);
     }

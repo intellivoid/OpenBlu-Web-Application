@@ -4,6 +4,18 @@
         "iso_639-1": "en"
     },
     "pages": {
+        "404": {
+            "PAGE_TITLE": "OpenBlu - Page Not Found",
+            "CARD_HEADER": "404 Not Found",
+            "CARD_DESCRIPTION": "The page you were looking for was not found",
+            "BUTTON_HOME": "Go Home"
+        },
+        "500": {
+            "PAGE_TITLE": "OpenBlu - Internal Server Error",
+            "CARD_HEADER": "Internal Server Error",
+            "CARD_DESCRIPTION": "There was an issue while processing your request, please try again or report to support",
+            "BUTTON_HOME": "Go Home"
+        },
         "index": {
             "PAGE_TITLE": "OpenBlu",
             "UPDATED_TIME_YEAR": "year",
@@ -181,53 +193,11 @@
             "API_USAGE_CARD_TITLE": "API Usage",
             "API_USAGE_GRAPH_CURRENT_MONTH": "Current Month",
             "API_USAGE_GRAPH_LAST_MONTH": "Last Month",
-            "CALLBACK_100": "Your plan has been canceled",
-            "CALLBACK_101": "Your signatures has been re-generated and updated",
-            "CALLBACK_102": "There was an error while trying to re-generate signatures, please contact support.",
-            "CALLBACK_103": "There was an error while trying download the certificate, please contact support.",
-            "CALLBACK_104": "There was an error while trying cancel your plan, please contact support.",
+            "CALLBACK_100": "There has been an issue while trying to process your request",
             "API_DOCUMENTATION_BUTTON": "API Documentation (EN)",
             "WARNING_INACTIVE_PLAN": "Your plan is currently not active due to insufficient funds in your account",
             "CURRENT_USAGE_WARNING": "You have %s requests available till your next billing cycle, if you need more requests you should consider upgrading",
             "CURRENT_USAGE_ERROR": "You have used up your monthly calls, on the next billing cycle will your current usage will reset. If you need more requests you should consider upgrading"
-        },
-        "login": {
-            "PAGE_TITLE": "Login to OpenBlu",
-            "HEADER": "Intellivoid Accounts",
-            "FIELD_1": "Username or email *",
-            "FIELD_2": "Password *",
-            "SUBMIT_BUTTON": "Login",
-            "REGISTER": "Don't have an Intellivoid Account?",
-            "REGISTER_LINK": "Sign Up",
-            "CALLBACK_100": "There was an issue with your request, please make sure your browser is up to date",
-            "CALLBACK_101": "The login information is incorrect",
-            "CALLBACK_102": "Your account has been suspended",
-            "CALLBACK_103": "There was an issue while trying to verify your login details, please contact support",
-            "CALLBACK_104": "Captcha verification failed, please solve the captcha correctly",
-            "CALLBACK_105": "The server cannot verify your client, please restart the application and try again",
-            "CALLBACK_106": "There was an issue while trying to verify your client, please contact support.",
-            "CALLBACK_107": "There was an issue while trying to retrieve your account, please contact support."
-        },
-        "register": {
-            "PAGE_TITLE": "Create Intellivoid Account",
-            "HEADER": "Register",
-            "FIELD_1": "Username",
-            "FIELD_2": "Email",
-            "FIELD_3": "Password",
-            "SUBMIT_BUTTON": "Create Account",
-            "LOGIN": "Already have an Account?",
-            "LOGIN_LINK": "Login",
-            "TOS": "By creating an account you are accepting our Terms of Service",
-            "PRIVACY": "Read our Privacy Policy",
-            "CALLBACK_100": "There was an issue with your request, please make sure your browser is up to date",
-            "CALLBACK_101": "The given Username is invalid",
-            "CALLBACK_102": "The given E-Mail is invalid",
-            "CALLBACK_103": "The given password is invalid, it should be greater than 8 characters but no greater than 128",
-            "CALLBACK_104": "The given Username is already taken",
-            "CALLBACK_105": "The given E-Mail is already used",
-            "CALLBACK_106": "There was an issue while trying to create your account, please contact support",
-            "CALLBACK_107": "Your account has been created!",
-            "CALLBACK_108": "Captcha verification failed, please solve the captcha correctly"
         },
         "purchase": {
             "PAGE_TITLE": "OpenBlu - Confirm Purchase",
@@ -254,39 +224,9 @@
             "CALLBACK_102": "You are not allowed to make any purchases, please contact support",
             "CALLBACK_103": "A subscription is already active, this transaction cannot be completed"
         },
-        "login_required": {
-            "PAGE_TITLE": "OpenBlu - Login Required",
-            "CARD_TITLE": "Login Required",
-            "CARD_DESC": "You need to be logged in to continue downloading more configurations, this helps us prevent crawlers and spam",
-            "LOGIN_BLOCK_TITLE": "Login",
-            "LOGIN_BLOCK_DESC": "Login to an existing Account",
-            "LOGIN_BLOCK_BUTTON": "Login",
-            "REGISTER_BLOCK_TITLE": "Register",
-            "REGISTER_BLOCK_DESC": "Create a new Account",
-            "REGISTER_BLOCK_BUTTON": "Create Account"
-        },
-        "404": {
-            "PAGE_TITLE": "OpenBlu - Page Not Found",
-            "CARD_HEADER": "404 Not Found",
-            "CARD_DESCRIPTION": "The page you were looking for was not found",
-            "BUTTON_HOME": "Go Home"
-        },
-        "500": {
-            "PAGE_TITLE": "OpenBlu - Internal Server Error",
-            "CARD_HEADER": "Internal Server Error",
-            "CARD_DESCRIPTION": "There was an issue while processing your request, please try again or report to support",
-            "BUTTON_HOME": "Go Home"
-        },
         "about": {
             "PAGE_TITLE": "OpenBlu - About",
             "CARD_HEADER": "About OpenBlu"
-        },
-        "add_balance": {
-            "PAGE_TITLE": "OpenBlu - Add Balance",
-            "CARD_HEADER": "Add To Balance",
-            "FAQ_HEADER": "Please read the information presented below before adding money to your account balance (English Only)",
-            "ADD_BALANCE_HEADER": "Add balance using PayPal",
-            "ADD_BALANCE_DESC": "Please make sure that your Intellivoid Account's email is the same as your PayPal email, if they are different then send an email to %s with your PayPal transaction ID (after the purchase) and your Intellivoid Account username or email. If you fail to provide us with the required information then you will be refunded"
         },
         "support": {
             "PAGE_TITLE": "OpenBlu - Support",

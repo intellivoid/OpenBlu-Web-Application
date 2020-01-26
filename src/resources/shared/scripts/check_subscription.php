@@ -4,8 +4,10 @@
     use DynamicalWeb\DynamicalWeb;
     use DynamicalWeb\Runtime;
     use IntellivoidAPI\Abstracts\RateLimitName;
+    use IntellivoidAPI\Abstracts\SearchMethods\AccessRecordSearchMethod;
     use IntellivoidAPI\Exceptions\AccessRecordNotFoundException;
     use IntellivoidAPI\IntellivoidAPI;
+    use IntellivoidAPI\Objects\AccessRecord;
     use IntellivoidSubscriptionManager\Abstracts\SearchMethods\SubscriptionSearchMethod;
     use IntellivoidSubscriptionManager\Exceptions\DatabaseException;
     use IntellivoidSubscriptionManager\Exceptions\SubscriptionNotFoundException;
@@ -13,8 +15,8 @@
     use IntellivoidSubscriptionManager\Objects\Subscription;
     use IntellivoidSubscriptionManager\Objects\SubscriptionPlan;
     use OpenBlu\Abstracts\SearchMethods\UserSubscriptionSearchMethod;
-use OpenBlu\Exceptions\UserSubscriptionRecordNotFoundException;
-use OpenBlu\Objects\UserSubscription;
+    use OpenBlu\Exceptions\UserSubscriptionRecordNotFoundException;
+    use OpenBlu\Objects\UserSubscription;
     use OpenBlu\OpenBlu;
     use sws\sws;
 
@@ -221,7 +223,11 @@ use OpenBlu\Objects\UserSubscription;
                 }
                 else
                 {
+
                     $UserSubscription->SubscriptionID = $ActiveSubscription->ID;
+                    $UserSubscription = update_existing_subscription(
+                        $ApplicationConfiguration['APPLICATION_INTERNAL_ID'], $UserSubscription
+                    );
                     try
                     {
                         $OpenBlu->getUserSubscriptionManager()->updateUserSubscription($UserSubscription);
@@ -237,6 +243,68 @@ use OpenBlu\Objects\UserSubscription;
                 }
             }
         }
+    }
+
+    function update_existing_subscription(int $application_id, UserSubscription $userSubscription): UserSubscription
+    {
+        if(isset(DynamicalWeb::$globalObjects['intellivoid_api']) == false)
+        {
+            /** @var IntellivoidAPI $IntellivoidAPI */
+            $IntellivoidAPI = DynamicalWeb::setMemoryObject('intellivoid_api', new IntellivoidAPI());
+        }
+        else
+        {
+            /** @var IntellivoidAPI $IntellivoidAPI */
+            $IntellivoidAPI = DynamicalWeb::getMemoryObject('intellivoid_api');
+        }
+
+        try
+        {
+            $AccessRecord = $IntellivoidAPI->getAccessKeyManager()->getAccessRecord(
+                AccessRecordSearchMethod::bySubscriptionID, $userSubscription->AccessRecordID
+            );
+        }
+        catch(AccessRecordNotFoundException $e)
+        {
+            try
+            {
+                $AccessRecord = $IntellivoidAPI->getAccessKeyManager()->createAccessRecord(
+                    $application_id, $userSubscription->SubscriptionID,
+                    RateLimitName::None, array()
+                );
+            }
+            catch(Exception $e)
+            {
+                Actions::redirect(DynamicalWeb::getRoute('service_error', array(
+                    'error_type' => 'access_record_recreation_failed'
+                )));
+
+                return null;
+            }
+        }
+        catch(Exception $e)
+        {
+            Actions::redirect(DynamicalWeb::getRoute('service_error', array(
+                'error_type' => 'access_record_update_clause_failed'
+            )));
+            return null;
+        }
+
+        $AccessRecord = updateAccessRecord($AccessRecord);
+
+        try
+        {
+            $IntellivoidAPI->getAccessKeyManager()->updateAccessRecord($AccessRecord);
+        }
+        catch(Exception $e)
+        {
+            Actions::redirect(DynamicalWeb::getRoute('service_error', array(
+                'error_type' => 'ar_update_failure'
+            )));
+        }
+
+        $userSubscription->AccessRecordID = $AccessRecord->ID;
+        return $userSubscription;
     }
 
     function set_subscription(UserSubscription $userSubscription)
@@ -289,11 +357,24 @@ use OpenBlu\Objects\UserSubscription;
             Actions::redirect(DynamicalWeb::getRoute('service_error', array(
                 'error_type' => 'access_record_not_found'
             )));
+            return null;
         }
         catch(Exception $e)
         {
             Actions::redirect(DynamicalWeb::getRoute('service_error', array(
                 'error_type' => 'create_access_record_error'
+            )));
+        }
+
+        $AccessRecord = updateAccessRecord($AccessRecord);
+        try
+        {
+            $IntellivoidAPI->getAccessKeyManager()->updateAccessRecord($AccessRecord);
+        }
+        catch(Exception $e)
+        {
+            Actions::redirect(DynamicalWeb::getRoute('service_error', array(
+                'error_type' => 'ar_update_failure'
             )));
         }
 
@@ -311,6 +392,13 @@ use OpenBlu\Objects\UserSubscription;
         }
 
         return null;
+    }
+
+    function updateAccessRecord(AccessRecord $accessRecord): AccessRecord
+    {
+        $accessRecord->Variables = array();
+        $accessRecord->Variables['SERVER_CONFIGS'] = 0;
+        return $accessRecord;
     }
 
     /**

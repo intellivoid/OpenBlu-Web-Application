@@ -5,9 +5,9 @@
 
     HTML::importScript('check_subscription');
 
-    if(WEB_SUBSCRIPTION_ACTIVE == true)
+    if(WEB_SUBSCRIPTION_ACTIVE)
     {
-        //HTML::importScript('dashboard_actions');
+        HTML::importScript('dashboard_actions');
     }
 
     HTML::importScript('alert');
@@ -27,8 +27,8 @@
                 <?PHP HTML::importSection('sidebar'); ?>
                 <div class="main-panel">
                     <div class="content-wrapper">
-
                         <?PHP
+                            HTML::importScript('callbacks');
                             if(WEB_SUBSCRIPTION_ACTIVE == false)
                             {
                                 HTML::importScript('render_pricing');
@@ -47,11 +47,5 @@
         </div>
 
         <?PHP HTML::importSection('js_scripts'); ?>
-        <?PHP
-            if(WEB_SUBSCRIPTION_ACTIVE == true)
-            {
-                //HTML::importScript('render_charts_js');
-            }
-       ?>
     </body>
 </html>

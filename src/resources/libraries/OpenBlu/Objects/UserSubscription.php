@@ -95,7 +95,7 @@
 
             if(isset($data['access_record_id']))
             {
-                $UserSubscriptionObject->CreatedTimestamp = (int)$data['access_record_id'];
+                $UserSubscriptionObject->AccessRecordID = (int)$data['access_record_id'];
             }
 
             if(isset($data['status']))

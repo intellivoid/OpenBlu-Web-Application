@@ -5,7 +5,9 @@
     use DynamicalWeb\DynamicalWeb;
     use DynamicalWeb\HTML;
     use DynamicalWeb\Runtime;
-    use OpenBlu\OpenBlu;
+use msqg\Abstracts\SortBy;
+use msqg\QueryBuilder;
+use OpenBlu\OpenBlu;
 
     Runtime::import('OpenBlu');
 
@@ -23,6 +25,7 @@
     HTML::importScript('time_human');
     HTML::importScript('table');
     HTML::importScript('alert');
+    HTML::importScript('db_render_helper');
 
     if(isset(DynamicalWeb::$globalObjects['openblu']) == false)
     {
@@ -34,6 +37,61 @@
         /** @var OpenBlu $OpenBlu */
         $OpenBlu = DynamicalWeb::getMemoryObject('openblu');
     }
+
+    $where = null;
+    $where_value = null;
+
+    if(isset($_GET['filter']))
+    {
+        if ($_GET['filter'] == 'country_short')
+        {
+            if (isset($_GET['value']))
+            {
+                if(strlen($_GET['value']) < 5)
+                {
+                    $where = 'country_short';
+                    $where_value = $OpenBlu->database->real_escape_string(strtolower($_GET['value']));
+                }
+
+            }
+        }
+    }
+
+    $order_by = 'last_updated';
+    $sort_by = SortBy::descending;
+
+    if(isset($_GET['order_by']))
+    {
+        switch(strtolower($_GET['order_by']))
+        {
+            case 'last_updated':
+            case 'ping':
+            case 'sessions':
+                $order_by = strtolower($_GET['order_by']);
+                break;
+        }
+    }
+
+    if(isset($_GET['sort_by']))
+    {
+        switch(strtolower($_GET['sort_by']))
+        {
+            case 'ascending':
+                $sort_by = SortBy::ascending;
+                break;
+
+            case 'descending':
+                $sort_by = SortBy::descending;
+                break;
+        }
+    }
+
+    $Results = get_results($OpenBlu->database, 1000, 'vpns', 'id',
+        QueryBuilder::select(
+            'vpns', ['id', 'public_id', 'ip_address',  'country', 'country_short', 'ping', 'sessions', 'total_sessions', 'last_updated'],
+            $where, $where_value, $order_by, $sort_by
+        ),
+        $where, $where_value);
 
 ?>
 <!DOCTYPE html>
@@ -53,8 +111,26 @@
                         <div class="row grid-margin">
                             <div class="col-12">
                                 <div class="card" id="servers_table">
+                                    <div class="card-header header-sm d-flex justify-content-between align-items-center">
+                                        <h4 class="card-title mt-auto mb-auto">Servers</h4>
+                                        <div class="wrapper d-flex align-items-center">
+                                            <?PHP
+                                                if(isset($_GET['order_by']))
+                                                {
+                                                    ?>
+                                                    <button class="btn btn-transparent icon-btn arrow-disabled pl-2 pr-2 text-white text-small" onclick="location.href='<?PHP DynamicalWeb::getRoute('servers', array(), true); ?>';" type="button">
+                                                        <i class="mdi mdi-close"></i>
+                                                    </button>
+                                                    <?PHP
+                                                }
+                                            ?>
+                                            <button class="btn btn-transparent icon-btn arrow-disabled pl-2 pr-2 text-white text-small" data-toggle="modal" data-target="#filterDialog" type="button">
+                                                <i class="mdi mdi-filter"></i>
+                                            </button>
+                                        </div>
+                                    </div>
                                     <div class="card-body">
-                                        <h4 class="card-title">Servers</h4>
+
                                         <?PHP
                                             $current_page = 1;
                                             if(isset($_GET['page']))
@@ -62,11 +138,11 @@
                                                 $current_page = (int)$_GET['page'];
                                             }
 
-                                            $total_pages = $OpenBlu->getVPNManager()->totalServerPages();
+                                            $total_pages = $Results['total_pages'];
 
                                             if($total_pages == 0)
                                             {
-                                                render_alert(TEXT_NO_SERVERS_AVAILABLE_ERROR, 'primary', 'alert-circle');
+                                                render_alert("No results were found", 'primary', 'alert-circle');
                                                 HTML::print('<a href="' . DynamicalWeb::getRoute('servers') . '">' . TEXT_RELOAD_PAGE_LINK . '</a>', false);
                                             }
                                             elseif($current_page < 1)
@@ -81,7 +157,7 @@
                                             }
                                             else
                                             {
-                                                render_table($OpenBlu);
+                                                render_table($Results);
                                             }
                                         ?>
                                     </div>
@@ -89,6 +165,7 @@
                             </div>
                         </div>
                     </div>
+                    <?PHP HTML::importScript('filter_dialog'); ?>
                 </div>
             </div>
             <?PHP HTML::importSection('footer'); ?>
