@@ -1,5 +1,4 @@
 <!-- Generated Content, Reference ID <?PHP print(strtoupper(hash('sha256', time() . 'REF') . '(INTELLIVOID-TECHNOLOGIES)')); ?> -->
-<?PHP \DynamicalWeb\HTML::importScript('google_analytics'); ?>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="stylesheet" href="/assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
