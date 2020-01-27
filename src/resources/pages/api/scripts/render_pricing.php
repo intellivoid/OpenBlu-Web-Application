@@ -132,7 +132,7 @@
                                     <i class="mdi mdi-console-line"></i>
                                     <?PHP HTML::print($FreeSubscriptionPlan->PlanName); ?>
                                 </h3>
-                                <p class="text-muted">Renewed every month for free</p>
+                                <p class="text-muted"><?PHP HTML::print(TEXT_PLAN_FREE_DESCRIPTION); ?></p>
                             </div>
                             <ul class="list-unstyled plan-features">
                                 <?PHP
@@ -142,25 +142,25 @@
                                         switch($feature->Name)
                                         {
                                             case 'SERVER_CONFIGS':
-                                                $Text = "%s VPN Server configurations";
+                                                $Text = TEXT_PLAN_VPN_CONFIGS_AMOUNT;
                                                 if($feature->Value > 0)
                                                 {
                                                     $Text = str_ireplace('%s', $feature->Value, $Text);
                                                 }
                                                 else
                                                 {
-                                                    $Text = str_ireplace('%s', "Unlimited", $Text);
+                                                    $Text = str_ireplace('%s', TEXT_PLAN_UNLIMITED_VPN_CONFIGS, $Text);
                                                 }
                                                 ?><li><?PHP HTML::print($Text); ?></li><?PHP
                                                 break;
                                         }
                                     }
                                 ?>
-                                <li>Public Server Listings</li>
-                                <li>Configuration Parameters</li>
+                                <li><?PHP HTML::print(TEXT_PLAN_FEATURE_1); ?></li>
+                                <li><?PHP HTML::print(TEXT_PLAN_FEATURE_2); ?></li>
                             </ul>
                             <div class="wrapper">
-                                <a href="<?PHP HTML::print($FreeLocation, false); ?>" class="btn btn-inverse-primary btn-block"><?PHP HTML::print(TEXT_PRICING_FREE_SUBMIT); ?></a href="#">
+                                <a href="<?PHP HTML::print($FreeLocation, false); ?>" class="btn btn-inverse-primary btn-block"><?PHP HTML::print(TEXT_BUTTON_SUBMIT_FREE); ?></a>
                             </div>
                         </div>
                     </div>
@@ -172,7 +172,7 @@
                                     <?PHP HTML::print($BasicSubscriptionPlan->PlanName); ?>
                                 </h3>
                                 <?PHP
-                                    $Text = "$%s USD Every month";
+                                    $Text = TEXT_PLAN_MONTHLY_PRICE;
                                     $Text = str_ireplace('%s', $BasicSubscriptionPlan->CyclePrice, $Text);
                                 ?>
                                 <p><?PHP HTML::print($Text); ?></p>
@@ -185,26 +185,26 @@
                                     switch($feature->Name)
                                     {
                                         case 'SERVER_CONFIGS':
-                                            $Text = "%s VPN Server configurations";
+                                            $Text = TEXT_PLAN_VPN_CONFIGS_AMOUNT;
                                             if($feature->Value > 0)
                                             {
                                                 $Text = str_ireplace('%s', $feature->Value, $Text);
                                             }
                                             else
                                             {
-                                                $Text = str_ireplace('%s', "Unlimited", $Text);
+                                                $Text = str_ireplace('%s', TEXT_PLAN_UNLIMITED_VPN_CONFIGS, $Text);
                                             }
                                             ?><li><?PHP HTML::print($Text); ?></li><?PHP
                                             break;
                                     }
                                 }
                                 ?>
-                                <li>Public Server Listings</li>
-                                <li>Configuration Parameters</li>
+                                <li><?PHP HTML::print(TEXT_PLAN_FEATURE_1); ?></li>
+                                <li><?PHP HTML::print(TEXT_PLAN_FEATURE_2); ?></li>
                             </ul>
                             <div class="wrapper">
                                 <a href="<?PHP HTML::print($BasicLocation, false); ?>" class="btn btn-inverse-success btn-block">
-                                    <?PHP HTML::print(str_ireplace('%s', $BasicSubscriptionPlan->InitialPrice, "Purchase now ($%s USD)")); ?>
+                                    <?PHP HTML::print(str_ireplace('%s', $BasicSubscriptionPlan->InitialPrice, TEXT_BUTTON_SUBMIT_PAID)); ?>
                                 </a>
                             </div>
                         </div>
@@ -218,7 +218,7 @@
                                     <?PHP HTML::print($EnterpriseSubscriptionPlan->PlanName); ?>
                                 </h3>
                                 <?PHP
-                                $Text = "$%s USD Every month";
+                                $Text = TEXT_PLAN_MONTHLY_PRICE;
                                 $Text = str_ireplace('%s', $EnterpriseSubscriptionPlan->CyclePrice, $Text);
                                 ?>
                                 <p><?PHP HTML::print($Text); ?></p>
@@ -231,26 +231,26 @@
                                     switch($feature->Name)
                                     {
                                         case 'SERVER_CONFIGS':
-                                            $Text = "%s VPN Server configurations";
+                                            $Text = TEXT_PLAN_VPN_CONFIGS_AMOUNT;
                                             if($feature->Value > 0)
                                             {
                                                 $Text = str_ireplace('%s', $feature->Value, $Text);
                                             }
                                             else
                                             {
-                                                $Text = str_ireplace('%s', "Unlimited", $Text);
+                                                $Text = str_ireplace('%s', TEXT_PLAN_UNLIMITED_VPN_CONFIGS, $Text);
                                             }
                                             ?><li><?PHP HTML::print($Text); ?></li><?PHP
                                             break;
                                     }
                                 }
                                 ?>
-                                <li>Public Server Listings</li>
-                                <li>Configuration Parameters</li>
+                                <li><?PHP HTML::print(TEXT_PLAN_FEATURE_1); ?></li>
+                                <li><?PHP HTML::print(TEXT_PLAN_FEATURE_2); ?></li>
                             </ul>
                             <div class="wrapper">
                                 <a href="<?PHP HTML::print($EnterpriseLocation, false); ?>" class="btn btn-inverse-danger btn-block">
-                                    <?PHP HTML::print(str_ireplace('%s', $EnterpriseSubscriptionPlan->InitialPrice, "Purchase now ($%s USD)")); ?>
+                                    <?PHP HTML::print(str_ireplace('%s', $EnterpriseSubscriptionPlan->InitialPrice, TEXT_BUTTON_SUBMIT_PAID)); ?>
                                 </a>
                             </div>
                         </div>
