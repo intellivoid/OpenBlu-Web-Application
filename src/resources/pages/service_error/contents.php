@@ -1,15 +1,15 @@
 <?PHP
     /** @noinspection PhpUnhandledExceptionInspection */
 
-use DynamicalWeb\DynamicalWeb;
-use DynamicalWeb\HTML;
+    use DynamicalWeb\DynamicalWeb;
+    use DynamicalWeb\HTML;
     http_response_code(500);
 ?>
 <!DOCTYPE html>
 <html lang="<?PHP HTML::print(APP_LANGUAGE_ISO_639); ?>">
     <head>
         <?PHP HTML::importSection('header'); ?>
-        <title>OpenBlu - Service Error</title>
+        <title><?PHP HTML::print(TEXT_PAGE_TITLE); ?></title>
     </head>
 
     <body<?PHP HTML::print(SIDEBAR_STATE, false); ?>>
@@ -25,10 +25,10 @@ use DynamicalWeb\HTML;
                             <div class="col-12 grid-margin">
                                 <div class="card animated fadeInUp">
                                     <div class="card-body">
-                                        <h4 class="card-title">Service Error</h4>
-                                        <div class="card-description">There was an error while trying to verify contents about your account, this might be a programming error. Please contact support</div>
+                                        <h4 class="card-title"><?PHP HTML::print(TEXT_ERROR_CARD_TITLE); ?></h4>
+                                        <div class="card-description"><?PHP HTML::print(TEXT_ERROR_CARD_DESC); ?></div>
                                         <button class="btn btn-primary" onclick="location.href='<?PHP DynamicalWeb::getRoute('index', array(), true); ?>'">
-                                            <i class="mdi mdi-home"></i><?PHP HTML::print("Go Home"); ?>
+                                            <i class="mdi mdi-home"></i><?PHP HTML::print(TEXT_BUTTON_HOME); ?>
                                         </button>
                                     </div>
                                 </div>

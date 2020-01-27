@@ -190,9 +190,12 @@
             "NOTIFICATION_DOWNLOAD_STARTED_TITLE": "Download Started",
             "NOTIFICATION_DOWNLOAD_STARTED_MESSAGE": "Your OpenVPN Configuration file should start downloading"
         },
-
-
-
+        "service_error": {
+            "PAGE_TITLE": "OpenBlu - Service Error",
+            "ERROR_CARD_TITLE": "Service Error",
+            "ERROR_CARD_DESC": "There was an error while trying to verify contents about your account, this might be a programming error. Please contact support",
+            "BUTTON_HOME": "Go Home"
+        },
         "support": {
             "PAGE_TITLE": "OpenBlu - Support",
             "CARD_TITLE": "OpenBlu Contact/Support",
