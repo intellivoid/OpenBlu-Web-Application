@@ -1,9 +1,9 @@
 <?PHP
 
-use COASniffle\Abstracts\AvatarResourceName;
-use COASniffle\COASniffle;
-use COASniffle\Handlers\COA;
-use DynamicalWeb\DynamicalWeb;
+    use COASniffle\Abstracts\AvatarResourceName;
+    use COASniffle\COASniffle;
+    use COASniffle\Handlers\COA;
+    use DynamicalWeb\DynamicalWeb;
     use DynamicalWeb\HTML;
 ?>
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
@@ -14,7 +14,7 @@ use DynamicalWeb\DynamicalWeb;
                 ?>
                     <li class="nav-item account-dropdown">
                         <a class="nav-link" data-toggle="collapse" href="#account-dropdown" aria-expanded="false" aria-controls="account-dropdown">
-                            <img id="user-avatar" class="letterpic" src="<?PHP HTML::print(COA::getAvatarUrl(AvatarResourceName::Normal, WEB_ACCOUNT_PUBID), false); ?>" title="<?PHP HTML::print(WEB_ACCOUNT_USERNAME); ?>" width="42" height="42" style="margin-right: 5px; border-radius: 30px;">
+                            <img alt="User Avatar" id="user-avatar" class="letterpic" src="<?PHP HTML::print(COA::getAvatarUrl(AvatarResourceName::Normal, WEB_ACCOUNT_PUBID), false); ?>" title="<?PHP HTML::print(WEB_ACCOUNT_USERNAME); ?>" width="42" height="42" style="margin-right: 5px; border-radius: 30px;">
                             <p class="mb-0 ml-3 text-light" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"><?PHP HTML::print(WEB_ACCOUNT_USERNAME); ?></p>
                             <i class="menu-arrow"></i>
                         </a>
