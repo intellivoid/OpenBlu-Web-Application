@@ -48,6 +48,7 @@
 
                     <a class="dropdown-item preview-item" href="<?PHP DynamicalWeb::getRoute('change_language', array('language' => 'es', 'cache' => hash('sha256', time())), true); ?>">
                         <div class="preview-thumbnail">
+                            <!-- TODO: add a taco icon before i entirely rage out of this chilean hermano druggy guy owo -->
                             <i class="flag-icon flag-icon-cl"></i>
                         </div>
                         <div class="preview-item-content">
