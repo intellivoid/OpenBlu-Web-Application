@@ -48,7 +48,7 @@
 
                     <a class="dropdown-item preview-item" href="<?PHP DynamicalWeb::getRoute('change_language', array('language' => 'es', 'cache' => hash('sha256', time())), true); ?>">
                         <div class="preview-thumbnail">
-                            <i class="flag-icon flag-icon-es"></i>
+                            <i class="flag-icon flag-icon-cl"></i>
                         </div>
                         <div class="preview-item-content">
                             <p class="preview-subject mb-1">Español</p>
