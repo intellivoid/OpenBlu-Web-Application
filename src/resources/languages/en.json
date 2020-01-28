@@ -173,6 +173,7 @@
             "ROW_PING": "%s ms",
             "PAGE_NOT_FOUND_ERROR": "The requested page was not found, it might have been moved",
             "NO_SERVERS_AVAILABLE_ERROR": "There are no servers available at the moment, please try again in a moment",
+            "NO_RESULTS_ERROR": "No results were found",
             "RELOAD_PAGE_LINK": "Reload Page",
             "CALLBACK_100": "The server you requested was not found or is not available on OpenBlu anymore",
             "NOTIFICATION_AUTH_REQUIRED_TITLE": "Authentication Required",
@@ -180,7 +181,11 @@
             "NOTIFICATION_DOWNLOAD_ERROR_TITLE": "Download Error",
             "NOTIFICATION_DOWNLOAD_ERROR_MESSAGE": "There was an error while trying to process your request, try refreshing this page.",
             "NOTIFICATION_DOWNLOAD_STARTED_TITLE": "Download Started",
-            "NOTIFICATION_DOWNLOAD_STARTED_MESSAGE": "Your OpenVPN Configuration file should start downloading"
+            "NOTIFICATION_DOWNLOAD_STARTED_MESSAGE": "Your OpenVPN Configuration file should start downloading",
+            "FILTER_DIALOG_TITLE": "Filter servers by Country",
+            "FILTER_DIALOG_CHOICE_LABEL": "Country",
+            "FILTER_DIALOG_FILTER_BUTTON": "Filter Results",
+            "FILTER_DIALOG_CANCEL_BUTTON": "Cancel"
         },
         "service_error": {
             "PAGE_TITLE": "OpenBlu - Service Error",

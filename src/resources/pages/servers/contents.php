@@ -142,7 +142,7 @@ use OpenBlu\OpenBlu;
 
                                             if($total_pages == 0)
                                             {
-                                                render_alert("No results were found", 'primary', 'alert-circle');
+                                                render_alert(TEXT_NO_RESULTS_ERROR, 'primary', 'alert-circle');
                                                 HTML::print('<a href="' . DynamicalWeb::getRoute('servers') . '">' . TEXT_RELOAD_PAGE_LINK . '</a>', false);
                                             }
                                             elseif($current_page < 1)
