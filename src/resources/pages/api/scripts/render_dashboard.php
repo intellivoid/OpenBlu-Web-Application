@@ -133,7 +133,7 @@
     <div class="col-md-6 grid-margin stretch-card">
         <div class="card animated fadeInLeft">
             <div class="card-body">
-                <h4 class="card-title"><?PHP HTML::print("Subscription Details"); ?></h4>
+                <h4 class="card-title"><?PHP HTML::print(TEXT_DASHBOARD_SUBSCRIPTION_DETAILS_HEADER); ?></h4>
 
                 <div class="preview-list">
                     <div class="preview-item border-bottom">
@@ -144,7 +144,7 @@
                         </div>
                         <div class="preview-item-content d-flex flex-grow">
                             <div class="flex-grow">
-                                <h6 class="preview-subject">Server Configurations
+                                <h6 class="preview-subject"><?PHP HTML::print(TEXT_DASHBOARD_SERVER_CONFIGURATION_HEADER); ?>
                                     <span class="float-right small">
                                         <span class="text-muted">
                                             <?PHP HTML::print($UsedServerConfigurations); ?>
@@ -153,7 +153,7 @@
                                 </h6>
                                 <p>
                                     <?PHP
-                                        $Text = "You retrieve %s server configurations from the API, this will reset for every billing cycle";
+                                        $Text = TEXT_DASHBOARD_SERVER_CONFIGURATION_DESC;
                                         $Text = str_ireplace('%s', $ConfiguredServerConfigurations, $Text);
                                         HTML::print($Text);
                                     ?>
@@ -169,13 +169,13 @@
                         </div>
                         <div class="preview-item-content d-flex flex-grow">
                             <div class="flex-grow">
-                                <h6 class="preview-subject">Next Billing Cycle
+                                <h6 class="preview-subject"><?PHP HTML::print(TEXT_DASHBOARD_BILLING_CYCLE_HEADER); ?>
                                     <span class="float-right small">
                                         <span class="text-muted">
                                             <?PHP
                                             if((int)time() > $Subscription->NextBillingCycle)
                                             {
-                                                HTML::print("Today");
+                                                HTML::print(TEXT_DASHBOARD_BILLING_CYCLE_DATE_TODAY);
                                             }
                                             else
                                             {
@@ -185,7 +185,7 @@
                                         </span>
                                     </span>
                                 </h6>
-                                <p><?PHP HTML::print("Your billing will be processed automatically when you use the API"); ?></p>
+                                <p><?PHP HTML::print(TEXT_DASHBOARD_BILLING_CYCLE_DESC); ?></p>
                             </div>
                         </div>
                     </div>
@@ -200,16 +200,16 @@
     <div class="col-md-6 grid-margin stretch-card">
         <div class="card animated fadeInRight">
             <div class="card-body">
-                <h4 class="card-title"><?PHP HTML::print(TEXT_AUTHENTICATION_CARD_TITLE); ?></h4>
-                <p class="card-description"><?PHP HTML::print(TEXT_AUTHENTICATION_CARD_DESC); ?></p>
+                <h4 class="card-title"><?PHP HTML::print(TEXT_DASHBOARD_API_KEY_HEADER); ?></h4>
+                <p class="card-description"><?PHP HTML::print(TEXT_DASHBOARD_API_KEY_DESC); ?></p>
                 <div class="form-group border-bottom mt-5">
-                    <label for="access_key" class="card-subtitle"><?PHP HTML::print("Access Key"); ?></label>
+                    <label for="access_key" class="card-subtitle"><?PHP HTML::print(TEXT_DASHBOARD_API_KEY_HEADER); ?></label>
                     <input type="text" id="access_key" name="access_key" class="form-control" value="<?PHP HTML::print($AccessRecord->AccessKey); ?>" readonly>
                 </div>
 
                 <div class="form-group text-right">
                     <button type="button" class="btn btn-inverse-primary" onclick="location.href='<?PHP DynamicalWeb::getRoute('api', array('action' => 'generate_access_key'), true); ?>';">
-                        <i class="mdi mdi-refresh"></i><?PHP HTML::print("Generate new Access Key"); ?>
+                        <i class="mdi mdi-refresh"></i><?PHP HTML::print(TEXT_BUTTON_GENERATE_ACCESS_KEY); ?>
                     </button>
                 </div>
             </div>
@@ -226,7 +226,7 @@
                 <div id="api-usage-chart">
                     <div class="d-flex flex-column justify-content-center align-items-center" style="height:30vh;">
                         <div class="p-2 my-flex-item">
-                            <h4 class="text-muted">Coming soon</h4>
+                            <h4 class="text-muted"><?PHP HTML::print(TEXT_API_USAGE_CARD_PLACEHOLDER); ?></h4>
                         </div>
                     </div>
                 </div>

@@ -1,12 +1,14 @@
 <?PHP
     use DynamicalWeb\DynamicalWeb;
+    use DynamicalWeb\HTML;
+
 ?>
 <div class="modal fade" id="filterDialog" tabindex="-1" role="dialog" aria-labelledby="filterDialogLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <form method="GET" action="<?PHP DynamicalWeb::getRoute('servers', array(), true); ?>">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="filterDialog">Filter servers by Country</h5>
+                    <h5 class="modal-title" id="filterDialog"><?PHP HTML::print(TEXT_FILTER_DIALOG_TITLE); ?></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">
                             <i class="mdi mdi-close"></i>
@@ -16,7 +18,7 @@
                 <div class="modal-body">
                     <input name="filter" id="filter" value="country_short" hidden>
                     <div class="from-group">
-                        <label for="value">Country</label>
+                        <label for="value"><?PHP HTML::print(TEXT_FILTER_DIALOG_CHOICE_LABEL); ?></label>
                         <select name="value" id="value" class="form-control">
                             <option value="AF">Afghanistan</option>
                             <option value="AX">Åland Islands</option>
@@ -271,8 +273,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
-                    <input type="submit" class="btn btn-primary" value="Filter Results">
+                    <button type="button" class="btn btn-light" data-dismiss="modal"><?PHP HTML::print(TEXT_FILTER_DIALOG_CANCEL_BUTTON); ?></button>
+                    <input type="submit" class="btn btn-primary" value="<?PHP HTML::print(TEXT_FILTER_DIALOG_FILTER_BUTTON); ?>">
                 </div>
             </form>
 

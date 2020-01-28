@@ -1,5 +1,7 @@
 <?php
 
+    use DynamicalWeb\Actions;
+    use DynamicalWeb\DynamicalWeb;
     use DynamicalWeb\Runtime;
     use Support\Support;
     use Support\Utilities\Validation;
@@ -8,28 +10,25 @@
 
     if($_SERVER['REQUEST_METHOD'] == 'POST')
     {
-        if(verify_recaptcha() == false)
-        {
-            header('Location: /support?callback=106');
-            exit();
-        }
-
         if(isset($_POST['email']) == false)
         {
-            header('Location: /support?callback=100');
-            exit();
+            Actions::redirect(DynamicalWeb::getRoute(
+                'support', array('callback' => '100')
+            ));
         }
 
         if(isset($_POST['subject']) == false)
         {
-            header('Location: /support?callback=100');
-            exit();
+            Actions::redirect(DynamicalWeb::getRoute(
+                'support', array('callback' => '100')
+            ));
         }
 
         if(isset($_POST['message']) == false)
         {
-            header('Location: /support?callback=100');
-            exit();
+            Actions::redirect(DynamicalWeb::getRoute(
+                'support', array('callback' => '100')
+            ));
         }
 
         submit_report();
@@ -40,20 +39,23 @@
     {
         if(Validation::email($_POST['email']) == false)
         {
-            header('Location: /support?callback=101');
-            exit();
+            Actions::redirect(DynamicalWeb::getRoute(
+                'support', array('callback' => '101')
+            ));
         }
 
         if(Validation::subject($_POST['subject']) == false)
         {
-            header('Location: /support?callback=102');
-            exit();
+            Actions::redirect(DynamicalWeb::getRoute(
+                'support', array('callback' => '102')
+            ));
         }
 
         if(Validation::message($_POST['message']) == false)
         {
-            header('Location: /support?callback=103');
-            exit();
+            Actions::redirect(DynamicalWeb::getRoute(
+                'support', array('callback' => '103')
+            ));
         }
 
         $IntellivoidSupport = new Support();
@@ -66,10 +68,12 @@
         }
         catch(Exception $exception)
         {
-            header('Location: /support?callback=104');
-            exit();
+            Actions::redirect(DynamicalWeb::getRoute(
+                'support', array('callback' => '104')
+            ));
         }
 
-        header('Location: /support?callback=105&ticket_number=' . urlencode($SupportTicket->TicketNumber));
-        exit();
+        Actions::redirect(DynamicalWeb::getRoute(
+            'support', array('callback' => '105', 'ticket_number' => $SupportTicket->TicketNumber)
+        ));
     }

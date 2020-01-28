@@ -128,8 +128,8 @@ use DynamicalWeb\DynamicalWeb;
                             <div class="card animated fadeInUp">
                                 <div class="card-body">
 
-                                    <h4 class="card-title">Purchase Subscription</h4>
-                                    <p class="card-description">Review subscription details and start the subscription</p>
+                                    <h4 class="card-title"><?PHP HTML::print(TEXT_DETAILS_HEADER); ?></h4>
+                                    <p class="card-description"><?PHP HTML::print(TEXT_DETAILS_DESC); ?></p>
 
                                     <div class="row">
                                         <div class="col-md-6">
@@ -170,7 +170,7 @@ use DynamicalWeb\DynamicalWeb;
                                                 <h1 class="font-weight-normal mb-4 text-success">$<?PHP HTML::print($Subscription->SubscriptionDetails->InitialPrice); ?> USD</h1>
                                                 <p>
                                                     <?PHP
-                                                        $Text = "You pay $%cp USD every %bc";
+                                                        $Text = TEXT_DETAILS_PAYMENT;
                                                         $Text = str_ireplace('%bc', intval(abs($Subscription->SubscriptionDetails->BillingCycle)/60/60/24), $Text);
                                                         $Text = str_ireplace('%cp', $Subscription->SubscriptionDetails->CyclePrice, $Text);
                                                         HTML::print($Text);
