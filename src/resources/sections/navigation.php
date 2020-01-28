@@ -36,7 +36,7 @@
                     </a>
                     <div class="dropdown-divider"></div>
 
-                    <a class="dropdown-item preview-item" href="<?PHP DynamicalWeb::getRoute('change_language', array('language' => 'cn', 'cache' => hash('sha256', time())), true); ?>">
+                    <a class="dropdown-item preview-item" href="<?PHP DynamicalWeb::getRoute('change_language', array('language' => 'zh', 'cache' => hash('sha256', time())), true); ?>">
                         <div class="preview-thumbnail">
                             <i class="flag-icon flag-icon-cn"></i>
                         </div>
@@ -46,12 +46,12 @@
                     </a>
                     <div class="dropdown-divider"></div>
 
-                    <a class="dropdown-item preview-item" href="<?PHP DynamicalWeb::getRoute('change_language', array('language' => 'de', 'cache' => hash('sha256', time())), true); ?>">
+                    <a class="dropdown-item preview-item" href="<?PHP DynamicalWeb::getRoute('change_language', array('language' => 'es', 'cache' => hash('sha256', time())), true); ?>">
                         <div class="preview-thumbnail">
                             <i class="flag-icon flag-icon-de"></i>
                         </div>
                         <div class="preview-item-content">
-                            <p class="preview-subject mb-1">Deutsche</p>
+                            <p class="preview-subject mb-1">Español</p>
                         </div>
                     </a>
                     <div class="dropdown-divider"></div>

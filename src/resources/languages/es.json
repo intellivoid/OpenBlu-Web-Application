@@ -1,6 +1,6 @@
 {
     "language": {
-        "name": "spanish",
+        "name": "Español",
         "iso_639-1": "es"
     },
     "pages": {
@@ -36,7 +36,7 @@
             "DASHBOARD_SERVER_CONFIGURATION_HEADER": "Configuración del servidor",
             "DASHBOARD_SERVER_CONFIGURATION_DESC": "Tú puedes obtener %s configuraciones desde la API, Esto se restablecerá en cada ciclo de facturación",
             "DASHBOARD_BILLING_CYCLE_HEADER": "Próximo ciclo de facturación",
-            "DASHBOARD_BILLING_CYCLE_DESC": "Your billing will be processed automatically when you use the API",
+            "DASHBOARD_BILLING_CYCLE_DESC": "Tu cobro será procesado automaticamente cuando tú uses la API",
             "DASHBOARD_BILLING_CYCLE_DATE_TODAY": "Hoy",
             "API_DOCUMENTATION_BUTTON": "Documentación de la API",
             "DASHBOARD_API_KEY_HEADER": "Clave de acceso",
@@ -186,7 +186,7 @@
             "NOTIFICATION_DOWNLOAD_ERROR_TITLE": "Error de descarga",
             "NOTIFICATION_DOWNLOAD_ERROR_MESSAGE": "Hubo un error al procesar tu solicitud, intentá recargar esta página.",
             "NOTIFICATION_DOWNLOAD_STARTED_TITLE": "Descarga Iniciada",
-            "NOTIFICATION_DOWNLOAD_STARTED_MESSAGE": "Tu archivo de configuración OpenVPN debería empezar a descargar"
+            "NOTIFICATION_DOWNLOAD_STARTED_MESSAGE": "Tu archivo de configuración OpenVPN debería empezar a descargar",
             "FILTER_DIALOG_TITLE": "Filtrar servidores por país",
             "FILTER_DIALOG_CHOICE_LABEL": "País",
             "FILTER_DIALOG_FILTER_BUTTON": "Filtrar resultados",
@@ -218,11 +218,9 @@
     },
     "sections": {
         "sidebar": {
-            "SIDEBAR_ADD_TO_BALANCE": "Add to balance",
             "SIDEBAR_LOGOUT": "Cerrar sesión",
             "SIDEBAR_NOT_LOGGED_IN": "Sesión no iniciada",
             "SIDEBAR_LOGIN": "Iniciar sesión",
-            "SIDEBAR_REGISTER": "Registrar",
             "SIDEBAR_NAV_HEADER": "Navegación",
             "SIDEBAR_NAV_HOME": "Inicio",
             "SIDEBAR_NAV_SERVERS": "Servidores VPN",

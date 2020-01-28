@@ -169,7 +169,7 @@
                         </div>
                         <div class="preview-item-content d-flex flex-grow">
                             <div class="flex-grow">
-                                <h6 class="preview-subject">Next Billing Cycle
+                                <h6 class="preview-subject"><?PHP HTML::print(TEXT_DASHBOARD_BILLING_CYCLE_HEADER); ?>
                                     <span class="float-right small">
                                         <span class="text-muted">
                                             <?PHP

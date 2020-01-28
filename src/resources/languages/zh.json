@@ -213,11 +213,9 @@
     },
     "sections": {
         "sidebar": {
-            "SIDEBAR_ADD_TO_BALANCE": "加上余额",
             "SIDEBAR_LOGOUT": "登出",
             "SIDEBAR_NOT_LOGGED_IN": "未登录",
             "SIDEBAR_LOGIN": "登录",
-            "SIDEBAR_REGISTER": "寄存器",
             "SIDEBAR_NAV_HEADER": "导航",
             "SIDEBAR_NAV_HOME": "家",
             "SIDEBAR_NAV_SERVERS": "VPN服务器",

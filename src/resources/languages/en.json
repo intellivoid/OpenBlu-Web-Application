@@ -213,11 +213,9 @@
     },
     "sections": {
         "sidebar": {
-            "SIDEBAR_ADD_TO_BALANCE": "Add to balance",
             "SIDEBAR_LOGOUT": "Logout",
             "SIDEBAR_NOT_LOGGED_IN": "Not Logged In",
             "SIDEBAR_LOGIN": "Login",
-            "SIDEBAR_REGISTER": "Register",
             "SIDEBAR_NAV_HEADER": "Navigation",
             "SIDEBAR_NAV_HOME": "Home",
             "SIDEBAR_NAV_SERVERS": "VPN Servers",
