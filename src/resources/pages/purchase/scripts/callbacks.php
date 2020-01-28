@@ -5,19 +5,19 @@
         switch((int)$_GET['callback'])
         {
             case 100:
-                render_alert("The promotion code is invalid", 'danger', 'alert-circle');
+                render_alert(TEXT_CALLBACK_100, 'danger', 'alert-circle');
                 break;
 
             case 101:
-                render_alert("The promotion code is not available", 'danger', 'alert-circle');
+                render_alert(TEXT_CALLBACK_101, 'danger', 'alert-circle');
                 break;
 
             case 102:
-                render_alert("The promotion code has expired", 'danger', 'alert-circle');
+                render_alert(TEXT_CALLBACK_102, 'danger', 'alert-circle');
                 break;
 
             case 103:
-                render_alert("The promotion code is not applicable to this plan", 'danger', 'alert-circle');
+                render_alert(TEXT_CALLBACK_103, 'danger', 'alert-circle');
                 break;
         }
     }
