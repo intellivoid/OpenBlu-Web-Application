@@ -14,6 +14,7 @@
     use IntellivoidSubscriptionManager\IntellivoidSubscriptionManager;
     use IntellivoidSubscriptionManager\Objects\Subscription;
     use IntellivoidSubscriptionManager\Objects\SubscriptionPlan;
+    use IntellivoidSubscriptionManager\Utilities\Converter;
     use OpenBlu\Abstracts\SearchMethods\UserSubscriptionSearchMethod;
     use OpenBlu\Exceptions\UserSubscriptionRecordNotFoundException;
     use OpenBlu\Objects\UserSubscription;
@@ -226,7 +227,7 @@
 
                     $UserSubscription->SubscriptionID = $ActiveSubscription->ID;
                     $UserSubscription = update_existing_subscription(
-                        $ApplicationConfiguration['APPLICATION_INTERNAL_ID'], $UserSubscription
+                        $ApplicationConfiguration['APPLICATION_INTERNAL_ID'], $UserSubscription, $ActiveSubscription
                     );
                     try
                     {
@@ -245,7 +246,7 @@
         }
     }
 
-    function update_existing_subscription(int $application_id, UserSubscription $userSubscription): UserSubscription
+    function update_existing_subscription(int $application_id, UserSubscription $userSubscription, Subscription $subscription): UserSubscription
     {
         if(isset(DynamicalWeb::$globalObjects['intellivoid_api']) == false)
         {
@@ -290,7 +291,7 @@
             return null;
         }
 
-        $AccessRecord = updateAccessRecord($AccessRecord);
+        $AccessRecord = updateAccessRecord($AccessRecord, $subscription);
 
         try
         {
@@ -366,7 +367,7 @@
             )));
         }
 
-        $AccessRecord = updateAccessRecord($AccessRecord);
+        $AccessRecord = updateAccessRecord($AccessRecord, $subscription);
         try
         {
             $IntellivoidAPI->getAccessKeyManager()->updateAccessRecord($AccessRecord);
@@ -394,10 +395,14 @@
         return null;
     }
 
-    function updateAccessRecord(AccessRecord $accessRecord): AccessRecord
+    function updateAccessRecord(AccessRecord $accessRecord, Subscription $subscription): AccessRecord
     {
+        $Features  = Converter::featuresToSA($subscription->Properties->Features);
+
         $accessRecord->Variables = array();
         $accessRecord->Variables['SERVER_CONFIGS'] = 0;
+        $accessRecord->Variables['MAX_SERVER_CONFIGS'] = (int)$Features['SERVER_CONFIGS'];
+
         return $accessRecord;
     }
 
