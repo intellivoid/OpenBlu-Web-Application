@@ -127,6 +127,11 @@
     if(isset($AccessRecord->Variables['SERVER_CONFIGS']))
     {
         $UsedServerConfigurations = (int)$AccessRecord->Variables['SERVER_CONFIGS'];
+
+        if($UsedServerConfigurations > $ConfiguredServerConfigurations)
+        {
+            $UsedServerConfigurations = $ConfiguredServerConfigurations;
+        }
     }
 ?>
 <div class="row">
