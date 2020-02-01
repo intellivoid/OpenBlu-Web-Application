@@ -41,7 +41,7 @@
             "API_DOCUMENTATION_BUTTON": "Documentación de la API",
             "DASHBOARD_API_KEY_HEADER": "Clave de acceso",
             "DASHBOARD_API_KEY_DESC": "Usando esta clave te puedes autenticar con la API y hacer solicitudes validas",
-            "BUTTON_GENERATE_ACCESS_KEY": "Generar nueva clade de acceso",
+            "BUTTON_GENERATE_ACCESS_KEY": "Generar nueva clave de acceso",
             "API_USAGE_CARD_TITLE": "API Usage Analytics",
             "API_USAGE_CARD_PLACEHOLDER": "Muy pronto"
         },
