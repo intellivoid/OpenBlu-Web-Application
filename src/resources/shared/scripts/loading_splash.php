@@ -8,7 +8,6 @@
     <html lang="en">
     <head>
         <?PHP HTML::importSection('header'); ?>
-        <title>OpenBlu</title>
         <style>
             /* Absolute Center Spinner */
             .loading {
@@ -23,6 +22,8 @@
                 right: 0;
             }
         </style>
+        <title>OpenBlu</title>
+
     </head>
 
     <body>
