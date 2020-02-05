@@ -59,7 +59,7 @@
         catch (UserSubscriptionRecordNotFoundException $e)
         {
             remove_subscription();
-            Actions::redirect(DynamicalWeb::getRoute('index') . '#pricing');
+            Actions::redirect(DynamicalWeb::getRoute('api'));
             return;
         }
         catch(Exception $e)
@@ -89,7 +89,7 @@
         catch (SubscriptionNotFoundException $e)
         {
             remove_subscription();
-            Actions::redirect(DynamicalWeb::getRoute('index') . '#pricing');
+            Actions::redirect(DynamicalWeb::getRoute('api'));
             return;
         }
         catch(Exception $e)
@@ -197,7 +197,7 @@
                         )));
                     }
                     remove_subscription();
-                    Actions::redirect(DynamicalWeb::getRoute('index') . '#pricing');
+                    Actions::redirect(DynamicalWeb::getRoute('api'));
                     return;
                 }
                 catch(Exception $exception)
