@@ -321,7 +321,7 @@
         $Cookie->Data['user_subscription_id'] = $userSubscription->SubscriptionID;
 
         $sws->CookieManager()->updateCookie($Cookie);
-        Actions::redirect(DynamicalWeb::getRoute('dashboard'));
+        Actions::redirect(DynamicalWeb::getRoute('api'));
     }
 
     function remove_subscription()
