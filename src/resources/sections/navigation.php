@@ -62,7 +62,7 @@
                             <i class="flag-icon flag-icon-de"></i>
                         </div>
                         <div class="preview-item-content">
-                            <p class="preview-subject mb-1">Deutsche</p>
+                            <p class="preview-subject mb-1">Deutsch</p>
                         </div>
                     </a>
                     <div class="dropdown-divider"></div>
