@@ -67,6 +67,16 @@
                     </a>
                     <div class="dropdown-divider"></div>
 
+                    <a class="dropdown-item preview-item" href="<?PHP DynamicalWeb::getRoute('change_language', array('language' => 'tr', 'cache' => hash('sha256', time())), true); ?>">
+                        <div class="preview-thumbnail">
+                            <i class="flag-icon flag-icon-tr"></i>
+                        </div>
+                        <div class="preview-item-content">
+                            <p class="preview-subject mb-1">Türk</p>
+                        </div>
+                    </a>
+                    <div class="dropdown-divider"></div>
+
                     <p class="p-3 mb-0 text-center" onclick="window.open('https://github.com/intellivoid/Translations');"><?PHP HTML::print(TEXT_ADD_TRANSLATION); ?></p>
                 </div>
             </li>
