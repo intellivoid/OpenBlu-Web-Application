@@ -43,7 +43,11 @@
 			  "DASHBOARD_API_KEY_DESC": "Mit diesem Zugriffsschlüssel kannst du dich bei der API authentifizieren und Anfragen senden",
 			  "BUTTON_GENERATE_ACCESS_KEY": "Neuen Zugriffsschlüssel generieren",
 			  "API_USAGE_CARD_TITLE": "API-Nutzung",
-			  "API_USAGE_CARD_PLACEHOLDER": "Demnächst verfügbar"
+			  "API_USAGE_CARD_PLACEHOLDER": "Demnächst verfügbar",
+			  "CALLBACK_100": "Bei deiner Anfrage ist ein unerwarteter Fehler aufgetreten",
+			  "CALLBACK_101": "Der Tarif wurde nicht gefunden",
+			  "CALLBACK_102": "Der Tarif ist nicht verfügbar",
+			  "CALLBACK_103": "Ein neuer Zugriffsschlüssel wurde erfolgreich generiert"
 		 },
 		 "index": {
 			  "PAGE_TITLE": "OpenBlu",
