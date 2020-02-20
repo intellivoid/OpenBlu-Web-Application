@@ -43,7 +43,11 @@
             "DASHBOARD_API_KEY_DESC": "使用此访问密钥，您可以向API进行身份验证并发出有效请求",
             "BUTTON_GENERATE_ACCESS_KEY": "生成新的访问密钥",
             "API_USAGE_CARD_TITLE": "API使用率分析",
-            "API_USAGE_CARD_PLACEHOLDER": "快来了"
+            "API_USAGE_CARD_PLACEHOLDER": "快来了",
+            "CALLBACK_100": "尝试处理您的请求时出现意外错误",
+            "CALLBACK_101": "找不到订阅计划",
+            "CALLBACK_102": "订阅计划不可用",
+            "CALLBACK_103": "已成功生成新的访问密钥"
         },
         "index": {
             "PAGE_TITLE": "OpenBlu",

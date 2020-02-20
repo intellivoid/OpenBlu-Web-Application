@@ -41,9 +41,13 @@
             "API_DOCUMENTATION_BUTTON": "Documentación de la API",
             "DASHBOARD_API_KEY_HEADER": "Clave de acceso",
             "DASHBOARD_API_KEY_DESC": "Usando esta clave te puedes autenticar con la API y hacer solicitudes validas",
-            "BUTTON_GENERATE_ACCESS_KEY": "Generar nueva clade de acceso",
-            "API_USAGE_CARD_TITLE": "API Usage Analytics",
-            "API_USAGE_CARD_PLACEHOLDER": "Muy pronto"
+            "BUTTON_GENERATE_ACCESS_KEY": "Generar nueva clave de acceso",
+            "API_USAGE_CARD_TITLE": "Estadisticas de uso de API",
+            "API_USAGE_CARD_PLACEHOLDER": "Muy pronto",
+            "CALLBACK_100": "Hubo un error inesperado al procesar tu solicitud",
+            "CALLBACK_101": "El plan de subscribción no fué encontrado",
+            "CALLBACK_102": "El plan de subscripción no está disponible",
+            "CALLBACK_103": "Una nueva clave de acceso se ha generado exitosamente"
         },
         "index": {
             "PAGE_TITLE": "OpenBlu",

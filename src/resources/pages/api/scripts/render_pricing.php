@@ -171,10 +171,7 @@
                                     <i class="mdi mdi-console-line"></i>
                                     <?PHP HTML::print($BasicSubscriptionPlan->PlanName); ?>
                                 </h3>
-                                <?PHP
-                                    $Text = TEXT_PLAN_MONTHLY_PRICE;
-                                    $Text = str_ireplace('%s', $BasicSubscriptionPlan->CyclePrice, $Text);
-                                ?>
+                                
                                 <p><?PHP HTML::print($Text); ?></p>
                             </div>
                             <ul class="list-unstyled plan-features">

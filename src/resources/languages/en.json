@@ -43,7 +43,11 @@
             "DASHBOARD_API_KEY_DESC": "Using this Access Key you can authenticate yourself to the API and make valid requests",
             "BUTTON_GENERATE_ACCESS_KEY": "Generate new Access Key",
             "API_USAGE_CARD_TITLE": "API Usage Analytics",
-            "API_USAGE_CARD_PLACEHOLDER": "Coming soon"
+            "API_USAGE_CARD_PLACEHOLDER": "Coming soon",
+            "CALLBACK_100": "There was an unexpected error while trying to process your request",
+            "CALLBACK_101": "The subscription plan was not found",
+            "CALLBACK_102": "The subscription plan is not available",
+            "CALLBACK_103": "A new access key has been generated successfully"
         },
         "index": {
             "PAGE_TITLE": "OpenBlu",

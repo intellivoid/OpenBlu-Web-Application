@@ -94,6 +94,9 @@
         }
         catch(Exception $e)
         {
+
+            var_dump($e);
+            die();
             Actions::redirect(DynamicalWeb::getRoute('service_error', array(
                 'error_type' => 'user_subscription_fetch_failure'
             )));
