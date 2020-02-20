@@ -195,7 +195,7 @@
                         </div>
                     </div>
                 </div>
-                <button type="button" class="btn btn-inverse-warning" onclick="window.open('https://gist.github.com/Netkas/584b0648c93620060f60d89b1878564f');">
+                <button type="button" class="btn btn-inverse-warning" onclick="window.open('https://gist.github.com/Netkas/6d09bd76ad8a6eaee6a6229b17eb373f');">
                     <i class="mdi mdi-book"></i> <?PHP HTML::print(TEXT_API_DOCUMENTATION_BUTTON); ?>
                 </button>
             </div>
