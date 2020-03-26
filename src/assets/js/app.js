@@ -28,6 +28,6 @@ function show_notification(heading, text, icon)
 }
 
 console.log("%cOpenBlu", "color: blue; font-size: x-large");
-console.log("%cCreated and Developed by Intellivoid (https://intellivoid.info)", "color: blue;");
+console.log("%cCreated and Developed by Intellivoid (https://intellivoid.net)", "color: blue;");
 console.log("%cWeb Application written by Netkas (https://twitter.com/narrakas)", "color: blue;");
 console.log("%cHosted by Bytechain Industries (https://twitter.com/bytechain)\n", "color: blue;");
