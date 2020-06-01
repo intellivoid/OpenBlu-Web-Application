@@ -29,7 +29,7 @@ use DynamicalWeb\DynamicalWeb;
     try
     {
         $Protocol = strtolower(substr($_SERVER["SERVER_PROTOCOL"],0,strpos( $_SERVER["SERVER_PROTOCOL"],'/'))).'://';
-        $RedirectURL = $Protocol . $_SERVER['HTTP_HOST'] . DynamicalWeb::getRoute('dashboard');
+        $RedirectURL = $Protocol . $_SERVER['HTTP_HOST'] . DynamicalWeb::getRoute('api');
 
         /** @var SubscriptionPurchaseResults $Subscription */
         if(isset($_GET['promotion_code']))
