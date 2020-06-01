@@ -26,7 +26,7 @@
         }
 
         $Cookie->Data['cache_refresh'] = time() + 30;
-    
+
         $sws->CookieManager()->updateCookie($Cookie);
         DynamicalWeb::setMemoryObject('(cookie)web_session', $Cookie);
     }
