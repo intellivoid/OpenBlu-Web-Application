@@ -1,6 +1,6 @@
 {
     "primary_language": "en",
-    "debugging_mode": false,
+    "debugging_mode": true,
     "router": [
         {"path": "/", "page": "index"},
         {"path": "/service_error", "page": "service_error"},
@@ -72,7 +72,7 @@
     },
     "runtime_scripts": {
         "initialize": ["coa_sniffles.php", "sync_network.php"],
-        "on_page_load": ["client_mode.php", "check_auth.php", "cache.php"],
+        "on_page_load": ["check_auth.php", "cache.php"],
         "page_loaded": [],
         "after_request": [],
         "on_request": ["maintenance.php"],
