@@ -36,27 +36,24 @@ use DynamicalWeb\Runtime;
             print('There was an issue with the security check, Please refresh the page');
             exit();
         }
-
-        header('Refresh: 2; URL=/');
-        HTML::importScript('loading_splash');
-        exit();
-
     }
-
-    try
+    else
     {
-        $Cookie = $sws->WebManager()->getCookie('web_session');
+        try
+        {
+            $Cookie = $sws->WebManager()->getCookie('web_session');
+        }
+        catch(Exception $exception)
+        {
+            Page::staticResponse(
+                'OpenBlu Error',
+                'Web Sessions Issue',
+                'There was an issue with your Web Session, try clearing your cookies and try again'
+            );
+            exit();
+        }
     }
-    catch(Exception $exception)
-    {
-        Page::staticResponse(
-            'OpenBlu Error',
-            'Web Sessions Issue',
-            'There was an issue with your Web Session, try clearing your cookies and try again'
-        );
-        exit();
-    }
-
+    
     DynamicalWeb::setMemoryObject('(cookie)web_session', $Cookie);
 
     define('WEB_SESSION_ACTIVE', $Cookie->Data['session_active'], false);

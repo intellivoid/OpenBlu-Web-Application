@@ -2,15 +2,19 @@
     /** @noinspection PhpUnhandledExceptionInspection */
 
     use DynamicalWeb\HTML;
+use DynamicalWeb\Javascript;
 
-    HTML::importScript('check_subscription');
+HTML::importScript('check_subscription');
 
     if(WEB_SUBSCRIPTION_ACTIVE)
     {
         HTML::importScript('dashboard_actions');
+        HTML::importScript('load_variables');
+        HTML::importScript('deepanalytics');
     }
 
     HTML::importScript('alert');
+
 ?>
 <!DOCTYPE html>
 <html lang="<?PHP HTML::print(APP_LANGUAGE_ISO_639); ?>">
@@ -47,5 +51,14 @@
         </div>
 
         <?PHP HTML::importSection('js_scripts'); ?>
+        <script src="/assets/vendors/morris/morris.min.js"></script>
+        <script src="/assets/vendors/raphael/raphael-min.js"></script>
+        <?PHP
+            if(WEB_SUBSCRIPTION_ACTIVE)
+            {
+                Javascript::importScript('rpage');
+                Javascript::importScript('deepanalytics', [], false);
+            }
+        ?>
     </body>
 </html>

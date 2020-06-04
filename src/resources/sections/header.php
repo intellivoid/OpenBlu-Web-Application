@@ -2,11 +2,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="stylesheet" href="/assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+<link rel="stylesheet" href="/assets/vendors/iconfonts/font-awesome/css/font-awesome.min.css">
 <link rel="stylesheet" href="/assets/vendors/css/vendor.bundle.base.css">
 <link rel="stylesheet" href="/assets/vendors/css/vendor.bundle.addons.css">
 <link rel="stylesheet" href="/assets/vendors/animate.css/animate.min.css">
 <link rel="stylesheet" href="/assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css">
 <link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/vendors/morris/morris.css">
 <link rel="stylesheet" href="/assets/css/app.css">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png?v=Kmnx6w0N7E">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png?v=Kmnx6w0N7E">
@@ -22,14 +24,14 @@
 <meta name="msapplication-config" content="/assets/favicon/browserconfig.xml?v=Kmnx6w0N7E">
 <meta name="theme-color" content="#191c20">
 <meta name="title" content="OpenBlu VPN">
-<meta name="description" content="Free VPN Service powered by volunteers, get access to over 500 OpenVPN Servers to use with any device or server">
+<meta name="description" content="Free VPN Service powered by volunteers, get access to over 10,000 OpenVPN Servers to use with any device or server for free">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://openblu.intellivoid.net/">
 <meta property="og:title" content="OpenBlu VPN">
-<meta property="og:description" content="Free VPN Service powered by volunteers, get access to over 500 OpenVPN Servers to use with any device or server">
-<meta property="og:image" content="">
+<meta property="og:description" content="Free VPN Service powered by volunteers, get access to over 10,000 OpenVPN Servers to use with any device or server for free">
+<meta property="og:image" content="/assets/images/web_banner.jpg">
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="https://openblu.intellivoid.net/">
 <meta property="twitter:title" content="OpenBlu VPN">
-<meta property="twitter:description" content="Free VPN Service powered by volunteers, get access to over 500 OpenVPN Servers to use with any device or server">
-<meta property="twitter:image" content="">
+<meta property="twitter:description" content="Free VPN Service powered by volunteers, get access to over 10,000 OpenVPN Servers to use with any device or server for free">
+<meta property="twitter:image" content="/assets/images/web_banner.jpg">
