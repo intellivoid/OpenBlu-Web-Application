@@ -67,6 +67,16 @@
                     </a>
                     <div class="dropdown-divider"></div>
 
+                    <a class="dropdown-item preview-item" href="<?PHP DynamicalWeb::getRoute('change_language', array('language' => 'ru', 'cache' => hash('sha256', time())), true); ?>">
+                        <div class="preview-thumbnail">
+                            <i class="flag-icon flag-icon-ru"></i>
+                        </div>
+                        <div class="preview-item-content">
+                            <p class="preview-subject mb-1">русский</p>
+                        </div>
+                    </a>
+                    <div class="dropdown-divider"></div>
+
                     <a class="dropdown-item preview-item" href="<?PHP DynamicalWeb::getRoute('change_language', array('language' => 'tr', 'cache' => hash('sha256', time())), true); ?>">
                         <div class="preview-thumbnail">
                             <i class="flag-icon flag-icon-tr"></i>
