@@ -1,8 +1,8 @@
 <?PHP
     /** @noinspection PhpUnhandledExceptionInspection */
 
-use DynamicalWeb\DynamicalWeb;
-use DynamicalWeb\HTML;
+    use DynamicalWeb\DynamicalWeb;
+    use DynamicalWeb\HTML;
 
     HTML::importScript('action.download');
     HTML::importScript('check_selection');
@@ -12,7 +12,7 @@ use DynamicalWeb\HTML;
 <!DOCTYPE html>
 <html lang="<?PHP HTML::print(APP_LANGUAGE_ISO_639); ?>">
     <head>
-        <?PHP HTML::importSection('header'); ?>
+        <?PHP HTML::importSection('header_server'); ?>
         <title><?PHP HTML::print(str_ireplace('%s', CACHE_VPN_PUBLIC_ID, TEXT_PAGE_TITLE)); ?></title>
     </head>
 

@@ -1,14 +1,14 @@
 <?php
 
 
-    use CoffeeHouse\CoffeeHouse;
     use DeepAnalytics\Exceptions\DataNotFoundException;
+    use DeepAnalytics\Objects\Date;
     use DeepAnalytics\Utilities;
     use DynamicalWeb\DynamicalWeb;
     use IntellivoidAPI\Objects\AccessRecord;
-use OpenBlu\OpenBlu;
+    use OpenBlu\OpenBlu;
 
-if(isset($_GET['action']))
+    if(isset($_GET['action']))
     {
         switch($_GET['action'])
         {
@@ -115,8 +115,7 @@ if(isset($_GET['action']))
 
         /** @var AccessRecord $AccessRecord */
         $AccessRecord = DynamicalWeb::getMemoryObject('access_record');
-
-        $SelectedDate = new \DeepAnalytics\Objects\Date();
+        $SelectedDate = new Date();
         $SelectedDate->Year = (int)$_POST['year'];
         $SelectedDate->Month = (int)$_POST['month'];
         $SelectedDate->Day = (int)$_POST['day'];
@@ -125,8 +124,8 @@ if(isset($_GET['action']))
 
         try
         {
-            $Object = $CoffeeHouse->getDeepAnalytics()->getHourlyData(
-                "intellivoid_api", "requests", $AccessRecord->ID,
+            $Object = $OpenBlu->getDeepAnalytics()->getHourlyData(
+                "intellivoid_api", "requests", $AccessRecord->ID, false,
                 (int)$_POST['year'], (int)$_POST['month'], (int)$_POST['day']);
 
             $Results[$Object->Name] = array(
@@ -148,8 +147,8 @@ if(isset($_GET['action']))
 
         try
         {
-            $Object = $CoffeeHouse->getDeepAnalytics()->getHourlyData(
-                "coffeehouse_api", "created_sessions", $AccessRecord->ID,
+            $Object = $OpenBlu->getDeepAnalytics()->getHourlyData(
+                "openblu_api", "list_servers", $AccessRecord->ID, false,
                 (int)$_POST['year'], (int)$_POST['month'], (int)$_POST['day']);
 
             $Results[$Object->Name] = array(
@@ -163,16 +162,17 @@ if(isset($_GET['action']))
                     $SelectedDate, $key
                 )] = $value;
             }
+
         }
         catch(DataNotFoundException $exception)
         {
-            $Results['created_sessions'] = null;
+            $Results['list_servers'] = null;
         }
 
         try
         {
-            $Object = $CoffeeHouse->getDeepAnalytics()->getHourlyData(
-                "coffeehouse_api", "ai_responses", $AccessRecord->ID,
+            $Object = $OpenBlu->getDeepAnalytics()->getHourlyData(
+                "openblu_api", "get_server", $AccessRecord->ID, false,
                 (int)$_POST['year'], (int)$_POST['month'], (int)$_POST['day']);
 
             $Results[$Object->Name] = array(
@@ -189,7 +189,7 @@ if(isset($_GET['action']))
         }
         catch(DataNotFoundException $exception)
         {
-            $Results['ai_responses'] = null;
+            $Results['get_server'] = null;
         }
 
         $Results = array(
@@ -233,8 +233,16 @@ if(isset($_GET['action']))
             exit(0);
         }
 
-        /** @var CoffeeHouse $CoffeeHouse */
-        $CoffeeHouse = DynamicalWeb::getMemoryObject('coffeehouse');
+        if(isset(DynamicalWeb::$globalObjects['openblu']) == false)
+        {
+            /** @var OpenBlu $OpenBlu */
+            $OpenBlu = DynamicalWeb::setMemoryObject('openblu', new OpenBlu());
+        }
+        else
+        {
+            /** @var OpenBlu $OpenBlu */
+            $OpenBlu = DynamicalWeb::getMemoryObject('openblu');
+        }
 
         /** @var AccessRecord $AccessRecord */
         $AccessRecord = DynamicalWeb::getMemoryObject('access_record');
@@ -243,8 +251,8 @@ if(isset($_GET['action']))
 
         try
         {
-            $Object = $CoffeeHouse->getDeepAnalytics()->getMonthlyData(
-                "intellivoid_api", "requests", $AccessRecord->ID,
+            $Object = $OpenBlu->getDeepAnalytics()->getMonthlyData(
+                "intellivoid_api", "requests", $AccessRecord->ID, false,
                 (int)$_POST['year'], (int)$_POST['month']);
 
             $Results[$Object->Name] = array(
@@ -266,8 +274,8 @@ if(isset($_GET['action']))
 
         try
         {
-            $Object = $CoffeeHouse->getDeepAnalytics()->getMonthlyData(
-                "coffeehouse_api", "created_sessions", $AccessRecord->ID,
+            $Object = $OpenBlu->getDeepAnalytics()->getMonthlyData(
+                "openblu_api", "list_servers", $AccessRecord->ID, false,
                 (int)$_POST['year'], (int)$_POST['month']);
 
             $Results[$Object->Name] = array(
@@ -284,13 +292,13 @@ if(isset($_GET['action']))
         }
         catch(DataNotFoundException $exception)
         {
-            $Results['created_sessions'] = null;
+            $Results['list_servers'] = null;
         }
 
         try
         {
-            $Object = $CoffeeHouse->getDeepAnalytics()->getMonthlyData(
-                "coffeehouse_api", "ai_responses", $AccessRecord->ID,
+            $Object = $OpenBlu->getDeepAnalytics()->getMonthlyData(
+                "openblu_api", "get_server", $AccessRecord->ID, false,
                 (int)$_POST['year'], (int)$_POST['month']);
 
             $Results[$Object->Name] = array(
@@ -307,7 +315,7 @@ if(isset($_GET['action']))
         }
         catch(DataNotFoundException $exception)
         {
-            $Results['ai_responses'] = null;
+            $Results['get_server'] = null;
         }
 
         $Results = array(
@@ -325,33 +333,41 @@ if(isset($_GET['action']))
      */
     function da_get_range()
     {
-        /** @var CoffeeHouse $CoffeeHouse */
-        $CoffeeHouse = DynamicalWeb::getMemoryObject('coffeehouse');
+        if(isset(DynamicalWeb::$globalObjects['openblu']) == false)
+        {
+            /** @var OpenBlu $OpenBlu */
+            $OpenBlu = DynamicalWeb::setMemoryObject('openblu', new OpenBlu());
+        }
+        else
+        {
+            /** @var OpenBlu $OpenBlu */
+            $OpenBlu = DynamicalWeb::getMemoryObject('openblu');
+        }
 
         /** @var AccessRecord $AccessRecord */
         $AccessRecord = DynamicalWeb::getMemoryObject('access_record');
 
         $Results = array(
             "requests" => array(
-                "monthly" => $CoffeeHouse->getDeepAnalytics()->getMonthlyDataRange(
+                "monthly" => $OpenBlu->getDeepAnalytics()->getMonthlyDataRange(
                     "intellivoid_api", "requests", $AccessRecord->ID),
-                "hourly" => $CoffeeHouse->getDeepAnalytics()->getHourlyDataRange(
+                "hourly" => $OpenBlu->getDeepAnalytics()->getHourlyDataRange(
                     "intellivoid_api", "requests", $AccessRecord->ID),
                 "text" => TEXT_DATA_TYPE_REQUESTS
             ),
-            "created_sessions" => array(
-                "monthly" => $CoffeeHouse->getDeepAnalytics()->getMonthlyDataRange(
-                    "coffeehouse_api", "created_sessions", $AccessRecord->ID),
-                "hourly" => $CoffeeHouse->getDeepAnalytics()->getHourlyDataRange(
-                    "coffeehouse_api", "created_sessions", $AccessRecord->ID),
-                "text" => TEXT_DATA_TYPE_LYDIA_SESSIONS_CREATED
+            "list_servers" => array(
+                "monthly" => $OpenBlu->getDeepAnalytics()->getMonthlyDataRange(
+                    "openblu_api", "list_servers", $AccessRecord->ID),
+                "hourly" => $OpenBlu->getDeepAnalytics()->getHourlyDataRange(
+                    "openblu_api", "list_servers", $AccessRecord->ID),
+                "text" => TEXT_DATA_TYPE_SERVER_LISTING_REQUESTED
             ),
-            "ai_responses" => array(
-                "monthly" => $CoffeeHouse->getDeepAnalytics()->getMonthlyDataRange(
-                    "coffeehouse_api", "ai_responses", $AccessRecord->ID),
-                "hourly" => $CoffeeHouse->getDeepAnalytics()->getHourlyDataRange(
-                    "coffeehouse_api", "ai_responses", $AccessRecord->ID),
-                "text" => TEXT_DATA_TYPE_LYDIA_THOUGHTS_PROCESSED
+            "get_server" => array(
+                "monthly" => $OpenBlu->getDeepAnalytics()->getMonthlyDataRange(
+                    "openblu_api", "get_server", $AccessRecord->ID),
+                "hourly" => $OpenBlu->getDeepAnalytics()->getHourlyDataRange(
+                    "openblu_api", "get_server", $AccessRecord->ID),
+                "text" => TEXT_DATA_TYPE_SERVER_REQUESTED
             )
         );
 

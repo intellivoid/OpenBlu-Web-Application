@@ -965,7 +965,7 @@ const deepanalytics = {
                     }
 
                     if ($data.length === 0) {
-                        this.deepanalytics.chart_handler.monthly_chart.chart.no_data_render();
+                        deepanalytics.chart_handler.monthly_chart.chart.no_data_render();
                         return;
                     }
 
@@ -981,7 +981,7 @@ const deepanalytics = {
 
 $(document).ready(function () {
     deepanalytics.init(
-        "deepanalytics_viewer", "<?php \DynamicalWeb\DynamicalWeb::getRoute('dashboard', [], true); ?>",
-        ['#5468da', '#ffbb44', '#67a8e4', '#4ac18e', '#ea553d', '#3bc3e9'],
+        "deepanalytics_viewer", "<?php \DynamicalWeb\DynamicalWeb::getRoute('api', [], true); ?>",
+        ['#63CF72', '#F36368', '#76C1FA', '#FABA66'],
         '#2f3e47');
 });
