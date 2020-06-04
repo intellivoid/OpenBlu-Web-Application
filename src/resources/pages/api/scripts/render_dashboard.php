@@ -109,7 +109,7 @@ use IntellivoidSubscriptionManager\Objects\Subscription\Feature;
                         </div>
                     </div>
                 </div>
-                <button type="button" class="btn btn-inverse-warning" onclick="window.open('https://gist.github.com/Netkas/6d09bd76ad8a6eaee6a6229b17eb373f');">
+                <button type="button" class="btn btn-inverse-warning" onclick="window.open('https://docs.intellivoid.net/openblu/v1/basics');">
                     <i class="mdi mdi-book"></i> <?PHP HTML::print(TEXT_API_DOCUMENTATION_BUTTON); ?>
                 </button>
             </div>
@@ -142,12 +142,8 @@ use IntellivoidSubscriptionManager\Objects\Subscription\Feature;
         <div class="card animated fadeInUp">
             <div class="card-body">
                 <h4 class="card-title"><?PHP HTML::print(TEXT_API_USAGE_CARD_TITLE); ?></h4>
-                <div id="api-usage-chart">
-                    <div class="d-flex flex-column justify-content-center align-items-center" style="height:30vh;">
-                        <div class="p-2 my-flex-item">
-                            <h4 class="text-muted"><?PHP HTML::print(TEXT_API_USAGE_CARD_PLACEHOLDER); ?></h4>
-                        </div>
-                    </div>
+                <div id="deepanalytics_viewer">
+                    <span><?PHP HTML::print(TEXT_API_USAGE_CARD_LOADING_PLACEHOLDER) ?></span>
                 </div>
             </div>
         </div>
