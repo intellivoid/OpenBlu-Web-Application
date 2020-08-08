@@ -1,6 +1,7 @@
 {
     "primary_language": "en",
     "debugging_mode": false,
+    "enable_ppm": true,
     "router": [
         {"path": "/", "page": "index"},
         {"path": "/service_error", "page": "service_error"},
@@ -13,13 +14,6 @@
         {"path": "/auth/logout", "page": "logout"}
     ],
     "libraries": {
-        "Logixal": {
-            "directory_name": "Logixal",
-            "autoloader": "Logixal.php",
-            "check_class_exists": true,
-            "namespace": "Logixal",
-            "main_class": "Logixal"
-        },
         "IntellivoidSubscriptionManager": {
             "directory_name": "IntellivoidSubscriptionManager",
             "autoloader": "IntellivoidSubscriptionManager.php",
